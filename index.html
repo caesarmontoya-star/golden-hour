@@ -1751,9 +1751,9 @@ function showCrawlDetail(index) {
 }
 
 function shareCrawl(name) {
-  var text = 'Check out the ' + name + ' on Golden Hour -- NoCo\'s happy hour guide! goldenhour.netlify.app';
+  var text = 'Check out the ' + name + ' on Golden Hour -- NoCo\'s happy hour guide! goldenhournoco.com';
   if (navigator.share) {
-    navigator.share({ title: 'Golden Hour: ' + name, text: text, url: 'https://focohappyhour.netlify.app' });
+    navigator.share({ title: 'Golden Hour: ' + name, text: text, url: 'https://goldenhournoco.com' });
   } else {
     var el = document.createElement('textarea');
     el.value = text;
