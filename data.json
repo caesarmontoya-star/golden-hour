@@ -1,0 +1,789 @@
+[
+  {
+    "Name": "Ace Gillett's",
+    "City": "Fort Collins",
+    "Address": "239 S College Ave",
+    "Hours": "Wed-Sun 5-6pm",
+    "Status": "Active",
+    "specials": [
+      "$5 select beers",
+      "$7 house red or white wine",
+      "$9 featured classic cocktails",
+      "$6 truffle fries, $9 sliders"
+    ]
+  },
+  {
+    "Name": "Austin's American Grill",
+    "City": "Fort Collins",
+    "Address": "Old Town & Harmony",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$5 well cocktails, $6+ featured cocktails",
+      "$2 off all draft beer, $5 mocktails, $6 wine",
+      "$4 beer cheese soup, $2 ribs, $9 chicken street tacos"
+    ]
+  },
+  {
+    "Name": "Avery Eatery",
+    "City": "Fort Collins",
+    "Address": "100 N College Ave",
+    "Hours": "Mon-Sat 4-6pm",
+    "Status": "Active",
+    "specials": [
+      "$8 froze, margaritas, Aperol spritzes, house wine",
+      "$5 select beers",
+      "$3 duck wings, $8 chicken tenders, $11 cheeseburgers"
+    ]
+  },
+  {
+    "Name": "Avogadro's Number",
+    "City": "Fort Collins",
+    "Address": "605 S Mason St",
+    "Hours": "Mon-Fri 3-5pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off drafts and wine",
+      "$5 margaritas",
+      "$5 PBR + well shot combo",
+      "$5 tempeh burgers, fries, chicken tenders"
+    ]
+  },
+  {
+    "Name": "Beau Jo's",
+    "City": "Fort Collins",
+    "Address": "205 N College Ave",
+    "Hours": "Mon-Thu 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$5 food and $4 drink specials",
+      "$13.50 lunch combo"
+    ]
+  },
+  {
+    "Name": "Bistro Nautile",
+    "City": "Fort Collins",
+    "Address": "150 W Oak St",
+    "Hours": "Tue-Sun 4-6pm",
+    "Status": "Active",
+    "specials": [
+      "Discounted small plates and select wines",
+      "$2 off house cocktails"
+    ]
+  },
+  {
+    "Name": "Blue Agave Grill",
+    "City": "Fort Collins",
+    "Address": "201 S College Ave",
+    "Hours": "Mon-Fri 3-6pm (Tue all day)",
+    "Status": "Active",
+    "specials": [
+      "$3 off wine, $4 beer/well cocktails",
+      "$5 draft pints, $6 margaritas and sangria swirls",
+      "$7-$11 street tacos, chorizo corn dip, guac",
+      "Tue: 50% off tequila. Wed: 50% off wine bottles"
+    ]
+  },
+  {
+    "Name": "Brother's Bar & Grill",
+    "City": "Fort Collins",
+    "Address": "Old Town",
+    "Hours": "Tue 4-10pm, Wed 9pm-close",
+    "Status": "Active",
+    "specials": [
+      "Tue: $3 cheeseburgers (dine-in only)",
+      "Wed: 25-cent wings (dine-in only)"
+    ]
+  },
+  {
+    "Name": "Buffalo Wild Wings",
+    "City": "Fort Collins",
+    "Address": "150 E Harmony Rd",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$6 strawberry margs, $4 Long Islands",
+      "$4 tall drafts, $5 Bud Lights, $6 Voodoo Ranger IPA",
+      "$3 chips/salsa/tots, $5 mozzarella sticks, $6 pretzel knots"
+    ]
+  },
+  {
+    "Name": "Cafe Vino",
+    "City": "Fort Collins",
+    "Address": "1200 S College Ave",
+    "Hours": "Tue-Sat 2-6pm",
+    "Status": "Active",
+    "specials": [
+      "$7 wine by glass, $28 featured bottles",
+      "$24 sangria carafes, $6 mimosas/well drinks/drafts",
+      "$4 PBR bottles, food specials $3-$10"
+    ]
+  },
+  {
+    "Name": "Cafe at Ginger & Baker",
+    "City": "Fort Collins",
+    "Address": "359 Linden St",
+    "Hours": "Tue-Sat 2-5pm",
+    "Status": "Active",
+    "specials": [
+      "$5 well drinks and house wines",
+      "$2 off draft beers"
+    ]
+  },
+  {
+    "Name": "C.B. & Potts",
+    "City": "Fort Collins",
+    "Address": "1441 E Horsetooth Rd",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$3.75 domestic pints, $4.75 craft pints",
+      "$5.75 margaritas/well/wine, $8.75 martinis",
+      "$3 off large shareables"
+    ]
+  },
+  {
+    "Name": "Charco Broiler",
+    "City": "Fort Collins",
+    "Address": "1716 E Mulberry St",
+    "Hours": "Tue-Sun 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off well drinks",
+      "$1 off all wines by the glass",
+      "$1 off local craft, domestic, and imported beers"
+    ]
+  },
+  {
+    "Name": "Choice City",
+    "City": "Fort Collins",
+    "Address": "104 W Olive St",
+    "Hours": "Wed-Fri 3-5pm",
+    "Status": "Active",
+    "specials": [
+      "2 for 1 house cocktails",
+      "$5 Colorado dogs",
+      "Wed 5-9pm: 2 for 1 burgers, $1 off drafts"
+    ]
+  },
+  {
+    "Name": "Chili's",
+    "City": "Fort Collins",
+    "Address": "3524 S College Ave",
+    "Hours": "Mon/Thu to close, Tue-Fri 3-6pm, Sat-Sun all day",
+    "Status": "Active",
+    "specials": [
+      "$3-$5 domestic beers",
+      "$5 house wine",
+      "$6 Tequila Trifectas"
+    ]
+  },
+  {
+    "Name": "Colorado Room",
+    "City": "Fort Collins",
+    "Address": "642 S College Ave",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off domestics, crafts, cocktails, well drinks",
+      "$3 BBQ pork sammys, $3.50 poutine"
+    ]
+  },
+  {
+    "Name": "Comet Chicken",
+    "City": "Fort Collins",
+    "Address": "126 W Mountain Ave",
+    "Hours": "Daily 2-5pm",
+    "Status": "Active",
+    "specials": [
+      "$5 keg cocktails",
+      "$1 off draft beer",
+      "$2.99 churros/fries, $4.99 chicken sandwiches"
+    ]
+  },
+  {
+    "Name": "CooperSmith's",
+    "City": "Fort Collins",
+    "Address": "5 Old Town Square",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off select pints",
+      "$1 off well drinks",
+      "$5 select appetizers"
+    ]
+  },
+  {
+    "Name": "Corner Slice",
+    "City": "Fort Collins",
+    "Address": "172 N College Ave",
+    "Hours": "Mon-Fri 2-5pm",
+    "Status": "Active",
+    "specials": [
+      "$2 cheese slices, garlic pretzels, cheesy bread",
+      "$10 16-inch cheese pizza",
+      "$3.50 beers, $5 shots/mixed drinks"
+    ]
+  },
+  {
+    "Name": "Crown Pub",
+    "City": "Fort Collins",
+    "Address": "134 S College Ave",
+    "Hours": "Mon-Thu 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$5 draft beer, spirits, wine",
+      "$7 fries/shishitos, $8 calamari/fish & chips",
+      "$11 pork sliders"
+    ]
+  },
+  {
+    "Name": "DC Oakes Brewhouse",
+    "City": "Fort Collins",
+    "Address": "3581 Harmony Rd",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$3 select brews",
+      "$4 well drinks",
+      "$5 house wines"
+    ]
+  },
+  {
+    "Name": "Elliott's Martini Bar",
+    "City": "Fort Collins",
+    "Address": "234 Linden St",
+    "Hours": "Mon-Fri 4:30-7pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off martinis and tapas",
+      "Wed: $7 house dirty martinis all night"
+    ]
+  },
+  {
+    "Name": "The Emporium",
+    "City": "Fort Collins",
+    "Address": "378 Walnut St",
+    "Hours": "Daily 3-5pm",
+    "Status": "Active",
+    "specials": [
+      "$8 tapped cocktails, $9 classic cocktails",
+      "$7 select wines, $1 off local drafts",
+      "Small plates $5-$9"
+    ]
+  },
+  {
+    "Name": "Farmhouse at Jessup Farm",
+    "City": "Fort Collins",
+    "Address": "1957 Jessup Dr",
+    "Hours": "Mon/Wed-Sat 4-6pm, all night Tue/Sun",
+    "Status": "Active",
+    "specials": [
+      "$7 select wines, $8+ cocktails, $4 draft beer",
+      "$5 carnitas tacos, $8 duck fat tots",
+      "$10 truffle Parmesan fries"
+    ]
+  },
+  {
+    "Name": "Fuzzy's Taco Shop",
+    "City": "Fort Collins",
+    "Address": "Harmony & Elizabeth",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$5 18oz margaritas",
+      "$4 imported beer, $3 domestic beer",
+      "$2 chips/salsa, $2 select tacos"
+    ]
+  },
+  {
+    "Name": "Illegal Pete's",
+    "City": "Fort Collins",
+    "Address": "320 Walnut St",
+    "Hours": "Daily 3-8pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off margaritas and draft beer",
+      "$4 off party margaritas (serves 4)",
+      "$1 off chips/queso/guac"
+    ]
+  },
+  {
+    "Name": "Japango",
+    "City": "Fort Collins",
+    "Address": "125 S College Ave",
+    "Hours": "Daily 3-6pm (all day Mon)",
+    "Status": "Active",
+    "specials": [
+      "$5 drafts, $6 small sake",
+      "$8 well cocktails/house wine",
+      "$9 large sake/choice cocktail/sangria",
+      "$2 off special rolls, $4.50 hand rolls"
+    ]
+  },
+  {
+    "Name": "Jax Fish House",
+    "City": "Fort Collins",
+    "Address": "123 N College Ave",
+    "Hours": "Daily 3:30-5:30pm, all night Tue",
+    "Status": "Active",
+    "specials": [
+      "$5 oyster shooters, $7 cocktails",
+      "$8 sangria, $10 Tito's martinis",
+      "$2-$3 raw oysters",
+      "$7 wedge salads, $41 seafood sampler"
+    ]
+  },
+  {
+    "Name": "Jaws Sushi",
+    "City": "Fort Collins",
+    "Address": "1205 W Elizabeth St",
+    "Hours": "Tue-Sun 11am-1pm",
+    "Status": "Active",
+    "specials": [
+      "$3 drafts, well drinks, sake bombs",
+      "$4 large hot sake"
+    ]
+  },
+  {
+    "Name": "JINYA Ramen Bar",
+    "City": "Fort Collins",
+    "Address": "3280 S College Ave",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "Deals on Sapporo drafts, lychee-tini, hot sake",
+      "Discounted assorted small plates"
+    ]
+  },
+  {
+    "Name": "The Lyric",
+    "City": "Fort Collins",
+    "Address": "1209 N College Ave",
+    "Hours": "Mon-Thu 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$4.50 Lagerados, $6.50 well drinks",
+      "$7 pinot noir/grigio, $8 boilermakers",
+      "$8 cheese curds, $5 pretzels/edamame"
+    ]
+  },
+  {
+    "Name": "Mas Fuegos",
+    "City": "Fort Collins",
+    "Address": "2350 E Harmony Rd",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off margaritas, wine, draft beers",
+      "Half-price tequila ($12+)",
+      "$3.50 street tacos, $6 chips/guac, $12 carne asada fries"
+    ]
+  },
+  {
+    "Name": "Maya Cove",
+    "City": "Fort Collins",
+    "Address": "2100 W Drake Rd",
+    "Hours": "Daily 3-6pm (Fri: free buffet 3-6pm)",
+    "Status": "Active",
+    "specials": [
+      "$7 margaritas, $5 mezcal margs, $6 hurricanes",
+      "$4 draft beer, $3.75 Coors Light",
+      "$3 ribs, $8 pulled pork/burger baskets, $8 crispy chicken tacos"
+    ]
+  },
+  {
+    "Name": "The Melting Pot",
+    "City": "Fort Collins",
+    "Address": "334 E Mountain Ave",
+    "Hours": "Mon-Thu 5-7pm",
+    "Status": "Active",
+    "specials": [
+      "Half off cheese and chocolate fondues",
+      "$8 cocktails, beer and wine specials"
+    ]
+  },
+  {
+    "Name": "Mobb Mountain Distillers",
+    "City": "Fort Collins",
+    "Address": "400 Linden St",
+    "Hours": "Wed-Thu 3-5pm, Sat-Sun 1-3pm",
+    "Status": "Active",
+    "specials": [
+      "$3 vodka mules and vodka sodas",
+      "$2 off all cocktails"
+    ]
+  },
+  {
+    "Name": "Moot House",
+    "City": "Fort Collins",
+    "Address": "2626 S College Ave",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1.50 off all draft beer",
+      "$6 wine/sangria, $5 well cocktails",
+      "$3.95 Caesar salads, $4.95 pretzel rolls, $7.95 artichoke dip"
+    ]
+  },
+  {
+    "Name": "Mugs",
+    "City": "Fort Collins",
+    "Address": "S College & W Laurel",
+    "Hours": "Daily 2pm-close",
+    "Status": "Active",
+    "specials": [
+      "$5 craft cocktails",
+      "$5 half toasts, paninis, mini mac and cheese, hummus, quesadillas"
+    ]
+  },
+  {
+    "Name": "Music City Hot Chicken",
+    "City": "Fort Collins",
+    "Address": "111 W Prospect Rd",
+    "Hours": "Daily 3-7pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off all house cocktails"
+    ]
+  },
+  {
+    "Name": "Nick's Restaurant & Bar",
+    "City": "Fort Collins",
+    "Address": "1100 S College Ave",
+    "Hours": "Daily 4-6pm",
+    "Status": "Active",
+    "specials": [
+      "$2.75 Old Aggies, $3 Bud Lights",
+      "$6 house wine, $5.50 well drinks, $7 frozen cocktails",
+      "$3 pizza slices/meatball sliders, $6 chicken Parm hoagies"
+    ]
+  },
+  {
+    "Name": "PizzaVino NoCo",
+    "City": "Fort Collins",
+    "Address": "1939 Jessup Dr",
+    "Hours": "Mon-Thu 3-5pm, Fri-Sun 11am-4pm",
+    "Status": "Active",
+    "specials": [
+      "$6-$8 drinks",
+      "$3 meatball slider, $7 pizza roll, $9 bruschetta, $11 hot wings"
+    ]
+  },
+  {
+    "Name": "Rare Italian",
+    "City": "Fort Collins",
+    "Address": "101 S College Ave",
+    "Hours": "Mon-Fri 4-6pm",
+    "Status": "Active",
+    "specials": [
+      "$3-$4 beers, $6 well drinks, $5 limoncello",
+      "$7+ cocktails/wine",
+      "$5 meatballs, $6 truffle fries, $11-$15 pizzettas, $14 dry-aged burger"
+    ]
+  },
+  {
+    "Name": "The Regional",
+    "City": "Fort Collins",
+    "Address": "130 S Mason St",
+    "Hours": "Tue all day, Wed-Mon 4-5:30pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off all drinks",
+      "$2.50 raw oysters, $7 fries",
+      "$15 burger/beer/shot combo"
+    ]
+  },
+  {
+    "Name": "Rio Grande",
+    "City": "Fort Collins",
+    "Address": "143 W Mountain Ave",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off margaritas",
+      "$3 drafts/cans, $5 wine",
+      "$7 quesadilla, $4-$7 queso, tacos $1 off"
+    ]
+  },
+  {
+    "Name": "Road 34",
+    "City": "Fort Collins",
+    "Address": "1213 W Elizabeth St",
+    "Hours": "Tue-Sat 4-7pm, all day Sun",
+    "Status": "Active",
+    "specials": [
+      "$2 Coors/Coors Light/Old Aggie",
+      "50 cents off other drafts and appetizers"
+    ]
+  },
+  {
+    "Name": "Scrumpy's Hard Cider Bar",
+    "City": "Fort Collins",
+    "Address": "215 N College Ave",
+    "Hours": "Wed-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off everything"
+    ]
+  },
+  {
+    "Name": "Smok",
+    "City": "Fort Collins",
+    "Address": "327 E Foothills Pkwy",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off beers on tap",
+      "$6 margaritas/whiskey sours/gin tonics/old fashioneds",
+      "$7 brisket chili frito pies, $10 brisket egg rolls"
+    ]
+  },
+  {
+    "Name": "Smokin Fins",
+    "City": "Fort Collins",
+    "Address": "327 E Foothills Pkwy",
+    "Hours": "Mon-Fri 2-6pm",
+    "Status": "Active",
+    "specials": [
+      "$5 house drafts, $6 well drinks/wine/mules",
+      "BOGO half off sushi rolls",
+      "$9 poke bowls/tacos, $8 wagyu sliders, $15 half dozen oysters"
+    ]
+  },
+  {
+    "Name": "Social",
+    "City": "Fort Collins",
+    "Address": "1 Old Town Square",
+    "Hours": "Sun-Thu 4-6pm, all night Tue",
+    "Status": "Active",
+    "specials": [
+      "$7.75-$9.75 cocktails, $7 wine, $6 Ayinger Pils",
+      "$5.25 olives, $6.50 deviled eggs, $11.50 charcuterie board"
+    ]
+  },
+  {
+    "Name": "Sonny Lubick Steakhouse",
+    "City": "Fort Collins",
+    "Address": "115 S College Ave",
+    "Hours": "Tue-Sun 4-6pm, all day Mon",
+    "Status": "Active",
+    "specials": [
+      "$8 wine/cocktails/spirits, $5 beers",
+      "$3.50 oysters, BOGO burgers",
+      "$10 smashburgers, $9 meatballs/pork belly sliders, $6 fries"
+    ]
+  },
+  {
+    "Name": "The Cache at Ginger & Baker",
+    "City": "Fort Collins",
+    "Address": "359 Linden St",
+    "Hours": "Tue-Sat 4-6pm",
+    "Status": "Active",
+    "specials": [
+      "$5 dirty martinis and draft beer",
+      "$10 Old Fashioneds and wine",
+      "Happy hour appetizers"
+    ]
+  },
+  {
+    "Name": "Tap and Handle",
+    "City": "Fort Collins",
+    "Address": "307 S College Ave",
+    "Hours": "Mon-Fri 3-5pm, late night specials",
+    "Status": "Active",
+    "specials": [
+      "$2 off featured beers",
+      "$9 lager and a shot",
+      "75-cent wings (min 6)",
+      "$8 hot pretzels/tender baskets, $5 cheese curds"
+    ]
+  },
+  {
+    "Name": "Tony's Bar",
+    "City": "Fort Collins",
+    "Address": "224 S College Ave",
+    "Hours": "Mon-Fri 10:30am-7pm, Sat-Sun 9:30am-7pm",
+    "Status": "Active",
+    "specials": [
+      "$3 Budweiser/Bud Light",
+      "$3.75 well mixed drinks",
+      "$2.50 Fireball/Jager/Jim Beam shots"
+    ]
+  },
+  {
+    "Name": "Torchy's Tacos",
+    "City": "Fort Collins",
+    "Address": "3280 S College Ave",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off tacos",
+      "$2 off cocktails",
+      "$1.50 off beer"
+    ]
+  },
+  {
+    "Name": "Town Pump",
+    "City": "Fort Collins",
+    "Address": "124 N College Ave",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$4.75 craft beers/well drinks",
+      "$4 Fat Tires",
+      "$3.75 Coors drafts"
+    ]
+  },
+  {
+    "Name": "Trailhead Tavern",
+    "City": "Fort Collins",
+    "Address": "148 W Mountain Ave",
+    "Hours": "Tue-Sun noon-7pm, all day Mon",
+    "Status": "Active",
+    "specials": [
+      "$3.50 craft beers/well drinks",
+      "$2.50 domestic drafts",
+      "$4 Jameson/$4 Hornitos shots"
+    ]
+  },
+  {
+    "Name": "Uno Mas Taqueria",
+    "City": "Fort Collins",
+    "Address": "120 W Olive St",
+    "Hours": "Daily 2-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off drafts",
+      "$8 traditional margs, $7 palomas, $10 mango margs",
+      "$7 half order chips/guac"
+    ]
+  },
+  {
+    "Name": "Union Bar & Soda Fountain",
+    "City": "Fort Collins",
+    "Address": "250 Jefferson St",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$4.50 Old Aggies, $7.50 house wine",
+      "$5.50 select beer and cider",
+      "$4.95 fries, $5.95 pretzel bites, $8.95 quesadillas"
+    ]
+  },
+  {
+    "Name": "William Oliver's",
+    "City": "Fort Collins",
+    "Address": "2608 S Timberline Rd",
+    "Hours": "Daily 3-5pm",
+    "Status": "Active",
+    "specials": [
+      "10% off cocktails and appetizers",
+      "Free beer with any hot dog meal (11am-4pm daily)",
+      "Thu: BOGO bossy pig (pork mac and cheese)"
+    ]
+  },
+  {
+    "Name": "Chimney Park",
+    "City": "Windsor",
+    "Address": "406 Main St",
+    "Hours": "Daily 4-6pm",
+    "Status": "Active",
+    "specials": [
+      "$5 select wine",
+      "$4 select beer",
+      "$2 off cocktails and food"
+    ]
+  },
+  {
+    "Name": "Hearth Restaurant & Pub",
+    "City": "Windsor",
+    "Address": "205 1/2 4th St",
+    "Hours": "Mon-Fri 3-6pm, all night Mon",
+    "Status": "Active",
+    "specials": [
+      "Craft cocktails, beer, and wine specials",
+      "Elevated pub fare at happy hour prices"
+    ]
+  },
+  {
+    "Name": "Windsor Mill Tavern",
+    "City": "Windsor",
+    "Address": "301 Main St",
+    "Hours": "Sun-Thu 3-5pm and 9-10pm",
+    "Status": "Active",
+    "specials": [
+      "Mill Old Fashioned",
+      "Strawberry Mule",
+      "Discounted appetizers"
+    ]
+  },
+  {
+    "Name": "Tiho's Tequila Bar",
+    "City": "Windsor",
+    "Address": "301 Main St Unit B",
+    "Hours": "Thu all day, Mon-Wed specials",
+    "Status": "Active",
+    "specials": [
+      "Mon: $4 house margaritas with fajita purchase",
+      "Tue: 50% off tequila and mezcal",
+      "Wed: $25 any appetizer and house margs"
+    ]
+  },
+  {
+    "Name": "Sweet Heart Winery",
+    "City": "Loveland",
+    "Address": "5500 W US-34",
+    "Hours": "Daily 3-5pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off wine by the glass",
+      "$2 off charcuterie boards"
+    ]
+  },
+  {
+    "Name": "BJ\u2019s",
+    "City": "Fort Collins",
+    "Address": "2670 E Harmony Rd",
+    "Hours": "Mon-Fri 3-7pm and 9pm to close",
+    "Status": "Active",
+    "specials": [
+      "$6 Titos, 1800 Tequila, Jack Daniels",
+      "$7 sliders, pot stickers, mozzarella sticks and personal pizza",
+      "$5 house wines"
+    ]
+  },
+  {
+    "Name": "Hooters",
+    "City": "Loveland",
+    "Address": "4230 Byrd Dr",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$4 off boneless wings, fried pickles, shrimp",
+      "$5 screwball, Jameson, Patron and fireball (1.25oz shots)",
+      "$16 all you can eat wings (Weds only)"
+    ]
+  },
+  {
+    "Name": "Union Bar & Soda Fountain",
+    "City": "Fort Collins",
+    "Address": "250 Jefferson St",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$5 drafts, $7 wines, $8 elixirs",
+      "$3 off starters"
+    ]
+  },
+  {
+    "Name": "Mo Jeauxs",
+    "City": "Fort Collins",
+    "Address": "820 City Park Ave",
+    "Hours": "Daily 4-7pm, All day Thu and Sun",
+    "Status": "Active",
+    "specials": [
+      "$4 Single, $6 Double Cocktails"
+    ]
+  }
+]
