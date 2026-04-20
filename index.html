@@ -1711,7 +1711,11 @@ if (document.readyState === 'loading') {
 } else {
   init();
 }
-window.addEventListener('load', init);
+window.addEventListener('load', function() {
+  applyOpenNowBadges();
+  applyFavButtons();
+  filterCards();
+});
 
 // --- Crawl ---
 var CRAWLS = [
