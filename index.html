@@ -409,6 +409,23 @@ body {
   justify-content: center;
   gap: 8px;
 }
+.share-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  line-height: 1;
+  padding: 2px 0 2px 2px;
+  cursor: pointer;
+  color: #d4c0b0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+}
+.share-btn:active { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -1644,11 +1661,48 @@ document.addEventListener('click', function(e) {
     btn = btn.parentNode;
   }
 });
+// --- Share buttons ---
+function shareVenue(name, special) {
+  var text = name + ' has ' + special + ' during happy hour! Check it out on Golden Hour. goldenhournoco.com';
+  if (navigator.share) {
+    navigator.share({ title: 'Golden Hour: ' + name, text: text, url: 'https://goldenhournoco.com' });
+  } else {
+    var el = document.createElement('textarea');
+    el.value = text + ' goldenhournoco.com';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    alert('Copied to clipboard!');
+  }
+}
 
+function injectShareButtons() {
+  var cards = document.querySelectorAll('.card');
+  for (var i = 0; i < cards.length; i++) {
+    var card = cards[i];
+    var cardRight = card.querySelector('.card-right');
+    var nameEl = card.querySelector('.card-name');
+    var firstSpecial = card.querySelector('.specials li');
+    if (!cardRight || !nameEl) continue;
+    var name = nameEl.textContent.trim();
+    var special = firstSpecial ? firstSpecial.textContent.trim() : 'great happy hour deals';
+    var btn = document.createElement('button');
+    btn.className = 'share-btn';
+    btn.setAttribute('aria-label', 'Share ' + name);
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>';
+    btn.onclick = (function(n, s) {
+      return function(e) { e.stopPropagation(); shareVenue(n, s); };
+    })(name, special);
+    var favBtn = cardRight.querySelector('.fav-btn');
+    if (favBtn) { cardRight.insertBefore(btn, favBtn); } else { cardRight.appendChild(btn); }
+  }
+}
 // --- Init ---
 function init() {
   applyOpenNowBadges();
   applyFavButtons();
+  injectShareButtons();
   filterCards();
 }
 
