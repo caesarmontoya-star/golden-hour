@@ -755,6 +755,160 @@
     ]
   },
   {
+    "Name": "Austin's American Grill",
+    "City": "Greeley",
+    "Address": "1100 8th Ave Suite 100",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off all draft beers, $5 mocktails, $6 wine",
+      "$3.95 cup of soup, $7.95 queso, $8.95 chicken street tacos",
+      "$9.95 rotisserie chicken & fries, $13.95 steak bites"
+    ]
+  },
+  {
+    "Name": "Big City Roadhouse",
+    "City": "Greeley",
+    "Address": "1923 59th Ave",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$5 house spirits and wine, $3 domestic drafts, $4 micro pints",
+      "$1 off margaritas, half-price tequilas ($12+)",
+      "Daily rotating food specials"
+    ]
+  },
+  {
+    "Name": "The Cow Saloon & Eatery",
+    "City": "Greeley",
+    "Address": "800 9th St",
+    "Hours": "Daily 2-6pm",
+    "Status": "Active",
+    "specials": [
+      "$2 select cans, $3 select drafts, $5 cocktails, $5 wine",
+      "$2 off appetizers",
+      "Wed: half off wine bottles, $2 off whiskey pours"
+    ]
+  },
+  {
+    "Name": "Coyote's Southwestern Grill",
+    "City": "Greeley",
+    "Address": "5250 W 9th St Dr",
+    "Hours": "Mon-Fri 2-6pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off cocktails and wine",
+      "$1 off draft and bottled beers",
+      "$2 off appetizers"
+    ]
+  },
+  {
+    "Name": "Fuzzy's Taco Shop",
+    "City": "Greeley",
+    "Address": "2410 29th St",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$5 18oz margaritas",
+      "$4 imported beer, $3 domestic beer",
+      "$2 chips/salsa, $2 select tacos"
+    ]
+  },
+  {
+    "Name": "The GOAT Sports Bar",
+    "City": "Greeley",
+    "Address": "2514 46th Ave",
+    "Hours": "Mon-Fri 2-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off draft beer, well drinks, wine",
+      "$1 off appetizers (except wings)"
+    ]
+  },
+  {
+    "Name": "Lucky Fins",
+    "City": "Greeley",
+    "Address": "4530 Centerplace Dr",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$5 draft pours, $6 house wine, $10 signature cocktails",
+      "BOGO half off sushi rolls",
+      "Happy hour bites: potstickers, calamari, kickin' shrimp"
+    ]
+  },
+  {
+    "Name": "Meeker's Kitchen",
+    "City": "Greeley",
+    "Address": "919 7th St",
+    "Hours": "Daily 2:30-6pm",
+    "Status": "Active",
+    "specials": [
+      "$5 domestic drafts, $6 local drafts (Tightknit/WeldWerks)",
+      "$9 cocktails (Pearl of the Plains, Cherry Picked Old Fashioned)",
+      "$7 wine by the glass"
+    ]
+  },
+  {
+    "Name": "Patrick's Irish Pub",
+    "City": "Greeley",
+    "Address": "909 8th Ave",
+    "Hours": "Mon-Thu 4-5pm, late night Mon-Thu 10pm-midnight",
+    "Status": "Active",
+    "specials": [
+      "Half off all drinks (Mon-Thu 4-5pm)",
+      "Tue all day: $2 off beer cheese fries, $2 off liters",
+      "Fri 3pm-midnight: $1 off all IPAs",
+      "Late night Mon-Thu 10pm-midnight: $1 off wells and drafts"
+    ]
+  },
+  {
+    "Name": "Rio Grande",
+    "City": "Greeley",
+    "Address": "825 9th St Unit A",
+    "Hours": "Mon-Fri 3-5pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off margaritas",
+      "$1 off tacos"
+    ]
+  },
+  {
+    "Name": "Smokin' Dave's BBQ",
+    "City": "Greeley",
+    "Address": "819 9th St",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off drafts, $1 off bottles/wells/wine",
+      "$6 double-shot margaritas",
+      "$2 off appetizers"
+    ]
+  },
+  {
+    "Name": "The Tavern at St. Michael's Square",
+    "City": "Greeley",
+    "Address": "2918 67th Ave",
+    "Hours": "Daily 3-5pm (bar only)",
+    "Status": "Active",
+    "specials": [
+      "$5 house wines, $5 local drafts, $5 well drinks",
+      "$6 cocktails: margaritas, cosmos, old fashioneds, rum smashes",
+      "$7 apps: potato skins, tavern sliders, beef street tacos, buffalo wings, shrimp ceviche tostadas"
+    ]
+  },
+  {
+    "Name": "Wyler's Pub & Grill",
+    "City": "Greeley",
+    "Address": "2385 W 27th St #513",
+    "Hours": "Mon-Thu 3-6pm, late night Mon-Thu 10pm-midnight",
+    "Status": "Active",
+    "specials": [
+      "$3 shots (Fireball/Ole Smokey Peanut Butter), $2 drafts (12oz), $1 off wells",
+      "Late night Mon-Thu 10pm-midnight: $1 off wells and drafts"
+    ]
+  },
+  {
     "Name": "BJ\u2019s",
     "City": "Fort Collins",
     "Address": "2670 E Harmony Rd",
