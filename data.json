@@ -61,6 +61,19 @@
     ]
   },
   {
+    "Name": "Big Al's Burgers & Dogs",
+    "City": "Fort Collins",
+    "Address": "140 W Mountain Ave",
+    "Hours": "Daily 2-5pm",
+    "Status": "Active",
+    "specials": [
+      "$5 60/40 bacon burger",
+      "$5 Chicago dog",
+      "$5 hand-scooped milkshake"
+    ],
+    "tags": ["old-town", "cheap", "food-forward", "student-deals"]
+  },
+  {
     "Name": "Bistro Nautile",
     "City": "Fort Collins",
     "Address": "150 W Oak St",
@@ -155,16 +168,16 @@
     ]
   },
   {
-    "Name": "Choice City",
+    "Name": "Choice City Butcher & Deli",
     "City": "Fort Collins",
     "Address": "104 W Olive St",
-    "Hours": "Wed-Fri 3-5pm",
+    "Hours": "Wed 5-8pm, Sat-Sun 9-10am",
     "Status": "Active",
     "specials": [
-      "2 for 1 house cocktails",
-      "$5 Colorado dogs",
-      "Wed 5-9pm: 2 for 1 burgers, $1 off drafts"
-    ]
+      "Wed: 2 for 1 burgers, 2 for 1 house cocktails, $1 off drafts (dine-in only)",
+      "Sat-Sun 9-10am: 2 for 1 mimosas"
+    ],
+    "tags": ["old-town", "cheap", "food-forward", "weekend"]
   },
   {
     "Name": "Chili's",
