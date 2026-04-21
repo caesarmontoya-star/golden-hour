@@ -569,9 +569,10 @@
     "Hours": "Tue-Sun 4-6pm, all day Mon",
     "Status": "Active",
     "specials": [
-      "$8 wine/cocktails/spirits, $5 beers",
-      "$3.50 oysters, BOGO burgers",
-      "$10 smashburgers, $9 meatballs/pork belly sliders, $6 fries"
+      "$3.75 oysters on the half shell",
+      "$8 wines, cocktails and spirits, $28 wine bottles",
+      "$6 pommes frites, $9 meatballs",
+      "$10 nachos and loaded fries"
     ]
   },
   {
@@ -660,18 +661,6 @@
     ]
   },
   {
-    "Name": "Union Bar & Soda Fountain",
-    "City": "Fort Collins",
-    "Address": "250 Jefferson St",
-    "Hours": "Mon-Fri 3-6pm",
-    "Status": "Active",
-    "specials": [
-      "$4.50 Old Aggies, $7.50 house wine",
-      "$5.50 select beer and cider",
-      "$4.95 fries, $5.95 pretzel bites, $8.95 quesadillas"
-    ]
-  },
-  {
     "Name": "William Oliver's",
     "City": "Fort Collins",
     "Address": "2608 S Timberline Rd",
@@ -684,11 +673,35 @@
     ]
   },
   {
+    "Name": "Lucky Joe's Sidewalk Saloon",
+    "City": "Fort Collins",
+    "Address": "25 Old Town Square",
+    "Hours": "Wed 5pm-2am, Thu 7pm-2am",
+    "Status": "Active",
+    "specials": [
+      "$4.99 burger baskets (Mon)",
+      "$4 Guinness pints (Tue)",
+      "Irish Whiskey Wednesdays 5pm-2am",
+      "$4 all bomb shots (Thu 7pm-2am)"
+    ]
+  },
+  {
+    "Name": "Pour Brothers Community Tavern",
+    "City": "Fort Collins",
+    "Address": "220 Linden St",
+    "Hours": "Mon-Fri 3-6pm, All day Sun",
+    "Status": "Active",
+    "specials": [
+      "$1 off draft beer, liquor, wine and shots",
+      "$2 16oz domestic drafts, $3 22oz domestic drafts"
+    ]
+  },
+  {
     "Name": "Chimney Park",
     "City": "Windsor",
     "Address": "406 Main St",
     "Hours": "Daily 4-6pm",
-    "Status": "Active",
+    "Status": "Inactive",
     "specials": [
       "$5 select wine",
       "$4 select beer",
