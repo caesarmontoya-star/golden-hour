@@ -247,9 +247,6 @@ body {
 }
 .tag-row { margin-top: 0; }
 
-/* Sort dropdown */
-.sort-select { font-size: 13px; height: 36px; padding: 0 28px 0 10px; }
-
 /* Today's hours highlight */
 .hours.is-today { color: var(--accent); font-weight: 600; }
 
@@ -621,7 +618,7 @@ body {
   </svg>
   <span style="font-family:'Nunito',sans-serif;font-size:26px;font-weight:800;letter-spacing:-0.5px;"><span style="color:#8B4513;">Golden</span><span style="color:#ff7a1f;">Hour</span></span>
 </div>  
-    <span class="subtitle">NoCo's Happy Hour Guide &middot; 81 spots across 4 cities</span>
+    <span class="subtitle">NoCo's Happy Hour Guide &middot; 80 spots across 4 cities</span>
   </div>
   <div class="controls">
     <div class="search-wrap">
@@ -629,11 +626,6 @@ body {
         oninput="filterCards();toggleClearBtn()" autocorrect="off" autocapitalize="none" spellcheck="false">
       <button class="search-clear" id="searchClear" onclick="clearSearch()" aria-label="Clear search">&#x2715;</button>
     </div>
-    <select class="ctrl ctrl-select sort-select" id="sort" onchange="filterCards()">
-      <option value="default">Default</option>
-      <option value="az">A-Z</option>
-      <option value="city">By City</option>
-    </select>
   </div>
   <div class="filter-row">
     <select class="ctrl ctrl-select" id="city" onchange="filterCards();saveFilterState()">
@@ -1942,6 +1934,8 @@ function applyTodayHours() {
 var recentViewed = storageGet('noco-recents', []);
 
 function trackRecentView(name) {
+  // Safety check -- only store short venue names, not data attributes
+  if (!name || name.length > 60 || name.indexOf('data-') >= 0) return;
   recentViewed = recentViewed.filter(function(n) { return n !== name; });
   recentViewed.unshift(name);
   if (recentViewed.length > 5) recentViewed = recentViewed.slice(0, 5);
@@ -2173,8 +2167,18 @@ function saveFilterState() {
 
 function restoreFilterState() {
   try {
+    // Version bump -- clear old recents data that may be corrupted
+    var recentsVersion = localStorage.getItem('noco-recents-version');
+    if (recentsVersion !== '2') {
+      localStorage.removeItem('noco-recents');
+      localStorage.setItem('noco-recents-version', '2');
+      recentViewed = [];
+    }
     var city = localStorage.getItem('noco-city');
     if (city) document.getElementById('city').value = city;
+    // Always reset sort to default on page load
+    var sortEl = document.getElementById('sort');
+    if (sortEl) sortEl.value = 'default';
   } catch(e) {}
 }
 
