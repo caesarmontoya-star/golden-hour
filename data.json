@@ -25,18 +25,6 @@
     ]
   },
   {
-    "Name": "Avery Eatery",
-    "City": "Fort Collins",
-    "Address": "100 N College Ave",
-    "Hours": "Mon-Sat 4-6pm",
-    "Status": "Active",
-    "specials": [
-      "$8 froze, margaritas, Aperol spritzes, house wine",
-      "$5 select beers",
-      "$3 duck wings, $8 chicken tenders, $11 cheeseburgers"
-    ]
-  },
-  {
     "Name": "Avogadro's Number",
     "City": "Fort Collins",
     "Address": "605 S Mason St",
@@ -152,6 +140,18 @@
       "$1 off well drinks",
       "$1 off all wines by the glass",
       "$1 off local craft, domestic, and imported beers"
+    ]
+  },
+  {
+    "Name": "Cheba Hut",
+    "City": "Fort Collins",
+    "Address": "Harmony, Taft Hill, Laurel",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off bar menu",
+      "Signature \"Dirty Hippy\" cocktail",
+      "Hash Cans and beer/shot combos"
     ]
   },
   {
@@ -378,6 +378,18 @@
       "$1 off margaritas, wine, draft beers",
       "Half-price tequila ($12+)",
       "$3.50 street tacos, $6 chips/guac, $12 carne asada fries"
+    ]
+  },
+  {
+    "Name": "Masa Hibachi & Sushi",
+    "City": "Fort Collins",
+    "Address": "2400 E Harmony Rd",
+    "Hours": "Mon-Thu 3-7pm, Fri-Sat 3-7pm (bar only), Sun all day",
+    "Status": "Active",
+    "specials": [
+      "Draft beers $5-$6, house wine $6, well drinks $6.50, hot sake $8",
+      "Kitchen apps $4-$9: edamame, gyoza, yakitori, calamari, shrimp tempura",
+      "Sushi rolls $5.50-$12: Alaskan, spicy salmon/tuna, California and specialty rolls"
     ]
   },
   {
