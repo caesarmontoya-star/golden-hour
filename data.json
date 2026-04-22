@@ -61,19 +61,6 @@
     ]
   },
   {
-    "Name": "Big Al's Burgers & Dogs",
-    "City": "Fort Collins",
-    "Address": "140 W Mountain Ave",
-    "Hours": "Daily 2-5pm",
-    "Status": "Active",
-    "specials": [
-      "$5 60/40 bacon burger",
-      "$5 Chicago dog",
-      "$5 hand-scooped milkshake"
-    ],
-    "tags": ["old-town", "cheap", "food-forward", "student-deals"]
-  },
-  {
     "Name": "Bistro Nautile",
     "City": "Fort Collins",
     "Address": "150 W Oak St",
@@ -168,16 +155,16 @@
     ]
   },
   {
-    "Name": "Choice City Butcher & Deli",
+    "Name": "Choice City",
     "City": "Fort Collins",
     "Address": "104 W Olive St",
-    "Hours": "Wed 5-8pm, Sat-Sun 9-10am",
+    "Hours": "Wed-Fri 3-5pm",
     "Status": "Active",
     "specials": [
-      "Wed: 2 for 1 burgers, 2 for 1 house cocktails, $1 off drafts (dine-in only)",
-      "Sat-Sun 9-10am: 2 for 1 mimosas"
-    ],
-    "tags": ["old-town", "cheap", "food-forward", "weekend"]
+      "2 for 1 house cocktails",
+      "$5 Colorado dogs",
+      "Wed 5-9pm: 2 for 1 burgers, $1 off drafts"
+    ]
   },
   {
     "Name": "Chili's",
@@ -674,6 +661,23 @@
     ]
   },
   {
+    "Name": "Grey Rock Sports Grill",
+    "City": "Fort Collins",
+    "Address": "925 E Harmony Rd",
+    "Hours": "Daily 3:30-6:30pm, late night 9pm",
+    "Status": "Active",
+    "specials": [
+      "Mon: $5 house margarita, $10 Grey Rock 'rita",
+      "Tue: $5 domestic/$6 craft mugs (25oz), two tacos for $7",
+      "Wed: BOGO 50% off pizza, half price wine",
+      "Thu: $4-$5 select pints, BOGO burger with 2 drinks",
+      "Fri: $1 off Fat Tire/90 Shilling, house battered fish fry",
+      "Sat: $5 off bottled beer buckets (5 beers)",
+      "Sun: $6 mimosas/Long Islands, $5 screwdrivers"
+    ],
+    "dateAdded": "2026-04-21"
+  },
+  {
     "Name": "William Oliver's",
     "City": "Fort Collins",
     "Address": "2608 S Timberline Rd",
@@ -696,7 +700,8 @@
       "$4 Guinness pints (Tue)",
       "Irish Whiskey Wednesdays 5pm-2am",
       "$4 all bomb shots (Thu 7pm-2am)"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "Pour Brothers Community Tavern",
@@ -707,7 +712,8 @@
     "specials": [
       "$1 off draft beer, liquor, wine and shots",
       "$2 16oz domestic drafts, $3 22oz domestic drafts"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "Chimney Park",
@@ -777,7 +783,8 @@
       "$2 off all draft beers, $5 mocktails, $6 wine",
       "$3.95 cup of soup, $7.95 queso, $8.95 chicken street tacos",
       "$9.95 rotisserie chicken & fries, $13.95 steak bites"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "Big City Roadhouse",
@@ -789,7 +796,8 @@
       "$5 house spirits and wine, $3 domestic drafts, $4 micro pints",
       "$1 off margaritas, half-price tequilas ($12+)",
       "Daily rotating food specials"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "The Cow Saloon & Eatery",
@@ -801,7 +809,8 @@
       "$2 select cans, $3 select drafts, $5 cocktails, $5 wine",
       "$2 off appetizers",
       "Wed: half off wine bottles, $2 off whiskey pours"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "Coyote's Southwestern Grill",
@@ -813,7 +822,8 @@
       "$2 off cocktails and wine",
       "$1 off draft and bottled beers",
       "$2 off appetizers"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "Fuzzy's Taco Shop",
@@ -825,7 +835,8 @@
       "$5 18oz margaritas",
       "$4 imported beer, $3 domestic beer",
       "$2 chips/salsa, $2 select tacos"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "The GOAT Sports Bar",
@@ -836,7 +847,8 @@
     "specials": [
       "$1 off draft beer, well drinks, wine",
       "$1 off appetizers (except wings)"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "Lucky Fins",
@@ -848,7 +860,8 @@
       "$5 draft pours, $6 house wine, $10 signature cocktails",
       "BOGO half off sushi rolls",
       "Happy hour bites: potstickers, calamari, kickin' shrimp"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "Meeker's Kitchen",
@@ -860,7 +873,8 @@
       "$5 domestic drafts, $6 local drafts (Tightknit/WeldWerks)",
       "$9 cocktails (Pearl of the Plains, Cherry Picked Old Fashioned)",
       "$7 wine by the glass"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "Patrick's Irish Pub",
@@ -873,7 +887,8 @@
       "Tue all day: $2 off beer cheese fries, $2 off liters",
       "Fri 3pm-midnight: $1 off all IPAs",
       "Late night Mon-Thu 10pm-midnight: $1 off wells and drafts"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "Rio Grande",
@@ -884,7 +899,8 @@
     "specials": [
       "$2 off margaritas",
       "$1 off tacos"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "Smokin' Dave's BBQ",
@@ -896,7 +912,8 @@
       "$2 off drafts, $1 off bottles/wells/wine",
       "$6 double-shot margaritas",
       "$2 off appetizers"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "The Tavern at St. Michael's Square",
@@ -908,7 +925,8 @@
       "$5 house wines, $5 local drafts, $5 well drinks",
       "$6 cocktails: margaritas, cosmos, old fashioneds, rum smashes",
       "$7 apps: potato skins, tavern sliders, beef street tacos, buffalo wings, shrimp ceviche tostadas"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "Wyler's Pub & Grill",
@@ -919,7 +937,8 @@
     "specials": [
       "$3 shots (Fireball/Ole Smokey Peanut Butter), $2 drafts (12oz), $1 off wells",
       "Late night Mon-Thu 10pm-midnight: $1 off wells and drafts"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "BJ\u2019s",
@@ -931,7 +950,8 @@
       "$6 Titos, 1800 Tequila, Jack Daniels",
       "$7 sliders, pot stickers, mozzarella sticks and personal pizza",
       "$5 house wines"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "Hooters",
@@ -943,7 +963,8 @@
       "$4 off boneless wings, fried pickles, shrimp",
       "$5 screwball, Jameson, Patron and fireball (1.25oz shots)",
       "$16 all you can eat wings (Weds only)"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   },
   {
     "Name": "Union Bar & Soda Fountain",
@@ -964,6 +985,7 @@
     "Status": "Active",
     "specials": [
       "$4 Single, $6 Double Cocktails"
-    ]
+    ],
+    "dateAdded": "2026-04-21"
   }
 ]

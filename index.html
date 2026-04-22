@@ -3,7 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Golden Hour</title>
+<title>Golden Hour | NoCo's Happy Hour Guide for Fort Collins, Greeley, Windsor & Loveland</title>
+<meta name="description" content="Find the best happy hour deals in Northern Colorado. 80+ bars and restaurants in Fort Collins, Greeley, Windsor, and Loveland with hours, specials, and filters for open now, day of week, and more.">
+<meta name="keywords" content="happy hour Fort Collins, happy hour Greeley, happy hour Windsor, happy hour Loveland, NoCo happy hour, Northern Colorado bars, Fort Collins drink specials, Greeley happy hour deals">
+<meta property="og:title" content="Golden Hour | NoCo's Happy Hour Guide">
+<meta property="og:description" content="Find the best happy hour deals in Northern Colorado. 80+ bars and restaurants across Fort Collins, Greeley, Windsor, and Loveland.">
+<meta property="og:url" content="https://goldenhournoco.com">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://goldenhournoco.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -167,6 +174,7 @@ body {
 .badge-loveland { background: #fff0e0; color: #c05c0a; }
 .badge-greeley  { background: #fce8e8; color: #b91c1c; }
 .open-badge     { background: var(--green-bg); color: var(--green); font-size: 10px; font-weight: 700; border: 1px solid var(--green-border); }
+.new-badge      { background: #fef9c3; color: #854d0e; font-size: 10px; font-weight: 700; border: 1px solid #fde047; }
 .fav-btn {
   background: none;
   border: none;
@@ -192,6 +200,159 @@ body {
 .specials li { font-size: 13px; color: #3d2a1a; padding: 2px 0 2px 14px; line-height: 1.55; position: relative; }
 .specials li::before { content: ""; position: absolute; left: 2px; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent-light); opacity: 0.6; }
 .no-results { text-align: center; padding: 48px 16px; color: var(--text-3); font-size: 15px; }
+
+/* Starting Soon and Last Call badges */
+.starting-badge { background: #fff7ed; color: #c05c0a; font-size: 10px; font-weight: 700; border: 1px solid #fdba74; }
+.lastcall-badge { background: #fef2f2; color: #b91c1c; font-size: 10px; font-weight: 700; border: 1px solid #fca5a5; }
+
+/* Card fade animation */
+.card { transition: opacity 0.15s ease, border-color 0.2s; }
+.card.is-hiding { opacity: 0; }
+
+/* Search clear button */
+.search-wrap { position: relative; flex: 1; display: flex; }
+.search-clear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: var(--text-3);
+  cursor: pointer;
+  display: none;
+  padding: 4px;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+.search-clear.is-visible { display: block; }
+
+/* Tag row fade indicator */
+.tag-row-wrap { position: relative; margin-top: 8px; }
+.tag-row-wrap::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  background: linear-gradient(to right, transparent, var(--header-bg));
+  pointer-events: none;
+}
+.tag-row { margin-top: 0; }
+
+/* Copy specials button */
+.copy-btn {
+  width: 100%;
+  height: 36px;
+  margin-top: 10px;
+  border: 1.5px dashed var(--border);
+  border-radius: 8px;
+  background: none;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.15s;
+}
+.copy-btn:active { background: var(--accent-bg); border-color: var(--accent); color: var(--accent); }
+.copy-btn.copied { background: var(--green-bg); border-color: var(--green-border); color: var(--green); }
+
+/* Sort dropdown */
+.sort-select { font-size: 13px; height: 36px; padding: 0 28px 0 10px; }
+
+/* Today's hours highlight */
+.hours.is-today { color: var(--accent); font-weight: 600; }
+
+/* Recently viewed section */
+.recents-section {
+  padding: 0 12px 0;
+  margin-bottom: 4px;
+}
+.recents-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.recents-row {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+.recents-row::-webkit-scrollbar { display: none; }
+.recent-chip {
+  height: 30px;
+  padding: 0 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-2);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.recent-chip:active { background: var(--accent-bg); }
+
+/* Deal of the day */
+.dotd-section {
+  margin: 12px 12px 0;
+  background: linear-gradient(135deg, #fff3ec, #fff8f0);
+  border: 1.5px solid #f4a07a;
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+.dotd-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.dotd-name { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.dotd-special { font-size: 13px; color: #3d2a1a; margin-bottom: 6px; }
+.dotd-hours { font-size: 11px; color: var(--text-2); font-weight: 500; }
+
+/* Add to home screen prompt */
+.a2hs-banner {
+  display: none;
+  margin: 8px 12px 0;
+  background: var(--accent-bg);
+  border: 1.5px solid #f4a07a;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--text);
+  align-items: center;
+  gap: 10px;
+}
+.a2hs-banner.is-visible { display: flex; }
+.a2hs-banner span { flex: 1; }
+.a2hs-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: var(--text-3);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
 
 /* Floating Lucky Button */
 .lucky-btn {
@@ -248,7 +409,30 @@ body {
   letter-spacing: 0.03em;
 }
 
-/* Extra bottom padding so last cards aren't hidden behind button */
+/* Back to top button */
+.back-top-btn {
+  position: fixed;
+  bottom: calc(90px + env(safe-area-inset-bottom, 0px));
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  color: var(--text-2);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 49;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.back-top-btn.is-visible { opacity: 1; pointer-events: auto; }
 .grid { padding-bottom: 90px; }
 
 /* Crawl Modal */
@@ -455,14 +639,22 @@ body {
   </svg>
   <span style="font-family:'Nunito',sans-serif;font-size:26px;font-weight:800;letter-spacing:-0.5px;"><span style="color:#8B4513;">Golden</span><span style="color:#ff7a1f;">Hour</span></span>
 </div>  
-    <span class="subtitle">NoCo's Happy Hour Guide</span>
+    <span class="subtitle">NoCo's Happy Hour Guide &middot; 81 spots across 4 cities</span>
   </div>
   <div class="controls">
-    <input class="ctrl ctrl-search" type="search" id="search" placeholder="Search restaurants or specials..."
-      oninput="filterCards()" autocorrect="off" autocapitalize="none" spellcheck="false">
+    <div class="search-wrap">
+      <input class="ctrl ctrl-search" type="search" id="search" placeholder="Search restaurants or specials..."
+        oninput="filterCards();toggleClearBtn()" autocorrect="off" autocapitalize="none" spellcheck="false">
+      <button class="search-clear" id="searchClear" onclick="clearSearch()" aria-label="Clear search">&#x2715;</button>
+    </div>
+    <select class="ctrl ctrl-select sort-select" id="sort" onchange="filterCards()">
+      <option value="default">Default</option>
+      <option value="az">A-Z</option>
+      <option value="city">By City</option>
+    </select>
   </div>
   <div class="filter-row">
-    <select class="ctrl ctrl-select" id="city" onchange="filterCards()">
+    <select class="ctrl ctrl-select" id="city" onchange="filterCards();saveFilterState()">
       <option value="">All cities</option>
       <option value="Fort Collins">Fort Collins</option>
       <option value="Windsor">Windsor</option>
@@ -488,22 +680,39 @@ body {
   <div class="toggle-row" style="margin-top:6px;">
     <a class="toggle-btn" href="mailto:caesar.montoya@gmail.com?subject=Golden%20Hour%20-%20Venue%20Suggestion&body=Name%3A%0ACity%3A%0AAddress%3A%0AHappy%20Hour%20Hours%3A%0ASpecials%3A%0A%0AAny%20other%20details%3A%0A%0AFound%20on%3A%20goldenhournoco.com" style="text-decoration:none">Suggest a Venue</a>
   </div>
-  <div class="tag-row" id="tagRow">
-    <button class="tag-btn" data-tag="cheap"        onclick="toggleTag('cheap')">Cheap</button>
-    <button class="tag-btn" data-tag="old-town"     onclick="toggleTag('old-town')">Old Town</button>
-    <button class="tag-btn" data-tag="food-forward" onclick="toggleTag('food-forward')">Food-forward</button>
-    <button class="tag-btn" data-tag="date-night"   onclick="toggleTag('date-night')">Date Night</button>
-    <button class="tag-btn" data-tag="patio"        onclick="toggleTag('patio')">Patio</button>
-    <button class="tag-btn" data-tag="live-music"   onclick="toggleTag('live-music')">Live Music</button>
-    <button class="tag-btn" data-tag="brewery"      onclick="toggleTag('brewery')">Brewery</button>
-    <button class="tag-btn" data-tag="sports-bar"   onclick="toggleTag('sports-bar')">Sports Bar</button>
-    <button class="tag-btn" data-tag="late-night"   onclick="toggleTag('late-night')">Late Night</button>
-    <button class="tag-btn" data-tag="weekend"      onclick="toggleTag('weekend')">Weekend</button>
-    <button class="tag-btn" data-tag="student-deals" onclick="toggleTag('student-deals')">🎓 Student Deals</button>
+  <div class="tag-row-wrap">
+    <div class="tag-row" id="tagRow">
+      <button class="tag-btn" data-tag="cheap"        onclick="toggleTag('cheap')">Cheap</button>
+      <button class="tag-btn" data-tag="old-town"     onclick="toggleTag('old-town')">Old Town</button>
+      <button class="tag-btn" data-tag="food-forward" onclick="toggleTag('food-forward')">Food-forward</button>
+      <button class="tag-btn" data-tag="date-night"   onclick="toggleTag('date-night')">Date Night</button>
+      <button class="tag-btn" data-tag="patio"        onclick="toggleTag('patio')">Patio</button>
+      <button class="tag-btn" data-tag="live-music"   onclick="toggleTag('live-music')">Live Music</button>
+      <button class="tag-btn" data-tag="brewery"      onclick="toggleTag('brewery')">Brewery</button>
+      <button class="tag-btn" data-tag="sports-bar"   onclick="toggleTag('sports-bar')">Sports Bar</button>
+      <button class="tag-btn" data-tag="late-night"   onclick="toggleTag('late-night')">Late Night</button>
+      <button class="tag-btn" data-tag="weekend"      onclick="toggleTag('weekend')">Weekend</button>
+      <button class="tag-btn" data-tag="student-deals" onclick="toggleTag('student-deals')">🎓 Student Deals</button>
+      <button class="tag-btn" id="btnNew" onclick="toggleNew()">✨ New</button>
+    </div>
   </div>
   <div class="count" id="count"></div>
 </div>
 
+<div class="a2hs-banner" id="a2hsBanner">
+  <span>📲 Add Golden Hour to your home screen for quick access</span>
+  <button class="a2hs-close" onclick="dismissA2HS()" aria-label="Dismiss">&#x2715;</button>
+</div>
+<div class="dotd-section" id="dotdSection" style="display:none">
+  <div class="dotd-label">✨ Deal of the Day</div>
+  <div class="dotd-name" id="dotdName"></div>
+  <div class="dotd-special" id="dotdSpecial"></div>
+  <div class="dotd-hours" id="dotdHours"></div>
+</div>
+<div class="recents-section" id="recentsSection" style="display:none">
+  <div class="recents-label">Recently Viewed</div>
+  <div class="recents-row" id="recentsRow"></div>
+</div>
 <div class="grid" id="grid">
 <div class="card" data-city="Fort Collins" data-tags="date-night,old-town,live-music" data-text="ace gillett&#x27;s 239 s college ave fort collins wed-sun 5-6pm $5 select beers $7 house red or white wine $9 featured classic cocktails $6 truffle fries, $9 sliders">
   <div class="card-top">
@@ -575,21 +784,7 @@ body {
   <div class="hours">Mon-Thu 3-6pm</div>
   <ul class="specials"><li>$5 food and $4 drink specials</li><li>$13.50 lunch combo</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="old-town,cheap,food-forward,student-deals" data-text="big al&#x27;s burgers &amp; dogs 140 w mountain ave fort collins daily 2-5pm $5 60/40 bacon burger $5 chicago dog $5 hand-scooped milkshake">
-  <div class="card-top">
-    <div class="card-name">Big Al&#x27;s Burgers &amp; Dogs</div>
-    <div class="card-right">
-      <span class="badge open-badge" style="display:none"></span>
-      <span class="badge badge-fc">Fort Collins</span>
-      <button class="fav-btn" data-name="Big Al&#x27;s Burgers &amp; Dogs" aria-label="Add to favorites">&#9734;</button>
-    </div>
-  </div>
-  <a class="card-address" href="https://maps.apple.com/?q=Big%20Al%27s%20Burgers%20%26%20Dogs%20140%20W%20Mountain%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">140 W Mountain Ave &nearr;</a>
-  <hr class="divider">
-  <div class="hours">Daily 2-5pm</div>
-  <ul class="specials"><li>$5 60/40 bacon burger</li><li>$5 Chicago dog</li><li>$5 hand-scooped milkshake</li></ul>
-</div>
-<div class="card" data-city="Fort Collins" data-tags="sports-bar,cheap" data-text="bj&#x27;s 2670 e harmony rd fort collins mon-fri 3-7pm and 9pm to close $6 titos, 1800 tequila, jack daniels $7 sliders, pot stickers, mozzarella sticks and personal pizza $5 house wines">
+<div class="card" data-city="Fort Collins" data-tags="sports-bar,cheap" data-date="2026-04-21" data-text="bj&#x27;s 2670 e harmony rd fort collins mon-fri 3-7pm and 9pm to close $6 titos, 1800 tequila, jack daniels $7 sliders, pot stickers, mozzarella sticks and personal pizza $5 house wines">
   <div class="card-top">
     <div class="card-name">BJ&#x27;s</div>
     <div class="card-right">
@@ -715,19 +910,19 @@ body {
   <div class="hours">Tue-Sun 3-6pm</div>
   <ul class="specials"><li>$1 off well drinks</li><li>$1 off all wines by the glass</li><li>$1 off local craft, domestic, and imported beers</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="old-town,cheap,food-forward,weekend" data-text="choice city butcher &amp; deli 104 w olive st fort collins wed 5-8pm, sat-sun 9-10am wed: 2 for 1 burgers, 2 for 1 house cocktails, $1 off drafts (dine-in only) sat-sun 9-10am: 2 for 1 mimosas">
+<div class="card" data-city="Fort Collins" data-tags="old-town,cheap" data-text="choice city 104 w olive st fort collins wed-fri 3-5pm 2 for 1 house cocktails $5 colorado dogs wed 5-9pm: 2 for 1 burgers, $1 off drafts">
   <div class="card-top">
-    <div class="card-name">Choice City Butcher &amp; Deli</div>
+    <div class="card-name">Choice City</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-fc">Fort Collins</span>
-      <button class="fav-btn" data-name="Choice City Butcher &amp; Deli" aria-label="Add to favorites">&#9734;</button>
+      <button class="fav-btn" data-name="Choice City" aria-label="Add to favorites">&#9734;</button>
     </div>
   </div>
-  <a class="card-address" href="https://maps.apple.com/?q=Choice%20City%20Butcher%20%26%20Deli%20104%20W%20Olive%20St%20Fort%20Collins%20CO" target="_blank" rel="noopener">104 W Olive St &nearr;</a>
+  <a class="card-address" href="https://maps.apple.com/?q=Choice%20City%20104%20W%20Olive%20St%20Fort%20Collins%20CO" target="_blank" rel="noopener">104 W Olive St &nearr;</a>
   <hr class="divider">
-  <div class="hours">Wed 5-8pm, Sat-Sun 9-10am</div>
-  <ul class="specials"><li>Wed: 2 for 1 burgers, 2 for 1 house cocktails, $1 off drafts (dine-in only)</li><li>Sat-Sun 9-10am: 2 for 1 mimosas</li></ul>
+  <div class="hours">Wed-Fri 3-5pm</div>
+  <ul class="specials"><li>2 for 1 house cocktails</li><li>$5 Colorado dogs</li><li>Wed 5-9pm: 2 for 1 burgers, $1 off drafts</li></ul>
 </div>
 <div class="card" data-city="Fort Collins" data-tags="cheap,weekend" data-text="chili&#x27;s 3524 s college ave fort collins mon/thu to close, tue-fri 3-6pm, sat-sun all day $3-$5 domestic beers $5 house wine $6 tequila trifectas">
   <div class="card-top">
@@ -953,7 +1148,7 @@ body {
   <div class="hours">Daily 3-6pm</div>
   <ul class="specials"><li>Deals on Sapporo drafts, lychee-tini, hot sake</li><li>Discounted assorted small plates</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="old-town,patio,cheap,late-night" data-text="lucky joe&#x27;s sidewalk saloon 25 old town square fort collins $4.99 burger baskets (mon) $4 guinness pints (tue) irish whiskey wednesdays 5pm-2am $4 all bomb shots (thu 7pm-2am)">
+<div class="card" data-city="Fort Collins" data-tags="old-town,patio,cheap,late-night" data-date="2026-04-21" data-text="lucky joe&#x27;s sidewalk saloon 25 old town square fort collins $4.99 burger baskets (mon) $4 guinness pints (tue) irish whiskey wednesdays 5pm-2am $4 all bomb shots (thu 7pm-2am)">
   <div class="card-top">
     <div class="card-name">Lucky Joe&#x27;s Sidewalk Saloon</div>
     <div class="card-right">
@@ -1037,7 +1232,7 @@ body {
   <div class="hours">Wed-Thu 3-5pm, Sat-Sun 1-3pm</div>
   <ul class="specials"><li>$3 vodka mules and vodka sodas</li><li>$2 off all cocktails</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="cheap,weekend" data-text="mo jeauxs 820 city park ave fort collins daily 4-7pm, all day thu and sun $4 single, $6 double cocktails">
+<div class="card" data-city="Fort Collins" data-tags="cheap,weekend" data-date="2026-04-21" data-text="mo jeauxs 820 city park ave fort collins daily 4-7pm, all day thu and sun $4 single, $6 double cocktails">
   <div class="card-top">
     <div class="card-name">Mo Jeauxs</div>
     <div class="card-right">
@@ -1121,7 +1316,7 @@ body {
   <div class="hours">Mon-Thu 3-5pm, Fri-Sun 11am-4pm</div>
   <ul class="specials"><li>$6-$8 drinks</li><li>$3 meatball slider, $7 pizza roll, $9 bruschetta, $11 hot wings</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="old-town,cheap,weekend,live-music" data-text="pour brothers community tavern 220 linden st fort collins mon-fri 3-6pm, all day sun $1 off draft beer, liquor, wine and shots $2 16oz domestic drafts, $3 22oz domestic drafts">
+<div class="card" data-city="Fort Collins" data-tags="old-town,cheap,weekend,live-music" data-date="2026-04-21" data-text="pour brothers community tavern 220 linden st fort collins mon-fri 3-6pm, all day sun $1 off draft beer, liquor, wine and shots $2 16oz domestic drafts, $3 22oz domestic drafts">
   <div class="card-top">
     <div class="card-name">Pour Brothers Community Tavern</div>
     <div class="card-right">
@@ -1387,7 +1582,20 @@ body {
   <div class="hours">Daily 3-5pm</div>
   <ul class="specials"><li>10% off cocktails and appetizers</li><li>Free beer with any hot dog meal (11am-4pm daily)</li><li>Thu: BOGO bossy pig (pork mac and cheese)</li></ul>
 </div>
-<div class="card" data-city="Windsor" data-tags="date-night" data-text="hearth restaurant &amp; pub 205 1/2 4th st windsor mon-fri 3-6pm, all night mon craft cocktails, beer, and wine specials elevated pub fare at happy hour prices">
+<div class="card" data-city="Fort Collins" data-tags="sports-bar,food-forward,cheap" data-date="2026-04-21" data-text="grey rock sports grill 925 e harmony rd fort collins daily 3:30-6:30pm, late night 9pm mon: $5 house margarita, $10 grey rock 'rita tue: $5 domestic/$6 craft mugs 25oz, taco tuesday two tacos $7 wed: bogo 50% off pizza, half price wine thu: $4-$5 select pints, burger deal fri: $1 off fat tire/90 shilling, fish fry sat: $5 off beer buckets sun: $6 mimosa/$6 long island/$5 screwdriver">
+  <div class="card-top">
+    <div class="card-name">Grey Rock Sports Grill</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-fc">Fort Collins</span>
+      <button class="fav-btn" data-name="Grey Rock Sports Grill" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Grey%20Rock%20Sports%20Grill%20925%20E%20Harmony%20Rd%20Fort%20Collins%20CO" target="_blank" rel="noopener">925 E Harmony Rd &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3:30-6:30pm, late night 9pm</div>
+  <ul class="specials"><li>Mon: $5 house margarita, $10 Grey Rock 'rita</li><li>Tue: $5 domestic/$6 craft mugs (25oz), two tacos for $7</li><li>Wed: BOGO 50% off pizza, half price wine</li><li>Thu: $4-$5 select pints, BOGO burger with 2 drinks</li><li>Fri: $1 off Fat Tire/90 Shilling, house battered fish fry</li><li>Sat: $5 off bottled beer buckets (5 beers)</li><li>Sun: $6 mimosas/Long Islands, $5 screwdrivers</li></ul>
+</div> data-text="hearth restaurant &amp; pub 205 1/2 4th st windsor mon-fri 3-6pm, all night mon craft cocktails, beer, and wine specials elevated pub fare at happy hour prices">
   <div class="card-top">
     <div class="card-name">Hearth Restaurant &amp; Pub</div>
     <div class="card-right">
@@ -1429,7 +1637,7 @@ body {
   <div class="hours">Sun-Thu 3-5pm and 9-10pm</div>
   <ul class="specials"><li>Mill Old Fashioned</li><li>Strawberry Mule</li><li>Discounted appetizers</li></ul>
 </div>
-<div class="card" data-city="Loveland" data-tags="sports-bar,cheap" data-text="hooters 4230 byrd dr loveland mon-fri 3-6pm $4 off boneless wings, fried pickles, shrimp $5 screwball, jameson, patron and fireball (1.25oz shots) $16 all you can eat wings (wed only)">
+<div class="card" data-city="Loveland" data-tags="sports-bar,cheap" data-date="2026-04-21" data-text="hooters 4230 byrd dr loveland mon-fri 3-6pm $4 off boneless wings, fried pickles, shrimp $5 screwball, jameson, patron and fireball (1.25oz shots) $16 all you can eat wings (wed only)">
   <div class="card-top">
     <div class="card-name">Hooters</div>
     <div class="card-right">
@@ -1457,7 +1665,7 @@ body {
   <div class="hours">Daily 3-5pm</div>
   <ul class="specials"><li>$2 off wine by the glass</li><li>$2 off charcuterie boards</li></ul>
 </div>
-<div class="card" data-city="Greeley" data-tags="food-forward,cheap" data-text="austin's american grill 1100 8th ave greeley mon-fri 3-6pm $2 off all draft beers, $5 mocktails, $6 wine $3.95 cup of soup, $7.95 queso, $8.95 chicken street tacos $9.95 rotisserie chicken & fries, $13.95 steak bites">
+<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="food-forward,cheap" data-text="austin's american grill 1100 8th ave greeley mon-fri 3-6pm $2 off all draft beers, $5 mocktails, $6 wine $3.95 cup of soup, $7.95 queso, $8.95 chicken street tacos $9.95 rotisserie chicken & fries, $13.95 steak bites">
   <div class="card-top">
     <div class="card-name">Austin&#x27;s American Grill</div>
     <div class="card-right">
@@ -1471,7 +1679,7 @@ body {
   <div class="hours">Mon-Fri 3-6pm</div>
   <ul class="specials"><li>$2 off all draft beers, $5 mocktails, $6 wine</li><li>$3.95 cup of soup, $7.95 queso, $8.95 chicken street tacos</li><li>$9.95 rotisserie chicken &amp; fries, $13.95 steak bites</li></ul>
 </div>
-<div class="card" data-city="Greeley" data-tags="cheap,food-forward" data-text="big city roadhouse 1923 59th ave greeley daily 3-6pm $5 house spirits and wine, $3 domestic draft pints, $4 micro pints $1 off margaritas, half-price tequilas ($12+) daily rotating food specials">
+<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="cheap,food-forward" data-text="big city roadhouse 1923 59th ave greeley daily 3-6pm $5 house spirits and wine, $3 domestic draft pints, $4 micro pints $1 off margaritas, half-price tequilas ($12+) daily rotating food specials">
   <div class="card-top">
     <div class="card-name">Big City Roadhouse</div>
     <div class="card-right">
@@ -1485,7 +1693,7 @@ body {
   <div class="hours">Daily 3-6pm</div>
   <ul class="specials"><li>$5 house spirits and wine, $3 domestic drafts, $4 micro pints</li><li>$1 off margaritas, half-price tequilas ($12+)</li><li>Daily rotating food specials</li></ul>
 </div>
-<div class="card" data-city="Greeley" data-tags="cheap,live-music,weekend" data-text="the cow saloon & eatery 800 9th st greeley daily 2-6pm $2 select cans, $3 select drafts, $5 cocktails, $5 wine $2 off appetizers wed: half off wine bottles, $2 off whiskey">
+<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="cheap,live-music,weekend" data-text="the cow saloon & eatery 800 9th st greeley daily 2-6pm $2 select cans, $3 select drafts, $5 cocktails, $5 wine $2 off appetizers wed: half off wine bottles, $2 off whiskey">
   <div class="card-top">
     <div class="card-name">The Cow Saloon &amp; Eatery</div>
     <div class="card-right">
@@ -1499,7 +1707,7 @@ body {
   <div class="hours">Daily 2-6pm</div>
   <ul class="specials"><li>$2 select cans, $3 select drafts, $5 cocktails, $5 wine</li><li>$2 off appetizers</li><li>Wed: half off wine bottles, $2 off whiskey pours</li></ul>
 </div>
-<div class="card" data-city="Greeley" data-tags="cheap" data-text="coyote's southwestern grill 5250 w 9th st dr greeley mon-fri 2-6pm $2 off cocktails and wine, $1 off draft and bottled beers $2 off appetizers">
+<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="cheap" data-text="coyote's southwestern grill 5250 w 9th st dr greeley mon-fri 2-6pm $2 off cocktails and wine, $1 off draft and bottled beers $2 off appetizers">
   <div class="card-top">
     <div class="card-name">Coyote&#x27;s Southwestern Grill</div>
     <div class="card-right">
@@ -1513,7 +1721,7 @@ body {
   <div class="hours">Mon-Fri 2-6pm</div>
   <ul class="specials"><li>$2 off cocktails and wine</li><li>$1 off draft and bottled beers</li><li>$2 off appetizers</li></ul>
 </div>
-<div class="card" data-city="Greeley" data-tags="cheap,student-deals" data-text="fuzzy's taco shop 2410 29th st greeley mon-fri 3-6pm $5 18oz margaritas $4 imported beer, $3 domestic beer $2 chips/salsa, $2 select tacos">
+<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="cheap,student-deals" data-text="fuzzy's taco shop 2410 29th st greeley mon-fri 3-6pm $5 18oz margaritas $4 imported beer, $3 domestic beer $2 chips/salsa, $2 select tacos">
   <div class="card-top">
     <div class="card-name">Fuzzy&#x27;s Taco Shop</div>
     <div class="card-right">
@@ -1527,7 +1735,7 @@ body {
   <div class="hours">Mon-Fri 3-6pm</div>
   <ul class="specials"><li>$5 18oz margaritas</li><li>$4 imported beer, $3 domestic beer</li><li>$2 chips/salsa, $2 select tacos</li></ul>
 </div>
-<div class="card" data-city="Greeley" data-tags="sports-bar,cheap" data-text="the goat sports bar 2514 46th ave greeley mon-fri 2-6pm $1 off draft beer, well drinks, wine $1 off appetizers (except wings)">
+<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="sports-bar,cheap" data-text="the goat sports bar 2514 46th ave greeley mon-fri 2-6pm $1 off draft beer, well drinks, wine $1 off appetizers (except wings)">
   <div class="card-top">
     <div class="card-name">The GOAT Sports Bar</div>
     <div class="card-right">
@@ -1541,7 +1749,7 @@ body {
   <div class="hours">Mon-Fri 2-6pm</div>
   <ul class="specials"><li>$1 off draft beer, well drinks, wine</li><li>$1 off appetizers (except wings)</li></ul>
 </div>
-<div class="card" data-city="Greeley" data-tags="food-forward,date-night" data-text="lucky fins 4530 centerplace dr greeley mon-fri 3-6pm $5 draft pours, $6 house wine, $10 signature cocktails bogo half off sushi rolls happy hour bites: potstickers, calamari, kickin' shrimp">
+<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="food-forward,date-night" data-text="lucky fins 4530 centerplace dr greeley mon-fri 3-6pm $5 draft pours, $6 house wine, $10 signature cocktails bogo half off sushi rolls happy hour bites: potstickers, calamari, kickin' shrimp">
   <div class="card-top">
     <div class="card-name">Lucky Fins</div>
     <div class="card-right">
@@ -1555,7 +1763,7 @@ body {
   <div class="hours">Mon-Fri 3-6pm</div>
   <ul class="specials"><li>$5 draft pours, $6 house wine, $10 signature cocktails</li><li>BOGO half off sushi rolls</li><li>Happy hour bites: potstickers, calamari, kickin&#x27; shrimp</li></ul>
 </div>
-<div class="card" data-city="Greeley" data-tags="date-night,food-forward" data-text="meeker's kitchen 919 7th st greeley daily 2:30-6pm $5 domestic drafts, $6 local drafts $9 cocktails, $7 wine by the glass pearl of the plains, cherry picked old fashioned">
+<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="date-night,food-forward" data-text="meeker's kitchen 919 7th st greeley daily 2:30-6pm $5 domestic drafts, $6 local drafts $9 cocktails, $7 wine by the glass pearl of the plains, cherry picked old fashioned">
   <div class="card-top">
     <div class="card-name">Meeker&#x27;s Kitchen</div>
     <div class="card-right">
@@ -1569,7 +1777,7 @@ body {
   <div class="hours">Daily 2:30-6pm</div>
   <ul class="specials"><li>$5 domestic drafts, $6 local drafts (Tightknit/WeldWerks)</li><li>$9 cocktails (Pearl of the Plains, Cherry Picked Old Fashioned)</li><li>$7 wine by the glass</li></ul>
 </div>
-<div class="card" data-city="Greeley" data-tags="live-music,cheap,late-night" data-text="patrick's irish pub 909 8th ave greeley mon-thu 4-5pm half off all drinks tue all day $2 off beer cheese fries, $2 off liters fri $1 off all ipas 3pm-midnight late night mon-thu 10pm-midnight $1 off wells and drafts">
+<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="live-music,cheap,late-night" data-text="patrick's irish pub 909 8th ave greeley mon-thu 4-5pm half off all drinks tue all day $2 off beer cheese fries, $2 off liters fri $1 off all ipas 3pm-midnight late night mon-thu 10pm-midnight $1 off wells and drafts">
   <div class="card-top">
     <div class="card-name">Patrick&#x27;s Irish Pub</div>
     <div class="card-right">
@@ -1583,7 +1791,7 @@ body {
   <div class="hours">Mon-Thu 4-5pm, late night Mon-Thu 10pm-midnight</div>
   <ul class="specials"><li>Half off all drinks (Mon-Thu 4-5pm)</li><li>Tue all day: $2 off beer cheese fries, $2 off liters</li><li>Fri 3pm-midnight: $1 off all IPAs</li><li>Late night Mon-Thu 10pm-midnight: $1 off wells and drafts</li></ul>
 </div>
-<div class="card" data-city="Greeley" data-tags="cheap" data-text="rio grande 825 9th st greeley mon-fri 3-5pm $2 off margaritas $1 off tacos">
+<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="cheap" data-text="rio grande 825 9th st greeley mon-fri 3-5pm $2 off margaritas $1 off tacos">
   <div class="card-top">
     <div class="card-name">Rio Grande</div>
     <div class="card-right">
@@ -1597,7 +1805,7 @@ body {
   <div class="hours">Mon-Fri 3-5pm</div>
   <ul class="specials"><li>$2 off margaritas</li><li>$1 off tacos</li></ul>
 </div>
-<div class="card" data-city="Greeley" data-tags="cheap,food-forward" data-text="smokin' dave's bbq 819 9th st greeley mon-fri 3-6pm $2 off drafts, $1 off bottles/wells/wine $6 double-shot margaritas $2 off appetizers">
+<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="cheap,food-forward" data-text="smokin' dave's bbq 819 9th st greeley mon-fri 3-6pm $2 off drafts, $1 off bottles/wells/wine $6 double-shot margaritas $2 off appetizers">
   <div class="card-top">
     <div class="card-name">Smokin&#x27; Dave&#x27;s BBQ</div>
     <div class="card-right">
@@ -1611,7 +1819,7 @@ body {
   <div class="hours">Mon-Fri 3-6pm</div>
   <ul class="specials"><li>$2 off drafts, $1 off bottles/wells/wine</li><li>$6 double-shot margaritas</li><li>$2 off appetizers</li></ul>
 </div>
-<div class="card" data-city="Greeley" data-tags="date-night,food-forward" data-text="the tavern at st. michael's square 2918 67th ave greeley daily 3-5pm bar only $5 house wines, $5 local drafts, $5 well drinks $6 signature cocktails (margaritas, cosmos, old fashioneds, rum smashes) $7 apps: potato skins, tavern sliders, beef street tacos, buffalo wings, shrimp ceviche tostadas">
+<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="date-night,food-forward" data-text="the tavern at st. michael's square 2918 67th ave greeley daily 3-5pm bar only $5 house wines, $5 local drafts, $5 well drinks $6 signature cocktails (margaritas, cosmos, old fashioneds, rum smashes) $7 apps: potato skins, tavern sliders, beef street tacos, buffalo wings, shrimp ceviche tostadas">
   <div class="card-top">
     <div class="card-name">The Tavern at St. Michael&#x27;s Square</div>
     <div class="card-right">
@@ -1625,7 +1833,7 @@ body {
   <div class="hours">Daily 3-5pm (bar only)</div>
   <ul class="specials"><li>$5 house wines, $5 local drafts, $5 well drinks</li><li>$6 cocktails: margaritas, cosmos, old fashioneds, rum smashes</li><li>$7 apps: potato skins, tavern sliders, beef street tacos, buffalo wings, shrimp ceviche tostadas</li></ul>
 </div>
-<div class="card" data-city="Greeley" data-tags="cheap,late-night,sports-bar" data-text="wyler's pub & grill 2385 w 27th st greeley mon-thu 3-6pm $3 shots fireball/ole smokey peanut butter, $2 drafts 12oz, $1 off wells late night mon-thu 10pm-midnight $1 off wells and drafts">
+<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="cheap,late-night,sports-bar" data-text="wyler's pub & grill 2385 w 27th st greeley mon-thu 3-6pm $3 shots fireball/ole smokey peanut butter, $2 drafts 12oz, $1 off wells late night mon-thu 10pm-midnight $1 off wells and drafts">
   <div class="card-top">
     <div class="card-name">Wyler&#x27;s Pub &amp; Grill</div>
     <div class="card-right">
@@ -1648,6 +1856,7 @@ body {
 
 var showOpenNow = false;
 var showFavs = false;
+var showNew = false;
 var activeTags = {};
 
 // --- localStorage helpers (fail-safe) ---
@@ -1661,6 +1870,331 @@ function storageSet(key, val) {
 var favSet = {};
 var savedFavs = storageGet('noco-favs', []);
 for (var i = 0; i < savedFavs.length; i++) { favSet[savedFavs[i]] = true; }
+
+// --- Search clear button ---
+function toggleClearBtn() {
+  var val = (document.getElementById('search').value || '').length > 0;
+  var btn = document.getElementById('searchClear');
+  if (btn) btn.classList.toggle('is-visible', val);
+}
+
+function clearSearch() {
+  document.getElementById('search').value = '';
+  toggleClearBtn();
+  filterCards();
+}
+
+// --- Dynamic page title ---
+function updatePageTitle() {
+  var city = document.getElementById('city').value;
+  var base = "Golden Hour | NoCo's Happy Hour Guide";
+  document.title = city ? city + ' Happy Hours | Golden Hour' : base;
+}
+
+// --- Starting Soon / Last Call badges ---
+function applyTimingBadges() {
+  var now = new Date();
+  var nowM = now.getHours() * 60 + now.getMinutes();
+  var today = now.getDay();
+  var cards = document.querySelectorAll('.card');
+  for (var i = 0; i < cards.length; i++) {
+    var card = cards[i];
+    var hoursEl = card.querySelector('.hours');
+    if (!hoursEl) continue;
+    var hoursStr = hoursEl.textContent;
+    var cardRight = card.querySelector('.card-right');
+    if (!cardRight) continue;
+
+    // Remove existing timing badges
+    var existing = cardRight.querySelectorAll('.starting-badge, .lastcall-badge');
+    for (var j = 0; j < existing.length; j++) existing[j].remove();
+
+    var cleaned = hoursStr.replace(/\(([^)]+)\)/g, ', $1').replace(/\.\s+/g, ', ').replace(/:(?!\d)/g, ' ');
+    var segs = cleaned.split(',');
+    for (var s = 0; s < segs.length; s++) {
+      var seg = segs[s].trim();
+      var mB = seg.match(/^([\w\/\-]+)\s+(.*)/);
+      if (!mB) continue;
+      var days = parseDays(mB[1]);
+      if (!arrIncludes(days, today)) continue;
+      var timeRe = /([\d:]+(?:am|pm)?)\s*-\s*([\d:]+(?:am|pm)?)/gi;
+      var tr;
+      while ((tr = timeRe.exec(mB[2])) !== null) {
+        var startS = tr[1], endS = tr[2];
+        if (!/[ap]m/i.test(startS) && /pm/i.test(endS)) {
+          var sh = parseInt(startS), eh = parseInt(endS);
+          startS += (sh > eh) ? 'am' : 'pm';
+        }
+        var startM = toMins(startS), endM = toMins(endS);
+        var badge = null;
+        if (nowM < startM && startM - nowM <= 60) {
+          badge = document.createElement('span');
+          badge.className = 'badge starting-badge';
+          badge.textContent = 'Starting Soon';
+        } else if (nowM >= startM && endM - nowM <= 30 && endM > nowM) {
+          badge = document.createElement('span');
+          badge.className = 'badge lastcall-badge';
+          badge.textContent = 'Last Call';
+        }
+        if (badge) {
+          cardRight.insertBefore(badge, cardRight.firstChild);
+          break;
+        }
+      }
+    }
+  }
+}
+
+// --- Bold today's hours ---
+function applyTodayHours() {
+  var today = new Date().getDay();
+  var cards = document.querySelectorAll('.card');
+  for (var i = 0; i < cards.length; i++) {
+    var hoursEl = cards[i].querySelector('.hours');
+    if (!hoursEl) continue;
+    hoursEl.classList.toggle('is-today', hasHoursOnDay(hoursEl.textContent, today));
+  }
+}
+
+// --- Recently viewed ---
+var recentViewed = storageGet('noco-recents', []);
+
+function trackRecentView(name) {
+  recentViewed = recentViewed.filter(function(n) { return n !== name; });
+  recentViewed.unshift(name);
+  if (recentViewed.length > 5) recentViewed = recentViewed.slice(0, 5);
+  storageSet('noco-recents', recentViewed);
+  renderRecents();
+}
+
+function renderRecents() {
+  var section = document.getElementById('recentsSection');
+  var row = document.getElementById('recentsRow');
+  if (!section || !row || recentViewed.length === 0) {
+    if (section) section.style.display = 'none';
+    return;
+  }
+  section.style.display = 'block';
+  row.innerHTML = '';
+  for (var i = 0; i < recentViewed.length; i++) {
+    (function(name) {
+      var chip = document.createElement('button');
+      chip.className = 'recent-chip';
+      chip.textContent = name;
+      chip.onclick = function() {
+        document.getElementById('search').value = name;
+        toggleClearBtn();
+        filterCards();
+      };
+      row.appendChild(chip);
+    })(recentViewed[i]);
+  }
+}
+
+function injectRecentTracking() {
+  var cards = document.querySelectorAll('.card');
+  for (var i = 0; i < cards.length; i++) {
+    (function(card) {
+      var nameEl = card.querySelector('.card-name');
+      if (!nameEl) return;
+      var name = nameEl.textContent.trim();
+      card.addEventListener('click', function(e) {
+        if (e.target.classList.contains('fav-btn') || e.target.classList.contains('share-btn') || e.target.classList.contains('copy-btn')) return;
+        trackRecentView(name);
+      });
+    })(cards[i]);
+  }
+}
+
+// --- Deal of the Day ---
+function initDealOfTheDay() {
+  var cards = document.querySelectorAll('.card');
+  if (!cards.length) return;
+  var today = new Date();
+  var seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+  var index = seed % cards.length;
+  var card = cards[index];
+  var nameEl = card.querySelector('.card-name');
+  var firstSpecial = card.querySelector('.specials li');
+  var hoursEl = card.querySelector('.hours');
+  if (!nameEl || !firstSpecial) return;
+  var section = document.getElementById('dotdSection');
+  document.getElementById('dotdName').textContent = nameEl.textContent.trim();
+  document.getElementById('dotdSpecial').textContent = firstSpecial.textContent.trim();
+  document.getElementById('dotdHours').textContent = hoursEl ? hoursEl.textContent.trim() : '';
+  section.style.display = 'block';
+  section.onclick = function() {
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    card.classList.add('is-lucky');
+    setTimeout(function() { card.classList.remove('is-lucky'); }, 3000);
+  };
+  section.style.cursor = 'pointer';
+}
+
+// --- Copy specials ---
+function injectCopyButtons() {
+  var cards = document.querySelectorAll('.card');
+  for (var i = 0; i < cards.length; i++) {
+    var card = cards[i];
+    var nameEl = card.querySelector('.card-name');
+    var specials = card.querySelectorAll('.specials li');
+    var hoursEl = card.querySelector('.hours');
+    var city = card.getAttribute('data-city') || '';
+    if (!nameEl || !specials.length) continue;
+    var name = nameEl.textContent.trim();
+    var hours = hoursEl ? hoursEl.textContent.trim() : '';
+    var specialsText = [];
+    for (var j = 0; j < specials.length; j++) specialsText.push(specials[j].textContent.trim());
+    var copyText = name + ' (' + city + ') -- Happy Hour ' + hours + '\n' + specialsText.join('\n') + '\ngoldenhournoco.com';
+    var btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.innerHTML = '&#128203; Copy specials';
+    btn.onclick = (function(text, b) {
+      return function(e) {
+        e.stopPropagation();
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function() {
+            b.textContent = 'Copied!';
+            b.classList.add('copied');
+            setTimeout(function() { b.innerHTML = '&#128203; Copy specials'; b.classList.remove('copied'); }, 2000);
+          });
+        } else {
+          var el = document.createElement('textarea');
+          el.value = text;
+          el.style.position = 'fixed';
+          el.style.opacity = '0';
+          document.body.appendChild(el);
+          el.focus(); el.select();
+          document.execCommand('copy');
+          document.body.removeChild(el);
+          b.textContent = 'Copied!';
+          b.classList.add('copied');
+          setTimeout(function() { b.innerHTML = '&#128203; Copy specials'; b.classList.remove('copied'); }, 2000);
+        }
+      };
+    })(copyText, btn);
+    card.appendChild(btn);
+  }
+}
+
+// --- Flag an error ---
+function injectFlagButtons() {
+  var cards = document.querySelectorAll('.card');
+  for (var i = 0; i < cards.length; i++) {
+    var card = cards[i];
+    var nameEl = card.querySelector('.card-name');
+    if (!nameEl) continue;
+    var name = nameEl.textContent.trim();
+    var link = document.createElement('a');
+    link.href = 'mailto:caesar.montoya@gmail.com?subject=Golden%20Hour%20-%20Error%20Report&body=Venue%3A%20' + encodeURIComponent(name) + '%0A%0AWhat%27s%20wrong%3A%0A';
+    link.style.cssText = 'display:block;text-align:center;font-size:11px;color:var(--text-3);margin-top:6px;text-decoration:none;padding-bottom:2px;';
+    link.textContent = 'Report an error';
+    card.appendChild(link);
+  }
+}
+
+// --- Near me sort ---
+var userLat = null, userLng = null;
+
+function getNearMe() {
+  if (!navigator.geolocation) return;
+  navigator.geolocation.getCurrentPosition(function(pos) {
+    userLat = pos.coords.latitude;
+    userLng = pos.coords.longitude;
+    filterCards();
+  });
+}
+
+// --- Add to Home Screen prompt ---
+function initA2HS() {
+  var isIphone = /iPhone/.test(navigator.userAgent);
+  var isInStandaloneMode = window.navigator.standalone === true;
+  var dismissed = storageGet('noco-a2hs-dismissed', false);
+  if (isIphone && !isInStandaloneMode && !dismissed) {
+    var banner = document.getElementById('a2hsBanner');
+    if (banner) banner.classList.add('is-visible');
+  }
+}
+
+function dismissA2HS() {
+  storageSet('noco-a2hs-dismissed', true);
+  var banner = document.getElementById('a2hsBanner');
+  if (banner) banner.classList.remove('is-visible');
+}
+
+// --- Structured data JSON-LD ---
+function injectStructuredData() {
+  var cards = document.querySelectorAll('.card');
+  var items = [];
+  for (var i = 0; i < cards.length; i++) {
+    var card = cards[i];
+    var nameEl = card.querySelector('.card-name');
+    var addrEl = card.querySelector('.card-address');
+    var city = card.getAttribute('data-city') || '';
+    if (!nameEl || !addrEl) continue;
+    items.push({
+      "@type": "FoodEstablishment",
+      "name": nameEl.textContent.trim(),
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": addrEl.textContent.replace('\u2197', '').trim(),
+        "addressLocality": city,
+        "addressRegion": "CO",
+        "addressCountry": "US"
+      }
+    });
+  }
+  var script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "NoCo Happy Hour Guide",
+    "description": "Happy hour deals at bars and restaurants in Northern Colorado",
+    "url": "https://goldenhournoco.com",
+    "numberOfItems": items.length,
+    "itemListElement": items.map(function(item, idx) {
+      return { "@type": "ListItem", "position": idx + 1, "item": item };
+    })
+  });
+  document.head.appendChild(script);
+}
+
+// --- Sort cards ---
+function sortCards() {
+  var sort = (document.getElementById('sort') || {}).value || 'default';
+  var grid = document.getElementById('grid');
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
+  if (sort === 'default') return;
+  cards.sort(function(a, b) {
+    if (sort === 'az') {
+      var na = (a.querySelector('.card-name') || {}).textContent || '';
+      var nb = (b.querySelector('.card-name') || {}).textContent || '';
+      return na.localeCompare(nb);
+    }
+    if (sort === 'city') {
+      var ca = a.getAttribute('data-city') || '';
+      var cb = b.getAttribute('data-city') || '';
+      return ca.localeCompare(cb);
+    }
+    return 0;
+  });
+  for (var i = 0; i < cards.length; i++) grid.appendChild(cards[i]);
+}
+
+// --- Filter state persistence ---
+function saveFilterState() {
+  try {
+    localStorage.setItem('noco-city', document.getElementById('city').value);
+  } catch(e) {}
+}
+
+function restoreFilterState() {
+  try {
+    var city = localStorage.getItem('noco-city');
+    if (city) document.getElementById('city').value = city;
+  } catch(e) {}
+}
 
 // --- Day/time parser for Open Now ---
 var DAY = { sun:0, mon:1, tue:2, wed:3, thu:4, fri:5, sat:6 };
@@ -1764,6 +2298,21 @@ function hasHoursOnDay(hoursStr, targetDay) {
   return false;
 }
 
+function isNewVenue(card) {
+  var dateStr = card.getAttribute('data-date');
+  if (!dateStr) return false;
+  var added = new Date(dateStr);
+  var now = new Date();
+  return (now - added) / (1000 * 60 * 60 * 24) <= 30;
+}
+
+function toggleNew() {
+  showNew = !showNew;
+  var btn = document.getElementById('btnNew');
+  if (btn) btn.classList.toggle('is-active', showNew);
+  filterCards();
+}
+
 // --- Tags ---
 function toggleTag(tag) {
   activeTags[tag] = !activeTags[tag];
@@ -1798,6 +2347,7 @@ function filterCards() {
     if (city && cardCity !== city)                           visible = false;
     if (q && cardText.indexOf(q) < 0)                       visible = false;
     if (showOpenNow && !checkOpenNow(hoursStr))              visible = false;
+    if (showNew && !isNewVenue(card))                        visible = false;
     if (targetDay !== null && !hasHoursOnDay(hoursStr, targetDay)) visible = false;
     if (tagKeys.length > 0) {
       for (var ti = 0; ti < tagKeys.length; ti++) {
@@ -1814,10 +2364,56 @@ function filterCards() {
   }
 
   var countEl = document.getElementById('count');
-  if (countEl) countEl.textContent = shown + ' spot' + (shown !== 1 ? 's' : '');
+  var total = document.querySelectorAll('.card').length;
+  if (countEl) {
+    if (shown === total) {
+      countEl.textContent = total + ' spots across 4 cities';
+    } else {
+      countEl.textContent = 'Showing ' + shown + ' of ' + total + ' spots';
+    }
+  }
+
+  sortCards();
+  updatePageTitle();
+
+  // Empty state
+  var grid = document.getElementById('grid');
+  var emptyEl = document.getElementById('emptyState');
+  if (shown === 0) {
+    if (!emptyEl) {
+      emptyEl = document.createElement('div');
+      emptyEl.id = 'emptyState';
+      emptyEl.className = 'no-results';
+      grid.appendChild(emptyEl);
+    }
+    emptyEl.innerHTML = 'No spots found.<br><span style="font-size:13px;margin-top:6px;display:block;">Try removing a filter or searching something else.</span>';
+  } else {
+    if (emptyEl) emptyEl.remove();
+  }
 }
 
 // --- Open Now ---
+function applyNewBadges() {
+  var now = new Date();
+  var cards = document.querySelectorAll('.card[data-date]');
+  for (var i = 0; i < cards.length; i++) {
+    var card = cards[i];
+    var dateStr = card.getAttribute('data-date');
+    if (!dateStr) continue;
+    var added = new Date(dateStr);
+    var daysDiff = (now - added) / (1000 * 60 * 60 * 24);
+    if (daysDiff <= 30) {
+      var cardRight = card.querySelector('.card-right');
+      if (cardRight && !cardRight.querySelector('.new-badge')) {
+        var badge = document.createElement('span');
+        badge.className = 'badge new-badge';
+        badge.textContent = 'New';
+        cardRight.insertBefore(badge, cardRight.firstChild);
+      }
+    }
+  }
+}
+
 function applyOpenNowBadges() {
   var cards = document.querySelectorAll('.card');
   for (var i = 0; i < cards.length; i++) {
@@ -1881,19 +2477,54 @@ document.addEventListener('click', function(e) {
     btn = btn.parentNode;
   }
 });
+// --- Maps auto-detect (Apple Maps for iOS, Google Maps for Android) ---
+function isIOS() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+}
+function isMacOS() {
+  return /Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints === 0;
+}
+
+document.addEventListener('click', function(e) {
+  var target = e.target;
+  while (target && target !== document) {
+    if (target.classList && target.classList.contains('card-address')) {
+      var href = target.getAttribute('href') || '';
+      if (href.indexOf('maps.apple.com') >= 0) {
+        if (!isIOS() && !isMacOS()) {
+          e.preventDefault();
+          var q = href.split('?q=')[1] || '';
+          window.open('https://www.google.com/maps/search/?api=1&query=' + q, '_blank');
+        }
+      }
+      break;
+    }
+    target = target.parentNode;
+  }
+});
+
 // --- Share buttons ---
-function shareVenue(name, special) {
-  var text = name + ' has ' + special + ' during happy hour! Check it out on Golden Hour. goldenhournoco.com';
+function shareVenue(name, special, hours, city) {
+  var text = name + ' in ' + city + ' -- ' + special + '. Happy hour ' + hours + '. Find more NoCo deals at goldenhournoco.com';
   if (navigator.share) {
-    navigator.share({ title: 'Golden Hour: ' + name, text: text, url: 'https://goldenhournoco.com' });
+    navigator.share({ title: name + ' Happy Hour', text: text, url: 'https://goldenhournoco.com' });
   } else {
-    var el = document.createElement('textarea');
-    el.value = text + ' goldenhournoco.com';
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
-    alert('Copied to clipboard!');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() {
+        alert('Copied to clipboard!');
+      });
+    } else {
+      var el = document.createElement('textarea');
+      el.value = text;
+      el.style.position = 'fixed';
+      el.style.opacity = '0';
+      document.body.appendChild(el);
+      el.focus();
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      alert('Copied to clipboard!');
+    }
   }
 }
 
@@ -1904,25 +2535,39 @@ function injectShareButtons() {
     var cardRight = card.querySelector('.card-right');
     var nameEl = card.querySelector('.card-name');
     var firstSpecial = card.querySelector('.specials li');
+    var hoursEl = card.querySelector('.hours');
+    var city = card.getAttribute('data-city') || 'NoCo';
     if (!cardRight || !nameEl) continue;
     var name = nameEl.textContent.trim();
     var special = firstSpecial ? firstSpecial.textContent.trim() : 'great happy hour deals';
+    var hours = hoursEl ? hoursEl.textContent.trim() : '';
     var btn = document.createElement('button');
     btn.className = 'share-btn';
     btn.setAttribute('aria-label', 'Share ' + name);
     btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>';
-    btn.onclick = (function(n, s) {
-      return function(e) { e.stopPropagation(); shareVenue(n, s); };
-    })(name, special);
+    btn.onclick = (function(n, s, h, c) {
+      return function(e) { e.stopPropagation(); shareVenue(n, s, h, c); };
+    })(name, special, hours, city);
     var favBtn = cardRight.querySelector('.fav-btn');
     if (favBtn) { cardRight.insertBefore(btn, favBtn); } else { cardRight.appendChild(btn); }
   }
 }
 // --- Init ---
 function init() {
+  restoreFilterState();
   applyOpenNowBadges();
+  applyNewBadges();
+  applyTimingBadges();
+  applyTodayHours();
   applyFavButtons();
   injectShareButtons();
+  injectCopyButtons();
+  injectFlagButtons();
+  injectRecentTracking();
+  renderRecents();
+  initDealOfTheDay();
+  initA2HS();
+  injectStructuredData();
   filterCards();
 }
 
@@ -1973,6 +2618,15 @@ var CRAWLS = [
       { name: "Smokin Fins", address: "327 E Foothills Pkwy", hours: "Mon-Fri 2-6pm", order: "Start with BOGO sushi rolls and wagyu sliders" },
       { name: "Farmhouse at Jessup Farm", address: "1957 Jessup Dr", hours: "Mon/Wed-Sat 4-6pm", order: "Duck fat tots and carnitas tacos -- order both" },
       { name: "The Regional", address: "130 S Mason St", hours: "Tue all day, Wed-Mon 4-5:30pm", order: "Finish with $2.50 raw oysters and the burger/beer/shot combo" }
+    ]
+  },
+  {
+    name: "Greeley Discovery",
+    tagline: "NoCo's most underrated happy hour scene",
+    stops: [
+      { name: "The Cow Saloon & Eatery", address: "800 9th St", hours: "Daily 2-6pm", order: "Start with $3 drafts and $2 off appetizers -- great energy on the 9th Street corridor" },
+      { name: "Smokin' Dave's BBQ", address: "819 9th St", hours: "Mon-Fri 3-6pm", order: "Two doors down -- $6 double-shot margaritas and $2 off apps while you're already here" },
+      { name: "Meeker's Kitchen", address: "919 7th St", hours: "Daily 2:30-6pm", order: "Finish with a Cherry Picked Old Fashioned and local WeldWerks draft -- the best seat in downtown Greeley" }
     ]
   },
   {
@@ -2076,6 +2730,16 @@ function feelingLucky() {
   }, 5000);
 }
 
+// --- Keyboard dismiss on scroll ---
+window.addEventListener('scroll', function() {
+  var searchEl = document.getElementById('search');
+  if (searchEl && document.activeElement === searchEl) {
+    searchEl.blur();
+  }
+  var btn = document.getElementById('backTopBtn');
+  if (btn) btn.classList.toggle('is-visible', window.scrollY > 300);
+}, { passive: true });
+
 // Close crawl on overlay tap
 document.addEventListener('click', function(e) {
   if (e.target && e.target.id === 'crawlOverlay') closeCrawl();
@@ -2084,6 +2748,7 @@ document.addEventListener('click', function(e) {
 <button class="lucky-btn" onclick="feelingLucky()">
   <span class="dice">🎲</span> I'm Feeling Lucky
 </button>
+<button class="back-top-btn" id="backTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#8593;</button>
 
 <div class="crawl-overlay" id="crawlOverlay">
   <div class="crawl-sheet">
