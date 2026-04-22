@@ -310,30 +310,6 @@ body {
 .dotd-special { font-size: 13px; color: #3d2a1a; margin-bottom: 6px; }
 .dotd-hours { font-size: 11px; color: var(--text-2); font-weight: 500; }
 
-/* Add to home screen prompt */
-.a2hs-banner {
-  display: none;
-  margin: 8px 12px 0;
-  background: var(--accent-bg);
-  border: 1.5px solid #f4a07a;
-  border-radius: 12px;
-  padding: 10px 14px;
-  font-size: 13px;
-  color: var(--text);
-  align-items: center;
-  gap: 10px;
-}
-.a2hs-banner.is-visible { display: flex; }
-.a2hs-banner span { flex: 1; }
-.a2hs-close {
-  background: none;
-  border: none;
-  font-size: 18px;
-  color: var(--text-3);
-  cursor: pointer;
-  padding: 0;
-  line-height: 1;
-}
 
 /* Floating Lucky Button */
 .lucky-btn {
@@ -676,10 +652,7 @@ body {
   <div class="count" id="count"></div>
 </div>
 
-<div class="a2hs-banner" id="a2hsBanner">
-  <span>📲 Add Golden Hour to your home screen for quick access</span>
-  <button class="a2hs-close" onclick="dismissA2HS()" aria-label="Dismiss">&#x2715;</button>
-</div>
+
 <div class="dotd-section" id="dotdSection" style="display:none">
   <div class="dotd-label">✨ Deal of the Day</div>
   <div class="dotd-name" id="dotdName"></div>
@@ -2128,22 +2101,6 @@ function getNearMe() {
 }
 
 // --- Add to Home Screen prompt ---
-function initA2HS() {
-  var isIphone = /iPhone/.test(navigator.userAgent);
-  var isInStandaloneMode = window.navigator.standalone === true;
-  var dismissed = storageGet('noco-a2hs-dismissed', false);
-  if (isIphone && !isInStandaloneMode && !dismissed) {
-    var banner = document.getElementById('a2hsBanner');
-    if (banner) banner.classList.add('is-visible');
-  }
-}
-
-function dismissA2HS() {
-  storageSet('noco-a2hs-dismissed', true);
-  var banner = document.getElementById('a2hsBanner');
-  if (banner) banner.classList.remove('is-visible');
-}
-
 // --- Structured data JSON-LD ---
 function injectStructuredData() {
   var cards = document.querySelectorAll('.card');
@@ -2600,7 +2557,6 @@ function init() {
   injectRecentTracking();
   renderRecents();
   initDealOfTheDay();
-  initA2HS();
   injectStructuredData();
   filterCards();
 }
