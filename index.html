@@ -172,7 +172,8 @@ body {
 .badge-fc       { background: #e8f0ff; color: #2d5be3; }
 .badge-windsor  { background: #e6f7ee; color: #1a7a40; }
 .badge-loveland { background: #fff0e0; color: #c05c0a; }
-.badge-greeley  { background: #fce8e8; color: #b91c1c; }
+.badge-greeley     { background: #fce8e8; color: #b91c1c; }
+.badge-wellington  { background: #f3e8ff; color: #7e22ce; }
 .open-badge     { background: var(--green-bg); color: var(--green); font-size: 10px; font-weight: 700; border: 1px solid var(--green-border); }
 .new-badge      { background: #fef9c3; color: #854d0e; font-size: 10px; font-weight: 700; border: 1px solid #fde047; }
 .fav-btn {
@@ -634,6 +635,7 @@ body {
       <option value="Windsor">Windsor</option>
       <option value="Loveland">Loveland</option>
       <option value="Greeley">Greeley</option>
+      <option value="Wellington">Wellington</option>
     </select>
     <select class="ctrl ctrl-select" id="day" onchange="filterCards()">
       <option value="">All days</option>
@@ -1066,6 +1068,20 @@ body {
   <div class="hours">Daily 3-8pm</div>
   <ul class="specials"><li>$1 off margaritas and draft beer</li><li>$4 off party margaritas (serves 4)</li><li>$1 off chips/queso/guac</li></ul>
 </div>
+<div class="card" data-city="Fort Collins" data-tags="cheap,food-forward" data-date="2026-04-22" data-text="island grill 2601 s lemay ave fort collins mon-fri 3-6pm all day sun $1 off draft beers house wines well cocktails house rocks margaritas $2 off appetizers">
+  <div class="card-top">
+    <div class="card-name">Island Grill</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-fc">Fort Collins</span>
+      <button class="fav-btn" data-name="Island Grill" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Island%20Grill%202601%20S%20Lemay%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">2601 S Lemay Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm, all day Sun</div>
+  <ul class="specials"><li>$1 off draft beers, house wines, well cocktails, House Rocks Margaritas</li><li>$2 off appetizers</li></ul>
+</div>
 <div class="card" data-city="Fort Collins" data-tags="food-forward,cheap" data-text="japango 125 s college ave fort collins daily 3-6pm (all day mon) $5 drafts, $6 small sake $8 well cocktails/house wine $9 large sake/choice cocktail/sangria $2 off special rolls, $4.50 hand rolls">
   <div class="card-top">
     <div class="card-name">Japango</div>
@@ -1136,7 +1152,7 @@ body {
   <div class="hours">Wed 5pm-2am, Thu 7pm-2am</div>
   <ul class="specials"><li>$4.99 burger baskets (Mon)</li><li>$4 Guinness pints (Tue)</li><li>Irish Whiskey Wednesdays 5pm-2am</li><li>$4 all bomb shots (Thu 7pm-2am)</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="cheap" data-text="the lyric 1209 n college ave fort collins mon-thu 3-6pm $4.50 lagerados, $6.50 well drinks $7 pinot noir/grigio, $8 boilermakers $8 cheese curds, $5 pretzels/edamame">
+<div class="card" data-city="Fort Collins" data-tags="cheap,food-forward,live-music" data-text="the lyric 1209 n college ave fort collins daily 3-5pm $5 off pitcher or bottle of wine $1 off draft beer and cider $2 off n/a cocktails $1 off n/a beer or bucha $5 off large pizzas $1 off pretzels falafel bites mozz sticks 2 slices and a draft for $12">
   <div class="card-top">
     <div class="card-name">The Lyric</div>
     <div class="card-right">
@@ -1147,8 +1163,8 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=The%20Lyric%201209%20N%20College%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">1209 N College Ave &nearr;</a>
   <hr class="divider">
-  <div class="hours">Mon-Thu 3-6pm</div>
-  <ul class="specials"><li>$4.50 Lagerados, $6.50 well drinks</li><li>$7 pinot noir/grigio, $8 boilermakers</li><li>$8 cheese curds, $5 pretzels/edamame</li></ul>
+  <div class="hours">Daily 3-5pm</div>
+  <ul class="specials"><li>$5 off pitcher or bottle of wine, $1 off draft beer and cider</li><li>$2 off N/A cocktails, $1 off N/A beer or bucha</li><li>$5 off large pizzas, $1 off pretzels/falafel bites/mozz sticks</li><li>2 slices and a draft for $12</li></ul>
 </div>
 <div class="card" data-city="Fort Collins" data-tags="cheap" data-text="mas fuegos 2350 e harmony rd fort collins mon-fri 3-6pm $1 off margaritas, wine, draft beers half-price tequila ($12+) $3.50 street tacos, $6 chips/guac, $12 carne asada fries">
   <div class="card-top">
@@ -1402,20 +1418,6 @@ body {
   <div class="hours">Mon-Fri 3-6pm</div>
   <ul class="specials"><li>$1 off beers on tap</li><li>$6 margaritas/whiskey sours/gin tonics/old fashioneds</li><li>$7 brisket chili frito pies, $10 brisket egg rolls</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="food-forward" data-text="smokin fins 327 e foothills pkwy fort collins mon-fri 2-6pm $5 house drafts, $6 well drinks/wine/mules bogo half off sushi rolls $9 poke bowls/tacos, $8 wagyu sliders, $15 half dozen oysters">
-  <div class="card-top">
-    <div class="card-name">Smokin Fins</div>
-    <div class="card-right">
-      <span class="badge open-badge" style="display:none"></span>
-      <span class="badge badge-fc">Fort Collins</span>
-      <button class="fav-btn" data-name="Smokin Fins" aria-label="Add to favorites">&#9734;</button>
-    </div>
-  </div>
-  <a class="card-address" href="https://maps.apple.com/?q=Smokin%20Fins%20327%20E%20Foothills%20Pkwy%20Fort%20Collins%20CO" target="_blank" rel="noopener">327 E Foothills Pkwy &nearr;</a>
-  <hr class="divider">
-  <div class="hours">Mon-Fri 2-6pm</div>
-  <ul class="specials"><li>$5 house drafts, $6 well drinks/wine/mules</li><li>BOGO half off sushi rolls</li><li>$9 poke bowls/tacos, $8 wagyu sliders, $15 half dozen oysters</li></ul>
-</div>
 <div class="card" data-city="Fort Collins" data-tags="old-town,date-night,live-music" data-text="social 1 old town square fort collins sun-thu 4-6pm, all night tue $7.75-$9.75 cocktails, $7 wine, $6 ayinger pils $5.25 olives, $6.50 deviled eggs, $11.50 charcuterie board">
   <div class="card-top">
     <div class="card-name">Social</div>
@@ -1597,6 +1599,20 @@ body {
   <hr class="divider">
   <div class="hours">Mon-Fri 3-6pm, all night Mon</div>
   <ul class="specials"><li>Craft cocktails, beer, and wine specials</li><li>Elevated pub fare at happy hour prices</li></ul>
+</div>
+<div class="card" data-city="Windsor" data-tags="cheap,food-forward" data-date="2026-04-22" data-text="mash lab 4487 highland meadows pkwy windsor mon-fri 3-5pm mon-thu 8-9pm fri 9-10pm $5 house wine $5 old fashioned $7 strawberry cucumber limeade bourbon smash pomegranate margarita ranch water $4 pretzel bites $5 chips queso salsa $6 fried green beans skillet fries">
+  <div class="card-top">
+    <div class="card-name">Mash Lab</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-windsor">Windsor</span>
+      <button class="fav-btn" data-name="Mash Lab" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Mash%20Lab%204487%20Highland%20Meadows%20Pkwy%20Windsor%20CO" target="_blank" rel="noopener">4487 Highland Meadows Pkwy &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-5pm, Mon-Thu 8-9pm, Fri 9-10pm</div>
+  <ul class="specials"><li>$5 house wine, $5 Old Fashioned</li><li>$7 strawberry cucumber limeade, bourbon smash, pomegranate margarita, ranch water</li><li>$4 pretzel bites, $5 chips/queso/salsa, $6 fried green beans, $6 skillet fries</li></ul>
 </div>
 <div class="card" data-city="Windsor" data-tags="cheap" data-text="tiho&#x27;s tequila bar 301 main st unit b windsor thu all day, mon-wed specials mon: $4 house margaritas with fajita purchase tue: 50% off tequila and mezcal wed: $25 any appetizer and house margs">
   <div class="card-top">
@@ -1835,6 +1851,20 @@ body {
   <hr class="divider">
   <div class="hours">Mon-Thu 3-6pm, late night Mon-Thu 10pm-midnight</div>
   <ul class="specials"><li>$3 shots (Fireball/Ole Smokey Peanut Butter), $2 drafts (12oz), $1 off wells</li><li>Late night Mon-Thu 10pm-midnight: $1 off wells and drafts</li></ul>
+</div>
+<div class="card" data-city="Wellington" data-tags="cheap" data-date="2026-04-22" data-text="deppen brewing 3999 gw bush ave unit 101 wellington wed-sun 3-6pm $1 off beers $2 off wine and cocktails">
+  <div class="card-top">
+    <div class="card-name">Deppen Brewing</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-wellington">Wellington</span>
+      <button class="fav-btn" data-name="Deppen Brewing" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Deppen%20Brewing%203999%20GW%20Bush%20Ave%20Unit%20101%20Wellington%20CO" target="_blank" rel="noopener">3999 GW Bush Ave Unit 101 &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Wed-Sun 3-6pm</div>
+  <ul class="specials"><li>$1 off beers</li><li>$2 off wine and cocktails</li></ul>
 </div>
 </div>
 
@@ -2618,7 +2648,7 @@ var CRAWLS = [
     name: "Food Forward",
     tagline: "For when the bites matter as much as the drinks",
     stops: [
-      { name: "Smokin Fins", address: "327 E Foothills Pkwy", hours: "Mon-Fri 2-6pm", order: "Start with BOGO sushi rolls and wagyu sliders" },
+      { name: "Masa Hibachi & Sushi", address: "2400 E Harmony Rd", hours: "Mon-Thu 3-7pm", order: "Happy hour sushi rolls and sake -- great value for the quality" },
       { name: "Farmhouse at Jessup Farm", address: "1957 Jessup Dr", hours: "Mon/Wed-Sat 4-6pm", order: "Duck fat tots and carnitas tacos -- order both" },
       { name: "The Regional", address: "130 S Mason St", hours: "Tue all day, Wed-Mon 4-5:30pm", order: "Finish with $2.50 raw oysters and the burger/beer/shot combo" }
     ]

@@ -309,6 +309,17 @@
     ]
   },
   {
+    "Name": "Island Grill",
+    "City": "Fort Collins",
+    "Address": "2601 S Lemay Ave",
+    "Hours": "Mon-Fri 3-6pm, all day Sun",
+    "Status": "Active",
+    "specials": [
+      "$1 off draft beers, house wines, well cocktails, House Rocks Margaritas",
+      "$2 off appetizers"
+    ]
+  },
+  {
     "Name": "Japango",
     "City": "Fort Collins",
     "Address": "125 S College Ave",
@@ -360,12 +371,13 @@
     "Name": "The Lyric",
     "City": "Fort Collins",
     "Address": "1209 N College Ave",
-    "Hours": "Mon-Thu 3-6pm",
+    "Hours": "Daily 3-5pm",
     "Status": "Active",
     "specials": [
-      "$4.50 Lagerados, $6.50 well drinks",
-      "$7 pinot noir/grigio, $8 boilermakers",
-      "$8 cheese curds, $5 pretzels/edamame"
+      "$5 off pitcher or bottle of wine, $1 off draft beer and cider",
+      "$2 off N/A cocktails, $1 off N/A beer or bucha",
+      "$5 off large pizzas, $1 off pretzels/falafel bites/mozz sticks",
+      "2 slices and a draft for $12"
     ]
   },
   {
@@ -556,7 +568,7 @@
     "City": "Fort Collins",
     "Address": "327 E Foothills Pkwy",
     "Hours": "Mon-Fri 2-6pm",
-    "Status": "Active",
+    "Status": "Inactive",
     "specials": [
       "$5 house drafts, $6 well drinks/wine/mules",
       "BOGO half off sushi rolls",
@@ -748,6 +760,18 @@
     "specials": [
       "Craft cocktails, beer, and wine specials",
       "Elevated pub fare at happy hour prices"
+    ]
+  },
+  {
+    "Name": "Mash Lab",
+    "City": "Windsor",
+    "Address": "4487 Highland Meadows Pkwy",
+    "Hours": "Mon-Fri 3-5pm, Mon-Thu 8-9pm, Fri 9-10pm",
+    "Status": "Active",
+    "specials": [
+      "$5 house wine, $5 Old Fashioned",
+      "$7 strawberry cucumber limeade, bourbon smash, pomegranate margarita, ranch water",
+      "$4 pretzel bites, $5 chips/queso/salsa, $6 fried green beans, $6 skillet fries"
     ]
   },
   {
@@ -999,5 +1023,16 @@
       "$4 Single, $6 Double Cocktails"
     ],
     "dateAdded": "2026-04-21"
+  },
+  {
+    "Name": "Deppen Brewing",
+    "City": "Wellington",
+    "Address": "3999 GW Bush Ave Unit 101",
+    "Hours": "Wed-Sun 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off beers",
+      "$2 off wine and cocktails"
+    ]
   }
 ]
