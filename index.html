@@ -296,7 +296,25 @@ body {
   background: linear-gradient(135deg, #fff3ec, #fff8f0);
   border: 1.5px solid #f4a07a;
   border-radius: 14px;
-  padding: 14px 16px;
+  overflow: hidden;
+}
+.dotd-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.dotd-chevron {
+  font-size: 11px;
+  color: var(--accent);
+  transition: transform 0.2s;
+}
+.dotd-chevron.is-open { transform: rotate(180deg); }
+.dotd-body {
+  padding: 0 16px 12px;
+  border-top: 1px solid #f4d4c0;
 }
 .dotd-label {
   font-size: 10px;
@@ -304,10 +322,10 @@ body {
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
-.dotd-name { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
-.dotd-special { font-size: 13px; color: #3d2a1a; margin-bottom: 6px; }
+.dotd-name { font-size: 14px; font-weight: 600; color: var(--text); }
+.dotd-special { font-size: 13px; color: #3d2a1a; margin-top: 8px; margin-bottom: 4px; }
 .dotd-hours { font-size: 11px; color: var(--text-2); font-weight: 500; }
 
 
@@ -654,17 +672,27 @@ body {
 
 
 <div class="dotd-section" id="dotdSection" style="display:none">
-  <div class="dotd-label">✨ Deal of the Day</div>
-  <div class="dotd-name" id="dotdName"></div>
-  <div class="dotd-special" id="dotdSpecial"></div>
-  <div class="dotd-hours" id="dotdHours"></div>
+  <div class="dotd-header" id="dotdHeader">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <span style="font-size:14px;">✨</span>
+      <div>
+        <div class="dotd-label">Deal of the Day</div>
+        <div class="dotd-name" id="dotdName"></div>
+      </div>
+    </div>
+    <span class="dotd-chevron" id="dotdChevron">&#9660;</span>
+  </div>
+  <div class="dotd-body" id="dotdBody" style="display:none">
+    <div class="dotd-special" id="dotdSpecial"></div>
+    <div class="dotd-hours" id="dotdHours"></div>
+  </div>
 </div>
 <div class="recents-section" id="recentsSection" style="display:none">
   <div class="recents-label">Recently Viewed</div>
   <div class="recents-row" id="recentsRow"></div>
 </div>
 <div class="grid" id="grid">
-<div class="card" data-city="Fort Collins" data-tags="date-night,old-town,live-music" data-text="ace gillett&#x27;s 239 s college ave fort collins wed-sun 5-6pm $5 select beers $7 house red or white wine $9 featured classic cocktails $6 truffle fries, $9 sliders">
+<div class="card" data-city="Fort Collins" data-tags="date-night,old-town,live-music" data-text="ace gillett&#x27;s 239 s college ave fort collins wed-sun 5-6pm all night thu $5 select beers $7 house red or white wine $9 featured classic cocktails $6 truffle fries, $9 sliders">
   <div class="card-top">
     <div class="card-name">Ace Gillett&#x27;s</div>
     <div class="card-right">
@@ -675,7 +703,7 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Ace%20Gillett%27s%20239%20S%20College%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">239 S College Ave &nearr;</a>
   <hr class="divider">
-  <div class="hours">Wed-Sun 5-6pm</div>
+  <div class="hours">Wed-Sun 5-6pm, all night Thu</div>
   <ul class="specials"><li>$5 select beers</li><li>$7 house red or white wine</li><li>$9 featured classic cocktails</li><li>$6 truffle fries, $9 sliders</li></ul>
 </div>
 <div class="card" data-city="Fort Collins" data-tags="old-town,cheap" data-text="austin&#x27;s american grill old town &amp; harmony fort collins mon-fri 3-6pm $5 well cocktails, $6+ featured cocktails $2 off all draft beer, $5 mocktails, $6 wine $4 beer cheese soup, $2 ribs, $9 chicken street tacos">
@@ -1140,7 +1168,21 @@ body {
   <div class="hours">Daily 3-5pm</div>
   <ul class="specials"><li>$5 off pitcher or bottle of wine, $1 off draft beer and cider</li><li>$2 off N/A cocktails, $1 off N/A beer or bucha</li><li>$5 off large pizzas, $1 off pretzels/falafel bites/mozz sticks</li><li>2 slices and a draft for $12</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="cheap" data-text="mas fuegos 2350 e harmony rd fort collins mon-fri 3-6pm $1 off margaritas, wine, draft beers half-price tequila ($12+) $3.50 street tacos, $6 chips/guac, $12 carne asada fries">
+<div class="card" data-city="Fort Collins" data-tags="date-night,food-forward,old-town" data-date="2026-04-22" data-text="maida trattoria 100 n college ave fort collins everyday 2-5pm all day tue half off featured wine bottles on wednesdays">
+  <div class="card-top">
+    <div class="card-name">Maida Trattoria</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-fc">Fort Collins</span>
+      <button class="fav-btn" data-name="Maida Trattoria" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Maida%20Trattoria%20100%20N%20College%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">100 N College Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 2-5pm, all day Tue</div>
+  <ul class="specials"><li>Half off featured wine bottles on Wednesdays</li></ul>
+</div>
+<div class="card" data-city="Fort Collins" data-tags="cheap,patio" data-text="mas fuegos 2350 e harmony rd fort collins mon-fri 3-6pm all day tue $7.95 house margaritas and micheladas $1 off all other margaritas wine draft beers half-price tequila $12+ and tequila flights $1 off a la carte tacos and tostadas sope $5.50 chicken taquitos guac tinga chips $5.75 queso $6.75 carne asada fries $12.75">
   <div class="card-top">
     <div class="card-name">Mas Fuegos</div>
     <div class="card-right">
@@ -1151,8 +1193,8 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Mas%20Fuegos%202350%20E%20Harmony%20Rd%20Fort%20Collins%20CO" target="_blank" rel="noopener">2350 E Harmony Rd &nearr;</a>
   <hr class="divider">
-  <div class="hours">Mon-Fri 3-6pm</div>
-  <ul class="specials"><li>$1 off margaritas, wine, draft beers</li><li>Half-price tequila ($12+)</li><li>$3.50 street tacos, $6 chips/guac, $12 carne asada fries</li></ul>
+  <div class="hours">Mon-Fri 3-6pm, all day Tue</div>
+  <ul class="specials"><li>$7.95 house margaritas and micheladas, $1 off all other margaritas, wine, draft beers</li><li>Half-price tequila ($12+, on the rocks or neat) and tequila flights</li><li>$1 off a la carte tacos and tostadas</li><li>$5.50 sope, $5.75 chicken taquitos/guac/tinga chips, $6.75 queso, $12.75 carne asada fries</li></ul>
 </div>
 <div class="card" data-city="Fort Collins" data-tags="food-forward,date-night" data-date="2026-04-22" data-text="masa hibachi steakhouse &amp; sushi 2400 e harmony rd fort collins mon-thu 3-7pm fri-sat 3-7pm bar only sun all day draft beers $5-$6, house wine $6, well drinks $6.50, hot sake $8 kitchen apps $4-$9 edamame gyoza yakitori calamari shrimp tempura sushi rolls $5.50-$12 alaskan spicy salmon tuna california specialty rolls">
   <div class="card-top">
@@ -2018,12 +2060,19 @@ function initDealOfTheDay() {
   document.getElementById('dotdSpecial').textContent = firstSpecial.textContent.trim();
   document.getElementById('dotdHours').textContent = hoursEl ? hoursEl.textContent.trim() : '';
   section.style.display = 'block';
-  section.onclick = function() {
-    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    card.classList.add('is-lucky');
-    setTimeout(function() { card.classList.remove('is-lucky'); }, 3000);
+  var header = document.getElementById('dotdHeader');
+  var body = document.getElementById('dotdBody');
+  var chevron = document.getElementById('dotdChevron');
+  header.onclick = function() {
+    var isOpen = body.style.display !== 'none';
+    body.style.display = isOpen ? 'none' : 'block';
+    chevron.classList.toggle('is-open', !isOpen);
+    if (!isOpen) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      card.classList.add('is-lucky');
+      setTimeout(function() { card.classList.remove('is-lucky'); }, 3000);
+    }
   };
-  section.style.cursor = 'pointer';
 }
 
 // --- Copy specials ---

@@ -3,7 +3,7 @@
     "Name": "Ace Gillett's",
     "City": "Fort Collins",
     "Address": "239 S College Ave",
-    "Hours": "Wed-Sun 5-6pm",
+    "Hours": "Wed-Sun 5-6pm, all night Thu",
     "Status": "Active",
     "specials": [
       "$5 select beers",
@@ -381,15 +381,26 @@
     ]
   },
   {
+    "Name": "Maida Trattoria",
+    "City": "Fort Collins",
+    "Address": "100 N College Ave",
+    "Hours": "Daily 2-5pm, all day Tue",
+    "Status": "Active",
+    "specials": [
+      "Half off featured wine bottles on Wednesdays"
+    ]
+  },
+  {
     "Name": "Mas Fuegos",
     "City": "Fort Collins",
     "Address": "2350 E Harmony Rd",
-    "Hours": "Mon-Fri 3-6pm",
+    "Hours": "Mon-Fri 3-6pm, all day Tue",
     "Status": "Active",
     "specials": [
-      "$1 off margaritas, wine, draft beers",
-      "Half-price tequila ($12+)",
-      "$3.50 street tacos, $6 chips/guac, $12 carne asada fries"
+      "$7.95 house margaritas and micheladas, $1 off all other margaritas, wine, draft beers",
+      "Half-price tequila ($12+, on the rocks or neat) and tequila flights",
+      "$1 off a la carte tacos and tostadas",
+      "$5.50 sope, $5.75 chicken taquitos/guac/tinga chips, $6.75 queso, $12.75 carne asada fries"
     ]
   },
   {
