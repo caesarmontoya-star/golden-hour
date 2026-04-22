@@ -290,44 +290,6 @@ body {
 }
 .recent-chip:active { background: var(--accent-bg); }
 
-/* Deal of the day */
-.dotd-section {
-  margin: 12px 12px 0;
-  background: linear-gradient(135deg, #fff3ec, #fff8f0);
-  border: 1.5px solid #f4a07a;
-  border-radius: 14px;
-  overflow: hidden;
-}
-.dotd-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-.dotd-chevron {
-  font-size: 11px;
-  color: var(--accent);
-  transition: transform 0.2s;
-}
-.dotd-chevron.is-open { transform: rotate(180deg); }
-.dotd-body {
-  padding: 0 16px 12px;
-  border-top: 1px solid #f4d4c0;
-}
-.dotd-label {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 2px;
-}
-.dotd-name { font-size: 14px; font-weight: 600; color: var(--text); }
-.dotd-special { font-size: 13px; color: #3d2a1a; margin-top: 8px; margin-bottom: 4px; }
-.dotd-hours { font-size: 11px; color: var(--text-2); font-weight: 500; }
-
 
 /* Floating Lucky Button */
 .lucky-btn {
@@ -671,22 +633,7 @@ body {
 </div>
 
 
-<div class="dotd-section" id="dotdSection" style="display:none">
-  <div class="dotd-header" id="dotdHeader">
-    <div style="display:flex; align-items:center; gap:8px;">
-      <span style="font-size:14px;">✨</span>
-      <div>
-        <div class="dotd-label">Deal of the Day</div>
-        <div class="dotd-name" id="dotdName"></div>
-      </div>
-    </div>
-    <span class="dotd-chevron" id="dotdChevron">&#9660;</span>
-  </div>
-  <div class="dotd-body" id="dotdBody" style="display:none">
-    <div class="dotd-special" id="dotdSpecial"></div>
-    <div class="dotd-hours" id="dotdHours"></div>
-  </div>
-</div>
+
 <div class="recents-section" id="recentsSection" style="display:none">
   <div class="recents-label">Recently Viewed</div>
   <div class="recents-row" id="recentsRow"></div>
@@ -2043,37 +1990,6 @@ function injectRecentTracking() {
   }
 }
 
-// --- Deal of the Day ---
-function initDealOfTheDay() {
-  var cards = document.querySelectorAll('.card');
-  if (!cards.length) return;
-  var today = new Date();
-  var seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
-  var index = seed % cards.length;
-  var card = cards[index];
-  var nameEl = card.querySelector('.card-name');
-  var firstSpecial = card.querySelector('.specials li');
-  var hoursEl = card.querySelector('.hours');
-  if (!nameEl || !firstSpecial) return;
-  var section = document.getElementById('dotdSection');
-  document.getElementById('dotdName').textContent = nameEl.textContent.trim();
-  document.getElementById('dotdSpecial').textContent = firstSpecial.textContent.trim();
-  document.getElementById('dotdHours').textContent = hoursEl ? hoursEl.textContent.trim() : '';
-  section.style.display = 'block';
-  var header = document.getElementById('dotdHeader');
-  var body = document.getElementById('dotdBody');
-  var chevron = document.getElementById('dotdChevron');
-  header.onclick = function() {
-    var isOpen = body.style.display !== 'none';
-    body.style.display = isOpen ? 'none' : 'block';
-    chevron.classList.toggle('is-open', !isOpen);
-    if (!isOpen) {
-      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      card.classList.add('is-lucky');
-      setTimeout(function() { card.classList.remove('is-lucky'); }, 3000);
-    }
-  };
-}
 
 // --- Copy specials ---
 function injectCopyButtons() {
@@ -2605,7 +2521,6 @@ function init() {
   injectShareButtons();
   injectRecentTracking();
   renderRecents();
-  initDealOfTheDay();
   injectStructuredData();
   filterCards();
 }
