@@ -569,6 +569,11 @@ body {
 }
 .share-btn:active { color: var(--accent); }
 
+.tag-more-btn { border-style: dashed; color: var(--text-3); }
+.tag-more-btn.is-open { color: var(--accent); border-color: var(--accent); border-style: solid; }
+.tag-row-more { margin-top: 6px; }
+
+
 /* Collapsible filters */
 .filter-collapse-btn {
   display: none;
@@ -670,19 +675,22 @@ body {
   <div class="tag-row-wrap">
     <div class="tag-row" id="tagRow">
       <button class="tag-btn" data-tag="cheap"        onclick="toggleTag('cheap')">Cheap</button>
-      <button class="tag-btn" data-tag="old-town"     onclick="toggleTag('old-town')">Old Town</button>
-      <button class="tag-btn" data-tag="food-forward" onclick="toggleTag('food-forward')">Food-forward</button>
-      <button class="tag-btn" data-tag="date-night"   onclick="toggleTag('date-night')">Date Night</button>
+      <button class="tag-btn" data-tag="sports-bar"   onclick="toggleTag('sports-bar')">Sports Bar</button>
       <button class="tag-btn" data-tag="patio"        onclick="toggleTag('patio')">Patio</button>
+      <button class="tag-btn" data-tag="date-night"   onclick="toggleTag('date-night')">Date Night</button>
+      <button class="tag-btn" id="btnNew" onclick="toggleNew()">✨ New</button>
+      <button class="tag-btn tag-more-btn" id="tagMoreBtn" onclick="toggleMoreTags()">+ More</button>
+    </div>
+    <div class="tag-row tag-row-more" id="tagRowMore" style="display:none">
+      <button class="tag-btn" data-tag="food-forward" onclick="toggleTag('food-forward')">Food-forward</button>
+      <button class="tag-btn" data-tag="old-town"     onclick="toggleTag('old-town')">Old Town</button>
       <button class="tag-btn" data-tag="live-music"   onclick="toggleTag('live-music')">Live Music</button>
       <button class="tag-btn" data-tag="brewery"      onclick="toggleTag('brewery')">Brewery</button>
-      <button class="tag-btn" data-tag="sports-bar"   onclick="toggleTag('sports-bar')">Sports Bar</button>
       <button class="tag-btn" data-tag="late-night"   onclick="toggleTag('late-night')">Late Night</button>
       <button class="tag-btn" data-tag="weekend"      onclick="toggleTag('weekend')">Weekend</button>
       <button class="tag-btn" data-tag="student-deals" onclick="toggleTag('student-deals')">🎓 Student Deals</button>
       <button class="tag-btn" data-tag="dog-friendly"   onclick="toggleTag('dog-friendly')">🐾 Dog Friendly</button>
       <button class="tag-btn" data-tag="reverse-happy-hour" onclick="toggleTag('reverse-happy-hour')">🌙 Reverse HH</button>
-      <button class="tag-btn" id="btnNew" onclick="toggleNew()">✨ New</button>
     </div>
   </div>
   </div>
@@ -712,7 +720,7 @@ body {
 </div>
 <div class="card" data-city="Fort Collins" data-tags="old-town,cheap,dog-friendly" data-text="austin&#x27;s american grill old town &amp; harmony fort collins mon-fri 3-6pm $5 well cocktails, $6+ featured cocktails $2 off all draft beer, $5 mocktails, $6 wine $4 beer cheese soup, $2 ribs, $9 chicken street tacos">
   <div class="card-top">
-    <div class="card-name">Austin&#x27;s American Grill</div>
+    <div class="card-name">Austin&#x27;s American Grill 🐶</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-fc">Fort Collins</span>
@@ -796,7 +804,7 @@ body {
 </div>
 <div class="card" data-city="Fort Collins" data-tags="old-town,late-night,cheap,student-deals,reverse-happy-hour" data-text="brother&#x27;s bar &amp; grill old town fort collins tue 4-10pm, wed 9pm-close tue: $3 cheeseburgers (dine-in only) wed: 25-cent wings (dine-in only)">
   <div class="card-top">
-    <div class="card-name">Brother&#x27;s Bar &amp; Grill</div>
+    <div class="card-name">Brother&#x27;s Bar &amp; Grill 🌙</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-fc">Fort Collins</span>
@@ -838,7 +846,7 @@ body {
 </div>
 <div class="card" data-city="Fort Collins" data-tags="old-town,dog-friendly" data-text="cafe at ginger &amp; baker 359 linden st fort collins tue-sat 2-5pm $5 well drinks and house wines $2 off draft beers">
   <div class="card-top">
-    <div class="card-name">Cafe at Ginger &amp; Baker</div>
+    <div class="card-name">Cafe at Ginger &amp; Baker 🐶</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-fc">Fort Collins</span>
@@ -922,7 +930,7 @@ body {
 </div>
 <div class="card" data-city="Fort Collins" data-tags="cheap,live-music,dog-friendly" data-text="colorado room 642 s college ave fort collins mon-fri 3-6pm $1 off domestics, crafts, cocktails, well drinks $3 bbq pork sammys, $3.50 poutine">
   <div class="card-top">
-    <div class="card-name">Colorado Room</div>
+    <div class="card-name">Colorado Room 🐶</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-fc">Fort Collins</span>
@@ -1034,7 +1042,7 @@ body {
 </div>
 <div class="card" data-city="Fort Collins" data-tags="date-night,food-forward,weekend,reverse-happy-hour" data-text="farmhouse at jessup farm 1957 jessup dr fort collins mon/wed-sat 4-6pm, all night tue/sun $7 select wines, $8+ cocktails, $4 draft beer $5 carnitas tacos, $8 duck fat tots $10 truffle parmesan fries">
   <div class="card-top">
-    <div class="card-name">Farmhouse at Jessup Farm</div>
+    <div class="card-name">Farmhouse at Jessup Farm 🌙</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-fc">Fort Collins</span>
@@ -1062,7 +1070,7 @@ body {
 </div>
 <div class="card" data-city="Fort Collins" data-tags="old-town,cheap,late-night,student-deals,dog-friendly" data-text="illegal pete&#x27;s 320 walnut st fort collins daily 3-8pm $1 off margaritas and draft beer $4 off party margaritas (serves 4) $1 off chips/queso/guac">
   <div class="card-top">
-    <div class="card-name">Illegal Pete&#x27;s</div>
+    <div class="card-name">Illegal Pete&#x27;s 🐶</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-fc">Fort Collins</span>
@@ -1146,7 +1154,7 @@ body {
 </div>
 <div class="card" data-city="Fort Collins" data-tags="old-town,patio,cheap,late-night,dog-friendly,reverse-happy-hour" data-date="2026-04-21" data-text="lucky joe&#x27;s sidewalk saloon 25 old town square fort collins $4.99 burger baskets (mon) $4 guinness pints (tue) irish whiskey wednesdays 5pm-2am $4 all bomb shots (thu 7pm-2am)">
   <div class="card-top">
-    <div class="card-name">Lucky Joe&#x27;s Sidewalk Saloon</div>
+    <div class="card-name">Lucky Joe&#x27;s Sidewalk Saloon 🐶 🌙</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-fc">Fort Collins</span>
@@ -1188,7 +1196,7 @@ body {
 </div>
 <div class="card" data-city="Fort Collins" data-tags="cheap,patio,dog-friendly" data-text="mas fuegos 2350 e harmony rd fort collins mon-fri 3-6pm all day tue $7.95 house margaritas and micheladas $1 off all other margaritas wine draft beers half-price tequila $12+ and tequila flights $1 off a la carte tacos and tostadas sope $5.50 chicken taquitos guac tinga chips $5.75 queso $6.75 carne asada fries $12.75">
   <div class="card-top">
-    <div class="card-name">Mas Fuegos</div>
+    <div class="card-name">Mas Fuegos 🐶</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-fc">Fort Collins</span>
@@ -1216,7 +1224,7 @@ body {
 </div>
 <div class="card" data-city="Fort Collins" data-tags="cheap,weekend,patio,live-music,dog-friendly" data-text="maya cove 2100 w drake rd fort collins daily 3-6pm (fri: free buffet 3-6pm) $7 margaritas, $5 mezcal margs, $6 hurricanes $4 draft beer, $3.75 coors light $3 ribs, $8 pulled pork/burger baskets, $8 crispy chicken tacos">
   <div class="card-top">
-    <div class="card-name">Maya Cove</div>
+    <div class="card-name">Maya Cove 🐶</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-fc">Fort Collins</span>
@@ -1412,7 +1420,7 @@ body {
 </div>
 <div class="card" data-city="Fort Collins" data-tags="cheap,weekend,student-deals,dog-friendly,reverse-happy-hour" data-text="road 34 1213 w elizabeth st fort collins tue-sat 4-7pm, all day sun $2 coors/coors light/old aggie 50 cents off other drafts and appetizers">
   <div class="card-top">
-    <div class="card-name">Road 34</div>
+    <div class="card-name">Road 34 🐶 🌙</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-fc">Fort Collins</span>
@@ -1454,7 +1462,7 @@ body {
 </div>
 <div class="card" data-city="Fort Collins" data-tags="old-town,date-night,live-music,reverse-happy-hour" data-text="social 1 old town square fort collins sun-thu 4-6pm, all night tue $7.75-$9.75 cocktails, $7 wine, $6 ayinger pils $5.25 olives, $6.50 deviled eggs, $11.50 charcuterie board">
   <div class="card-top">
-    <div class="card-name">Social</div>
+    <div class="card-name">Social 🌙</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-fc">Fort Collins</span>
@@ -1496,7 +1504,7 @@ body {
 </div>
 <div class="card" data-city="Fort Collins" data-tags="old-town,cheap,student-deals,reverse-happy-hour" data-text="tap and handle 307 s college ave fort collins mon-fri 3-5pm all day wed late night specials $2 off featured beers $9 lager and a shot 75-cent wings (min 6) $8 hot pretzels/tender baskets, $5 cheese curds">
   <div class="card-top">
-    <div class="card-name">Tap and Handle</div>
+    <div class="card-name">Tap and Handle 🌙</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-fc">Fort Collins</span>
@@ -1552,7 +1560,7 @@ body {
 </div>
 <div class="card" data-city="Fort Collins" data-tags="old-town,cheap,weekend,student-deals,reverse-happy-hour" data-text="trailhead tavern 148 w mountain ave fort collins tue-sun noon-7pm, all day mon $3.50 craft beers/well drinks $2.50 domestic drafts $4 jameson/$4 hornitos shots">
   <div class="card-top">
-    <div class="card-name">Trailhead Tavern</div>
+    <div class="card-name">Trailhead Tavern 🌙</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-fc">Fort Collins</span>
@@ -1636,7 +1644,7 @@ body {
 </div>
 <div class="card" data-city="Windsor" data-tags="cheap,food-forward,dog-friendly,reverse-happy-hour" data-date="2026-04-22" data-text="mash lab 4487 highland meadows pkwy windsor mon-fri 3-5pm mon-thu 8-9pm fri 9-10pm $5 house wine $5 old fashioned $7 strawberry cucumber limeade bourbon smash pomegranate margarita ranch water $4 pretzel bites $5 chips queso salsa $6 fried green beans skillet fries">
   <div class="card-top">
-    <div class="card-name">Mash Lab</div>
+    <div class="card-name">Mash Lab 🐶 🌙</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-windsor">Windsor</span>
@@ -1818,7 +1826,7 @@ body {
 </div>
 <div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="live-music,cheap,late-night,reverse-happy-hour" data-text="patrick's irish pub 909 8th ave greeley mon-thu 4-5pm half off all drinks tue all day $2 off beer cheese fries, $2 off liters fri $1 off all ipas 3pm-midnight late night mon-thu 10pm-midnight $1 off wells and drafts">
   <div class="card-top">
-    <div class="card-name">Patrick&#x27;s Irish Pub</div>
+    <div class="card-name">Patrick&#x27;s Irish Pub 🌙</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-greeley">Greeley</span>
@@ -1874,7 +1882,7 @@ body {
 </div>
 <div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="cheap,late-night,sports-bar,reverse-happy-hour" data-text="wyler's pub & grill 2385 w 27th st greeley mon-thu 3-6pm $3 shots fireball/ole smokey peanut butter, $2 drafts 12oz, $1 off wells late night mon-thu 10pm-midnight $1 off wells and drafts">
   <div class="card-top">
-    <div class="card-name">Wyler&#x27;s Pub &amp; Grill</div>
+    <div class="card-name">Wyler&#x27;s Pub &amp; Grill 🌙</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-greeley">Greeley</span>
@@ -2063,6 +2071,20 @@ function injectRecentTracking() {
 
 
 
+
+
+// --- More tags toggle ---
+var moreTagsOpen = false;
+function toggleMoreTags() {
+  moreTagsOpen = !moreTagsOpen;
+  var row = document.getElementById('tagRowMore');
+  var btn = document.getElementById('tagMoreBtn');
+  if (row) row.style.display = moreTagsOpen ? 'flex' : 'none';
+  if (btn) {
+    btn.textContent = moreTagsOpen ? '- Less' : '+ More';
+    btn.classList.toggle('is-open', moreTagsOpen);
+  }
+}
 
 // --- Collapsible filters ---
 var filtersOpen = true;
