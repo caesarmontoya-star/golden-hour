@@ -53,55 +53,6 @@
     --orange: #ff7a1f;
   }
 }
-[data-theme="dark"] {
-  --bg: #1a1008;
-  --header-bg: #231508;
-  --surface: #2a1a0e;
-  --border: #3d2510;
-  --border-open: #1a6b35;
-  --accent: #ff7a1f;
-  --accent-light: #ff9a4f;
-  --accent-bg: #2a1a0a;
-  --text: #f5e6d8;
-  --text-2: #c9a882;
-  --text-3: #8a6a50;
-  --green: #34c468;
-  --green-bg: #0d2a1a;
-  --green-border: #1a6b35;
-  --orange: #ff7a1f;
-}
-[data-theme="light"] {
-  --bg: #fff8f0;
-  --header-bg: #ffffff;
-  --surface: #ffffff;
-  --border: #ede0d4;
-  --border-open: #86c99a;
-  --accent: #e8650a;
-  --accent-light: #ff7a1f;
-  --accent-bg: #fff3ec;
-  --text: #1a1008;
-  --text-2: #7a5c44;
-  --text-3: #b8997e;
-  --green: #1a8c45;
-  --green-bg: #edfaf3;
-  --green-border: #86c99a;
-  --orange: #e8650a;
-}
-.dark-toggle {
-  background: none;
-  border: 1.5px solid var(--border);
-  border-radius: 10px;
-  width: 42px;
-  height: 42px;
-  font-size: 18px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  -webkit-tap-highlight-color: transparent;
-  color: var(--text-2);
-}
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -678,7 +629,6 @@ body {
   <span style="font-family:'Nunito',sans-serif;font-size:26px;font-weight:800;letter-spacing:-0.5px;"><span style="color:#8B4513;">Golden</span><span style="color:#ff7a1f;">Hour</span></span>
 </div>  
     <span class="subtitle">NoCo's Happy Hour Guide &middot; 80 spots across 4 cities</span>
-      <button class="dark-toggle" id="darkToggle" onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
   </div>
   <div class="controls">
     <div class="search-wrap">
@@ -2156,23 +2106,6 @@ function initCollapsibleHeader() {
   }, { passive: true });
 }
 
-// --- Dark mode ---
-function initDark() {
-  var saved = storageGet('noco-theme', null);
-  if (saved) {
-    document.documentElement.setAttribute('data-theme', saved);
-    document.getElementById('darkToggle').textContent = saved === 'dark' ? '☀️' : '🌙';
-  }
-}
-
-function toggleDark() {
-  var current = document.documentElement.getAttribute('data-theme');
-  var isDark = current === 'dark';
-  var next = isDark ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', next);
-  storageSet('noco-theme', next);
-  document.getElementById('darkToggle').textContent = next === 'dark' ? '☀️' : '🌙';
-}
 
 // --- Copy specials ---
 function injectCopyButtons() {
@@ -2695,7 +2628,6 @@ function injectShareButtons() {
 }
 // --- Init ---
 function init() {
-  initDark();
   initCollapsibleHeader();
   restoreFilterState();
   applyOpenNowBadges();
