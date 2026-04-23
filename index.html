@@ -33,6 +33,75 @@
   --green-border: #86c99a;
   --orange: #e8650a;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1008;
+    --header-bg: #231508;
+    --surface: #2a1a0e;
+    --border: #3d2510;
+    --border-open: #1a6b35;
+    --accent: #ff7a1f;
+    --accent-light: #ff9a4f;
+    --accent-bg: #2a1a0a;
+    --text: #f5e6d8;
+    --text-2: #c9a882;
+    --text-3: #8a6a50;
+    --green: #34c468;
+    --green-bg: #0d2a1a;
+    --green-border: #1a6b35;
+    --orange: #ff7a1f;
+  }
+}
+[data-theme="dark"] {
+  --bg: #1a1008;
+  --header-bg: #231508;
+  --surface: #2a1a0e;
+  --border: #3d2510;
+  --border-open: #1a6b35;
+  --accent: #ff7a1f;
+  --accent-light: #ff9a4f;
+  --accent-bg: #2a1a0a;
+  --text: #f5e6d8;
+  --text-2: #c9a882;
+  --text-3: #8a6a50;
+  --green: #34c468;
+  --green-bg: #0d2a1a;
+  --green-border: #1a6b35;
+  --orange: #ff7a1f;
+}
+[data-theme="light"] {
+  --bg: #fff8f0;
+  --header-bg: #ffffff;
+  --surface: #ffffff;
+  --border: #ede0d4;
+  --border-open: #86c99a;
+  --accent: #e8650a;
+  --accent-light: #ff7a1f;
+  --accent-bg: #fff3ec;
+  --text: #1a1008;
+  --text-2: #7a5c44;
+  --text-3: #b8997e;
+  --green: #1a8c45;
+  --green-bg: #edfaf3;
+  --green-border: #86c99a;
+  --orange: #e8650a;
+}
+.dark-toggle {
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  color: var(--text-2);
+}
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -548,6 +617,38 @@ body {
   transition: color 0.15s;
 }
 .share-btn:active { color: var(--accent); }
+
+/* Collapsible filters */
+.filter-collapse-btn {
+  display: none;
+  width: 100%;
+  height: 36px;
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-2);
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  margin-top: 8px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  -webkit-tap-highlight-color: transparent;
+}
+.filter-collapse-btn.is-visible { display: flex; }
+.filter-collapse-btn.filters-open { color: var(--accent); border-color: var(--accent); }
+.filters-collapsible {
+  transition: max-height 0.25s ease, opacity 0.2s ease;
+  overflow: hidden;
+  max-height: 400px;
+  opacity: 1;
+}
+.filters-collapsible.is-collapsed {
+  max-height: 0;
+  opacity: 0;
+}
 </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJ43Y9JCTP"></script>
@@ -577,6 +678,7 @@ body {
   <span style="font-family:'Nunito',sans-serif;font-size:26px;font-weight:800;letter-spacing:-0.5px;"><span style="color:#8B4513;">Golden</span><span style="color:#ff7a1f;">Hour</span></span>
 </div>  
     <span class="subtitle">NoCo's Happy Hour Guide &middot; 80 spots across 4 cities</span>
+      <button class="dark-toggle" id="darkToggle" onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
   </div>
   <div class="controls">
     <div class="search-wrap">
@@ -585,6 +687,8 @@ body {
       <button class="search-clear" id="searchClear" onclick="clearSearch()" aria-label="Clear search">&#x2715;</button>
     </div>
   </div>
+  <button class="filter-collapse-btn" id="filterCollapseBtn" onclick="toggleFilters()">⚙️ Filters</button>
+  <div class="filters-collapsible" id="filtersCollapsible">
   <div class="filter-row">
     <select class="ctrl ctrl-select" id="city" onchange="filterCards();saveFilterState()">
       <option value="">All cities</option>
@@ -626,8 +730,11 @@ body {
       <button class="tag-btn" data-tag="late-night"   onclick="toggleTag('late-night')">Late Night</button>
       <button class="tag-btn" data-tag="weekend"      onclick="toggleTag('weekend')">Weekend</button>
       <button class="tag-btn" data-tag="student-deals" onclick="toggleTag('student-deals')">🎓 Student Deals</button>
+      <button class="tag-btn" data-tag="dog-friendly"   onclick="toggleTag('dog-friendly')">🐾 Dog Friendly</button>
+      <button class="tag-btn" data-tag="reverse-happy-hour" onclick="toggleTag('reverse-happy-hour')">🌙 Reverse HH</button>
       <button class="tag-btn" id="btnNew" onclick="toggleNew()">✨ New</button>
     </div>
+  </div>
   </div>
   <div class="count" id="count"></div>
 </div>
@@ -653,7 +760,7 @@ body {
   <div class="hours">Wed-Sun 5-6pm, all night Thu</div>
   <ul class="specials"><li>$5 select beers</li><li>$7 house red or white wine</li><li>$9 featured classic cocktails</li><li>$6 truffle fries, $9 sliders</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="old-town,cheap" data-text="austin&#x27;s american grill old town &amp; harmony fort collins mon-fri 3-6pm $5 well cocktails, $6+ featured cocktails $2 off all draft beer, $5 mocktails, $6 wine $4 beer cheese soup, $2 ribs, $9 chicken street tacos">
+<div class="card" data-city="Fort Collins" data-tags="old-town,cheap,dog-friendly" data-text="austin&#x27;s american grill old town &amp; harmony fort collins mon-fri 3-6pm $5 well cocktails, $6+ featured cocktails $2 off all draft beer, $5 mocktails, $6 wine $4 beer cheese soup, $2 ribs, $9 chicken street tacos">
   <div class="card-top">
     <div class="card-name">Austin&#x27;s American Grill</div>
     <div class="card-right">
@@ -737,7 +844,7 @@ body {
   <div class="hours">Mon-Fri 3-6pm (Tue all day)</div>
   <ul class="specials"><li>$3 off wine, $4 beer/well cocktails</li><li>$5 draft pints, $6 margaritas and sangria swirls</li><li>$7-$11 street tacos, chorizo corn dip, guac</li><li>Tue: 50% off tequila. Wed: 50% off wine bottles</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="old-town,late-night,cheap,student-deals" data-text="brother&#x27;s bar &amp; grill old town fort collins tue 4-10pm, wed 9pm-close tue: $3 cheeseburgers (dine-in only) wed: 25-cent wings (dine-in only)">
+<div class="card" data-city="Fort Collins" data-tags="old-town,late-night,cheap,student-deals,reverse-happy-hour" data-text="brother&#x27;s bar &amp; grill old town fort collins tue 4-10pm, wed 9pm-close tue: $3 cheeseburgers (dine-in only) wed: 25-cent wings (dine-in only)">
   <div class="card-top">
     <div class="card-name">Brother&#x27;s Bar &amp; Grill</div>
     <div class="card-right">
@@ -779,7 +886,7 @@ body {
   <div class="hours">Tue-Sat 2-6pm</div>
   <ul class="specials"><li>$7 wine by glass, $28 featured bottles</li><li>$24 sangria carafes, $6 mimosas/well drinks/drafts</li><li>$4 PBR bottles, food specials $3-$10</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="old-town" data-text="cafe at ginger &amp; baker 359 linden st fort collins tue-sat 2-5pm $5 well drinks and house wines $2 off draft beers">
+<div class="card" data-city="Fort Collins" data-tags="old-town,dog-friendly" data-text="cafe at ginger &amp; baker 359 linden st fort collins tue-sat 2-5pm $5 well drinks and house wines $2 off draft beers">
   <div class="card-top">
     <div class="card-name">Cafe at Ginger &amp; Baker</div>
     <div class="card-right">
@@ -863,7 +970,7 @@ body {
   <div class="hours">Mon/Thu to close, Tue-Fri 3-6pm, Sat-Sun all day</div>
   <ul class="specials"><li>$3-$5 domestic beers</li><li>$5 house wine</li><li>$6 Tequila Trifectas</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="cheap,live-music" data-text="colorado room 642 s college ave fort collins mon-fri 3-6pm $1 off domestics, crafts, cocktails, well drinks $3 bbq pork sammys, $3.50 poutine">
+<div class="card" data-city="Fort Collins" data-tags="cheap,live-music,dog-friendly" data-text="colorado room 642 s college ave fort collins mon-fri 3-6pm $1 off domestics, crafts, cocktails, well drinks $3 bbq pork sammys, $3.50 poutine">
   <div class="card-top">
     <div class="card-name">Colorado Room</div>
     <div class="card-right">
@@ -905,7 +1012,7 @@ body {
   <div class="hours">Mon-Fri 3-6pm</div>
   <ul class="specials"><li>$2 off select pints</li><li>$1 off well drinks</li><li>$5 select appetizers</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="old-town,cheap,student-deals" data-text="corner slice 172 n college ave fort collins mon-fri 2-5pm $2 cheese slices, garlic pretzels, cheesy bread $10 16-inch cheese pizza $3.50 beers, $5 shots/mixed drinks">
+<div class="card" data-city="Fort Collins" data-tags="old-town,cheap,student-deals" data-text="corner slice 172 n college ave fort collins mon-fri 2-5pm $3 cheese slices, garlic pretzels, cheesy bread $10 16-inch cheese pizza $3.50 beers, $5 shots/mixed drinks">
   <div class="card-top">
     <div class="card-name">Corner Slice</div>
     <div class="card-right">
@@ -917,7 +1024,7 @@ body {
   <a class="card-address" href="https://maps.apple.com/?q=Corner%20Slice%20172%20N%20College%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">172 N College Ave &nearr;</a>
   <hr class="divider">
   <div class="hours">Mon-Fri 2-5pm</div>
-  <ul class="specials"><li>$2 cheese slices, garlic pretzels, cheesy bread</li><li>$10 16-inch cheese pizza</li><li>$3.50 beers, $5 shots/mixed drinks</li></ul>
+  <ul class="specials"><li>$3 cheese slices, garlic pretzels, cheesy bread</li><li>$10 16-inch cheese pizza</li><li>$3.50 beers, $5 shots/mixed drinks</li></ul>
 </div>
 <div class="card" data-city="Fort Collins" data-tags="old-town,live-music" data-text="crown pub 134 s college ave fort collins mon-thu 3-6pm $5 draft beer, spirits, wine $7 fries/shishitos, $8 calamari/fish &amp; chips $11 pork sliders">
   <div class="card-top">
@@ -975,7 +1082,7 @@ body {
   <div class="hours">Daily 3-5pm</div>
   <ul class="specials"><li>$8 tapped cocktails, $9 classic cocktails</li><li>$7 select wines, $1 off local drafts</li><li>Small plates $5-$9</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="date-night,food-forward,weekend" data-text="farmhouse at jessup farm 1957 jessup dr fort collins mon/wed-sat 4-6pm, all night tue/sun $7 select wines, $8+ cocktails, $4 draft beer $5 carnitas tacos, $8 duck fat tots $10 truffle parmesan fries">
+<div class="card" data-city="Fort Collins" data-tags="date-night,food-forward,weekend,reverse-happy-hour" data-text="farmhouse at jessup farm 1957 jessup dr fort collins mon/wed-sat 4-6pm, all night tue/sun $7 select wines, $8+ cocktails, $4 draft beer $5 carnitas tacos, $8 duck fat tots $10 truffle parmesan fries">
   <div class="card-top">
     <div class="card-name">Farmhouse at Jessup Farm</div>
     <div class="card-right">
@@ -1003,7 +1110,7 @@ body {
   <div class="hours">Mon-Fri 3-6pm</div>
   <ul class="specials"><li>$5 18oz margaritas</li><li>$4 imported beer, $3 domestic beer</li><li>$2 chips/salsa, $2 select tacos</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="old-town,cheap,late-night,student-deals" data-text="illegal pete&#x27;s 320 walnut st fort collins daily 3-8pm $1 off margaritas and draft beer $4 off party margaritas (serves 4) $1 off chips/queso/guac">
+<div class="card" data-city="Fort Collins" data-tags="old-town,cheap,late-night,student-deals,dog-friendly" data-text="illegal pete&#x27;s 320 walnut st fort collins daily 3-8pm $1 off margaritas and draft beer $4 off party margaritas (serves 4) $1 off chips/queso/guac">
   <div class="card-top">
     <div class="card-name">Illegal Pete&#x27;s</div>
     <div class="card-right">
@@ -1087,7 +1194,7 @@ body {
   <div class="hours">Daily 3-6pm</div>
   <ul class="specials"><li>Deals on Sapporo drafts, lychee-tini, hot sake</li><li>Discounted assorted small plates</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="old-town,patio,cheap,late-night" data-date="2026-04-21" data-text="lucky joe&#x27;s sidewalk saloon 25 old town square fort collins $4.99 burger baskets (mon) $4 guinness pints (tue) irish whiskey wednesdays 5pm-2am $4 all bomb shots (thu 7pm-2am)">
+<div class="card" data-city="Fort Collins" data-tags="old-town,patio,cheap,late-night,dog-friendly,reverse-happy-hour" data-date="2026-04-21" data-text="lucky joe&#x27;s sidewalk saloon 25 old town square fort collins $4.99 burger baskets (mon) $4 guinness pints (tue) irish whiskey wednesdays 5pm-2am $4 all bomb shots (thu 7pm-2am)">
   <div class="card-top">
     <div class="card-name">Lucky Joe&#x27;s Sidewalk Saloon</div>
     <div class="card-right">
@@ -1115,7 +1222,7 @@ body {
   <div class="hours">Daily 3-5pm</div>
   <ul class="specials"><li>$5 off pitcher or bottle of wine, $1 off draft beer and cider</li><li>$2 off N/A cocktails, $1 off N/A beer or bucha</li><li>$5 off large pizzas, $1 off pretzels/falafel bites/mozz sticks</li><li>2 slices and a draft for $12</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="date-night,food-forward,old-town" data-date="2026-04-22" data-text="maida trattoria 100 n college ave fort collins everyday 2-5pm all day tue half off featured wine bottles on wednesdays">
+<div class="card" data-city="Fort Collins" data-tags="date-night,food-forward,old-town" data-date="2026-04-22" data-text="maida trattoria 100 n college ave fort collins daily 2-5pm all day mon all day tue industry specials wed discounted wine bottles $7 happy hour wine $9 margarita aperol spritz limoncello spritz $10 negroni classic cocktails $6 cheesy focaccia $7 bruschetta caesar $8 artichoke dip $10 margherita pizzetta">
   <div class="card-top">
     <div class="card-name">Maida Trattoria</div>
     <div class="card-right">
@@ -1126,10 +1233,10 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Maida%20Trattoria%20100%20N%20College%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">100 N College Ave &nearr;</a>
   <hr class="divider">
-  <div class="hours">Daily 2-5pm, all day Tue</div>
-  <ul class="specials"><li>Half off featured wine bottles on Wednesdays</li></ul>
+  <div class="hours">Daily 2-5pm, all day Mon, Tue industry specials, Wed discounted wine bottles</div>
+  <ul class="specials"><li>$7 happy hour wine (sparkling, white, rose, or red)</li><li>$9 margarita, aperol spritz, limoncello spritz, $10 negroni and classic cocktails</li><li>$6 cheesy focaccia, $7 bruschetta/caesar, $8 artichoke dip, $10 margherita pizzetta</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="cheap,patio" data-text="mas fuegos 2350 e harmony rd fort collins mon-fri 3-6pm all day tue $7.95 house margaritas and micheladas $1 off all other margaritas wine draft beers half-price tequila $12+ and tequila flights $1 off a la carte tacos and tostadas sope $5.50 chicken taquitos guac tinga chips $5.75 queso $6.75 carne asada fries $12.75">
+<div class="card" data-city="Fort Collins" data-tags="cheap,patio,dog-friendly" data-text="mas fuegos 2350 e harmony rd fort collins mon-fri 3-6pm all day tue $7.95 house margaritas and micheladas $1 off all other margaritas wine draft beers half-price tequila $12+ and tequila flights $1 off a la carte tacos and tostadas sope $5.50 chicken taquitos guac tinga chips $5.75 queso $6.75 carne asada fries $12.75">
   <div class="card-top">
     <div class="card-name">Mas Fuegos</div>
     <div class="card-right">
@@ -1157,7 +1264,7 @@ body {
   <div class="hours">Mon-Thu 3-7pm, Fri-Sat 3-7pm (bar only), Sun all day</div>
   <ul class="specials"><li>Draft beers $5-$6, house wine $6, well drinks $6.50, hot sake $8</li><li>Kitchen apps $4-$9: edamame, gyoza, yakitori, calamari, shrimp tempura</li><li>Sushi rolls $5.50-$12: Alaskan, spicy salmon/tuna, California and specialty rolls</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="cheap,weekend,patio,live-music" data-text="maya cove 2100 w drake rd fort collins daily 3-6pm (fri: free buffet 3-6pm) $7 margaritas, $5 mezcal margs, $6 hurricanes $4 draft beer, $3.75 coors light $3 ribs, $8 pulled pork/burger baskets, $8 crispy chicken tacos">
+<div class="card" data-city="Fort Collins" data-tags="cheap,weekend,patio,live-music,dog-friendly" data-text="maya cove 2100 w drake rd fort collins daily 3-6pm (fri: free buffet 3-6pm) $7 margaritas, $5 mezcal margs, $6 hurricanes $4 draft beer, $3.75 coors light $3 ribs, $8 pulled pork/burger baskets, $8 crispy chicken tacos">
   <div class="card-top">
     <div class="card-name">Maya Cove</div>
     <div class="card-right">
@@ -1255,6 +1362,20 @@ body {
   <div class="hours">Daily 3-7pm</div>
   <ul class="specials"><li>$1 off all house cocktails</li></ul>
 </div>
+<div class="card" data-city="Fort Collins" data-tags="cheap,food-forward" data-date="2026-04-22" data-text="music city hot chicken north 1820 n college ave fort collins daily 3-7pm $1 off seasonal and specialty cocktails $1.50 labatt blue during happy hour and game days">
+  <div class="card-top">
+    <div class="card-name">Music City Hot Chicken North</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-fc">Fort Collins</span>
+      <button class="fav-btn" data-name="Music City Hot Chicken North" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Music%20City%20Hot%20Chicken%201820%20N%20College%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">1820 N College Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-7pm</div>
+  <ul class="specials"><li>$1 off seasonal and specialty cocktails</li><li>$1.50 Labatt Blue during happy hour and Avalanche, Nuggets, and Broncos games</li></ul>
+</div>
 <div class="card" data-city="Fort Collins" data-tags="cheap,weekend" data-text="nick&#x27;s restaurant &amp; bar 1100 s college ave fort collins daily 4-6pm $2.75 old aggies, $3 bud lights $6 house wine, $5.50 well drinks, $7 frozen cocktails $3 pizza slices/meatball sliders, $6 chicken parm hoagies">
   <div class="card-top">
     <div class="card-name">Nick&#x27;s Restaurant &amp; Bar</div>
@@ -1339,7 +1460,7 @@ body {
   <div class="hours">Mon-Fri 3-6pm</div>
   <ul class="specials"><li>$2 off margaritas</li><li>$3 drafts/cans, $5 wine</li><li>$7 quesadilla, $4-$7 queso, tacos $1 off</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="cheap,weekend,student-deals" data-text="road 34 1213 w elizabeth st fort collins tue-sat 4-7pm, all day sun $2 coors/coors light/old aggie 50 cents off other drafts and appetizers">
+<div class="card" data-city="Fort Collins" data-tags="cheap,weekend,student-deals,dog-friendly,reverse-happy-hour" data-text="road 34 1213 w elizabeth st fort collins tue-sat 4-7pm, all day sun $2 coors/coors light/old aggie 50 cents off other drafts and appetizers">
   <div class="card-top">
     <div class="card-name">Road 34</div>
     <div class="card-right">
@@ -1381,7 +1502,7 @@ body {
   <div class="hours">Mon-Fri 3-6pm</div>
   <ul class="specials"><li>$1 off beers on tap</li><li>$6 margaritas/whiskey sours/gin tonics/old fashioneds</li><li>$7 brisket chili frito pies, $10 brisket egg rolls</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="old-town,date-night,live-music" data-text="social 1 old town square fort collins sun-thu 4-6pm, all night tue $7.75-$9.75 cocktails, $7 wine, $6 ayinger pils $5.25 olives, $6.50 deviled eggs, $11.50 charcuterie board">
+<div class="card" data-city="Fort Collins" data-tags="old-town,date-night,live-music,reverse-happy-hour" data-text="social 1 old town square fort collins sun-thu 4-6pm, all night tue $7.75-$9.75 cocktails, $7 wine, $6 ayinger pils $5.25 olives, $6.50 deviled eggs, $11.50 charcuterie board">
   <div class="card-top">
     <div class="card-name">Social</div>
     <div class="card-right">
@@ -1423,7 +1544,7 @@ body {
   <div class="hours">Tue-Sat 4-6pm</div>
   <ul class="specials"><li>$5 dirty martinis and draft beer</li><li>$10 Old Fashioneds and wine</li><li>Happy hour appetizers</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="old-town,cheap,student-deals" data-text="tap and handle 307 s college ave fort collins mon-fri 3-5pm, late night specials $2 off featured beers $9 lager and a shot 75-cent wings (min 6) $8 hot pretzels/tender baskets, $5 cheese curds">
+<div class="card" data-city="Fort Collins" data-tags="old-town,cheap,student-deals,reverse-happy-hour" data-text="tap and handle 307 s college ave fort collins mon-fri 3-5pm all day wed late night specials $2 off featured beers $9 lager and a shot 75-cent wings (min 6) $8 hot pretzels/tender baskets, $5 cheese curds">
   <div class="card-top">
     <div class="card-name">Tap and Handle</div>
     <div class="card-right">
@@ -1434,7 +1555,7 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Tap%20and%20Handle%20307%20S%20College%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">307 S College Ave &nearr;</a>
   <hr class="divider">
-  <div class="hours">Mon-Fri 3-5pm, late night specials</div>
+  <div class="hours">Mon-Fri 3-5pm, all day Wed, late night specials</div>
   <ul class="specials"><li>$2 off featured beers</li><li>$9 lager and a shot</li><li>75-cent wings (min 6)</li><li>$8 hot pretzels/tender baskets, $5 cheese curds</li></ul>
 </div>
 <div class="card" data-city="Fort Collins" data-tags="old-town,cheap,late-night,student-deals" data-text="tony&#x27;s bar 224 s college ave fort collins mon-fri 10:30am-7pm, sat-sun 9:30am-7pm $3 budweiser/bud light $3.75 well mixed drinks $2.50 fireball/jager/jim beam shots">
@@ -1479,7 +1600,7 @@ body {
   <div class="hours">Mon-Fri 3-6pm</div>
   <ul class="specials"><li>$4.75 craft beers/well drinks</li><li>$4 Fat Tires</li><li>$3.75 Coors drafts</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="old-town,cheap,weekend,student-deals" data-text="trailhead tavern 148 w mountain ave fort collins tue-sun noon-7pm, all day mon $3.50 craft beers/well drinks $2.50 domestic drafts $4 jameson/$4 hornitos shots">
+<div class="card" data-city="Fort Collins" data-tags="old-town,cheap,weekend,student-deals,reverse-happy-hour" data-text="trailhead tavern 148 w mountain ave fort collins tue-sun noon-7pm, all day mon $3.50 craft beers/well drinks $2.50 domestic drafts $4 jameson/$4 hornitos shots">
   <div class="card-top">
     <div class="card-name">Trailhead Tavern</div>
     <div class="card-right">
@@ -1563,7 +1684,7 @@ body {
   <div class="hours">Mon-Fri 3-6pm, all night Mon</div>
   <ul class="specials"><li>Craft cocktails, beer, and wine specials</li><li>Elevated pub fare at happy hour prices</li></ul>
 </div>
-<div class="card" data-city="Windsor" data-tags="cheap,food-forward" data-date="2026-04-22" data-text="mash lab 4487 highland meadows pkwy windsor mon-fri 3-5pm mon-thu 8-9pm fri 9-10pm $5 house wine $5 old fashioned $7 strawberry cucumber limeade bourbon smash pomegranate margarita ranch water $4 pretzel bites $5 chips queso salsa $6 fried green beans skillet fries">
+<div class="card" data-city="Windsor" data-tags="cheap,food-forward,dog-friendly,reverse-happy-hour" data-date="2026-04-22" data-text="mash lab 4487 highland meadows pkwy windsor mon-fri 3-5pm mon-thu 8-9pm fri 9-10pm $5 house wine $5 old fashioned $7 strawberry cucumber limeade bourbon smash pomegranate margarita ranch water $4 pretzel bites $5 chips queso salsa $6 fried green beans skillet fries">
   <div class="card-top">
     <div class="card-name">Mash Lab</div>
     <div class="card-right">
@@ -1745,7 +1866,7 @@ body {
   <div class="hours">Daily 2:30-6pm</div>
   <ul class="specials"><li>$5 domestic drafts, $6 local drafts (Tightknit/WeldWerks)</li><li>$9 cocktails (Pearl of the Plains, Cherry Picked Old Fashioned)</li><li>$7 wine by the glass</li></ul>
 </div>
-<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="live-music,cheap,late-night" data-text="patrick's irish pub 909 8th ave greeley mon-thu 4-5pm half off all drinks tue all day $2 off beer cheese fries, $2 off liters fri $1 off all ipas 3pm-midnight late night mon-thu 10pm-midnight $1 off wells and drafts">
+<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="live-music,cheap,late-night,reverse-happy-hour" data-text="patrick's irish pub 909 8th ave greeley mon-thu 4-5pm half off all drinks tue all day $2 off beer cheese fries, $2 off liters fri $1 off all ipas 3pm-midnight late night mon-thu 10pm-midnight $1 off wells and drafts">
   <div class="card-top">
     <div class="card-name">Patrick&#x27;s Irish Pub</div>
     <div class="card-right">
@@ -1756,8 +1877,8 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Patrick%27s%20Irish%20Pub%20909%208th%20Ave%20Greeley%20CO" target="_blank" rel="noopener">909 8th Ave &nearr;</a>
   <hr class="divider">
-  <div class="hours">Mon-Thu 4-5pm, late night Mon-Thu 10pm-midnight</div>
-  <ul class="specials"><li>Half off all drinks (Mon-Thu 4-5pm)</li><li>Tue all day: $2 off beer cheese fries, $2 off liters</li><li>Fri 3pm-midnight: $1 off all IPAs</li><li>Late night Mon-Thu 10pm-midnight: $1 off wells and drafts</li></ul>
+  <div class="hours">Mon-Thu 4-5pm, Mon service industry night 5pm-2am, late night Mon-Thu 10pm-midnight</div>
+  <ul class="specials"><li>Half off all drinks Mon-Thu 4-5pm</li><li>Mon service industry night 5pm-2am: half off all drinks</li><li>Tue all day: $2 off beer cheese fries, $2 off liters</li><li>Wed/Thu 9pm-midnight: $4 wells/drafts/ciders</li><li>Fri 3pm-midnight: $1 off all IPAs</li><li>Late night Mon-Thu 10pm-midnight: $1 off wells and drafts</li></ul>
 </div>
 <div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="cheap" data-text="rio grande 825 9th st greeley mon-fri 3-5pm $2 off margaritas $1 off tacos">
   <div class="card-top">
@@ -1801,7 +1922,7 @@ body {
   <div class="hours">Daily 3-5pm (bar only)</div>
   <ul class="specials"><li>$5 house wines, $5 local drafts, $5 well drinks</li><li>$6 cocktails: margaritas, cosmos, old fashioneds, rum smashes</li><li>$7 apps: potato skins, tavern sliders, beef street tacos, buffalo wings, shrimp ceviche tostadas</li></ul>
 </div>
-<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="cheap,late-night,sports-bar" data-text="wyler's pub & grill 2385 w 27th st greeley mon-thu 3-6pm $3 shots fireball/ole smokey peanut butter, $2 drafts 12oz, $1 off wells late night mon-thu 10pm-midnight $1 off wells and drafts">
+<div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="cheap,late-night,sports-bar,reverse-happy-hour" data-text="wyler's pub & grill 2385 w 27th st greeley mon-thu 3-6pm $3 shots fireball/ole smokey peanut butter, $2 drafts 12oz, $1 off wells late night mon-thu 10pm-midnight $1 off wells and drafts">
   <div class="card-top">
     <div class="card-name">Wyler&#x27;s Pub &amp; Grill</div>
     <div class="card-right">
@@ -1990,6 +2111,68 @@ function injectRecentTracking() {
   }
 }
 
+
+
+
+// --- Collapsible filters ---
+var filtersOpen = true;
+var hasScrolled = false;
+
+function toggleFilters() {
+  filtersOpen = !filtersOpen;
+  var el = document.getElementById('filtersCollapsible');
+  var btn = document.getElementById('filterCollapseBtn');
+  if (el) el.classList.toggle('is-collapsed', !filtersOpen);
+  if (btn) {
+    btn.classList.toggle('filters-open', filtersOpen);
+    btn.textContent = filtersOpen ? '⚙️ Hide Filters' : '⚙️ Filters';
+  }
+}
+
+function initCollapsibleHeader() {
+  window.addEventListener('scroll', function() {
+    if (!hasScrolled && window.scrollY > 60) {
+      hasScrolled = true;
+      filtersOpen = false;
+      var el = document.getElementById('filtersCollapsible');
+      var btn = document.getElementById('filterCollapseBtn');
+      if (el) el.classList.add('is-collapsed');
+      if (btn) {
+        btn.classList.add('is-visible');
+        btn.textContent = '⚙️ Filters';
+      }
+    }
+    if (window.scrollY <= 10 && !filtersOpen) {
+      hasScrolled = false;
+      filtersOpen = true;
+      var el = document.getElementById('filtersCollapsible');
+      var btn = document.getElementById('filterCollapseBtn');
+      if (el) el.classList.remove('is-collapsed');
+      if (btn) {
+        btn.classList.remove('is-visible');
+        btn.classList.add('filters-open');
+      }
+    }
+  }, { passive: true });
+}
+
+// --- Dark mode ---
+function initDark() {
+  var saved = storageGet('noco-theme', null);
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+    document.getElementById('darkToggle').textContent = saved === 'dark' ? '☀️' : '🌙';
+  }
+}
+
+function toggleDark() {
+  var current = document.documentElement.getAttribute('data-theme');
+  var isDark = current === 'dark';
+  var next = isDark ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  storageSet('noco-theme', next);
+  document.getElementById('darkToggle').textContent = next === 'dark' ? '☀️' : '🌙';
+}
 
 // --- Copy specials ---
 function injectCopyButtons() {
@@ -2512,6 +2695,8 @@ function injectShareButtons() {
 }
 // --- Init ---
 function init() {
+  initDark();
+  initCollapsibleHeader();
   restoreFilterState();
   applyOpenNowBadges();
   applyNewBadges();

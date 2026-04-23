@@ -220,7 +220,7 @@
     "Hours": "Mon-Fri 2-5pm",
     "Status": "Active",
     "specials": [
-      "$2 cheese slices, garlic pretzels, cheesy bread",
+      "$3 cheese slices, garlic pretzels, cheesy bread",
       "$10 16-inch cheese pizza",
       "$3.50 beers, $5 shots/mixed drinks"
     ]
@@ -384,10 +384,12 @@
     "Name": "Maida Trattoria",
     "City": "Fort Collins",
     "Address": "100 N College Ave",
-    "Hours": "Daily 2-5pm, all day Tue",
+    "Hours": "Daily 2-5pm, all day Mon, Tue industry specials, Wed discounted wine bottles",
     "Status": "Active",
     "specials": [
-      "Half off featured wine bottles on Wednesdays"
+      "$7 happy hour wine (sparkling, white, rose, or red)",
+      "$9 margarita, aperol spritz, limoncello spritz, $10 negroni and classic cocktails",
+      "$6 cheesy focaccia, $7 bruschetta/caesar, $8 artichoke dip, $10 margherita pizzetta"
     ]
   },
   {
@@ -480,6 +482,17 @@
     "Status": "Active",
     "specials": [
       "$1 off all house cocktails"
+    ]
+  },
+  {
+    "Name": "Music City Hot Chicken North",
+    "City": "Fort Collins",
+    "Address": "1820 N College Ave",
+    "Hours": "Daily 3-7pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off seasonal and specialty cocktails",
+      "$1.50 Labatt Blue during happy hour and Avalanche, Nuggets, and Broncos games"
     ]
   },
   {
@@ -626,7 +639,7 @@
     "Name": "Tap and Handle",
     "City": "Fort Collins",
     "Address": "307 S College Ave",
-    "Hours": "Mon-Fri 3-5pm, late night specials",
+    "Hours": "Mon-Fri 3-5pm, all day Wed, late night specials",
     "Status": "Active",
     "specials": [
       "$2 off featured beers",
@@ -927,11 +940,13 @@
     "Name": "Patrick's Irish Pub",
     "City": "Greeley",
     "Address": "909 8th Ave",
-    "Hours": "Mon-Thu 4-5pm, late night Mon-Thu 10pm-midnight",
+    "Hours": "Mon-Thu 4-5pm, Mon service industry night 5pm-2am, late night Mon-Thu 10pm-midnight",
     "Status": "Active",
     "specials": [
-      "Half off all drinks (Mon-Thu 4-5pm)",
+      "Half off all drinks Mon-Thu 4-5pm",
+      "Mon service industry night 5pm-2am: half off all drinks",
       "Tue all day: $2 off beer cheese fries, $2 off liters",
+      "Wed/Thu 9pm-midnight: $4 wells/drafts/ciders",
       "Fri 3pm-midnight: $1 off all IPAs",
       "Late night Mon-Thu 10pm-midnight: $1 off wells and drafts"
     ],
