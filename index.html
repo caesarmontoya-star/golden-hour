@@ -197,6 +197,14 @@ body {
 .badge-wellington  { background: #f3e8ff; color: #7e22ce; }
 .open-badge     { background: var(--green-bg); color: var(--green); font-size: 10px; font-weight: 700; border: 1px solid var(--green-border); }
 .new-badge      { background: #fef9c3; color: #854d0e; font-size: 10px; font-weight: 700; border: 1px solid #fde047; }
+@media (prefers-color-scheme: dark) {
+  .badge-fc       { background: #1a2a4a; color: #7aaaff; }
+  .badge-windsor  { background: #0d2a1a; color: #4dcc80; }
+  .badge-loveland { background: #2a1a08; color: #ffaa55; }
+  .badge-greeley  { background: #2a0d0d; color: #ff7a7a; }
+  .badge-wellington { background: #1e0d2a; color: #cc88ff; }
+  .new-badge      { background: #2a2200; color: #ffd700; border-color: #665500; }
+}
 .fav-btn {
   background: none;
   border: none;
@@ -219,7 +227,7 @@ body {
 .divider { border: none; border-top: 1px solid #f0e8e0; margin: 8px 0; }
 .hours { font-size: 12px; color: var(--text-2); margin-bottom: 7px; font-weight: 500; }
 .specials { list-style: none; }
-.specials li { font-size: 13px; color: #3d2a1a; padding: 2px 0 2px 14px; line-height: 1.55; position: relative; }
+.specials li { font-size: 13px; color: var(--text); padding: 2px 0 2px 14px; line-height: 1.55; position: relative; opacity: 0.85; }
 .specials li::before { content: ""; position: absolute; left: 2px; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent-light); opacity: 0.6; }
 .no-results { text-align: center; padding: 48px 16px; color: var(--text-3); font-size: 15px; }
 
@@ -1642,6 +1650,146 @@ body {
   <div class="hours">Mon-Fri 3-6pm</div>
   <ul class="specials"><li>$3 off Tiki and house cocktails, $2 off 16oz drafts, $2 off wine by the glass</li><li>Sliders: $4 sloppy joe, $5 burger/chicken salad/crispy buffalo chicken/BBQ pork, $7 crab cake, $10 lobster</li><li>Apps: $7 chips/queso, chips/guac, cheese curds, bacon wrapped dates, fried pickles</li></ul>
 </div>
+<div class="card" data-city="Fort Collins" data-tags="new,cheap,old-town,late-night" data-date="2026-04-23" data-text="high point bar 146 n college ave fort collins mon-fri 3-5pm late night mon-thu 8-9pm fri 9-10pm $5 drafts $5 house wine $5 old fashioned $7 cocktails $4 deviled eggs $5 pretzel bites $5 chips queso salsa">
+  <div class="card-top">
+    <div class="card-name">High Point Bar</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-fc">Fort Collins</span>
+      <button class="fav-btn" data-name="High Point Bar" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=High%20Point%20Bar%20146%20N%20College%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">146 N College Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-5pm, late night Mon-Thu 8-9pm, Fri 9-10pm</div>
+  <ul class="specials"><li>$5 drafts, $5 house wine, $5 Old Fashioned, $7 cocktails</li><li>$4 deviled eggs, $5 pretzel bites, $5 chips/queso/salsa</li></ul>
+</div>
+<div class="card" data-city="Fort Collins" data-tags="new,cheap,food-forward,old-town" data-date="2026-04-23" data-text="vatos tacos tequila 234 n college ave fort collins daily 3-6pm all day tue $5 house margaritas $1 off drafts $4 tecate $3 street tacos taco tuesday all day">
+  <div class="card-top">
+    <div class="card-name">Vatos Tacos &amp; Tequila</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-fc">Fort Collins</span>
+      <button class="fav-btn" data-name="Vatos Tacos &amp; Tequila Fort Collins" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Vatos%20Tacos%20%26%20Tequila%20234%20N%20College%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">234 N College Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-6pm, all day Tue</div>
+  <ul class="specials"><li>$5 house margaritas, $1 off drafts, $4 Tecate</li><li>$3 street tacos</li><li>Tue: Taco Tuesday all day - $2 off margs/beers, discounted taco trios</li></ul>
+</div>
+<div class="card" data-city="Fort Collins" data-tags="new,cheap,food-forward" data-date="2026-04-23" data-text="stuft burger bar 210 s college ave fort collins mon-fri 3-6pm $2 off house spirits $4 well drinks $5 house wine $1 off drafts $5-7 jalapeno bites cheese curds brussels sprouts">
+  <div class="card-top">
+    <div class="card-name">Stuft Burger Bar</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-fc">Fort Collins</span>
+      <button class="fav-btn" data-name="Stuft Burger Bar" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Stuft%20Burger%20Bar%20210%20S%20College%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">210 S College Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm</div>
+  <ul class="specials"><li>$2 off house spirits, $4 well drinks, $5 house wine, $1 off drafts</li><li>$5-$7 small bites: jalapeno bites, cheese curds, Brussels sprouts</li></ul>
+</div>
+<div class="card" data-city="Fort Collins" data-tags="new,date-night,food-forward,old-town" data-date="2026-04-23" data-text="the still whiskey steaks 151 n college ave fort collins mon-fri 3-6pm $5 drafts $6 well drinks $7 featured whiskey $6-10 steak tips cornbread small plates">
+  <div class="card-top">
+    <div class="card-name">The Still Whiskey Steaks</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-fc">Fort Collins</span>
+      <button class="fav-btn" data-name="The Still Whiskey Steaks" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=The%20Still%20Whiskey%20Steaks%20151%20N%20College%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">151 N College Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm</div>
+  <ul class="specials"><li>$5 drafts, $6 well drinks, $7 featured whiskey</li><li>$6-$10 small plates: steak tips, cornbread</li></ul>
+</div>
+<div class="card" data-city="Fort Collins" data-tags="new,date-night,old-town" data-date="2026-04-23" data-text="the whiskey at tonys 224 s college ave fort collins daily 4-7pm $1 off most drinks rotating daily whiskey flight specials">
+  <div class="card-top">
+    <div class="card-name">The Whiskey @ Tony&#x27;s</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-fc">Fort Collins</span>
+      <button class="fav-btn" data-name="The Whiskey @ Tony's" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=The%20Whiskey%20224%20S%20College%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">224 S College Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 4-7pm</div>
+  <ul class="specials"><li>$1 off most drinks</li><li>Rotating daily whiskey flight specials</li></ul>
+</div>
+<div class="card" data-city="Fort Collins" data-tags="new,food-forward,date-night" data-date="2026-04-23" data-text="indigo modern indian cuisine bar 144 n mason st fort collins daily 3-6pm $4 beers $5 house wine $8 select cocktails $5-8 momos samosas chilli gobi small plates">
+  <div class="card-top">
+    <div class="card-name">Indigo</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-fc">Fort Collins</span>
+      <button class="fav-btn" data-name="Indigo" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Indigo%20144%20N%20Mason%20St%20Fort%20Collins%20CO" target="_blank" rel="noopener">144 N Mason St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-6pm</div>
+  <ul class="specials"><li>$4 beers, $5 house wine, $8 select cocktails</li><li>$5-$8 small plates: momos, samosas, chilli gobi</li></ul>
+</div>
+<div class="card" data-city="Fort Collins" data-tags="new,cheap,food-forward,old-town" data-date="2026-04-23" data-text="madre cocina y lounge 214 linden st fort collins tue-fri 3-6pm $6 margaritas $5 palomas $1 off beer wine $3-5 tacos street snacks">
+  <div class="card-top">
+    <div class="card-name">Madre Cocina y Lounge</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-fc">Fort Collins</span>
+      <button class="fav-btn" data-name="Madre Cocina y Lounge" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Madre%20Cocina%20214%20Linden%20St%20Fort%20Collins%20CO" target="_blank" rel="noopener">214 Linden St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Tue-Fri 3-6pm</div>
+  <ul class="specials"><li>$6 margaritas, $5 palomas, $1 off beer/wine</li><li>$3-$5 tacos and street-style snacks</li></ul>
+</div>
+<div class="card" data-city="Fort Collins" data-tags="new,cheap,old-town" data-date="2026-04-23" data-text="the mayor of old town 632 s mason st fort collins mon-fri 3-5pm $1 off all 100+ draft taps $2 off pretzels fries">
+  <div class="card-top">
+    <div class="card-name">The Mayor of Old Town</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-fc">Fort Collins</span>
+      <button class="fav-btn" data-name="The Mayor of Old Town" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=The%20Mayor%20of%20Old%20Town%20632%20S%20Mason%20St%20Fort%20Collins%20CO" target="_blank" rel="noopener">632 S Mason St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-5pm</div>
+  <ul class="specials"><li>$1 off all 100+ draft taps</li><li>$2 off pretzels and fries</li></ul>
+</div>
+<div class="card" data-city="Fort Collins" data-tags="new,date-night,food-forward" data-date="2026-04-23" data-text="sugar beet saloon 1921 jessup dr fort collins daily 4-6pm $2 off cocktails and draft beer rotating seasonal small plates farm to table">
+  <div class="card-top">
+    <div class="card-name">Sugar Beet Saloon</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-fc">Fort Collins</span>
+      <button class="fav-btn" data-name="Sugar Beet Saloon" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Sugar%20Beet%20Saloon%201921%20Jessup%20Dr%20Fort%20Collins%20CO" target="_blank" rel="noopener">1921 Jessup Dr &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 4-6pm</div>
+  <ul class="specials"><li>$2 off cocktails and draft beer</li><li>Rotating seasonal small plates</li></ul>
+</div>
+<div class="card" data-city="Fort Collins" data-tags="new,cheap,food-forward,weekend" data-date="2026-04-23" data-text="la luz mexican grill 140 e boardwalk dr fort collins daily 3-6pm mon wed bogo 50% off margaritas tue thu $4 micro drafts all day tue $3.50 taco special">
+  <div class="card-top">
+    <div class="card-name">La Luz Mexican Grill</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-fc">Fort Collins</span>
+      <button class="fav-btn" data-name="La Luz Mexican Grill" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=La%20Luz%20Mexican%20Grill%20140%20E%20Boardwalk%20Dr%20Fort%20Collins%20CO" target="_blank" rel="noopener">140 E Boardwalk Dr &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-6pm</div>
+  <ul class="specials"><li>Mon/Wed: BOGO 50% off margaritas</li><li>Tue/Thu: $4 micro drafts all day</li><li>Tue: $3.50 taco special all day</li></ul>
+</div>
 <div class="card" data-city="Windsor" data-tags="date-night" data-text="hearth restaurant &amp; pub 205 1/2 4th st windsor mon-fri 3-6pm, all night mon craft cocktails, beer, and wine specials elevated pub fare at happy hour prices">
   <div class="card-top">
     <div class="card-name">Hearth Restaurant &amp; Pub</div>
@@ -1698,6 +1846,48 @@ body {
   <div class="hours">Sun-Thu 3-5pm and 9-10pm</div>
   <ul class="specials"><li>Mill Old Fashioned</li><li>Strawberry Mule</li><li>Discounted appetizers</li></ul>
 </div>
+<div class="card" data-city="Windsor" data-tags="new,cheap" data-date="2026-04-23" data-text="ridgehill tavern 455 apex dr windsor daily 3-6pm $5 wine wells $1 off beer $5-8 tavern snacks neighborhood bar">
+  <div class="card-top">
+    <div class="card-name">Ridgehill Tavern</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-windsor">Windsor</span>
+      <button class="fav-btn" data-name="Ridgehill Tavern" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Ridgehill%20Tavern%20455%20Apex%20Dr%20Windsor%20CO" target="_blank" rel="noopener">455 Apex Dr &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-6pm</div>
+  <ul class="specials"><li>$5 wine/wells, $1 off beer</li><li>$5-$8 tavern snacks</li></ul>
+</div>
+<div class="card" data-city="Windsor" data-tags="new,cheap" data-date="2026-04-23" data-text="twin staves 201 4th st windsor mon-fri 4-6pm $2 off house spirits local distillery taproom">
+  <div class="card-top">
+    <div class="card-name">Twin Staves</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-windsor">Windsor</span>
+      <button class="fav-btn" data-name="Twin Staves" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Twin%20Staves%20201%204th%20St%20Windsor%20CO" target="_blank" rel="noopener">201 4th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 4-6pm</div>
+  <ul class="specials"><li>$2 off house spirits</li></ul>
+</div>
+<div class="card" data-city="Windsor" data-tags="new,cheap,sports-bar" data-date="2026-04-23" data-text="the goat sports bar 6567 crossroads blvd windsor daily 3-6pm and 8-9pm $1 off wells $4 domestic drafts $2 off select starters late night specials">
+  <div class="card-top">
+    <div class="card-name">The Goat Sports Bar</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-windsor">Windsor</span>
+      <button class="fav-btn" data-name="The Goat Sports Bar" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=The%20Goat%20Sports%20Bar%206567%20Crossroads%20Blvd%20Windsor%20CO" target="_blank" rel="noopener">6567 Crossroads Blvd &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-6pm and 8-9pm</div>
+  <ul class="specials"><li>$1 off wells, $4 domestic drafts</li><li>$2 off select starters</li></ul>
+</div>
 <div class="card" data-city="Loveland" data-tags="new,food-forward" data-date="2026-04-23" data-text="nordy's bbq and grill 4360 st cloud dr loveland wed-fri 3-6pm bar side only $4 domestic pints $5 micro craft pints $5 wells house wines house margaritas $6 hillbilly nachos $5 cheddar fries $6 smokin skins $7 sausage basket $5 texas toothpicks $7 cheese curds $7 for 5 wings">
   <div class="card-top">
     <div class="card-name">Nordy's BBQ &amp; Grill</div>
@@ -1753,6 +1943,132 @@ body {
   <hr class="divider">
   <div class="hours">Daily 3-5pm</div>
   <ul class="specials"><li>$2 off wine by the glass</li><li>$2 off charcuterie boards</li></ul>
+</div>
+<div class="card" data-city="Loveland" data-tags="new,cheap,food-forward" data-date="2026-04-23" data-text="vatos tacos tequila 270 n cleveland ave loveland mon-fri 3-6pm $2 off vato macho margaritas $2 off all beers street tacos">
+  <div class="card-top">
+    <div class="card-name">Vatos Tacos &amp; Tequila</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-loveland">Loveland</span>
+      <button class="fav-btn" data-name="Vatos Tacos &amp; Tequila Loveland" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Vatos%20Tacos%20%26%20Tequila%20270%20N%20Cleveland%20Ave%20Loveland%20CO" target="_blank" rel="noopener">270 N Cleveland Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm</div>
+  <ul class="specials"><li>$2 off Vato &amp; Macho margaritas</li><li>$2 off all beers</li></ul>
+</div>
+<div class="card" data-city="Loveland" data-tags="new,cheap" data-date="2026-04-23" data-text="loveland tap tavern 237 e 4th st loveland tue-fri 3-7pm $1 off pints $5 wells $5-9 pub burgers snacks">
+  <div class="card-top">
+    <div class="card-name">Loveland Tap &amp; Tavern</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-loveland">Loveland</span>
+      <button class="fav-btn" data-name="Loveland Tap &amp; Tavern" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Loveland%20Tap%20%26%20Tavern%20237%20E%204th%20St%20Loveland%20CO" target="_blank" rel="noopener">237 E 4th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Tue-Fri 3-7pm</div>
+  <ul class="specials"><li>$1 off pints, $5 well drinks</li><li>$5-$9 pub burgers and snacks</li></ul>
+</div>
+<div class="card" data-city="Loveland" data-tags="new,date-night,food-forward" data-date="2026-04-23" data-text="loveland chophouse 125 e 4th st loveland daily 4-6pm $2 off cocktails wine half off appetizers oysters calamari tartare">
+  <div class="card-top">
+    <div class="card-name">Loveland Chophouse</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-loveland">Loveland</span>
+      <button class="fav-btn" data-name="Loveland Chophouse" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Loveland%20Chophouse%20125%20E%204th%20St%20Loveland%20CO" target="_blank" rel="noopener">125 E 4th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 4-6pm</div>
+  <ul class="specials"><li>$2 off cocktails and wine</li><li>Half off appetizers: oysters, calamari, tartare</li></ul>
+</div>
+<div class="card" data-city="Loveland" data-tags="new,cheap" data-date="2026-04-23" data-text="wicked tequila room 123 e 4th st loveland mon-fri 4-6pm $5 wicked margaritas $1 off wells premium tequila focus">
+  <div class="card-top">
+    <div class="card-name">Wicked Tequila Room</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-loveland">Loveland</span>
+      <button class="fav-btn" data-name="Wicked Tequila Room" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Wicked%20Tequila%20Room%20123%20E%204th%20St%20Loveland%20CO" target="_blank" rel="noopener">123 E 4th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 4-6pm</div>
+  <ul class="specials"><li>$5 Wicked margaritas, $1 off wells</li></ul>
+</div>
+<div class="card" data-city="Loveland" data-tags="new,cheap" data-date="2026-04-23" data-text="east end ale house 422 e 4th st loveland daily 3-6pm $1 off beer wells $2 off bbq items free pool mon wed fri 10am-3pm">
+  <div class="card-top">
+    <div class="card-name">East End Ale House</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-loveland">Loveland</span>
+      <button class="fav-btn" data-name="East End Ale House" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=East%20End%20Ale%20House%20422%20E%204th%20St%20Loveland%20CO" target="_blank" rel="noopener">422 E 4th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-6pm</div>
+  <ul class="specials"><li>$1 off beer/wells, $2 off BBQ items</li><li>Free pool Mon/Wed/Fri 10am-3pm</li></ul>
+</div>
+<div class="card" data-city="Loveland" data-tags="new,cheap" data-date="2026-04-23" data-text="tom davis saloon 450 n cleveland ave loveland daily open to 7pm happy hour specials voted best loveland">
+  <div class="card-top">
+    <div class="card-name">Tom Davis Saloon</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-loveland">Loveland</span>
+      <button class="fav-btn" data-name="Tom Davis Saloon" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Tom%20Davis%20Saloon%20450%20N%20Cleveland%20Ave%20Loveland%20CO" target="_blank" rel="noopener">450 N Cleveland Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily open to 7pm</div>
+  <ul class="specials"><li>Happy hour specials (voted best in Loveland - check tomdavissaloon.com for current deals)</li></ul>
+</div>
+<div class="card" data-city="Greeley" data-date="2026-04-23" data-tags="new,cheap" data-text="the atlas 709 16th st greeley daily 4-6pm $1 off drafts $5 select cocktails rotating shareables nonprofit model">
+  <div class="card-top">
+    <div class="card-name">The Atlas</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-greeley">Greeley</span>
+      <button class="fav-btn" data-name="The Atlas" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=The%20Atlas%20709%2016th%20St%20Greeley%20CO" target="_blank" rel="noopener">709 16th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 4-6pm</div>
+  <ul class="specials"><li>$1 off drafts, $5 select cocktails</li><li>Rotating shareables</li></ul>
+</div>
+<div class="card" data-city="Greeley" data-date="2026-04-23" data-tags="new,cheap,patio" data-text="pura vida bar 818 9th st greeley daily 3-6pm $5 margaritas $1 off beer latin inspired appetizers patio">
+  <div class="card-top">
+    <div class="card-name">Pura Vida Bar</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-greeley">Greeley</span>
+      <button class="fav-btn" data-name="Pura Vida Bar" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Pura%20Vida%20Bar%20818%209th%20St%20Greeley%20CO" target="_blank" rel="noopener">818 9th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-6pm</div>
+  <ul class="specials"><li>$5 margaritas, $1 off beer</li><li>Latin-inspired appetizers</li></ul>
+</div>
+<div class="card" data-city="Greeley" data-date="2026-04-23" data-tags="new,cheap,sports-bar,weekend" data-text="bogeys pub grille 2200 clubhouse dr greeley mon-sat 2:30-6:30pm $4 wells $4 tall boys $5 craft pints $6 wine $6-10 wings street tacos">
+  <div class="card-top">
+    <div class="card-name">Bogeys Pub &amp; Grille</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-greeley">Greeley</span>
+      <button class="fav-btn" data-name="Bogeys Pub &amp; Grille" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Bogeys%20Pub%20%26%20Grille%202200%20Clubhouse%20Dr%20Greeley%20CO" target="_blank" rel="noopener">2200 Clubhouse Dr &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Sat 2:30-6:30pm</div>
+  <ul class="specials"><li>$4 wells, $4 tall boys, $5 craft pints, $6 wine</li><li>$6-$10 wings and street tacos</li></ul>
 </div>
 <div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="food-forward,cheap" data-text="austin's american grill 1100 8th ave greeley mon-fri 3-6pm $2 off all draft beers, $5 mocktails, $6 wine $3.95 cup of soup, $7.95 queso, $8.95 chicken street tacos $9.95 rotisserie chicken & fries, $13.95 steak bites">
   <div class="card-top">
