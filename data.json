@@ -1274,12 +1274,12 @@
     "Name": "Loveland Tap & Tavern",
     "City": "Loveland",
     "Address": "237 E 4th St",
-    "Hours": "Tue-Fri 3-7pm",
+    "Hours": "Mon-Fri 3-5pm and after 8:30pm",
     "Status": "Active",
     "dateAdded": "2026-04-23",
     "specials": [
-      "$1 off pints, $5 well drinks",
-      "$5-$9 pub burgers and snacks"
+      "$2 off featured beers, $2 off draft cocktails, $10 lager and a shot",
+      "$5.50 wings, $8 pretzel, $6 cheese curds, $8 tenders/fries"
     ]
   },
   {
@@ -1321,11 +1321,12 @@
     "Name": "Tom Davis Saloon",
     "City": "Loveland",
     "Address": "450 N Cleveland Ave",
-    "Hours": "Daily open to 7pm",
+    "Hours": "Mon 4-10pm (industry night), Thu-Sat noon-3pm",
     "Status": "Active",
     "dateAdded": "2026-04-23",
     "specials": [
-      "Happy hour specials (voted best in Loveland - check tomdavissaloon.com for current deals)"
+      "$4 wells, $2 off all beer (Thu-Sat), BOGO shots/bombs (Mon)",
+      "Rotating food truck specials"
     ]
   },
   {
@@ -1362,6 +1363,371 @@
     "specials": [
       "$4 wells, $4 tall boys, $5 craft pints, $6 wine",
       "$6-$10 wings and street tacos"
+    ]
+  },
+  {
+    "Name": "Parry's Pizzeria & Taphouse",
+    "City": "Johnstown",
+    "Address": "4874 Thompson Pkwy",
+    "Hours": "Mon-Fri 3-6pm, all day Sun",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$4 Parry's pints, $5 signature pints, $5 house margs/wine",
+      "$3.99 parm fries, $5.99 pizza/cheesy bread, $6.99 wings"
+    ]
+  },
+  {
+    "Name": "Lazy Dog Bar & Grill",
+    "City": "Johnstown",
+    "Address": "4801 Thompson Pkwy",
+    "Hours": "Mon-Fri 3-6pm, late night Sun-Thu 9-11pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$3-$7 drafts, $5 wells/wine, $7 handcrafted cocktails",
+      "$5 cajun fries/hummus, $6.75 deviled eggs, $9 sliders/wings"
+    ]
+  },
+  {
+    "Name": "Bad Daddy's Burger Bar",
+    "City": "Johnstown",
+    "Address": "4848 Thompson Pkwy",
+    "Hours": "Daily 3-6pm and 8pm-close",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off drafts/wells/wine, $5 Bad Ass margaritas",
+      "$3 fried pickles/fries, $4 tots/queso, $5 sliders/wings"
+    ]
+  },
+  {
+    "Name": "Bonefish Grill",
+    "City": "Johnstown",
+    "Address": "4948 Thompson Pkwy",
+    "Hours": "Daily 4-6:30pm (Social Hour, bar only)",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off drafts, $6 house wine, $7 select cocktails",
+      "$7-$10 small plates: Bang Bang Shrimp, calamari"
+    ]
+  },
+  {
+    "Name": "The Post Chicken & Beer",
+    "City": "Longmont",
+    "Address": "210 Main St",
+    "Hours": "Mon-Fri 2-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$5 drafts, $6 well cocktails, 4 flights for $6",
+      "$6 wings/sliders, $1.50 deviled eggs, $11 sandwiches"
+    ]
+  },
+  {
+    "Name": "The Roost",
+    "City": "Longmont",
+    "Address": "526 Main St",
+    "Hours": "Daily 3-5pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off draft beer/wine, $2 off wells",
+      "$6+ off select appetizers: wings, shishitos"
+    ]
+  },
+  {
+    "Name": "300 Suns Brewing",
+    "City": "Longmont",
+    "Address": "335 1st Ave",
+    "Hours": "Tue 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "Half off 300 Suns drafts, $2 off cocktails",
+      "Half off appetizers: pretzels, poutine"
+    ]
+  },
+  {
+    "Name": "Pumphouse Brewery",
+    "City": "Longmont",
+    "Address": "540 Main St",
+    "Hours": "Daily 3-6pm and 9pm-close",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$5 wells/house wine, $6 margs, $2 off drafts",
+      "$2 off all appetizers (dine-in only)"
+    ]
+  },
+  {
+    "Name": "Georgia Boys BBQ",
+    "City": "Longmont",
+    "Address": "250 3rd Ave",
+    "Hours": "Tue-Fri 2:30-5pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off pints, $5 house margaritas",
+      "$5-$8 BBQ sliders and lil bowls"
+    ]
+  },
+  {
+    "Name": "West Side Tavern",
+    "City": "Longmont",
+    "Address": "1283 3rd Ave",
+    "Hours": "Sun-Thu 3-5pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$2 off house spirits, $5 drafts, $6 wells",
+      "$5-$9 rotating small plates: disco fries, sliders"
+    ]
+  },
+  {
+    "Name": "Urban Field Pizza",
+    "City": "Longmont",
+    "Address": "150 Main St",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off drafts, $2 off wells/wine",
+      "$2 off appetizers and slices"
+    ]
+  },
+  {
+    "Name": "Summit Tacos",
+    "City": "Longmont",
+    "Address": "329 Main St",
+    "Hours": "Daily 3-5pm, all day Tue",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "20% off all beer, margs, and palomas",
+      "20% off all appetizers: guac, queso"
+    ]
+  },
+  {
+    "Name": "Collision Brewing",
+    "City": "Longmont",
+    "Address": "1436 Skyway Dr",
+    "Hours": "Thu 3pm-close",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$5 house beers, $3 shots, $6.50 cocktails",
+      "Discounts on small bites and buzzard baskets"
+    ]
+  },
+  {
+    "Name": "Teocalli Cocina",
+    "City": "Longmont",
+    "Address": "462 Main St",
+    "Hours": "Daily 3-5pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$6 margaritas, $1 off drafts",
+      "$3.50 tacos, $6 queso, $8 ceviche"
+    ]
+  },
+  {
+    "Name": "Mike O'Shays",
+    "City": "Longmont",
+    "Address": "512 Main St",
+    "Hours": "Mon-Fri 2-5pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off drafts and wells, daily rotating specials",
+      "$2 off appetizers: Irish egg rolls"
+    ]
+  },
+  {
+    "Name": "Burk's Tavern",
+    "City": "Loveland",
+    "Address": "118 E 4th St",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$3.75 wells/domestics, $4.50 Odell drafts"
+    ]
+  },
+  {
+    "Name": "Door 222",
+    "City": "Loveland",
+    "Address": "222 E 4th St",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off drafts, $7 special cocktails, $6 wine",
+      "Half-priced tapas: dates, cheese curds"
+    ]
+  },
+  {
+    "Name": "El Mexicali Cafe",
+    "City": "Loveland",
+    "Address": "111 W 4th St",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$6 draft imports, $8 wells and margaritas",
+      "$9-$19 appetizer platters"
+    ]
+  },
+  {
+    "Name": "The White Rabbit",
+    "City": "Loveland",
+    "Address": "225 W 4th St",
+    "Hours": "Sun-Thu 4-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$2 off social hour cocktails, $1 off beer",
+      "$2 off small plates"
+    ]
+  },
+  {
+    "Name": "The Flipside",
+    "City": "Loveland",
+    "Address": "140 E 4th St",
+    "Hours": "Sun 3-10pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off drafts and wells"
+    ]
+  },
+  {
+    "Name": "Backyard Tap",
+    "City": "Loveland",
+    "Address": "323 N Railroad Ave",
+    "Hours": "Mon-Thu 4-8pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "Rotating local draft specials",
+      "Food truck dependent"
+    ]
+  },
+  {
+    "Name": "Stella's Bar",
+    "City": "Greeley",
+    "Address": "822 9th St",
+    "Hours": "Tue-Sat 3-6pm and 10pm-midnight",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$7 margaritas, $9 martinis, $4 Miller/Mich",
+      "$10-$12 apps: steak bites, sliders"
+    ]
+  },
+  {
+    "Name": "Centennial Public House",
+    "City": "Greeley",
+    "Address": "819 9th St",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$3 beer, $6 wine, $5 cocktails",
+      "$8-$12 apps: goat cheese, Brussels sprouts"
+    ]
+  },
+  {
+    "Name": "The Kress Speakeasy",
+    "City": "Greeley",
+    "Address": "817 8th Ave",
+    "Hours": "Tue-Thu 4-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$2 off classics, $1 off drafts"
+    ]
+  },
+  {
+    "Name": "Wing Shack",
+    "City": "Johnstown",
+    "Address": "4850 Thompson Pkwy",
+    "Hours": "Daily specials",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "Wed: $0.75 wings",
+      "Daily rotating bundle deals"
+    ]
+  },
+  {
+    "Name": "Jefe's Tacos & Tequila",
+    "City": "Longmont",
+    "Address": "246 Main St",
+    "Hours": "Mon-Fri 3-5pm, daily 8pm-close",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$5 margaritas, $1 off drafts",
+      "$3 street tacos"
+    ]
+  },
+  {
+    "Name": "Left Hand Brewing",
+    "City": "Longmont",
+    "Address": "1265 Boston Ave",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off all full pours"
+    ]
+  },
+  {
+    "Name": "Oskar Blues HML&S",
+    "City": "Longmont",
+    "Address": "1555 Hover St",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$4 Oskar Blues drafts, $5 wells",
+      "$4-$9 select apps"
+    ]
+  },
+  {
+    "Name": "Grossen Bart Brewery",
+    "City": "Longmont",
+    "Address": "1025 Delaware Ave",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off flagship pints"
+    ]
+  },
+  {
+    "Name": "Bootstrap Brewing",
+    "City": "Longmont",
+    "Address": "142 Pratt St",
+    "Hours": "Mon-Fri 3-5pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off pints"
+    ]
+  },
+  {
+    "Name": "Shoes & Brews",
+    "City": "Longmont",
+    "Address": "63 S Pratt Pkwy",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off drafts"
     ]
   }
 ]

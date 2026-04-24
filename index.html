@@ -92,6 +92,13 @@ body {
   text-transform: uppercase;
   padding-top: 2px;
 }
+.title-golden { color: #8B4513; }
+.title-hour   { color: #ff7a1f; }
+@media (prefers-color-scheme: dark) {
+  .title-golden { color: #f5deb3; }
+  .title-hour   { color: #ff7a1f; }
+  .header-title .subtitle { color: #c9a882; }
+}
 .controls { display: flex; gap: 8px; }
 .ctrl {
   height: 42px;
@@ -195,6 +202,8 @@ body {
 .badge-loveland { background: #fff0e0; color: #c05c0a; }
 .badge-greeley     { background: #fce8e8; color: #b91c1c; }
 .badge-wellington  { background: #f3e8ff; color: #7e22ce; }
+.badge-johnstown   { background: #e0f0ff; color: #0c5a9e; }
+.badge-longmont    { background: #e8f5e9; color: #2e7d32; }
 .open-badge     { background: var(--green-bg); color: var(--green); font-size: 10px; font-weight: 700; border: 1px solid var(--green-border); }
 .new-badge      { background: #fef9c3; color: #854d0e; font-size: 10px; font-weight: 700; border: 1px solid #fde047; }
 @media (prefers-color-scheme: dark) {
@@ -203,6 +212,8 @@ body {
   .badge-loveland { background: #2a1a08; color: #ffaa55; }
   .badge-greeley  { background: #2a0d0d; color: #ff7a7a; }
   .badge-wellington { background: #1e0d2a; color: #cc88ff; }
+  .badge-johnstown { background: #0a1e2e; color: #7ac4ff; }
+  .badge-longmont  { background: #0d2010; color: #6dcc80; }
   .new-badge      { background: #2a2200; color: #ffd700; border-color: #665500; }
 }
 .fav-btn {
@@ -603,6 +614,36 @@ body {
 }
 .filter-collapse-btn.is-visible { display: flex; }
 .filter-collapse-btn.filters-open { color: var(--accent); border-color: var(--accent); }
+.filter-collapse-btn .filter-badge {
+  display: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 1px 6px;
+  margin-left: 2px;
+}
+.filter-collapse-btn.has-active .filter-badge { display: inline; }
+.clear-filters-btn {
+  display: none;
+  width: 100%;
+  height: 34px;
+  background: none;
+  border: 1.5px solid var(--accent);
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  margin-top: 8px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  -webkit-tap-highlight-color: transparent;
+}
+.clear-filters-btn.is-visible { display: flex; }
 .filters-collapsible {
   transition: max-height 0.25s ease, opacity 0.2s ease;
   overflow: hidden;
@@ -639,9 +680,9 @@ body {
     <line x1="32" y1="28" x2="30" y2="26" stroke="#ff7a1f" stroke-width="2.5" stroke-linecap="round"/>
     <line x1="6" y1="30" x2="34" y2="30" stroke="#ff7a1f" stroke-width="2" stroke-linecap="round"/>
   </svg>
-  <span style="font-family:'Nunito',sans-serif;font-size:26px;font-weight:800;letter-spacing:-0.5px;"><span style="color:#8B4513;">Golden</span><span style="color:#ff7a1f;">Hour</span></span>
+  <span style="font-family:'Nunito',sans-serif;font-size:26px;font-weight:800;letter-spacing:-0.5px;"><span class="title-golden">Golden</span><span class="title-hour">Hour</span></span>
 </div>  
-    <span class="subtitle">NoCo's Happy Hour Guide &middot; 80 spots across 4 cities</span>
+    <span class="subtitle">NoCo's Happy Hour Guide &middot; <span id="total-spots"></span> spots across <span id="total-cities"></span> cities</span>
   </div>
   <div class="controls">
     <div class="search-wrap">
@@ -650,7 +691,7 @@ body {
       <button class="search-clear" id="searchClear" onclick="clearSearch()" aria-label="Clear search">&#x2715;</button>
     </div>
   </div>
-  <button class="filter-collapse-btn" id="filterCollapseBtn" onclick="toggleFilters()">⚙️ Filters</button>
+  <button class="filter-collapse-btn" id="filterCollapseBtn" onclick="toggleFilters()">⚙️ Filters <span class="filter-badge" id="filterBadge"></span></button>
   <div class="filters-collapsible" id="filtersCollapsible">
   <div class="filter-row">
     <select class="ctrl ctrl-select" id="city" onchange="filterCards();saveFilterState()">
@@ -660,6 +701,8 @@ body {
       <option value="Loveland">Loveland</option>
       <option value="Greeley">Greeley</option>
       <option value="Wellington">Wellington</option>
+      <option value="Johnstown">Johnstown</option>
+      <option value="Longmont">Longmont</option>
     </select>
     <select class="ctrl ctrl-select" id="day" onchange="filterCards()">
       <option value="">All days</option>
@@ -683,13 +726,15 @@ body {
   <div class="tag-row-wrap">
     <div class="tag-row" id="tagRow">
       <button class="tag-btn" data-tag="cheap"        onclick="toggleTag('cheap')">Cheap</button>
-      <button class="tag-btn" data-tag="sports-bar"   onclick="toggleTag('sports-bar')">Sports Bar</button>
-      <button class="tag-btn" data-tag="patio"        onclick="toggleTag('patio')">Patio</button>
+      <button class="tag-btn" data-tag="dog-friendly"   onclick="toggleTag('dog-friendly')">🐾 Dog Friendly</button>
+      <button class="tag-btn" data-tag="reverse-happy-hour" onclick="toggleTag('reverse-happy-hour')">🌙 Reverse HH</button>
       <button class="tag-btn" data-tag="date-night"   onclick="toggleTag('date-night')">Date Night</button>
       <button class="tag-btn" id="btnNew" onclick="toggleNew()">✨ New</button>
       <button class="tag-btn tag-more-btn" id="tagMoreBtn" onclick="toggleMoreTags()">+ More</button>
     </div>
     <div class="tag-row tag-row-more" id="tagRowMore" style="display:none">
+      <button class="tag-btn" data-tag="sports-bar"   onclick="toggleTag('sports-bar')">Sports Bar</button>
+      <button class="tag-btn" data-tag="patio"        onclick="toggleTag('patio')">Patio</button>
       <button class="tag-btn" data-tag="food-forward" onclick="toggleTag('food-forward')">Food-forward</button>
       <button class="tag-btn" data-tag="old-town"     onclick="toggleTag('old-town')">Old Town</button>
       <button class="tag-btn" data-tag="live-music"   onclick="toggleTag('live-music')">Live Music</button>
@@ -697,10 +742,9 @@ body {
       <button class="tag-btn" data-tag="late-night"   onclick="toggleTag('late-night')">Late Night</button>
       <button class="tag-btn" data-tag="weekend"      onclick="toggleTag('weekend')">Weekend</button>
       <button class="tag-btn" data-tag="student-deals" onclick="toggleTag('student-deals')">🎓 Student Deals</button>
-      <button class="tag-btn" data-tag="dog-friendly"   onclick="toggleTag('dog-friendly')">🐾 Dog Friendly</button>
-      <button class="tag-btn" data-tag="reverse-happy-hour" onclick="toggleTag('reverse-happy-hour')">🌙 Reverse HH</button>
     </div>
   </div>
+  <button class="clear-filters-btn" id="clearFiltersBtn" onclick="clearAllFilters()">✕ Clear all filters</button>
   </div>
   <div class="count" id="count"></div>
 </div>
@@ -1958,7 +2002,7 @@ body {
   <div class="hours">Mon-Fri 3-6pm</div>
   <ul class="specials"><li>$2 off Vato &amp; Macho margaritas</li><li>$2 off all beers</li></ul>
 </div>
-<div class="card" data-city="Loveland" data-tags="new,cheap" data-date="2026-04-23" data-text="loveland tap tavern 237 e 4th st loveland tue-fri 3-7pm $1 off pints $5 wells $5-9 pub burgers snacks">
+<div class="card" data-city="Loveland" data-tags="new,cheap,late-night,reverse-happy-hour" data-date="2026-04-23" data-text="loveland tap tavern 237 e 4th st loveland mon-fri 3-5pm after 8:30pm $2 off featured beers $2 off draft cocktails $10 lager shot $5.50 wings $8 pretzel $6 cheese curds $8 tenders fries">
   <div class="card-top">
     <div class="card-name">Loveland Tap &amp; Tavern</div>
     <div class="card-right">
@@ -1969,8 +2013,8 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Loveland%20Tap%20%26%20Tavern%20237%20E%204th%20St%20Loveland%20CO" target="_blank" rel="noopener">237 E 4th St &nearr;</a>
   <hr class="divider">
-  <div class="hours">Tue-Fri 3-7pm</div>
-  <ul class="specials"><li>$1 off pints, $5 well drinks</li><li>$5-$9 pub burgers and snacks</li></ul>
+  <div class="hours">Mon-Fri 3-5pm and after 8:30pm</div>
+  <ul class="specials"><li>$2 off featured beers, $2 off draft cocktails, $10 lager and a shot</li><li>$5.50 wings, $8 pretzel, $6 cheese curds, $8 tenders/fries</li></ul>
 </div>
 <div class="card" data-city="Loveland" data-tags="new,date-night,food-forward" data-date="2026-04-23" data-text="loveland chophouse 125 e 4th st loveland daily 4-6pm $2 off cocktails wine half off appetizers oysters calamari tartare">
   <div class="card-top">
@@ -2014,7 +2058,7 @@ body {
   <div class="hours">Daily 3-6pm</div>
   <ul class="specials"><li>$1 off beer/wells, $2 off BBQ items</li><li>Free pool Mon/Wed/Fri 10am-3pm</li></ul>
 </div>
-<div class="card" data-city="Loveland" data-tags="new,cheap" data-date="2026-04-23" data-text="tom davis saloon 450 n cleveland ave loveland daily open to 7pm happy hour specials voted best loveland">
+<div class="card" data-city="Loveland" data-tags="new,cheap,late-night" data-date="2026-04-23" data-text="tom davis saloon 450 n cleveland ave loveland mon 4-10pm thu-sat 12-3pm $4 wells $2 off all beer thu-sat bogo shots bombs mon service industry night rotating food truck specials">
   <div class="card-top">
     <div class="card-name">Tom Davis Saloon</div>
     <div class="card-right">
@@ -2025,8 +2069,8 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Tom%20Davis%20Saloon%20450%20N%20Cleveland%20Ave%20Loveland%20CO" target="_blank" rel="noopener">450 N Cleveland Ave &nearr;</a>
   <hr class="divider">
-  <div class="hours">Daily open to 7pm</div>
-  <ul class="specials"><li>Happy hour specials (voted best in Loveland - check tomdavissaloon.com for current deals)</li></ul>
+  <div class="hours">Mon 4-10pm (industry night), Thu-Sat noon-3pm</div>
+  <ul class="specials"><li>$4 wells, $2 off all beer (Thu-Sat), BOGO shots/bombs (Mon)</li><li>Rotating food truck specials</li></ul>
 </div>
 <div class="card" data-city="Greeley" data-date="2026-04-23" data-tags="new,cheap" data-text="the atlas 709 16th st greeley daily 4-6pm $1 off drafts $5 select cocktails rotating shareables nonprofit model">
   <div class="card-top">
@@ -2265,6 +2309,440 @@ body {
   <hr class="divider">
   <div class="hours">Wed-Sun 3-6pm</div>
   <ul class="specials"><li>$1 off beers</li><li>$2 off wine and cocktails</li></ul>
+</div>
+<div class="card" data-city="Johnstown" data-tags="new,cheap,food-forward,weekend" data-date="2026-04-23" data-text="parry's pizzeria taphouse 4874 thompson pkwy johnstown mon-fri 3-6pm all day sun $4 parrys pints $5 signature pints $5 house margs wine $3.99 parm fries $5.99 pizza cheesy bread $6.99 wings">
+  <div class="card-top">
+    <div class="card-name">Parry&#x27;s Pizzeria &amp; Taphouse</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-johnstown">Johnstown</span>
+      <button class="fav-btn" data-name="Parry's Pizzeria &amp; Taphouse" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Parry%27s%20Pizzeria%204874%20Thompson%20Pkwy%20Johnstown%20CO" target="_blank" rel="noopener">4874 Thompson Pkwy &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm, all day Sun</div>
+  <ul class="specials"><li>$4 Parry's pints, $5 signature pints, $5 house margs/wine</li><li>$3.99 parm fries, $5.99 pizza/cheesy bread, $6.99 wings</li></ul>
+</div>
+<div class="card" data-city="Johnstown" data-tags="new,cheap,food-forward,late-night,reverse-happy-hour" data-date="2026-04-23" data-text="lazy dog bar grill 4801 thompson pkwy johnstown mon-fri 3-6pm late night sun-thu 9-11pm $3-7 drafts $5 wells wine $7 handcrafted cocktails $5 cajun fries hummus $6.75 deviled eggs $9 sliders wings">
+  <div class="card-top">
+    <div class="card-name">Lazy Dog Bar &amp; Grill</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-johnstown">Johnstown</span>
+      <button class="fav-btn" data-name="Lazy Dog Bar &amp; Grill" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Lazy%20Dog%20Bar%20%26%20Grill%204801%20Thompson%20Pkwy%20Johnstown%20CO" target="_blank" rel="noopener">4801 Thompson Pkwy &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm, late night Sun-Thu 9-11pm</div>
+  <ul class="specials"><li>$3-$7 drafts, $5 wells/wine, $7 handcrafted cocktails</li><li>$5 cajun fries/hummus, $6.75 deviled eggs, $9 sliders/wings</li></ul>
+</div>
+<div class="card" data-city="Johnstown" data-tags="new,cheap,food-forward,late-night,reverse-happy-hour" data-date="2026-04-23" data-text="bad daddy's burger bar 4848 thompson pkwy johnstown daily 3-6pm and 8pm-close $1 off drafts wells wine $5 bad ass margaritas $3 fried pickles fries $4 tots queso $5 sliders wings">
+  <div class="card-top">
+    <div class="card-name">Bad Daddy&#x27;s Burger Bar</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-johnstown">Johnstown</span>
+      <button class="fav-btn" data-name="Bad Daddy's Burger Bar" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Bad%20Daddy%27s%20Burger%20Bar%204848%20Thompson%20Pkwy%20Johnstown%20CO" target="_blank" rel="noopener">4848 Thompson Pkwy &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-6pm and 8pm-close</div>
+  <ul class="specials"><li>$1 off drafts/wells/wine, $5 Bad Ass margaritas</li><li>$3 fried pickles/fries, $4 tots/queso, $5 sliders/wings</li></ul>
+</div>
+<div class="card" data-city="Johnstown" data-tags="new,date-night,food-forward" data-date="2026-04-23" data-text="bonefish grill 4948 thompson pkwy johnstown daily 4-6:30pm social hour $1 off drafts $6 house wine $7 select cocktails $7-10 bang bang shrimp calamari small plates">
+  <div class="card-top">
+    <div class="card-name">Bonefish Grill</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-johnstown">Johnstown</span>
+      <button class="fav-btn" data-name="Bonefish Grill" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Bonefish%20Grill%204948%20Thompson%20Pkwy%20Johnstown%20CO" target="_blank" rel="noopener">4948 Thompson Pkwy &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 4-6:30pm (Social Hour, bar only)</div>
+  <ul class="specials"><li>$1 off drafts, $6 house wine, $7 select cocktails</li><li>$7-$10 small plates: Bang Bang Shrimp, calamari</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap,food-forward" data-date="2026-04-23" data-text="the post chicken beer 210 main st longmont mon-fri 2-6pm $5 drafts $6 well cocktails $4 flights 4 for $6 $6 wings sliders $1.50 deviled eggs $11 sandwiches">
+  <div class="card-top">
+    <div class="card-name">The Post Chicken &amp; Beer</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="The Post Chicken &amp; Beer" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=The%20Post%20Chicken%20%26%20Beer%20210%20Main%20St%20Longmont%20CO" target="_blank" rel="noopener">210 Main St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 2-6pm</div>
+  <ul class="specials"><li>$5 drafts, $6 well cocktails, 4 flights for $6</li><li>$6 wings/sliders, $1.50 deviled eggs, $11 sandwiches</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap,food-forward,patio,dog-friendly" data-date="2026-04-23" data-text="the roost 526 main st longmont daily 3-5pm $1 off draft beer wine $2 off wells $6+ off select appetizers wings shishitos rooftop patio dog friendly">
+  <div class="card-top">
+    <div class="card-name">The Roost</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="The Roost" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=The%20Roost%20526%20Main%20St%20Longmont%20CO" target="_blank" rel="noopener">526 Main St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-5pm</div>
+  <ul class="specials"><li>$1 off draft beer/wine, $2 off wells</li><li>$6+ off select appetizers: wings, shishitos</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap,food-forward,dog-friendly" data-date="2026-04-23" data-text="300 suns brewing 335 1st ave longmont tue 3-6pm taps and apps half off 300 suns drafts $2 off cocktails half off appetizers pretzels poutine">
+  <div class="card-top">
+    <div class="card-name">300 Suns Brewing</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="300 Suns Brewing" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=300%20Suns%20Brewing%20335%201st%20Ave%20Longmont%20CO" target="_blank" rel="noopener">335 1st Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Tue 3-6pm</div>
+  <ul class="specials"><li>Half off 300 Suns drafts, $2 off cocktails</li><li>Half off appetizers: pretzels, poutine</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap,food-forward,late-night,reverse-happy-hour" data-date="2026-04-23" data-text="pumphouse brewery 540 main st longmont daily 3-6pm and 9pm-close $5 wells house wine $6 margs $2 off drafts $2 off all appetizers dine-in longmont original brewpub">
+  <div class="card-top">
+    <div class="card-name">Pumphouse Brewery</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="Pumphouse Brewery" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Pumphouse%20Brewery%20540%20Main%20St%20Longmont%20CO" target="_blank" rel="noopener">540 Main St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-6pm and 9pm-close</div>
+  <ul class="specials"><li>$5 wells/house wine, $6 margs, $2 off drafts</li><li>$2 off all appetizers (dine-in only)</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap,food-forward" data-date="2026-04-23" data-text="georgia boys bbq 250 3rd ave longmont tue-fri 2:30-5pm $1 off pints $5 house margaritas $5-8 bbq sliders lil bowls">
+  <div class="card-top">
+    <div class="card-name">Georgia Boys BBQ</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="Georgia Boys BBQ" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Georgia%20Boys%20BBQ%20250%203rd%20Ave%20Longmont%20CO" target="_blank" rel="noopener">250 3rd Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Tue-Fri 2:30-5pm</div>
+  <ul class="specials"><li>$1 off pints, $5 house margaritas</li><li>$5-$8 BBQ sliders and lil bowls</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap,date-night" data-date="2026-04-23" data-text="west side tavern 1283 3rd ave longmont sun-thu 3-5pm $2 off house spirits $5 drafts $6 wells $5-9 rotating small plates disco fries sliders high-end whiskey local favorite">
+  <div class="card-top">
+    <div class="card-name">West Side Tavern</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="West Side Tavern" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=West%20Side%20Tavern%201283%203rd%20Ave%20Longmont%20CO" target="_blank" rel="noopener">1283 3rd Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Sun-Thu 3-5pm</div>
+  <ul class="specials"><li>$2 off house spirits, $5 drafts, $6 wells</li><li>$5-$9 rotating small plates: disco fries, sliders</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap,food-forward" data-date="2026-04-23" data-text="urban field pizza 150 main st longmont daily 3-6pm $1 off drafts $2 off wells wine $2 off appetizers and slices detroit style pizza">
+  <div class="card-top">
+    <div class="card-name">Urban Field Pizza</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="Urban Field Pizza" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Urban%20Field%20Pizza%20150%20Main%20St%20Longmont%20CO" target="_blank" rel="noopener">150 Main St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-6pm</div>
+  <ul class="specials"><li>$1 off drafts, $2 off wells/wine</li><li>$2 off appetizers and slices</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap,food-forward,weekend" data-date="2026-04-23" data-text="summit tacos 329 main st longmont daily 3-5pm all day tue 20% off all beer margs palomas 20% off all appetizers guac queso taco tuesday all day">
+  <div class="card-top">
+    <div class="card-name">Summit Tacos</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="Summit Tacos" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Summit%20Tacos%20329%20Main%20St%20Longmont%20CO" target="_blank" rel="noopener">329 Main St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-5pm, all day Tue</div>
+  <ul class="specials"><li>20% off all beer, margs, and palomas</li><li>20% off all appetizers: guac, queso</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap" data-date="2026-04-23" data-text="collision brewing 1436 skyway dr longmont thu 3pm-close $5 house beers $3 shots $6.50 cocktails discounts on small bites buzzard baskets automotive themed">
+  <div class="card-top">
+    <div class="card-name">Collision Brewing</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="Collision Brewing" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Collision%20Brewing%201436%20Skyway%20Dr%20Longmont%20CO" target="_blank" rel="noopener">1436 Skyway Dr &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Thu 3pm-close</div>
+  <ul class="specials"><li>$5 house beers, $3 shots, $6.50 cocktails</li><li>Discounts on small bites and buzzard baskets</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap,food-forward" data-date="2026-04-23" data-text="teocalli cocina 462 main st longmont daily 3-5pm $6 margaritas $1 off drafts $3.50 tacos $6 queso $8 ceviche gluten free kitchen">
+  <div class="card-top">
+    <div class="card-name">Teocalli Cocina</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="Teocalli Cocina" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Teocalli%20Cocina%20462%20Main%20St%20Longmont%20CO" target="_blank" rel="noopener">462 Main St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-5pm</div>
+  <ul class="specials"><li>$6 margaritas, $1 off drafts</li><li>$3.50 tacos, $6 queso, $8 ceviche</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap" data-date="2026-04-23" data-text="mike o'shays 512 main st longmont mon-fri 2-5pm $1 off drafts wells daily rotating specials $2 off appetizers irish egg rolls longmont oldest pub">
+  <div class="card-top">
+    <div class="card-name">Mike O&#x27;Shays</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="Mike O'Shays" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Mike%20O%27Shays%20512%20Main%20St%20Longmont%20CO" target="_blank" rel="noopener">512 Main St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 2-5pm</div>
+  <ul class="specials"><li>$1 off drafts and wells, daily rotating specials</li><li>$2 off appetizers: Irish egg rolls</li></ul>
+</div>
+<div class="card" data-city="Loveland" data-tags="new,cheap" data-date="2026-04-23" data-text="burk's tavern 118 e 4th st loveland mon-fri 3-6pm $3.75 wells domestics $4.50 odell drafts local favorite">
+  <div class="card-top">
+    <div class="card-name">Burk&#x27;s Tavern</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-loveland">Loveland</span>
+      <button class="fav-btn" data-name="Burk's Tavern" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Burk%27s%20Tavern%20118%20E%204th%20St%20Loveland%20CO" target="_blank" rel="noopener">118 E 4th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm</div>
+  <ul class="specials"><li>$3.75 wells/domestics, $4.50 Odell drafts</li></ul>
+</div>
+<div class="card" data-city="Loveland" data-tags="new,date-night,food-forward" data-date="2026-04-23" data-text="door 222 222 e 4th st loveland mon-fri 3-6pm $1 off drafts $7 special cocktails $6 wine half priced tapas dates cheese curds">
+  <div class="card-top">
+    <div class="card-name">Door 222</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-loveland">Loveland</span>
+      <button class="fav-btn" data-name="Door 222" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Door%20222%20222%20E%204th%20St%20Loveland%20CO" target="_blank" rel="noopener">222 E 4th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm</div>
+  <ul class="specials"><li>$1 off drafts, $7 special cocktails, $6 wine</li><li>Half-priced tapas: dates, cheese curds</li></ul>
+</div>
+<div class="card" data-city="Loveland" data-tags="new,cheap,food-forward" data-date="2026-04-23" data-text="el mexicali cafe 111 w 4th st loveland daily 3-6pm $6 draft imports $8 wells margaritas $9-19 appetizer platters cantina style">
+  <div class="card-top">
+    <div class="card-name">El Mexicali Cafe</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-loveland">Loveland</span>
+      <button class="fav-btn" data-name="El Mexicali Cafe" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=El%20Mexicali%20Cafe%20111%20W%204th%20St%20Loveland%20CO" target="_blank" rel="noopener">111 W 4th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-6pm</div>
+  <ul class="specials"><li>$6 draft imports, $8 wells and margaritas</li><li>$9-$19 appetizer platters</li></ul>
+</div>
+<div class="card" data-city="Loveland" data-tags="new,date-night" data-date="2026-04-23" data-text="the white rabbit 225 w 4th st loveland sun-thu 4-6pm $2 off social hour cocktails $1 off beer $2 off small plates speakeasy entry">
+  <div class="card-top">
+    <div class="card-name">The White Rabbit</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-loveland">Loveland</span>
+      <button class="fav-btn" data-name="The White Rabbit" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=The%20White%20Rabbit%20225%20W%204th%20St%20Loveland%20CO" target="_blank" rel="noopener">225 W 4th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Sun-Thu 4-6pm</div>
+  <ul class="specials"><li>$2 off social hour cocktails, $1 off beer</li><li>$2 off small plates</li></ul>
+</div>
+<div class="card" data-city="Loveland" data-tags="new,cheap,weekend" data-date="2026-04-23" data-text="the flipside 140 e 4th st loveland sun 3-10pm $1 off drafts wells arcade bar">
+  <div class="card-top">
+    <div class="card-name">The Flipside</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-loveland">Loveland</span>
+      <button class="fav-btn" data-name="The Flipside" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=The%20Flipside%20140%20E%204th%20St%20Loveland%20CO" target="_blank" rel="noopener">140 E 4th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Sun 3-10pm</div>
+  <ul class="specials"><li>$1 off drafts and wells</li></ul>
+</div>
+<div class="card" data-city="Loveland" data-tags="new,cheap,patio,dog-friendly" data-date="2026-04-23" data-text="backyard tap 323 n railroad ave loveland mon-thu 4-8pm rotating local draft specials large outdoor space food truck dependent">
+  <div class="card-top">
+    <div class="card-name">Backyard Tap</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-loveland">Loveland</span>
+      <button class="fav-btn" data-name="Backyard Tap" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Backyard%20Tap%20323%20N%20Railroad%20Ave%20Loveland%20CO" target="_blank" rel="noopener">323 N Railroad Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Thu 4-8pm</div>
+  <ul class="specials"><li>Rotating local draft specials</li><li>Food truck dependent</li></ul>
+</div>
+<div class="card" data-city="Greeley" data-date="2026-04-23" data-tags="new,cheap,food-forward,late-night,reverse-happy-hour" data-text="stella's bar 822 9th st greeley tue-sat 3-6pm 10pm-midnight $7 margaritas $9 martinis $4 miller mich $10-12 steak bites sliders">
+  <div class="card-top">
+    <div class="card-name">Stella&#x27;s Bar</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-greeley">Greeley</span>
+      <button class="fav-btn" data-name="Stella's Bar" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Stella%27s%20Bar%20822%209th%20St%20Greeley%20CO" target="_blank" rel="noopener">822 9th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Tue-Sat 3-6pm and 10pm-midnight</div>
+  <ul class="specials"><li>$7 margaritas, $9 martinis, $4 Miller/Mich</li><li>$10-$12 apps: steak bites, sliders</li></ul>
+</div>
+<div class="card" data-city="Greeley" data-date="2026-04-23" data-tags="new,cheap,food-forward" data-text="centennial public house 819 9th st greeley mon-fri 3-6pm $3 beer $6 wine $5 cocktails $8-12 goat cheese brussels appetizers 9th street plaza anchor">
+  <div class="card-top">
+    <div class="card-name">Centennial Public House</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-greeley">Greeley</span>
+      <button class="fav-btn" data-name="Centennial Public House" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Centennial%20Public%20House%20819%209th%20St%20Greeley%20CO" target="_blank" rel="noopener">819 9th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm</div>
+  <ul class="specials"><li>$3 beer, $6 wine, $5 cocktails</li><li>$8-$12 apps: goat cheese, Brussels sprouts</li></ul>
+</div>
+<div class="card" data-city="Greeley" data-date="2026-04-23" data-tags="new,cheap,date-night" data-text="the kress speakeasy 817 8th ave greeley tue-thu 4-6pm $2 off classics $1 off drafts theater basement bar">
+  <div class="card-top">
+    <div class="card-name">The Kress Speakeasy</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-greeley">Greeley</span>
+      <button class="fav-btn" data-name="The Kress Speakeasy" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=The%20Kress%20Speakeasy%20817%208th%20Ave%20Greeley%20CO" target="_blank" rel="noopener">817 8th Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Tue-Thu 4-6pm</div>
+  <ul class="specials"><li>$2 off classics, $1 off drafts</li></ul>
+</div>
+<div class="card" data-city="Johnstown" data-tags="new,cheap,food-forward" data-date="2026-04-23" data-text="wing shack 4850 thompson pkwy johnstown wing wednesday $0.75 wings daily specials bundles combos">
+  <div class="card-top">
+    <div class="card-name">Wing Shack</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-johnstown">Johnstown</span>
+      <button class="fav-btn" data-name="Wing Shack" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Wing%20Shack%204850%20Thompson%20Pkwy%20Johnstown%20CO" target="_blank" rel="noopener">4850 Thompson Pkwy &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily specials</div>
+  <ul class="specials"><li>Wed: $0.75 wings</li><li>Daily rotating bundle deals</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap,food-forward,late-night,reverse-happy-hour" data-date="2026-04-23" data-text="jefe's tacos tequila 246 main st longmont mon-fri 3-5pm daily 8pm-close $5 margaritas $1 off drafts $3 street tacos late night taco deal">
+  <div class="card-top">
+    <div class="card-name">Jefe&#x27;s Tacos &amp; Tequila</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="Jefe's Tacos &amp; Tequila" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Jefe%27s%20Tacos%20%26%20Tequila%20246%20Main%20St%20Longmont%20CO" target="_blank" rel="noopener">246 Main St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-5pm, daily 8pm-close</div>
+  <ul class="specials"><li>$5 margaritas, $1 off drafts</li><li>$3 street tacos</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap,dog-friendly" data-date="2026-04-23" data-text="left hand brewing 1265 boston ave longmont mon-fri 3-6pm $1 off all full pours dog friendly">
+  <div class="card-top">
+    <div class="card-name">Left Hand Brewing</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="Left Hand Brewing" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Left%20Hand%20Brewing%201265%20Boston%20Ave%20Longmont%20CO" target="_blank" rel="noopener">1265 Boston Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm</div>
+  <ul class="specials"><li>$1 off all full pours</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap,food-forward" data-date="2026-04-23" data-text="oskar blues hml&s 1555 hover st longmont mon-fri 3-6pm $4 oskar blues drafts $5 wells $4-9 select apps brewery food anchor">
+  <div class="card-top">
+    <div class="card-name">Oskar Blues HML&amp;S</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="Oskar Blues HML&amp;S" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Oskar%20Blues%201555%20Hover%20St%20Longmont%20CO" target="_blank" rel="noopener">1555 Hover St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm</div>
+  <ul class="specials"><li>$4 Oskar Blues drafts, $5 wells</li><li>$4-$9 select apps</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap,dog-friendly" data-date="2026-04-23" data-text="grossen bart brewery 1025 delaware ave longmont mon-fri 3-6pm $1 off flagship pints dog friendly">
+  <div class="card-top">
+    <div class="card-name">Grossen Bart Brewery</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="Grossen Bart Brewery" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Grossen%20Bart%20Brewery%201025%20Delaware%20Ave%20Longmont%20CO" target="_blank" rel="noopener">1025 Delaware Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm</div>
+  <ul class="specials"><li>$1 off flagship pints</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap,live-music" data-date="2026-04-23" data-text="bootstrap brewing 142 pratt st longmont mon-fri 3-5pm $1 off pints live music focus">
+  <div class="card-top">
+    <div class="card-name">Bootstrap Brewing</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="Bootstrap Brewing" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Bootstrap%20Brewing%20142%20Pratt%20St%20Longmont%20CO" target="_blank" rel="noopener">142 Pratt St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-5pm</div>
+  <ul class="specials"><li>$1 off pints</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap" data-date="2026-04-23" data-text="shoes and brews 63 s pratt pkwy longmont mon-fri 3-6pm $1 off drafts community taproom">
+  <div class="card-top">
+    <div class="card-name">Shoes &amp; Brews</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="Shoes &amp; Brews" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Shoes%20%26%20Brews%2063%20S%20Pratt%20Pkwy%20Longmont%20CO" target="_blank" rel="noopener">63 S Pratt Pkwy &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm</div>
+  <ul class="specials"><li>$1 off drafts</li></ul>
 </div>
 </div>
 
@@ -2817,9 +3295,10 @@ function filterCards() {
 
   var countEl = document.getElementById('count');
   var total = document.querySelectorAll('.card').length;
+  var cityCount = document.querySelectorAll('#city option[value]:not([value=""])').length;
   if (countEl) {
     if (shown === total) {
-      countEl.textContent = total + ' spots across 4 cities';
+      countEl.textContent = total + ' spots across ' + cityCount + ' cities';
     } else {
       countEl.textContent = 'Showing ' + shown + ' of ' + total + ' spots';
     }
@@ -2827,6 +3306,7 @@ function filterCards() {
 
   sortCards();
   updatePageTitle();
+  updateFilterBadge();
 
   // Empty state
   var grid = document.getElementById('grid');
@@ -2885,6 +3365,52 @@ function toggleOpenNow() {
   var btn = document.getElementById('btnOpen');
   if (btn) btn.classList.toggle('is-active-open', showOpenNow);
   filterCards();
+}
+
+// --- Clear all filters ---
+function clearAllFilters() {
+  // Reset search
+  var search = document.getElementById('search');
+  if (search) { search.value = ''; toggleClearBtn(); }
+  // Reset city
+  var city = document.getElementById('city');
+  if (city) city.value = '';
+  // Reset day
+  var day = document.getElementById('day');
+  if (day) day.value = '';
+  // Reset open now
+  showOpenNow = false;
+  var btnOpen = document.getElementById('btnOpen');
+  if (btnOpen) btnOpen.classList.remove('is-active-open');
+  // Reset favs
+  showFavs = false;
+  var btnFav = document.getElementById('btnFav');
+  if (btnFav) btnFav.classList.remove('is-active-fav');
+  // Reset tags
+  activeTags = {};
+  showNew = false;
+  var btnNew = document.getElementById('btnNew');
+  if (btnNew) btnNew.classList.remove('is-active');
+  document.querySelectorAll('.tag-btn').forEach(function(b) { b.classList.remove('is-active'); });
+  filterCards();
+}
+
+function updateFilterBadge() {
+  var btn = document.getElementById('filterCollapseBtn');
+  var badge = document.getElementById('filterBadge');
+  var clearBtn = document.getElementById('clearFiltersBtn');
+  if (!btn) return;
+  var activeCount = 0;
+  if (document.getElementById('search') && document.getElementById('search').value) activeCount++;
+  if (document.getElementById('city') && document.getElementById('city').value) activeCount++;
+  if (document.getElementById('day') && document.getElementById('day').value) activeCount++;
+  if (showOpenNow) activeCount++;
+  if (showFavs) activeCount++;
+  for (var t in activeTags) { if (activeTags[t]) activeCount++; }
+  if (showNew) activeCount++;
+  btn.classList.toggle('has-active', activeCount > 0);
+  if (badge) badge.textContent = activeCount > 0 ? activeCount : '';
+  if (clearBtn) clearBtn.classList.toggle('is-visible', activeCount > 0);
 }
 
 // --- Favorites ---
@@ -3010,6 +3536,11 @@ function injectShareButtons() {
 function init() {
   initCollapsibleHeader();
   restoreFilterState();
+  // Default day to today if no saved state
+  var dayEl = document.getElementById('day');
+  if (dayEl && dayEl.value === '') {
+    dayEl.value = new Date().getDay().toString();
+  }
   applyOpenNowBadges();
   applyNewBadges();
   applyTimingBadges();
@@ -3020,6 +3551,10 @@ function init() {
   renderRecents();
   injectStructuredData();
   filterCards();
+  var totalEl = document.getElementById('total-spots');
+  if (totalEl) totalEl.textContent = document.querySelectorAll('.card').length;
+  var citiesEl = document.getElementById('total-cities');
+  if (citiesEl) citiesEl.textContent = document.querySelectorAll('#city option[value]:not([value=""])').length;
 }
 
 if (document.readyState === 'loading') {
