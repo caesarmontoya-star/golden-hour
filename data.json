@@ -1779,5 +1779,103 @@
       "$4 chips & salsa, $5 chicharrones, $8 gorditas (two double-stack tacos)",
       "$10 Frito pie, $11 shrimp ceviche"
     ]
+  },
+  {
+    "Name": "John Russell Brewing Co",
+    "City": "Erie",
+    "Address": "Erie, CO",
+    "Hours": "Mon-Fri 4-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-24",
+    "verified": true,
+    "verifiedDate": "2026-04-24",
+    "specials": [
+      "~50% off beers, mules, and wine",
+      "~50% off specialty pizzas and flatbreads"
+    ]
+  },
+  {
+    "Name": "The Old Mine",
+    "City": "Erie",
+    "Address": "Erie, CO",
+    "Hours": "Tue-Fri 4-5pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-24",
+    "verified": true,
+    "verifiedDate": "2026-04-24",
+    "specials": [
+      "$1 off all draft pours",
+      "Hard cider and pizza focus"
+    ]
+  },
+  {
+    "Name": "Master's Restaurant",
+    "City": "Erie",
+    "Address": "Erie, CO",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-24",
+    "verified": true,
+    "verifiedDate": "2026-04-24",
+    "specials": [
+      "$4 wells, $5 craft pints, $6 wine",
+      "Rotating appetizers, large patio with mountain views"
+    ]
+  },
+  {
+    "Name": "Erie Social Club",
+    "City": "Erie",
+    "Address": "105 Wells St",
+    "Hours": "Tue-Sat 3-5pm (Wed: all day)",
+    "Status": "Active",
+    "dateAdded": "2026-04-24",
+    "verified": true,
+    "verifiedDate": "2026-04-24",
+    "specials": [
+      "Wed: happy hour all day",
+      "25% off wine bottles, wine and whiskey focus"
+    ]
+  },
+  {
+    "Name": "Piripi",
+    "City": "Erie",
+    "Address": "615 Briggs St",
+    "Hours": "Mon-Sat 2-5pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-24",
+    "verified": true,
+    "verifiedDate": "2026-04-24",
+    "specials": [
+      "$6-$9 wine specials, 10% off tapas and apps",
+      "Latin/Mediterranean, 99% gluten free, heated patio"
+    ]
+  },
+  {
+    "Name": "Echo Brewing",
+    "City": "Erie",
+    "Address": "Erie, CO",
+    "Hours": "Daily 4-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-24",
+    "verified": true,
+    "verifiedDate": "2026-04-24",
+    "specials": [
+      "$2 off pints",
+      "Rotating food trucks, large dog-friendly outdoor space"
+    ]
+  },
+  {
+    "Name": "24 Carrot Bistro",
+    "City": "Erie",
+    "Address": "Erie, CO",
+    "Hours": "Tue-Fri 4:30-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-24",
+    "verified": true,
+    "verifiedDate": "2026-04-24",
+    "specials": [
+      "$2 off cocktails",
+      "$10 bistro sliders"
+    ]
   }
 ]
