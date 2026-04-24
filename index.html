@@ -240,7 +240,7 @@
   .card-address { display: block; font-size: 12px; color: var(–accent); text-decoration: none; margin-bottom: 8px; font-weight: 500; }
   .card-address:active { opacity: 0.6; }
   .divider { border: none; border-top: 1px solid #f0e8e0; margin: 8px 0; }
-  .hours { font-size: 12px; color: var(–text-2); margin-bottom: 7px; font-weight: 500; display: flex; align-items: center; gap: 5px; }
+  .hours { font-size: 12px; color: var(–text-2); margin-bottom: 7px; font-weight: 500; }
   .verified-badge { display: inline-flex; align-items: center; flex-shrink: 0; }
   .verified-badge svg { display: block; }
 
@@ -255,7 +255,7 @@ border-radius: 8px;
 }
 .tippy-box[data-theme~=‘golden’] .tippy-arrow { color: #1a0e00; }
 .tippy-box[data-theme~=‘golden’] .tippy-content { padding: 6px 10px; }
-.specials { list-style: none; }
+.specials { list-style: none; padding: 0; margin: 0; }
 .specials li { font-size: 13px; color: var(–text); padding: 2px 0 2px 14px; line-height: 1.55; position: relative; opacity: 0.85; }
 .specials li::before { content: “”; position: absolute; left: 2px; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(–accent-light); opacity: 0.6; }
 .no-results { text-align: center; padding: 48px 16px; color: var(–text-3); font-size: 15px; }
@@ -266,7 +266,8 @@ font-size: 10px;
 font-weight: 700;
 padding: 2px 8px;
 border-radius: 20px;
-margin-top: 4px;
+margin-top: 5px;
+margin-bottom: 5px;
 letter-spacing: 0.02em;
 }
 .hh-status.is-live {
