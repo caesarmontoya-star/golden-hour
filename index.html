@@ -752,9 +752,9 @@ body {
 }
 .clear-filters-btn.is-visible { display: flex; }
 .filters-collapsible {
-  transition: max-height 0.25s ease, opacity 0.2s ease;
+  transition: max-height 0.3s ease, opacity 0.25s ease;
   overflow: hidden;
-  max-height: 400px;
+  max-height: 600px;
   opacity: 1;
 }
 .filters-collapsible.is-collapsed {
@@ -3178,7 +3178,7 @@ function toggleFilters() {
 
 function initCollapsibleHeader() {
   window.addEventListener('scroll', function() {
-    if (!hasScrolled && window.scrollY > 60) {
+    if (!hasScrolled && window.scrollY > 100) {
       hasScrolled = true;
       filtersOpen = false;
       var el = document.getElementById('filtersCollapsible');
@@ -3186,7 +3186,12 @@ function initCollapsibleHeader() {
       if (el) el.classList.add('is-collapsed');
       if (btn) {
         btn.classList.add('is-visible');
-        btn.textContent = '⚙️ Filters';
+        btn.classList.remove('filters-open');
+        var badge = btn.querySelector('.filter-badge');
+        btn.innerHTML = '⚙️ Filters ';
+        if (badge) btn.appendChild(badge);
+        else btn.innerHTML = '⚙️ Filters <span class="filter-badge" id="filterBadge"></span>';
+        updateFilterBadge();
       }
     }
     if (window.scrollY <= 10 && !filtersOpen) {
