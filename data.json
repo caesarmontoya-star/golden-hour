@@ -1060,5 +1060,308 @@
       "$1 off beers",
       "$2 off wine and cocktails"
     ]
+  },
+  {
+    "Name": "Rally5",
+    "City": "Fort Collins",
+    "Address": "2310 E Harmony Rd",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$3 off Tiki and house cocktails, $2 off 16oz drafts, $2 off wine by the glass",
+      "Sliders: $4 sloppy joe, $5 burger/chicken salad/crispy buffalo chicken/BBQ pork, $7 crab cake, $10 lobster",
+      "Apps: $7 chips/queso, chips/guac, cheese curds, bacon wrapped dates, fried pickles"
+    ]
+  },
+  {
+    "Name": "High Point Bar",
+    "City": "Fort Collins",
+    "Address": "146 N College Ave",
+    "Hours": "Mon-Fri 3-5pm, late night Mon-Thu 8-9pm, Fri 9-10pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$5 drafts, $5 house wine, $5 Old Fashioned, $7 cocktails",
+      "$4 deviled eggs, $5 pretzel bites, $5 chips/queso/salsa"
+    ]
+  },
+  {
+    "Name": "Vatos Tacos & Tequila",
+    "City": "Fort Collins",
+    "Address": "234 N College Ave",
+    "Hours": "Daily 3-6pm, all day Tue",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$5 house margaritas, $1 off drafts, $4 Tecate",
+      "$3 street tacos",
+      "Tue: Taco Tuesday all day - $2 off margs/beers, discounted taco trios"
+    ]
+  },
+  {
+    "Name": "Stuft Burger Bar",
+    "City": "Fort Collins",
+    "Address": "210 S College Ave",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$2 off house spirits, $4 well drinks, $5 house wine, $1 off drafts",
+      "$5-$7 small bites: jalapeno bites, cheese curds, Brussels sprouts"
+    ]
+  },
+  {
+    "Name": "The Still Whiskey Steaks",
+    "City": "Fort Collins",
+    "Address": "151 N College Ave",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$5 drafts, $6 well drinks, $7 featured whiskey",
+      "$6-$10 small plates: steak tips, cornbread"
+    ]
+  },
+  {
+    "Name": "The Whiskey @ Tony's",
+    "City": "Fort Collins",
+    "Address": "224 S College Ave",
+    "Hours": "Daily 4-7pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off most drinks",
+      "Rotating daily whiskey flight specials"
+    ]
+  },
+  {
+    "Name": "Indigo",
+    "City": "Fort Collins",
+    "Address": "144 N Mason St",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$4 beers, $5 house wine, $8 select cocktails",
+      "$5-$8 small plates: momos, samosas, chilli gobi"
+    ]
+  },
+  {
+    "Name": "Madre Cocina y Lounge",
+    "City": "Fort Collins",
+    "Address": "214 Linden St",
+    "Hours": "Tue-Fri 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$6 margaritas, $5 palomas, $1 off beer/wine",
+      "$3-$5 tacos and street-style snacks"
+    ]
+  },
+  {
+    "Name": "The Mayor of Old Town",
+    "City": "Fort Collins",
+    "Address": "632 S Mason St",
+    "Hours": "Mon-Fri 3-5pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off all 100+ draft taps",
+      "$2 off pretzels and fries"
+    ]
+  },
+  {
+    "Name": "Sugar Beet Saloon",
+    "City": "Fort Collins",
+    "Address": "1921 Jessup Dr",
+    "Hours": "Daily 4-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$2 off cocktails and draft beer",
+      "Rotating seasonal small plates"
+    ]
+  },
+  {
+    "Name": "La Luz Mexican Grill",
+    "City": "Fort Collins",
+    "Address": "140 E Boardwalk Dr",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "Mon/Wed: BOGO 50% off margaritas",
+      "Tue/Thu: $4 micro drafts all day",
+      "Tue: $3.50 taco special all day"
+    ]
+  },
+  {
+    "Name": "Ridgehill Tavern",
+    "City": "Windsor",
+    "Address": "455 Apex Dr",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$5 wine/wells, $1 off beer",
+      "$5-$8 tavern snacks"
+    ]
+  },
+  {
+    "Name": "Twin Staves",
+    "City": "Windsor",
+    "Address": "201 4th St",
+    "Hours": "Mon-Fri 4-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$2 off house spirits"
+    ]
+  },
+  {
+    "Name": "The Goat Sports Bar",
+    "City": "Windsor",
+    "Address": "6567 Crossroads Blvd",
+    "Hours": "Daily 3-6pm and 8-9pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off wells, $4 domestic drafts",
+      "$2 off select starters"
+    ]
+  },
+  {
+    "Name": "Nordy's BBQ & Grill",
+    "City": "Loveland",
+    "Address": "4360 St Cloud Dr",
+    "Hours": "Wed-Fri 3-6pm (bar side only)",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$4 domestic pints, $5 micro/craft pints",
+      "$5 wells/house wines/house margaritas",
+      "$6 hillbilly nachos, $5 cheddar fries, $6 smokin' skins, $7 sausage basket",
+      "$5 Texas toothpicks, $7 cheese curds, $7 for 5 wings"
+    ]
+  },
+  {
+    "Name": "Pourhouse Bar & Grill",
+    "City": "Loveland",
+    "Address": "124 E 4th St",
+    "Hours": "Mon-Fri 11am-6pm, all day Sun",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off standard drafts",
+      "$4 well drinks",
+      "$4.50 house wine/margaritas/bloody marys"
+    ]
+  },
+  {
+    "Name": "Vatos Tacos & Tequila",
+    "City": "Loveland",
+    "Address": "270 N Cleveland Ave",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$2 off Vato & Macho margaritas",
+      "$2 off all beers"
+    ]
+  },
+  {
+    "Name": "Loveland Tap & Tavern",
+    "City": "Loveland",
+    "Address": "237 E 4th St",
+    "Hours": "Tue-Fri 3-7pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off pints, $5 well drinks",
+      "$5-$9 pub burgers and snacks"
+    ]
+  },
+  {
+    "Name": "Loveland Chophouse",
+    "City": "Loveland",
+    "Address": "125 E 4th St",
+    "Hours": "Daily 4-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$2 off cocktails and wine",
+      "Half off appetizers: oysters, calamari, tartare"
+    ]
+  },
+  {
+    "Name": "Wicked Tequila Room",
+    "City": "Loveland",
+    "Address": "123 E 4th St",
+    "Hours": "Mon-Fri 4-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$5 Wicked margaritas, $1 off wells"
+    ]
+  },
+  {
+    "Name": "East End Ale House",
+    "City": "Loveland",
+    "Address": "422 E 4th St",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off beer/wells, $2 off BBQ items",
+      "Free pool Mon/Wed/Fri 10am-3pm"
+    ]
+  },
+  {
+    "Name": "Tom Davis Saloon",
+    "City": "Loveland",
+    "Address": "450 N Cleveland Ave",
+    "Hours": "Daily open to 7pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "Happy hour specials (voted best in Loveland - check tomdavissaloon.com for current deals)"
+    ]
+  },
+  {
+    "Name": "The Atlas",
+    "City": "Greeley",
+    "Address": "709 16th St",
+    "Hours": "Daily 4-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$1 off drafts, $5 select cocktails",
+      "Rotating shareables"
+    ]
+  },
+  {
+    "Name": "Pura Vida Bar",
+    "City": "Greeley",
+    "Address": "818 9th St",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$5 margaritas, $1 off beer",
+      "Latin-inspired appetizers"
+    ]
+  },
+  {
+    "Name": "Bogeys Pub & Grille",
+    "City": "Greeley",
+    "Address": "2200 Clubhouse Dr",
+    "Hours": "Mon-Sat 2:30-6:30pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-23",
+    "specials": [
+      "$4 wells, $4 tall boys, $5 craft pints, $6 wine",
+      "$6-$10 wings and street tacos"
+    ]
   }
 ]
