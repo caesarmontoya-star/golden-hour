@@ -959,10 +959,13 @@
     "Hours": "Mon-Fri 3-5pm",
     "Status": "Active",
     "specials": [
-      "$2 off margaritas",
-      "$1 off tacos"
+      "$2 off Rio Classic/Big Tex margaritas, $3 select drafts/cans, $5 wine",
+      "$7 chicken quesadilla, $4/$7 chile con queso, $7 crispy jalape\u00f1o caps",
+      "$1 off tacos: shishito relleno, cilantro-lime chicken, baja fish, grilled skirt steak (+$1), carnitas"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "verified": true,
+    "verifiedDate": "2026-04-24"
   },
   {
     "Name": "Smokin' Dave's BBQ",
@@ -1078,13 +1081,20 @@
     "Name": "High Point Bar",
     "City": "Fort Collins",
     "Address": "146 N College Ave",
-    "Hours": "Mon-Fri 3-5pm, late night Mon-Thu 8-9pm, Fri 9-10pm",
+    "Hours": "Daily 2pm-close (rotating daily specials)",
     "Status": "Active",
     "dateAdded": "2026-04-23",
     "specials": [
-      "$5 drafts, $5 house wine, $5 Old Fashioned, $7 cocktails",
-      "$4 deviled eggs, $5 pretzel bites, $5 chips/queso/salsa"
-    ]
+      "Mon: $1 off drafts and wells all day",
+      "Tue: discounted New Belgium pints",
+      "Wed: $6.50 PBR pitcher, $2 Rainier tall boys",
+      "Thu: $3.50 craft pints",
+      "Fri: $7 Moscow mules, $7 Beam Old Fashioneds",
+      "Sat: $3.50 Modelo and Hornitos",
+      "Sun: happy hour all day and all night"
+    ],
+    "verified": true,
+    "verifiedDate": "2026-04-24"
   },
   {
     "Name": "Vatos Tacos & Tequila",
@@ -1103,25 +1113,29 @@
     "Name": "Stuft Burger Bar",
     "City": "Fort Collins",
     "Address": "210 S College Ave",
-    "Hours": "Mon-Fri 3-6pm",
+    "Hours": "Mon-Thu 4-7pm",
     "Status": "Active",
     "dateAdded": "2026-04-23",
     "specials": [
-      "$2 off house spirits, $4 well drinks, $5 house wine, $1 off drafts",
-      "$5-$7 small bites: jalapeno bites, cheese curds, Brussels sprouts"
-    ]
+      "$3 domestic beers, $4 craft beers, $3 house wine, half off wine bottles",
+      "Half off all appetizers"
+    ],
+    "verified": true,
+    "verifiedDate": "2026-04-24"
   },
   {
     "Name": "The Still Whiskey Steaks",
     "City": "Fort Collins",
     "Address": "151 N College Ave",
-    "Hours": "Mon-Fri 3-6pm",
+    "Hours": "Daily 11am-6pm",
     "Status": "Active",
     "dateAdded": "2026-04-23",
     "specials": [
-      "$5 drafts, $6 well drinks, $7 featured whiskey",
-      "$6-$10 small plates: steak tips, cornbread"
-    ]
+      "Specials on food and drink (check their site for current pricing)",
+      "Mon: half off all wine bottles"
+    ],
+    "verified": true,
+    "verifiedDate": "2026-04-24"
   },
   {
     "Name": "The Whiskey @ Tony's",
@@ -1139,13 +1153,15 @@
     "Name": "Indigo",
     "City": "Fort Collins",
     "Address": "144 N Mason St",
-    "Hours": "Daily 3-6pm",
+    "Hours": "Daily 3-5pm",
     "Status": "Active",
     "dateAdded": "2026-04-23",
     "specials": [
-      "$4 beers, $5 house wine, $8 select cocktails",
-      "$5-$8 small plates: momos, samosas, chilli gobi"
-    ]
+      "$8 signature cocktails, $5 house wine/$22 bottle, $4 beers, $8 beer + shot combo",
+      "Small plates: samosa chaat, tandoori wings and more"
+    ],
+    "verified": true,
+    "verifiedDate": "2026-04-24"
   },
   {
     "Name": "Madre Cocina y Lounge",
@@ -1321,13 +1337,15 @@
     "Name": "Tom Davis Saloon",
     "City": "Loveland",
     "Address": "450 N Cleveland Ave",
-    "Hours": "Mon 4-10pm (industry night), Thu-Sat noon-3pm",
+    "Hours": "Daily open to 7pm",
     "Status": "Active",
     "dateAdded": "2026-04-23",
     "specials": [
-      "$4 wells, $2 off all beer (Thu-Sat), BOGO shots/bombs (Mon)",
-      "Rotating food truck specials"
-    ]
+      "$4 drafts, $4 margaritas",
+      "$4 off TD teas, $4 off lemonades"
+    ],
+    "verified": true,
+    "verifiedDate": "2026-04-24"
   },
   {
     "Name": "The Atlas",
@@ -1373,9 +1391,12 @@
     "Status": "Active",
     "dateAdded": "2026-04-23",
     "specials": [
-      "$4 Parry's pints, $5 signature pints, $5 house margs/wine",
-      "$3.99 parm fries, $5.99 pizza/cheesy bread, $6.99 wings"
-    ]
+      "$4 Parry's/signature pints (second pour $3), $5 spirits/house margs/wine/prosecco",
+      "$7 frose, $8 Fireside martini, $8 espresso martini",
+      "$3.99 parm/fire fries, $5.99 cheesy bread/parm bites/9\" pizza, $6.99 wings, $7.99 pretzel & beer cheese"
+    ],
+    "verified": true,
+    "verifiedDate": "2026-04-24"
   },
   {
     "Name": "Lazy Dog Bar & Grill",
@@ -1393,13 +1414,16 @@
     "Name": "Bad Daddy's Burger Bar",
     "City": "Johnstown",
     "Address": "4848 Thompson Pkwy",
-    "Hours": "Daily 3-6pm and 8pm-close",
+    "Hours": "Mon-Fri 4-6pm",
     "Status": "Active",
     "dateAdded": "2026-04-23",
     "specials": [
-      "$1 off drafts/wells/wine, $5 Bad Ass margaritas",
-      "$3 fried pickles/fries, $4 tots/queso, $5 sliders/wings"
-    ]
+      "$4 Bad Daddy's Amber 16oz, $5 domestics/imports, $6 craft drafts/well spirits/house wine",
+      "$6 housemade chips & dip, $6 chili cheese tots, $7 fried pickles, $7 crispy verde fries",
+      "$8 Bad Ass margarita"
+    ],
+    "verified": true,
+    "verifiedDate": "2026-04-24"
   },
   {
     "Name": "Bonefish Grill",
@@ -1417,13 +1441,17 @@
     "Name": "The Post Chicken & Beer",
     "City": "Longmont",
     "Address": "210 Main St",
-    "Hours": "Mon-Fri 2-6pm",
+    "Hours": "Mon-Fri 2-6pm (dine-in only)",
     "Status": "Active",
     "dateAdded": "2026-04-23",
     "specials": [
-      "$5 drafts, $6 well cocktails, 4 flights for $6",
-      "$6 wings/sliders, $1.50 deviled eggs, $11 sandwiches"
-    ]
+      "$5 draft pints, $6 well cocktails, $7 Post margarita, $6 house wine, 4 flights for $6",
+      "$10 Back in the Saddle (pint + bourbon), $8 combo (Montucky + fried chicken tender)",
+      "4 wings $6, loaded fries $6, cauliflower $6, sliders $6 each, deviled eggs $1.50, pinto bean dip $9",
+      "Soup $5, salads $6, side fries $5, appetizer platter $18"
+    ],
+    "verified": true,
+    "verifiedDate": "2026-04-24"
   },
   {
     "Name": "The Roost",
@@ -1465,13 +1493,15 @@
     "Name": "Georgia Boys BBQ",
     "City": "Longmont",
     "Address": "250 3rd Ave",
-    "Hours": "Tue-Fri 2:30-5pm",
+    "Hours": "Mon-Fri 2:30-5pm",
     "Status": "Active",
     "dateAdded": "2026-04-23",
     "specials": [
-      "$1 off pints, $5 house margaritas",
-      "$5-$8 BBQ sliders and lil bowls"
-    ]
+      "50% off all draft beer",
+      "$7 bites: pickle fries, loaded fries (pork or chicken), 5 smoked wings, pork or chicken sandwich, medium banana pudding"
+    ],
+    "verified": true,
+    "verifiedDate": "2026-04-24"
   },
   {
     "Name": "West Side Tavern",
@@ -1560,13 +1590,15 @@
     "Name": "Door 222",
     "City": "Loveland",
     "Address": "222 E 4th St",
-    "Hours": "Mon-Fri 3-6pm",
+    "Hours": "Daily 4-5:30pm",
     "Status": "Active",
     "dateAdded": "2026-04-23",
     "specials": [
-      "$1 off drafts, $7 special cocktails, $6 wine",
-      "Half-priced tapas: dates, cheese curds"
-    ]
+      "Specials on draft beer and wine",
+      "Half-priced select appetizers"
+    ],
+    "verified": true,
+    "verifiedDate": "2026-04-24"
   },
   {
     "Name": "El Mexicali Cafe",
@@ -1678,12 +1710,15 @@
     "Name": "Left Hand Brewing",
     "City": "Longmont",
     "Address": "1265 Boston Ave",
-    "Hours": "Mon-Fri 3-6pm",
+    "Hours": "Tue-Fri 3-5pm",
     "Status": "Active",
     "dateAdded": "2026-04-23",
     "specials": [
-      "$1 off all full pours"
-    ]
+      "$10 burgers and single topping pizzas",
+      "$5 select beers, $6 margaritas, $4 shots"
+    ],
+    "verified": true,
+    "verifiedDate": "2026-04-24"
   },
   {
     "Name": "Oskar Blues HML&S",
@@ -1728,6 +1763,21 @@
     "dateAdded": "2026-04-23",
     "specials": [
       "$1 off drafts"
+    ]
+  },
+  {
+    "Name": "Luna's Tacos & Tequila",
+    "City": "Windsor",
+    "Address": "1246 Automation Dr",
+    "Hours": "Daily 3-5pm",
+    "Status": "Active",
+    "dateAdded": "2026-04-24",
+    "verified": true,
+    "verifiedDate": "2026-04-24",
+    "specials": [
+      "$5 house margaritas, $5 draft beer, $5 Suerte Blanco shots",
+      "$4 chips & salsa, $5 chicharrones, $8 gorditas (two double-stack tacos)",
+      "$10 Frito pie, $11 shrimp ceviche"
     ]
   }
 ]
