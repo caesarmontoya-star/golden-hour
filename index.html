@@ -1,9 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Golden Hour | NoCo's Happy Hour Guide for Fort Collins, Greeley, Windsor & Loveland</title>
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy.umd.min.js"></script>
 <meta name="description" content="Find the best happy hour deals in Northern Colorado. 80+ bars and restaurants in Fort Collins, Greeley, Windsor, and Loveland with hours, specials, and filters for open now, day of week, and more.">
 <meta name="keywords" content="happy hour Fort Collins, happy hour Greeley, happy hour Windsor, happy hour Loveland, NoCo happy hour, Northern Colorado bars, Fort Collins drink specials, Greeley happy hour deals">
 <meta property="og:title" content="Golden Hour | NoCo's Happy Hour Guide">
@@ -35,107 +39,108 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #1a1008;
-    --header-bg: #231508;
-    --surface: #2a1a0e;
-    --border: #3d2510;
-    --border-open: #1a6b35;
-    --accent: #ff7a1f;
-    --accent-light: #ff9a4f;
-    --accent-bg: #2a1a0a;
-    --text: #f5e6d8;
-    --text-2: #c9a882;
-    --text-3: #8a6a50;
-    --green: #34c468;
-    --green-bg: #0d2a1a;
-    --green-border: #1a6b35;
-    --orange: #ff7a1f;
-  }
+:root {
+–bg: #1a1008;
+–header-bg: #231508;
+–surface: #2a1a0e;
+–border: #3d2510;
+–border-open: #1a6b35;
+–accent: #ff7a1f;
+–accent-light: #ff9a4f;
+–accent-bg: #2a1a0a;
+–text: #f5e6d8;
+–text-2: #c9a882;
+–text-3: #8a6a50;
+–green: #34c468;
+–green-bg: #0d2a1a;
+–green-border: #1a6b35;
+–orange: #ff7a1f;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+}
+
+- { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+  font-family: “DM Sans”, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(–bg);
+  color: var(–text);
   padding-bottom: env(safe-area-inset-bottom, 0px);
-}
-.header {
-  background: var(--header-bg);
+  }
+  .header {
+  background: var(–header-bg);
   padding: 14px 16px;
   padding-top: calc(14px + env(safe-area-inset-top, 0px));
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(–border);
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 10;
-}
-.header-title {
+  }
+  .header-title {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 12px;
-}
-.header-title h1 {
-  font-family: "Nunito", sans-serif;
+  }
+  .header-title h1 {
+  font-family: “Nunito”, sans-serif;
   font-size: 22px;
   font-weight: 800;
-  color: var(--accent);
+  color: var(–accent);
   letter-spacing: -0.3px;
   line-height: 1;
-}
-.header-title .subtitle {
+  }
+  .header-title .subtitle {
   font-size: 11px;
   font-weight: 600;
-  color: var(--text-3);
+  color: var(–text-3);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding-top: 2px;
-}
-.title-golden { color: #8B4513; }
-.title-hour   { color: #ff7a1f; }
-@media (prefers-color-scheme: dark) {
+  }
+  .title-golden { color: #8B4513; }
+  .title-hour   { color: #ff7a1f; }
+  @media (prefers-color-scheme: dark) {
   .title-golden { color: #f5deb3; }
   .title-hour   { color: #ff7a1f; }
   .header-title .subtitle { color: #c9a882; }
-}
-.controls { display: flex; gap: 8px; }
-.ctrl {
+  }
+  .controls { display: flex; gap: 8px; }
+  .ctrl {
   height: 42px;
   padding: 0 12px;
   font-size: 15px;
-  font-family: "DM Sans", sans-serif;
-  border: 1.5px solid var(--border);
+  font-family: “DM Sans”, sans-serif;
+  border: 1.5px solid var(–border);
   border-radius: 10px;
-  background: var(--surface);
-  color: var(--text);
+  background: var(–surface);
+  color: var(–text);
   -webkit-appearance: none;
   appearance: none;
   transition: border-color 0.15s;
-}
-.ctrl:focus { outline: none; border-color: var(--accent); }
-.ctrl-search { flex: 1; }
-.ctrl-search::placeholder { color: var(--text-3); }
-.ctrl-select {
+  }
+  .ctrl:focus { outline: none; border-color: var(–accent); }
+  .ctrl-search { flex: 1; }
+  .ctrl-search::placeholder { color: var(–text-3); }
+  .ctrl-select {
   padding-right: 30px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23b8997e' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘12’ height=‘8’ viewBox=‘0 0 12 8’%3E%3Cpath d=‘M1 1l5 5 5-5’ stroke=’%23b8997e’ stroke-width=‘1.5’ fill=‘none’ stroke-linecap=‘round’/%3E%3C/svg%3E”);
   background-repeat: no-repeat;
   background-position: right 10px center;
   cursor: pointer;
-}
-.filter-row { display: flex; gap: 8px; margin-top: 8px; }
-.filter-row .ctrl-select { flex: 1; }
-.toggle-row { display: flex; gap: 7px; margin-top: 8px; }
-.toggle-btn {
+  }
+  .filter-row { display: flex; gap: 8px; margin-top: 8px; }
+  .filter-row .ctrl-select { flex: 1; }
+  .toggle-row { display: flex; gap: 7px; margin-top: 8px; }
+  .toggle-btn {
   flex: 1;
   height: 40px;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid var(–border);
   border-radius: 10px;
-  background: var(--surface);
-  font-family: "DM Sans", sans-serif;
+  background: var(–surface);
+  font-family: “DM Sans”, sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: var(--text-2);
+  color: var(–text-2);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -146,10 +151,10 @@ body {
   appearance: none;
   transition: all 0.15s;
   text-decoration: none;
-}
-.toggle-btn.is-active-open { background: var(--green-bg); border-color: var(--green-border); color: var(--green); font-weight: 600; }
-.toggle-btn.is-active-fav  { background: var(--accent-bg); border-color: #f4a07a; color: var(--orange); font-weight: 600; }
-.tag-row {
+  }
+  .toggle-btn.is-active-open { background: var(–green-bg); border-color: var(–green-border); color: var(–green); font-weight: 600; }
+  .toggle-btn.is-active-fav  { background: var(–accent-bg); border-color: #f4a07a; color: var(–orange); font-weight: 600; }
+  .tag-row {
   display: flex;
   gap: 6px;
   margin-top: 8px;
@@ -157,18 +162,18 @@ body {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   padding-bottom: 2px;
-}
-.tag-row::-webkit-scrollbar { display: none; }
-.tag-btn {
+  }
+  .tag-row::-webkit-scrollbar { display: none; }
+  .tag-btn {
   height: 30px;
   padding: 0 12px;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid var(–border);
   border-radius: 20px;
-  background: var(--surface);
-  font-family: "DM Sans", sans-serif;
+  background: var(–surface);
+  font-family: “DM Sans”, sans-serif;
   font-size: 12px;
   font-weight: 500;
-  color: var(--text-2);
+  color: var(–text-2);
   cursor: pointer;
   white-space: nowrap;
   flex-shrink: 0;
@@ -176,37 +181,38 @@ body {
   -webkit-appearance: none;
   appearance: none;
   transition: all 0.15s;
-}
-.tag-btn.is-active { background: var(--accent-bg); border-color: var(--accent-light); color: var(--accent); font-weight: 600; }
-.count { font-size: 12px; color: var(--text-3); padding-top: 8px; min-height: 22px; }
-.grid { padding: 12px; display: flex; flex-direction: column; gap: 10px; }
-@media (min-width: 600px) {
+  }
+  .tag-btn.is-active { background: var(–accent-bg); border-color: var(–accent-light); color: var(–accent); font-weight: 600; }
+  .count { font-size: 12px; color: var(–text-3); padding-top: 8px; min-height: 22px; }
+  .grid { padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+  @media (min-width: 600px) {
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
   .header { padding-top: 14px; }
-}
-.card {
-  background: var(--surface);
+  }
+  .card {
+  background: var(–surface);
   border-radius: 14px;
   padding: 14px 16px;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid var(–border);
   transition: border-color 0.2s;
-}
-.card.is-open { border-color: var(--green-border); }
-.card.is-hidden { display: none; }
-.card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; gap: 8px; }
-.card-name { font-size: 15px; font-weight: 600; flex: 1; color: var(--text); }
-.card-right { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
-.badge { font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 20px; white-space: nowrap; }
-.badge-fc       { background: #e8f0ff; color: #2d5be3; }
-.badge-windsor  { background: #e6f7ee; color: #1a7a40; }
-.badge-loveland { background: #fff0e0; color: #c05c0a; }
-.badge-greeley     { background: #fce8e8; color: #b91c1c; }
-.badge-wellington  { background: #f3e8ff; color: #7e22ce; }
-.badge-johnstown   { background: #e0f0ff; color: #0c5a9e; }
-.badge-longmont    { background: #e8f5e9; color: #2e7d32; }
-.open-badge     { background: var(--green-bg); color: var(--green); font-size: 10px; font-weight: 700; border: 1px solid var(--green-border); }
-.new-badge      { background: #fef9c3; color: #854d0e; font-size: 10px; font-weight: 700; border: 1px solid #fde047; }
-@media (prefers-color-scheme: dark) {
+  }
+  .card.is-open { border-color: var(–green-border); }
+  .card.is-hidden { display: none; }
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; gap: 8px; }
+  .card-name { font-size: 15px; font-weight: 600; flex: 1; color: var(–text); }
+  .card-right { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
+  .badge { font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 20px; white-space: nowrap; }
+  .badge-fc       { background: #e8f0ff; color: #2d5be3; }
+  .badge-windsor  { background: #e6f7ee; color: #1a7a40; }
+  .badge-loveland { background: #fff0e0; color: #c05c0a; }
+  .badge-greeley     { background: #fce8e8; color: #b91c1c; }
+  .badge-wellington  { background: #f3e8ff; color: #7e22ce; }
+  .badge-johnstown   { background: #e0f0ff; color: #0c5a9e; }
+  .badge-longmont    { background: #e8f5e9; color: #2e7d32; }
+  .badge-erie        { background: #fdf4e3; color: #92400e; }
+  .open-badge     { background: var(–green-bg); color: var(–green); font-size: 10px; font-weight: 700; border: 1px solid var(–green-border); }
+  .new-badge      { background: #fef9c3; color: #854d0e; font-size: 10px; font-weight: 700; border: 1px solid #fde047; }
+  @media (prefers-color-scheme: dark) {
   .badge-fc       { background: #1a2a4a; color: #7aaaff; }
   .badge-windsor  { background: #0d2a1a; color: #4dcc80; }
   .badge-loveland { background: #2a1a08; color: #ffaa55; }
@@ -214,9 +220,10 @@ body {
   .badge-wellington { background: #1e0d2a; color: #cc88ff; }
   .badge-johnstown { background: #0a1e2e; color: #7ac4ff; }
   .badge-longmont  { background: #0d2010; color: #6dcc80; }
+  .badge-erie       { background: #2a1a00; color: #ffb347; }
   .new-badge      { background: #2a2200; color: #ffd700; border-color: #665500; }
-}
-.fav-btn {
+  }
+  .fav-btn {
   background: none;
   border: none;
   font-size: 20px;
@@ -231,18 +238,121 @@ body {
   display: flex;
   align-items: center;
   transition: color 0.15s;
+  }
+  .fav-btn.is-fav { color: var(–orange); }
+  .card-address { display: block; font-size: 12px; color: var(–accent); text-decoration: none; margin-bottom: 8px; font-weight: 500; }
+  .card-address:active { opacity: 0.6; }
+  .divider { border: none; border-top: 1px solid #f0e8e0; margin: 8px 0; }
+  .hours { font-size: 12px; color: var(–text-2); margin-bottom: 7px; font-weight: 500; display: flex; align-items: center; gap: 5px; }
+  .verified-badge { display: inline-flex; align-items: center; flex-shrink: 0; }
+  .verified-badge svg { display: block; }
+
+/* Tippy golden theme */
+.tippy-box[data-theme~=‘golden’] {
+background: #1a0e00;
+color: #f5deb3;
+font-size: 12px;
+font-weight: 500;
+border: 1px solid #c05c0a;
+border-radius: 8px;
 }
-.fav-btn.is-fav { color: var(--orange); }
-.card-address { display: block; font-size: 12px; color: var(--accent); text-decoration: none; margin-bottom: 8px; font-weight: 500; }
-.card-address:active { opacity: 0.6; }
-.divider { border: none; border-top: 1px solid #f0e8e0; margin: 8px 0; }
-.hours { font-size: 12px; color: var(--text-2); margin-bottom: 7px; font-weight: 500; display: flex; align-items: center; gap: 5px; }
-.verified-badge { display: inline-flex; align-items: center; flex-shrink: 0; }
-.verified-badge svg { display: block; }
+.tippy-box[data-theme~=‘golden’] .tippy-arrow { color: #1a0e00; }
+.tippy-box[data-theme~=‘golden’] .tippy-content { padding: 6px 10px; }
 .specials { list-style: none; }
-.specials li { font-size: 13px; color: var(--text); padding: 2px 0 2px 14px; line-height: 1.55; position: relative; opacity: 0.85; }
-.specials li::before { content: ""; position: absolute; left: 2px; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent-light); opacity: 0.6; }
-.no-results { text-align: center; padding: 48px 16px; color: var(--text-3); font-size: 15px; }
+.specials li { font-size: 13px; color: var(–text); padding: 2px 0 2px 14px; line-height: 1.55; position: relative; opacity: 0.85; }
+.specials li::before { content: “”; position: absolute; left: 2px; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(–accent-light); opacity: 0.6; }
+.no-results { text-align: center; padding: 48px 16px; color: var(–text-3); font-size: 15px; }
+
+/* HH Status pills */
+.hh-status {
+display: inline-block;
+font-size: 10px;
+font-weight: 700;
+padding: 2px 7px;
+border-radius: 20px;
+margin-top: 4px;
+letter-spacing: 0.02em;
+}
+.hh-status.is-live {
+background: #dcfce7;
+color: #15803d;
+border: 1px solid #86efac;
+}
+.hh-status.is-soon {
+background: #fff7ed;
+color: #c05c0a;
+border: 1px solid #fdba74;
+}
+.hh-status.is-later {
+background: var(–surface-2, #f5f5f5);
+color: var(–text-3);
+border: 1px solid var(–border);
+}
+@keyframes livePulse {
+0%, 100% { opacity: 1; }
+50% { opacity: 0.7; }
+}
+.hh-status.is-live { animation: livePulse 2s ease-in-out infinite; }
+@media (prefers-color-scheme: dark) {
+.hh-status.is-live  { background: #052e16; color: #4ade80; border-color: #166534; }
+.hh-status.is-soon  { background: #1c0a00; color: #fb923c; border-color: #7c2d12; }
+.hh-status.is-later { background: #1f1f1f; color: #6b7280; border-color: #374151; }
+}
+
+/* Card detail modal (bottom sheet) */
+.card-modal-overlay {
+display: none;
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.5);
+z-index: 100;
+-webkit-tap-highlight-color: transparent;
+}
+.card-modal-overlay.is-open { display: block; }
+.card-modal {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background: var(–surface);
+border-radius: 20px 20px 0 0;
+padding: 20px 20px calc(20px + env(safe-area-inset-bottom, 0px));
+max-height: 85vh;
+overflow-y: auto;
+transform: translateY(100%);
+transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.card-modal-overlay.is-open .card-modal { transform: translateY(0); }
+.card-modal-handle { width: 40px; height: 4px; background: var(–border); border-radius: 2px; margin: 0 auto 16px; }
+.card-modal-name { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.card-modal-city { font-size: 12px; color: var(–text-3); margin-bottom: 12px; }
+.card-modal-countdown {
+background: var(–surface-2, #f8f8f8);
+border-radius: 12px;
+padding: 14px 16px;
+margin-bottom: 14px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.card-modal-countdown-label { font-size: 12px; color: var(–text-3); }
+.card-modal-countdown-time { font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.card-modal-countdown-time.is-live { color: #16a34a; }
+.card-modal-countdown-time.is-soon { color: #c05c0a; }
+.card-modal-countdown-time.is-inactive { color: var(–text-3); font-size: 16px; }
+@media (prefers-color-scheme: dark) {
+.card-modal { background: #1a1a1a; }
+.card-modal-countdown { background: #222; }
+.card-modal-countdown-time.is-live { color: #4ade80; }
+.card-modal-countdown-time.is-soon { color: #fb923c; }
+}
+.card-modal-hours { font-size: 13px; color: var(–text-2); margin-bottom: 12px; font-weight: 500; }
+.card-modal-specials { list-style: none; margin-bottom: 16px; }
+.card-modal-specials li { font-size: 14px; padding: 5px 0 5px 16px; position: relative; border-bottom: 1px solid var(–border); color: var(–text); }
+.card-modal-specials li:last-child { border-bottom: none; }
+.card-modal-specials li::before { content: “”; position: absolute; left: 2px; top: 13px; width: 6px; height: 6px; border-radius: 50%; background: var(–accent); opacity: 0.5; }
+.card-modal-address { display: block; font-size: 13px; color: var(–accent); text-decoration: none; padding: 10px 0; border-top: 1px solid var(–border); }
+.card-modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 22px; color: var(–text-3); cursor: pointer; padding: 4px; line-height: 1; }
 
 /* Starting Soon and Last Call badges */
 .starting-badge { background: #fff7ed; color: #c05c0a; font-size: 10px; font-weight: 700; border: 1px solid #fdba74; }
@@ -252,419 +362,421 @@ body {
 .card { transition: opacity 0.15s ease, border-color 0.2s; }
 .card.is-hiding { opacity: 0; }
 @keyframes cardFadeIn {
-  from { opacity: 0; transform: translateY(4px); }
-  to   { opacity: 1; transform: translateY(0); }
+from { opacity: 0; transform: translateY(4px); }
+to   { opacity: 1; transform: translateY(0); }
 }
 .card:not(.is-hidden) { animation: cardFadeIn 0.15s ease forwards; }
 
 /* Search clear button */
 .search-wrap { position: relative; flex: 1; display: flex; }
 .search-clear {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  font-size: 16px;
-  color: var(--text-3);
-  cursor: pointer;
-  display: none;
-  padding: 4px;
-  line-height: 1;
-  -webkit-tap-highlight-color: transparent;
+position: absolute;
+right: 10px;
+top: 50%;
+transform: translateY(-50%);
+background: none;
+border: none;
+font-size: 16px;
+color: var(–text-3);
+cursor: pointer;
+display: none;
+padding: 4px;
+line-height: 1;
+-webkit-tap-highlight-color: transparent;
 }
 .search-clear.is-visible { display: block; }
 
 /* Tag row fade indicator */
 .tag-row-wrap { position: relative; margin-top: 8px; }
 .tag-row-wrap::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 32px;
-  background: linear-gradient(to right, transparent, var(--header-bg));
-  pointer-events: none;
+content: ‘’;
+position: absolute;
+right: 0;
+top: 0;
+bottom: 0;
+width: 32px;
+background: linear-gradient(to right, transparent, var(–header-bg));
+pointer-events: none;
 }
 .tag-row { margin-top: 0; }
 
-/* Today's hours highlight */
-.hours.is-today { color: var(--accent); font-weight: 600; }
+/* Today’s hours highlight */
+.hours.is-today { color: var(–accent); font-weight: 600; }
 
 /* Recently viewed section */
 .recents-section {
-  padding: 0 12px 0;
-  margin-bottom: 4px;
+padding: 0 12px 0;
+margin-bottom: 4px;
 }
 .recents-label {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 6px;
+font-size: 11px;
+font-weight: 600;
+color: var(–text-3);
+text-transform: uppercase;
+letter-spacing: 0.06em;
+margin-bottom: 6px;
 }
 .recents-row {
-  display: flex;
-  gap: 6px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding-bottom: 2px;
+display: flex;
+gap: 6px;
+overflow-x: auto;
+scrollbar-width: none;
+padding-bottom: 2px;
 }
 .recents-row::-webkit-scrollbar { display: none; }
 .recent-chip {
-  height: 30px;
-  padding: 0 12px;
-  border: 1.5px solid var(--border);
-  border-radius: 20px;
-  background: var(--surface);
-  font-family: "DM Sans", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text-2);
-  cursor: pointer;
-  white-space: nowrap;
-  flex-shrink: 0;
-  -webkit-tap-highlight-color: transparent;
+height: 30px;
+padding: 0 12px;
+border: 1.5px solid var(–border);
+border-radius: 20px;
+background: var(–surface);
+font-family: “DM Sans”, sans-serif;
+font-size: 12px;
+font-weight: 500;
+color: var(–text-2);
+cursor: pointer;
+white-space: nowrap;
+flex-shrink: 0;
+-webkit-tap-highlight-color: transparent;
 }
-.recent-chip:active { background: var(--accent-bg); }
-
+.recent-chip:active { background: var(–accent-bg); }
 
 /* Floating Lucky Button */
 .lucky-btn {
-  position: fixed;
-  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 28px;
-  height: 52px;
-  padding: 0 24px;
-  font-family: "DM Sans", sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 20px rgba(232, 101, 10, 0.4);
-  z-index: 50;
-  -webkit-tap-highlight-color: transparent;
-  white-space: nowrap;
-  transition: transform 0.15s, box-shadow 0.15s;
+position: fixed;
+bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+left: 50%;
+transform: translateX(-50%);
+background: var(–accent);
+color: #fff;
+border: none;
+border-radius: 28px;
+height: 52px;
+padding: 0 24px;
+font-family: “DM Sans”, sans-serif;
+font-size: 15px;
+font-weight: 600;
+cursor: pointer;
+display: flex;
+align-items: center;
+gap: 8px;
+box-shadow: 0 4px 20px rgba(232, 101, 10, 0.4);
+z-index: 50;
+-webkit-tap-highlight-color: transparent;
+white-space: nowrap;
+transition: transform 0.15s, box-shadow 0.15s;
 }
 .lucky-btn:active {
-  transform: translateX(-50%) scale(0.95);
-  box-shadow: 0 2px 10px rgba(232, 101, 10, 0.3);
+transform: translateX(-50%) scale(0.95);
+box-shadow: 0 2px 10px rgba(232, 101, 10, 0.3);
 }
 .lucky-btn .dice { font-size: 20px; }
 
 @keyframes luckyPulse {
-  0%   { border-color: var(--accent); background: #ffeedd; transform: scale(1.02); }
-  30%  { border-color: var(--accent-light); background: #fff0e0; transform: scale(1.02); }
-  80%  { border-color: var(--accent); background: #fff5ec; transform: scale(1); }
-  100% { border-color: var(--border); background: #fff; transform: scale(1); }
+0%   { border-color: var(–accent); background: #ffeedd; transform: scale(1.02); }
+30%  { border-color: var(–accent-light); background: #fff0e0; transform: scale(1.02); }
+80%  { border-color: var(–accent); background: #fff5ec; transform: scale(1); }
+100% { border-color: var(–border); background: #fff; transform: scale(1); }
 }
 .card.is-lucky {
-  animation: luckyPulse 5s ease-out forwards;
-  border-width: 3px;
-  position: relative;
-  z-index: 2;
+animation: luckyPulse 5s ease-out forwards;
+border-width: 3px;
+position: relative;
+z-index: 2;
 }
 .lucky-badge {
-  display: inline-block;
-  background: var(--accent);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 4px 12px;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  letter-spacing: 0.03em;
+display: inline-block;
+background: var(–accent);
+color: #fff;
+font-size: 12px;
+font-weight: 700;
+padding: 4px 12px;
+border-radius: 20px;
+margin-bottom: 10px;
+letter-spacing: 0.03em;
 }
 
 /* Back to top button */
 .back-top-btn {
-  position: fixed;
-  bottom: calc(90px + env(safe-area-inset-bottom, 0px));
-  right: 16px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--surface);
-  border: 1.5px solid var(--border);
-  color: var(--text-2);
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 49;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s;
-  -webkit-tap-highlight-color: transparent;
+position: fixed;
+bottom: calc(90px + env(safe-area-inset-bottom, 0px));
+right: 16px;
+width: 44px;
+height: 44px;
+border-radius: 50%;
+background: var(–surface);
+border: 1.5px solid var(–border);
+color: var(–text-2);
+font-size: 18px;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+z-index: 49;
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.2s;
+-webkit-tap-highlight-color: transparent;
 }
 .back-top-btn.is-visible { opacity: 1; pointer-events: auto; }
 .grid { padding-bottom: 90px; }
 
 /* Crawl Modal */
 .crawl-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 100;
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
+display: none;
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.5);
+z-index: 100;
+-webkit-backdrop-filter: blur(4px);
+backdrop-filter: blur(4px);
 }
 .crawl-overlay.is-open { display: flex; align-items: flex-end; justify-content: center; }
 @media (min-width: 600px) { .crawl-overlay.is-open { align-items: center; } }
 .crawl-sheet {
-  background: #fff;
-  border-radius: 20px 20px 0 0;
-  width: 100%;
-  max-width: 560px;
-  max-height: 90vh;
-  overflow-y: auto;
-  padding: 0 0 32px 0;
+background: #fff;
+border-radius: 20px 20px 0 0;
+width: 100%;
+max-width: 560px;
+max-height: 90vh;
+overflow-y: auto;
+padding: 0 0 32px 0;
 }
 @media (min-width: 600px) { .crawl-sheet { border-radius: 20px; } }
 .crawl-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 20px 16px;
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  background: #fff;
-  z-index: 1;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 20px 20px 16px;
+border-bottom: 1px solid var(–border);
+position: sticky;
+top: 0;
+background: #fff;
+z-index: 1;
 }
 .crawl-header h2 {
-  font-family: "Nunito", sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--accent);
+font-family: “Nunito”, sans-serif;
+font-size: 20px;
+font-weight: 800;
+color: var(–accent);
 }
 .crawl-close {
-  background: #f5f0eb;
-  border: none;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  font-size: 18px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-2);
+background: #f5f0eb;
+border: none;
+width: 32px;
+height: 32px;
+border-radius: 50%;
+font-size: 18px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(–text-2);
 }
 .crawl-picks {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 16px 20px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+padding: 16px 20px;
 }
 .crawl-pick-btn {
-  background: var(--bg);
-  border: 1.5px solid var(--border);
-  border-radius: 14px;
-  padding: 14px 16px;
-  text-align: left;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  transition: all 0.15s;
+background: var(–bg);
+border: 1.5px solid var(–border);
+border-radius: 14px;
+padding: 14px 16px;
+text-align: left;
+cursor: pointer;
+-webkit-tap-highlight-color: transparent;
+transition: all 0.15s;
 }
 .crawl-pick-btn:active { opacity: 0.7; }
 .crawl-pick-name {
-  font-family: "Nunito", sans-serif;
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--accent);
-  margin-bottom: 2px;
+font-family: “Nunito”, sans-serif;
+font-size: 15px;
+font-weight: 800;
+color: var(–accent);
+margin-bottom: 2px;
 }
 .crawl-pick-tagline {
-  font-size: 12px;
-  color: var(--text-2);
-  font-weight: 500;
+font-size: 12px;
+color: var(–text-2);
+font-weight: 500;
 }
 .crawl-result {
-  display: none;
-  padding: 0 20px;
+display: none;
+padding: 0 20px;
 }
 .crawl-result.is-open { display: block; }
 .crawl-back {
-  background: none;
-  border: none;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--accent);
-  cursor: pointer;
-  padding: 0 0 12px 0;
-  display: flex;
-  align-items: center;
-  gap: 4px;
+background: none;
+border: none;
+font-size: 13px;
+font-weight: 600;
+color: var(–accent);
+cursor: pointer;
+padding: 0 0 12px 0;
+display: flex;
+align-items: center;
+gap: 4px;
 }
 .crawl-title {
-  font-family: "Nunito", sans-serif;
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--text);
-  margin-bottom: 4px;
+font-family: “Nunito”, sans-serif;
+font-size: 18px;
+font-weight: 800;
+color: var(–text);
+margin-bottom: 4px;
 }
 .crawl-subtitle {
-  font-size: 12px;
-  color: var(--text-2);
-  margin-bottom: 16px;
+font-size: 12px;
+color: var(–text-2);
+margin-bottom: 16px;
 }
 .crawl-stop {
-  display: flex;
-  gap: 14px;
-  margin-bottom: 16px;
-  align-items: flex-start;
+display: flex;
+gap: 14px;
+margin-bottom: 16px;
+align-items: flex-start;
 }
 .crawl-stop-num {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
-  font-family: "Nunito", sans-serif;
-  font-weight: 800;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 2px;
+width: 32px;
+height: 32px;
+border-radius: 50%;
+background: var(–accent);
+color: #fff;
+font-family: “Nunito”, sans-serif;
+font-weight: 800;
+font-size: 15px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+margin-top: 2px;
 }
 .crawl-stop-body { flex: 1; }
-.crawl-stop-name { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
-.crawl-stop-detail { font-size: 12px; color: var(--text-2); margin-bottom: 3px; }
-.crawl-stop-order { font-size: 12px; color: var(--accent); font-weight: 600; }
+.crawl-stop-name { font-size: 15px; font-weight: 600; color: var(–text); margin-bottom: 2px; }
+.crawl-stop-detail { font-size: 12px; color: var(–text-2); margin-bottom: 3px; }
+.crawl-stop-order { font-size: 12px; color: var(–accent); font-weight: 600; }
 .crawl-connector {
-  width: 2px;
-  height: 16px;
-  background: var(--border);
-  margin: 0 0 0 15px;
-  margin-bottom: 0;
+width: 2px;
+height: 16px;
+background: var(–border);
+margin: 0 0 0 15px;
+margin-bottom: 0;
 }
 .crawl-share-btn {
-  width: 100%;
-  height: 48px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  font-family: "DM Sans", sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+width: 100%;
+height: 48px;
+background: var(–accent);
+color: #fff;
+border: none;
+border-radius: 12px;
+font-family: “DM Sans”, sans-serif;
+font-size: 15px;
+font-weight: 600;
+cursor: pointer;
+margin-top: 8px;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
 }
 .share-btn {
-  background: none;
-  border: none;
-  font-size: 16px;
-  line-height: 1;
-  padding: 2px 0 2px 2px;
-  cursor: pointer;
-  color: #d4c0b0;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-user-select: none;
-  user-select: none;
-  min-height: 36px;
-  display: flex;
-  align-items: center;
-  transition: color 0.15s;
+background: none;
+border: none;
+font-size: 16px;
+line-height: 1;
+padding: 2px 0 2px 2px;
+cursor: pointer;
+color: #d4c0b0;
+-webkit-tap-highlight-color: transparent;
+-webkit-user-select: none;
+user-select: none;
+min-height: 36px;
+display: flex;
+align-items: center;
+transition: color 0.15s;
 }
-.share-btn:active { color: var(--accent); }
+.share-btn:active { color: var(–accent); }
 
-.tag-more-btn { border-style: dashed; color: var(--text-3); }
-.tag-more-btn.is-open { color: var(--accent); border-color: var(--accent); border-style: solid; }
+.tag-more-btn { border-style: dashed; color: var(–text-3); }
+.tag-more-btn.is-open { color: var(–accent); border-color: var(–accent); border-style: solid; }
 .tag-row-more { margin-top: 6px; }
-
 
 /* Collapsible filters */
 .filter-collapse-btn {
-  display: none;
-  width: 100%;
-  height: 36px;
-  background: none;
-  border: 1.5px solid var(--border);
-  border-radius: 10px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-2);
-  font-family: "DM Sans", sans-serif;
-  cursor: pointer;
-  margin-top: 8px;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  -webkit-tap-highlight-color: transparent;
+display: none;
+width: 100%;
+height: 36px;
+background: none;
+border: 1.5px solid var(–border);
+border-radius: 10px;
+font-size: 13px;
+font-weight: 600;
+color: var(–text-2);
+font-family: “DM Sans”, sans-serif;
+cursor: pointer;
+margin-top: 8px;
+align-items: center;
+justify-content: center;
+gap: 6px;
+-webkit-tap-highlight-color: transparent;
 }
 .filter-collapse-btn.is-visible { display: flex; }
-.filter-collapse-btn.filters-open { color: var(--accent); border-color: var(--accent); }
+.filter-collapse-btn.filters-open { color: var(–accent); border-color: var(–accent); }
 .filter-collapse-btn .filter-badge {
-  display: none;
-  background: var(--accent);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  border-radius: 10px;
-  padding: 1px 6px;
-  margin-left: 2px;
+display: none;
+background: var(–accent);
+color: #fff;
+font-size: 10px;
+font-weight: 700;
+border-radius: 10px;
+padding: 1px 6px;
+margin-left: 2px;
 }
 .filter-collapse-btn.has-active .filter-badge { display: inline; }
 .clear-filters-btn {
-  display: none;
-  width: 100%;
-  height: 34px;
-  background: none;
-  border: 1.5px solid var(--accent);
-  border-radius: 10px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--accent);
-  font-family: "DM Sans", sans-serif;
-  cursor: pointer;
-  margin-top: 8px;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  -webkit-tap-highlight-color: transparent;
+display: none;
+width: 100%;
+height: 34px;
+background: none;
+border: 1.5px solid var(–accent);
+border-radius: 10px;
+font-size: 12px;
+font-weight: 600;
+color: var(–accent);
+font-family: “DM Sans”, sans-serif;
+cursor: pointer;
+margin-top: 8px;
+align-items: center;
+justify-content: center;
+gap: 5px;
+-webkit-tap-highlight-color: transparent;
 }
 .clear-filters-btn.is-visible { display: flex; }
 .filters-collapsible {
-  transition: max-height 0.25s ease, opacity 0.2s ease;
-  overflow: hidden;
-  max-height: 400px;
-  opacity: 1;
+transition: max-height 0.25s ease, opacity 0.2s ease;
+overflow: hidden;
+max-height: 400px;
+opacity: 1;
 }
 .filters-collapsible.is-collapsed {
-  max-height: 0;
-  opacity: 0;
+max-height: 0;
+opacity: 0;
 }
 </style>
+
   <!-- Google tag (gtag.js) -->
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJ43Y9JCTP"></script>
+
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-YJ43Y9JCTP');
 </script>
+
 </head>
 <body>
 
@@ -705,6 +817,7 @@ body {
       <option value="Wellington">Wellington</option>
       <option value="Johnstown">Johnstown</option>
       <option value="Longmont">Longmont</option>
+      <option value="Erie">Erie</option>
     </select>
     <select class="ctrl ctrl-select" id="day" onchange="filterCards()">
       <option value="">All days</option>
@@ -751,12 +864,29 @@ body {
   <div class="count" id="count"></div>
 </div>
 
-
-
 <div class="recents-section" id="recentsSection" style="display:none">
   <div class="recents-label">Recently Viewed</div>
   <div class="recents-row" id="recentsRow"></div>
 </div>
+<div class="card-modal-overlay" id="cardModalOverlay" onclick="closeCardModal(event)">
+  <div class="card-modal" id="cardModal">
+    <div class="card-modal-handle"></div>
+    <button class="card-modal-close" onclick="closeCardModal()" aria-label="Close">&#x2715;</button>
+    <div class="card-modal-name" id="modalName"></div>
+    <div class="card-modal-city" id="modalCity"></div>
+    <div id="modalVerifiedDate" style="font-size:11px; color:var(--text-3); margin-bottom:10px; display:none;"></div>
+    <div class="card-modal-countdown" id="modalCountdown">
+      <div>
+        <div class="card-modal-countdown-label" id="modalCountdownLabel"></div>
+        <div class="card-modal-countdown-time" id="modalCountdownTime"></div>
+      </div>
+    </div>
+    <div class="card-modal-hours" id="modalHours"></div>
+    <ul class="card-modal-specials" id="modalSpecials"></ul>
+    <a class="card-modal-address" id="modalAddress" target="_blank" rel="noopener"></a>
+  </div>
+</div>
+
 <div class="grid" id="grid">
 <div class="card" data-city="Fort Collins" data-tags="date-night,old-town,live-music" data-text="ace gillett&#x27;s 239 s college ave fort collins wed-sun 5-6pm all night thu $5 select beers $7 house red or white wine $9 featured classic cocktails $6 truffle fries, $9 sliders">
   <div class="card-top">
@@ -783,7 +913,7 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Austin%27s%20American%20Grill%20Old%20Town%20%26%20Harmony%20Fort%20Collins%20CO" target="_blank" rel="noopener">Old Town &amp; Harmony &nearr;</a>
   <hr class="divider">
-  <div class="hours">Tue-Fri 3-5pm<span class="verified-badge" title="Verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="hours">Tue-Fri 3-5pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
   <ul class="specials"><li>$5 well cocktails, $6+ featured cocktails</li><li>$2 off all draft beer, $5 mocktails, $6 wine</li><li>$4 beer cheese soup, $2 ribs, $9 chicken street tacos</li></ul>
 </div>
 <div class="card" data-city="Fort Collins" data-tags="old-town,cheap,live-music,student-deals" data-text="avogadro&#x27;s number 605 s mason st fort collins mon-fri 3-5pm $1 off drafts and wine $5 margaritas $5 pbr + well shot combo $5 tempeh burgers, fries, chicken tenders">
@@ -797,7 +927,7 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Avogadro%27s%20Number%20605%20S%20Mason%20St%20Fort%20Collins%20CO" target="_blank" rel="noopener">605 S Mason St &nearr;</a>
   <hr class="divider">
-  <div class="hours">Mon-Fri 3-5pm<span class="verified-badge" title="Verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="hours">Mon-Fri 3-5pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
   <ul class="specials"><li>$1 off drafts and wine</li><li>$5 margaritas</li><li>$5 PBR + well shot combo</li><li>$5 tempeh burgers, fries, chicken tenders</li></ul>
 </div>
 <div class="card" data-city="Fort Collins" data-tags="cheap" data-text="beau jo&#x27;s 205 n college ave fort collins mon-thu 3-6pm $5 food and $4 drink specials $13.50 lunch combo">
@@ -814,9 +944,9 @@ body {
   <div class="hours">Mon-Thu 3-6pm</div>
   <ul class="specials"><li>$5 food and $4 drink specials</li><li>$13.50 lunch combo</li></ul>
 </div>
-<div class="card" data-city="Fort Collins" data-tags="sports-bar,cheap" data-date="2026-04-21" data-text="bj&#x27;s 2670 e harmony rd fort collins mon-fri 3-7pm and 9pm to close $6 titos, 1800 tequila, jack daniels $7 sliders, pot stickers, mozzarella sticks and personal pizza $5 house wines">
+<div class="card" data-city="Fort Collins" data-tags="sports-bar,cheap,reverse-happy-hour" data-date="2026-04-21" data-text="bj&#x27;s 2670 e harmony rd fort collins mon-fri 3-7pm and 9pm to close $6 titos, 1800 tequila, jack daniels $7 sliders, pot stickers, mozzarella sticks and personal pizza $5 house wines">
   <div class="card-top">
-    <div class="card-name">BJ&#x27;s</div>
+    <div class="card-name">BJ&#x27;s 🌙</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-fc">Fort Collins</span>
@@ -881,7 +1011,7 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Buffalo%20Wild%20Wings%20150%20E%20Harmony%20Rd%20Fort%20Collins%20CO" target="_blank" rel="noopener">150 E Harmony Rd &nearr;</a>
   <hr class="divider">
-  <div class="hours">Daily 4-5:30pm<span class="verified-badge" title="Verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="hours">Daily 4-5:30pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
   <ul class="specials"><li>$6 strawberry margs, $4 Long Islands</li><li>$4 tall drafts, $5 Bud Lights, $6 Voodoo Ranger IPA</li><li>$3 chips/salsa/tots, $5 mozzarella sticks, $6 pretzel knots</li></ul>
 </div>
 <div class="card" data-city="Fort Collins" data-tags="date-night,cheap" data-text="cafe vino 1200 s college ave fort collins tue-sat 2-6pm $7 wine by glass, $28 featured bottles $24 sangria carafes, $6 mimosas/well drinks/drafts $4 pbr bottles, food specials $3-$10">
@@ -923,7 +1053,7 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=C.B.%20%26%20Potts%201441%20E%20Horsetooth%20Rd%20Fort%20Collins%20CO" target="_blank" rel="noopener">1441 E Horsetooth Rd &nearr;</a>
   <hr class="divider">
-  <div class="hours">Daily 11am-6pm<span class="verified-badge" title="Verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="hours">Daily 11am-6pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
   <ul class="specials"><li>$3.75 domestic pints, $4.75 craft pints</li><li>$5.75 margaritas/well/wine, $8.75 martinis</li><li>$3 off large shareables</li></ul>
 </div>
 <div class="card" data-city="Fort Collins" data-tags="cheap" data-text="charco broiler 1716 e mulberry st fort collins tue-sun 3-6pm $1 off well drinks $1 off all wines by the glass $1 off local craft, domestic, and imported beers">
@@ -951,7 +1081,7 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Cheba%20Hut%20Fort%20Collins%20CO" target="_blank" rel="noopener">Harmony, Taft Hill, Laurel &nearr;</a>
   <hr class="divider">
-  <div class="hours">Mon-Thu 4-7pm<span class="verified-badge" title="Verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="hours">Mon-Thu 4-7pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
   <ul class="specials"><li>$2 off bar menu</li><li>Signature "Dirty Hippy" cocktail</li><li>Hash Cans and beer/shot combos</li></ul>
 </div>
 <div class="card" data-city="Fort Collins" data-tags="old-town,cheap" data-text="choice city 104 w olive st fort collins wed-fri 3-5pm 2 for 1 house cocktails $5 colorado dogs wed 5-9pm: 2 for 1 burgers, $1 off drafts">
@@ -1147,7 +1277,7 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Island%20Grill%202601%20S%20Lemay%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">2601 S Lemay Ave &nearr;</a>
   <hr class="divider">
-  <div class="hours">Mon-Fri 3-6pm, all day Sun<span class="verified-badge" title="Verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="hours">Mon-Fri 3-6pm, all day Sun<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
   <ul class="specials"><li>$1 off draft beers, house wines, well cocktails, House Rocks Margaritas</li><li>$2 off appetizers</li></ul>
 </div>
 <div class="card" data-city="Fort Collins" data-tags="food-forward,cheap" data-text="japango 125 s college ave fort collins daily 3-6pm (all day mon) $5 drafts, $6 small sake $8 well cocktails/house wine $9 large sake/choice cocktail/sangria $2 off special rolls, $4.50 hand rolls">
@@ -1203,7 +1333,7 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=JINYA%20Ramen%20Bar%203280%20S%20College%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">3280 S College Ave &nearr;</a>
   <hr class="divider">
-  <div class="hours">Daily 3-5pm<span class="verified-badge" title="Verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="hours">Daily 3-5pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
   <ul class="specials"><li>Deals on Sapporo drafts, lychee-tini, hot sake</li><li>Discounted assorted small plates</li></ul>
 </div>
 <div class="card" data-city="Fort Collins" data-tags="old-town,patio,cheap,late-night,dog-friendly,reverse-happy-hour" data-date="2026-04-21" data-text="lucky joe&#x27;s sidewalk saloon 25 old town square fort collins $4.99 burger baskets (mon) $4 guinness pints (tue) irish whiskey wednesdays 5pm-2am $4 all bomb shots (thu 7pm-2am)">
@@ -1707,7 +1837,7 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=High%20Point%20Bar%20146%20N%20College%20Ave%20Fort%20Collins%20CO" target="_blank" rel="noopener">146 N College Ave &nearr;</a>
   <hr class="divider">
-  <div class="hours">Daily 2pm-close (rotating daily specials)<span class="verified-badge" title="Verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="hours">Daily 2pm-close (rotating daily specials)<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
   <ul class="specials"><li>Mon: $1 off drafts and wells all day</li><li>Tue: discounted New Belgium pints</li><li>Wed: $6.50 PBR pitcher, $2 Rainier tall boys</li><li>Thu: $3.50 craft pints</li><li>Fri: $7 Moscow mules, $7 Beam Old Fashioneds</li><li>Sat: $3.50 Modelo and Hornitos</li><li>Sun: happy hour all day and all night</li></ul>
 </div>
 <div class="card" data-city="Fort Collins" data-tags="new,cheap,food-forward,old-town" data-date="2026-04-23" data-text="vatos tacos tequila 234 n college ave fort collins daily 3-6pm all day tue $5 house margaritas $1 off drafts $4 tecate $3 street tacos taco tuesday all day">
@@ -1847,7 +1977,7 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Luna%27s%20Tacos%20%26%20Tequila%201246%20Automation%20Dr%20Windsor%20CO" target="_blank" rel="noopener">1246 Automation Dr &nearr;</a>
   <hr class="divider">
-  <div class="hours">Daily 3-5pm<span class="verified-badge" title="Verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="hours">Daily 3-5pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
   <ul class="specials"><li>$5 house margaritas, $5 draft beer, $5 Suerte Blanco shots</li><li>$4 chips &amp; salsa, $5 chicharrones, $8 gorditas (two double-stack tacos)</li><li>$10 Frito pie, $11 shrimp ceviche</li></ul>
 </div>
 <div class="card" data-city="Windsor" data-tags="date-night" data-text="hearth restaurant &amp; pub 205 1/2 4th st windsor mon-fri 3-6pm, all night mon craft cocktails, beer, and wine specials elevated pub fare at happy hour prices">
@@ -2085,7 +2215,7 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Tom%20Davis%20Saloon%20450%20N%20Cleveland%20Ave%20Loveland%20CO" target="_blank" rel="noopener">450 N Cleveland Ave &nearr;</a>
   <hr class="divider">
-  <div class="hours">Daily open to 7pm<span class="verified-badge" title="Verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="hours">Daily open to 7pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
   <ul class="specials"><li>$4 drafts, $4 margaritas</li><li>$4 off TD teas, $4 off lemonades</li></ul>
 </div>
 <div class="card" data-city="Greeley" data-date="2026-04-23" data-tags="new,cheap" data-text="the atlas 709 16th st greeley daily 4-6pm $1 off drafts $5 select cocktails rotating shareables nonprofit model">
@@ -2183,7 +2313,7 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Coyote%27s%20Southwestern%20Grill%205250%20W%209th%20St%20Dr%20Greeley%20CO" target="_blank" rel="noopener">5250 W 9th St Dr &nearr;</a>
   <hr class="divider">
-  <div class="hours">Mon-Fri 2-6pm (dine-in only)<span class="verified-badge" title="Verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="hours">Mon-Fri 2-6pm (dine-in only)<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
   <ul class="specials"><li>$2 off cocktails and wine</li><li>$1 off draft and bottled beers</li><li>$2 off appetizers</li></ul>
 </div>
 <div class="card" data-city="Greeley" data-date="2026-04-21" data-tags="cheap,student-deals" data-text="fuzzy's taco shop 2410 29th st greeley mon-fri 3-6pm $5 18oz margaritas $4 imported beer, $3 domestic beer $2 chips/salsa, $2 select tacos">
@@ -2365,7 +2495,7 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Bad%20Daddy%27s%20Burger%20Bar%204848%20Thompson%20Pkwy%20Johnstown%20CO" target="_blank" rel="noopener">4848 Thompson Pkwy &nearr;</a>
   <hr class="divider">
-  <div class="hours">Mon-Fri 4-6pm<span class="verified-badge" title="Verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="hours">Mon-Fri 4-6pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
   <ul class="specials"><li>$4 Bad Daddy's Amber 16oz, $5 domestics/imports, $6 craft drafts/well spirits/house wine</li><li>$6 housemade chips & dip, $6 chili cheese tots, $7 fried pickles, $7 crispy verde fries</li><li>$8 Bad Ass margarita</li></ul>
 </div>
 <div class="card" data-city="Johnstown" data-tags="new,date-night,food-forward" data-date="2026-04-23" data-text="bonefish grill 4948 thompson pkwy johnstown daily 4-6:30pm social hour $1 off drafts $6 house wine $7 select cocktails $7-10 bang bang shrimp calamari small plates">
@@ -2449,7 +2579,7 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Georgia%20Boys%20BBQ%20250%203rd%20Ave%20Longmont%20CO" target="_blank" rel="noopener">250 3rd Ave &nearr;</a>
   <hr class="divider">
-  <div class="hours">Mon-Fri 2:30-5pm<span class="verified-badge" title="Verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="hours">Mon-Fri 2:30-5pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
   <ul class="specials"><li>50% off all draft beer</li><li>$7 bites: pickle fries, loaded fries (pork or chicken), 5 smoked wings, pork or chicken sandwich, medium banana pudding</li></ul>
 </div>
 <div class="card" data-city="Longmont" data-tags="new,cheap,date-night" data-date="2026-04-23" data-text="west side tavern 1283 3rd ave longmont sun-thu 3-5pm $2 off house spirits $5 drafts $6 wells $5-9 rotating small plates disco fries sliders high-end whiskey local favorite">
@@ -2759,6 +2889,104 @@ body {
   <hr class="divider">
   <div class="hours">Mon-Fri 3-6pm</div>
   <ul class="specials"><li>$1 off drafts</li></ul>
+</div>
+<div class="card" data-city="Erie" data-tags="new,cheap,food-forward,dog-friendly" data-date="2026-04-24" data-text="john russell brewing co erie weekdays 4-6pm 50% off beers mules wine 50% off specialty pizzas flatbreads groups">
+  <div class="card-top">
+    <div class="card-name">John Russell Brewing Co</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-erie">Erie</span>
+      <button class="fav-btn" data-name="John Russell Brewing Co" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=John%20Russell%20Brewing%20Co%20Erie%20CO" target="_blank" rel="noopener">Erie &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 4-6pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <ul class="specials"><li>~50% off beers, mules, and wine</li><li>~50% off specialty pizzas and flatbreads</li></ul>
+</div>
+<div class="card" data-city="Erie" data-tags="new,cheap" data-date="2026-04-24" data-text="the old mine erie tue-fri 4-5pm $1 off all draft pours hard cider pizza">
+  <div class="card-top">
+    <div class="card-name">The Old Mine</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-erie">Erie</span>
+      <button class="fav-btn" data-name="The Old Mine" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=The%20Old%20Mine%20Erie%20CO" target="_blank" rel="noopener">Erie &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Tue-Fri 4-5pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <ul class="specials"><li>$1 off all draft pours</li><li>Hard cider and pizza focus</li></ul>
+</div>
+<div class="card" data-city="Erie" data-tags="new,cheap,food-forward,patio" data-date="2026-04-24" data-text="masters restaurant erie mon-fri 3-6pm $4 wells $5 craft pints $6 wine rotating appetizers mountain views large patio">
+  <div class="card-top">
+    <div class="card-name">Master&#x27;s Restaurant</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-erie">Erie</span>
+      <button class="fav-btn" data-name="Master's Restaurant" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Masters%20Restaurant%20Erie%20CO" target="_blank" rel="noopener">Erie &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <ul class="specials"><li>$4 wells, $5 craft pints, $6 wine</li><li>Rotating appetizers, large patio with mountain views</li></ul>
+</div>
+<div class="card" data-city="Erie" data-tags="new,date-night" data-date="2026-04-24" data-text="erie social club 105 wells st erie tue-sat 3-5pm wed happy hour all day 25% off bottles wine whiskey bar social hour">
+  <div class="card-top">
+    <div class="card-name">Erie Social Club</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-erie">Erie</span>
+      <button class="fav-btn" data-name="Erie Social Club" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Erie%20Social%20Club%20105%20Wells%20St%20Erie%20CO" target="_blank" rel="noopener">105 Wells St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Tue-Sat 3-5pm (Wed: all day)<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <ul class="specials"><li>Wed: happy hour all day</li><li>25% off wine bottles, wine and whiskey focus</li></ul>
+</div>
+<div class="card" data-city="Erie" data-tags="new,date-night,food-forward,patio,dog-friendly" data-date="2026-04-24" data-text="piripi 615 briggs st erie mon-sat 2-5pm $6-9 wine specials 10% off tapas apps latin mediterranean gluten free patio">
+  <div class="card-top">
+    <div class="card-name">Piripi</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-erie">Erie</span>
+      <button class="fav-btn" data-name="Piripi" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Piripi%20615%20Briggs%20St%20Erie%20CO" target="_blank" rel="noopener">615 Briggs St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Sat 2-5pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <ul class="specials"><li>$6-$9 wine specials, 10% off tapas and apps</li><li>Latin/Mediterranean, 99% gluten free, heated patio</li></ul>
+</div>
+<div class="card" data-city="Erie" data-tags="new,cheap,dog-friendly" data-date="2026-04-24" data-text="echo brewing erie daily 4-6pm $2 off pints rotating food trucks large outdoor space dog friendly">
+  <div class="card-top">
+    <div class="card-name">Echo Brewing</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-erie">Erie</span>
+      <button class="fav-btn" data-name="Echo Brewing" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Echo%20Brewing%20Erie%20CO" target="_blank" rel="noopener">Erie &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 4-6pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <ul class="specials"><li>$2 off pints</li><li>Rotating food trucks, large dog-friendly outdoor space</li></ul>
+</div>
+<div class="card" data-city="Erie" data-tags="new,date-night,food-forward" data-date="2026-04-24" data-text="24 carrot bistro erie tue-fri 4:30-6pm $2 off cocktails $10 bistro sliders high end upscale">
+  <div class="card-top">
+    <div class="card-name">24 Carrot Bistro</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-erie">Erie</span>
+      <button class="fav-btn" data-name="24 Carrot Bistro" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=24%20Carrot%20Bistro%20Erie%20CO" target="_blank" rel="noopener">Erie &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Tue-Fri 4:30-6pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <ul class="specials"><li>$2 off cocktails</li><li>$10 bistro sliders</li></ul>
 </div>
 </div>
 
@@ -3184,45 +3412,15 @@ function arrIncludes(arr, val) {
 }
 
 function checkOpenNow(hoursStr) {
-  var now = new Date();
-  var today = now.getDay();
-  var nowM = now.getHours() * 60 + now.getMinutes();
-  var cleaned = hoursStr
-    .replace(/\(([^)]+)\)/g, ', $1')
-    .replace(/\.\s+/g, ', ')
-    .replace(/:(?!\d)/g, ' ');
-  var segs = cleaned.split(',');
-  for (var i = 0; i < segs.length; i++) {
-    var seg = segs[i].trim();
-    if (!seg) continue;
-    var mA1 = seg.match(/^([\w\/\-]+)\s+all\s*(?:day|night)/i);
-    var mA2 = seg.match(/^all\s*(?:day|night)\s+([\w\/\-]+)/i);
-    if (mA1 || mA2) {
-      if (arrIncludes(parseDays((mA1 || mA2)[1]), today)) return true;
-      continue;
-    }
-    var mB = seg.match(/^([\w\/\-]+)\s+(.*)/);
-    if (!mB) continue;
-    var days = parseDays(mB[1]);
-    if (!arrIncludes(days, today)) continue;
-    var rest = mB[2];
-    if (/to\s*close|all\s*(?:day|night)/i.test(rest)) return true;
-    var timeRe = /([\d:]+(?:am|pm)?)\s*-\s*([\d:]+(?:am|pm)?)/gi;
-    var tr;
-    while ((tr = timeRe.exec(rest)) !== null) {
-      var startS = tr[1], endS = tr[2];
-      if (!/[ap]m/i.test(startS) && /pm/i.test(endS)) {
-        var sh = parseInt(startS), eh = parseInt(endS);
-        startS += (sh > eh) ? 'am' : 'pm';
-      }
-      if (nowM >= toMins(startS) && nowM <= toMins(endS)) return true;
-    }
-  }
-  return false;
+  // Uses getHHWindows so Open Now shares the same parser as status pills
+  var status = getHHStatus(hoursStr);
+  return status.state === 2;
 }
 
 function hasHoursOnDay(hoursStr, targetDay) {
+  // Check if a venue has any happy hour windows on a given day
   var cleaned = hoursStr
+    .replace(/<[^>]+>/g, '')
     .replace(/\(([^)]+)\)/g, ', $1')
     .replace(/\.\s+/g, ', ')
     .replace(/:(?!\d)/g, ' ');
@@ -3323,6 +3521,7 @@ function filterCards() {
   sortCards();
   updatePageTitle();
   updateFilterBadge();
+  applyStatusPills();
 
   // Empty state
   var grid = document.getElementById('grid');
@@ -3548,6 +3747,344 @@ function injectShareButtons() {
     if (favBtn) { cardRight.insertBefore(btn, favBtn); } else { cardRight.appendChild(btn); }
   }
 }
+
+// --- HH Status Countdown ---
+
+function formatMins(m) {
+  m = Math.max(0, Math.round(m));
+  if (m >= 60) {
+    var h = Math.floor(m / 60);
+    var min = m % 60;
+    return min > 0 ? h + 'h ' + min + 'm' : h + 'h';
+  }
+  return m + 'm';
+}
+
+function formatSecs(ms) {
+  if (ms < 0) ms += 24 * 3600 * 1000; // midnight wraparound fix
+  var total = Math.max(0, Math.floor(ms / 1000));
+  var h = Math.floor(total / 3600);
+  var m = Math.floor((total % 3600) / 60);
+  var s = total % 60;
+  var parts = [];
+  if (h > 0) parts.push(h + 'h');
+  if (h > 0 || m > 0) parts.push(m + 'm');
+  parts.push((s < 10 ? '0' : '') + s + 's');
+  return parts.join(' ');
+}
+
+function formatTime12(m) {
+  m = ((m % (24 * 60)) + 24 * 60) % (24 * 60);
+  var h = Math.floor(m / 60);
+  var min = m % 60;
+  var ampm = h >= 12 ? 'pm' : 'am';
+  h = h % 12 || 12;
+  return min > 0 ? h + ':' + (min < 10 ? '0' + min : min) + ampm : h + ampm;
+}
+
+function getHHWindows(hoursStr) {
+  var now = new Date();
+  var today = now.getDay();
+  var nowM = now.getHours() * 60 + now.getMinutes();
+
+  var cleaned = hoursStr
+    .replace(/<[^>]+>/g, '')
+    .replace(/\(([^)]+)\)/g, ', $1')
+    .replace(/\.\s+/g, ', ')
+    .replace(/:(?!\d)/g, ' ');
+  var segs = cleaned.split(',');
+
+  var todayWindows = [];
+  var nextStart = null;   // next window beyond today
+  var nextLabel = '';
+
+  // Helper to extract time windows from a segment's rest string
+  function extractWindows(rest) {
+    var wins = [];
+    // Extract all explicit time ranges first (e.g. 3-7pm)
+    var timeRe = /([\d:]+(?:am|pm)?)\s*-\s*([\d:]+(?:am|pm)?)/gi;
+    var tr;
+    while ((tr = timeRe.exec(rest)) !== null) {
+      var startS = tr[1], endS = tr[2];
+      // Skip if endS is just a number with no am/pm - could be a range like "9pm to close"
+      if (endS.toLowerCase() === 'close') continue;
+      if (!/[ap]m/i.test(startS) && /pm/i.test(endS)) {
+        var sh = parseInt(startS), eh = parseInt(endS);
+        startS += (sh > eh) ? 'am' : 'pm';
+      }
+      var sm = toMins(startS);
+      var em = toMins(endS);
+      if (em < sm) em += 24 * 60;
+      wins.push({startM: sm, endM: em});
+    }
+    // Now check for "Xpm to close" windows
+    if (/to\s*close/i.test(rest)) {
+      var tr2 = rest.match(/([\d:]+(?:am|pm)?)\s*to\s*close/i);
+      if (tr2) wins.push({startM: toMins(tr2[1]), endM: 23 * 60 + 59});
+    }
+    return wins;
+  }
+
+  // Check today first
+  for (var i = 0; i < segs.length; i++) {
+    var seg = segs[i].trim();
+    if (!seg) continue;
+    var mA1 = seg.match(/^([\w\/\-]+)\s+all\s*(?:day|night)/i);
+    var mA2 = seg.match(/^all\s*(?:day|night)\s+([\w\/\-]+)/i);
+    if (mA1 || mA2) {
+      if (arrIncludes(parseDays((mA1 || mA2)[1]), today)) {
+        todayWindows.push({startM: 0, endM: 23 * 60 + 59, allDay: true});
+      }
+      continue;
+    }
+    var mB = seg.match(/^([\w\/\-]+)\s+(.*)/);
+    if (!mB) continue;
+    var days = parseDays(mB[1]);
+    var rest = mB[2];
+    if (arrIncludes(days, today)) {
+      var wins = extractWindows(rest);
+      for (var w = 0; w < wins.length; w++) todayWindows.push(wins[w]);
+    }
+  }
+
+  // Look ahead up to 7 days for next available window
+  for (var offset = 1; offset <= 7 && nextStart === null; offset++) {
+    var checkDay = (today + offset) % 7;
+    var DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    for (var i = 0; i < segs.length; i++) {
+      var seg = segs[i].trim();
+      if (!seg) continue;
+      var mA1 = seg.match(/^([\w\/\-]+)\s+all\s*(?:day|night)/i);
+      var mA2 = seg.match(/^all\s*(?:day|night)\s+([\w\/\-]+)/i);
+      if (mA1 || mA2) {
+        if (arrIncludes(parseDays((mA1 || mA2)[1]), checkDay)) {
+          nextStart = 0;
+          nextLabel = (offset === 1 ? 'Tomorrow' : DAY_NAMES[checkDay]) + ' open';
+          break;
+        }
+        continue;
+      }
+      var mB = seg.match(/^([\w\/\-]+)\s+(.*)/);
+      if (!mB) continue;
+      var days = parseDays(mB[1]);
+      if (!arrIncludes(days, checkDay)) continue;
+      var wins = extractWindows(mB[2]);
+      if (wins.length > 0) {
+        nextStart = wins[0].startM;
+        nextLabel = (offset === 1 ? 'Tomorrow' : DAY_NAMES[checkDay]) + ' at ' + formatTime12(wins[0].startM);
+        break;
+      }
+    }
+  }
+
+  return {windows: todayWindows, nowM: nowM, tomorrowStart: nextStart, nextLabel: nextLabel};
+}
+
+function getHHStatus(hoursStr) {
+  var r = getHHWindows(hoursStr);
+  var windows = r.windows, nowM = r.nowM, tomorrowStart = r.tomorrowStart;
+
+  var active = null, upcoming = null;
+
+  windows.sort(function(a, b) { return a.startM - b.startM; });
+
+  for (var j = 0; j < windows.length; j++) {
+    var w = windows[j];
+    if (w.allDay) return {state: 2, text: 'LIVE: All Day', mins: 9999};
+    if (nowM >= w.startM && nowM < w.endM) {
+      active = w;
+      break;
+    } else if (nowM < w.startM) {
+      if (!upcoming) upcoming = w;
+    }
+  }
+
+  if (active) {
+    var left = active.endM - nowM;
+    return {state: 2, text: 'LIVE: ' + formatMins(left) + ' left', mins: left, endM: active.endM};
+  }
+  if (upcoming) {
+    var until = upcoming.startM - nowM;
+    // Check if there was a window earlier today (gap between windows)
+    var hadWindowToday = false;
+    for (var k = 0; k < windows.length; k++) {
+      if (windows[k].endM <= nowM) { hadWindowToday = true; break; }
+    }
+    var prefix = hadWindowToday ? 'Starts again' : 'Starts';
+    if (until <= 60) return {state: 1, text: prefix + ' in ' + until + 'm', mins: until, startM: upcoming.startM};
+    return {state: 0, text: prefix + ' at ' + formatTime12(upcoming.startM), mins: until, startM: upcoming.startM};
+  }
+  if (tomorrowStart !== null) {
+    return {state: 3, text: r.nextLabel || ('Starts Tomorrow ' + formatTime12(tomorrowStart))};
+  }
+  return {state: 3, text: 'No HH This Week'};
+}
+
+function applyStatusPills() {
+  var cards = document.querySelectorAll('.card');
+  for (var i = 0; i < cards.length; i++) {
+    var card = cards[i];
+    if (card.classList.contains('is-hidden')) continue;
+    var hoursEl = card.querySelector('.hours');
+    if (!hoursEl) continue;
+    var hoursText = hoursEl.textContent || '';
+    var status = getHHStatus(hoursText);
+
+    var pill = card.querySelector('.hh-status');
+    if (!pill) {
+      pill = document.createElement('span');
+      pill.className = 'hh-status';
+      hoursEl.after(pill);
+    }
+
+    pill.className = 'hh-status';
+    if (status.state === 2) {
+      pill.classList.add('is-live');
+      pill.textContent = status.text;
+      pill.style.display = '';
+    } else if (status.state === 1) {
+      pill.classList.add('is-soon');
+      pill.textContent = status.text;
+      pill.style.display = '';
+    } else if (status.state === 0) {
+      pill.classList.add('is-later');
+      pill.textContent = status.text;
+      pill.style.display = '';
+    } else if (status.state === 3 && status.text) {
+      pill.classList.add('is-later');
+      pill.textContent = status.text;
+      pill.style.display = '';
+    } else {
+      pill.style.display = 'none';
+    }
+  }
+}
+
+// --- Card detail modal ---
+var modalCountdownInterval = null;
+var modalHoursStr = '';
+
+function openCardModal(card) {
+  var nameEl = card.querySelector('.card-name');
+  var hoursEl = card.querySelector('.hours');
+  var addressEl = card.querySelector('.card-address');
+  var specialsEls = card.querySelectorAll('.specials li');
+  var cityBadge = card.querySelector('.badge:not(.open-badge):not(.new-badge)');
+
+  var name = nameEl ? nameEl.textContent.trim() : '';
+  var city = cityBadge ? cityBadge.textContent.trim() : '';
+  var hoursText = hoursEl ? hoursEl.textContent.trim() : '';
+  var addressHref = addressEl ? addressEl.getAttribute('href') : '#';
+  var addressText = addressEl ? addressEl.textContent.replace('\u2197', '').trim() : '';
+
+  document.getElementById('modalName').textContent = name;
+  document.getElementById('modalCity').textContent = city;
+  document.getElementById('modalHours').textContent = hoursText;
+  document.getElementById('modalAddress').textContent = addressText + ' \u2197';
+  document.getElementById('modalAddress').href = addressHref;
+
+  var verifiedBadge = card.querySelector('.verified-badge');
+  var verifiedDateEl = document.getElementById('modalVerifiedDate');
+  if (verifiedBadge && verifiedDateEl) {
+    var vDate = verifiedBadge.getAttribute('title') || 'Recently';
+    verifiedDateEl.textContent = '\u2713 ' + vDate;
+    verifiedDateEl.style.display = 'block';
+  } else if (verifiedDateEl) {
+    verifiedDateEl.style.display = 'none';
+  }
+
+  var specList = document.getElementById('modalSpecials');
+  specList.innerHTML = '';
+  for (var i = 0; i < specialsEls.length; i++) {
+    var li = document.createElement('li');
+    li.textContent = specialsEls[i].textContent;
+    specList.appendChild(li);
+  }
+
+  modalHoursStr = hoursText;
+  updateModalCountdown();
+  if (modalCountdownInterval) clearInterval(modalCountdownInterval);
+  modalCountdownInterval = setInterval(updateModalCountdown, 1000);
+
+  var overlay = document.getElementById('cardModalOverlay');
+  overlay.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function updateModalCountdown() {
+  var status = getHHStatus(modalHoursStr);
+  var timeEl = document.getElementById('modalCountdownTime');
+  var labelEl = document.getElementById('modalCountdownLabel');
+  if (!timeEl || !labelEl) return;
+
+  var now = new Date();
+  var currentTotalSeconds = (now.getHours() * 3600) + (now.getMinutes() * 60) + now.getSeconds();
+
+  timeEl.className = 'card-modal-countdown-time';
+
+  if (status.state === 2 && status.endM !== undefined) {
+    var endSeconds = status.endM * 60;
+    var diff = endSeconds - currentTotalSeconds;
+    labelEl.textContent = 'HAPPY HOUR ENDS IN';
+    timeEl.textContent = formatSecs(diff * 1000);
+    timeEl.classList.add('is-live');
+  } else if (status.state === 2) {
+    labelEl.textContent = 'STATUS';
+    timeEl.textContent = 'Open All Day';
+    timeEl.classList.add('is-live');
+  } else if (status.state === 1 && status.startM !== undefined) {
+    var startSeconds = status.startM * 60;
+    var diff2 = startSeconds - currentTotalSeconds;
+    var label2 = status.text && status.text.indexOf('again') >= 0 ? 'HAPPY HOUR STARTS AGAIN IN' : 'HAPPY HOUR STARTS IN';
+    labelEl.textContent = label2;
+    timeEl.textContent = formatSecs(diff2 * 1000);
+    timeEl.classList.add('is-soon');
+  } else {
+    labelEl.textContent = 'NEXT HAPPY HOUR';
+    timeEl.textContent = status.text || 'Check Back Soon';
+    timeEl.classList.add('is-inactive');
+  }
+}
+
+function closeCardModal(e) {
+  if (e && e.target !== document.getElementById('cardModalOverlay') && !e.target.classList.contains('card-modal-close')) return;
+  if (modalCountdownInterval) { clearInterval(modalCountdownInterval); modalCountdownInterval = null; }
+  var overlay = document.getElementById('cardModalOverlay');
+  if (overlay) overlay.classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+function injectCardModalTriggers() {
+  var cards = document.querySelectorAll('.card');
+  for (var i = 0; i < cards.length; i++) {
+    (function(card) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function(e) {
+        if (e.target.closest && (e.target.closest('.fav-btn') || e.target.closest('.share-btn') || e.target.closest('.copy-btn') || e.target.closest('.card-address'))) return;
+        openCardModal(card);
+      });
+    })(cards[i]);
+  }
+}
+
+(function() {
+  var startY = 0;
+  document.addEventListener('touchstart', function(e) { startY = e.touches[0].clientY; }, {passive: true});
+  document.addEventListener('touchend', function(e) {
+    var diff = e.changedTouches[0].clientY - startY;
+    var overlay = document.getElementById('cardModalOverlay');
+    if (diff > 60 && overlay && overlay.classList.contains('is-open')) {
+      closeCardModal({target: overlay});
+    }
+  }, {passive: true});
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeCardModal({target: document.getElementById('cardModalOverlay')});
+  });
+})();
+
+// 60s interval to refresh all tile status pills
+var statusPillInterval = null;
+
 // --- Init ---
 function init() {
   initCollapsibleHeader();
@@ -3564,13 +4101,27 @@ function init() {
   applyFavButtons();
   injectShareButtons();
   injectRecentTracking();
+  injectCardModalTriggers();
   renderRecents();
   injectStructuredData();
   filterCards();
+  applyStatusPills();
   var totalEl = document.getElementById('total-spots');
   if (totalEl) totalEl.textContent = document.querySelectorAll('.card').length;
   var citiesEl = document.getElementById('total-cities');
   if (citiesEl) citiesEl.textContent = document.querySelectorAll('#city option[value]:not([value=""])').length;
+  // Refresh status pills every 60 seconds
+  if (statusPillInterval) clearInterval(statusPillInterval);
+  statusPillInterval = setInterval(applyStatusPills, 60000);
+  // Tippy tooltips on verified badges
+  if (typeof tippy !== 'undefined') {
+    tippy('.verified-badge', {
+      trigger: 'click',
+      theme: 'golden',
+      placement: 'top',
+      allowHTML: true,
+    });
+  }
 }
 
 if (document.readyState === 'loading') {
@@ -3747,6 +4298,7 @@ document.addEventListener('click', function(e) {
   if (e.target && e.target.id === 'crawlOverlay') closeCrawl();
 });
 </script>
+
 <button class="lucky-btn" onclick="feelingLucky()">
   <span class="dice">🎲</span> I'm Feeling Lucky
 </button>
