@@ -4341,7 +4341,10 @@ function init() {
   if (citiesEl) citiesEl.textContent = document.querySelectorAll('#city option[value]:not([value=""])').length;
   // Refresh status pills every 60 seconds
   if (statusPillInterval) clearInterval(statusPillInterval);
-  statusPillInterval = setInterval(applyStatusPills, 60000);
+  statusPillInterval = setInterval(function() {
+    applyStatusPills();
+    if (mapVisible) refreshMapPinStatuses();
+  }, 60000);
   // Tippy tooltips on verified badges
   if (typeof tippy !== 'undefined') {
     tippy('.verified-badge', {
@@ -4609,6 +4612,33 @@ function getDotColor(state) {
   if (state === 2) return '#f5c518'; // Golden - LIVE
   if (state === 1) return '#c05c0a'; // Amber - starting soon
   return '#9ca3af';                  // Gray - closed
+}
+
+// Lightweight refresh: updates pin colors and popup content in place.
+// Preserves open popups, no flicker, no DOM churn. Called every 60s when map is visible.
+function refreshMapPinStatuses() {
+  if (!mapVisible || !allMapMarkers || !allMapMarkers.length) return;
+
+  for (var i = 0; i < allMapMarkers.length; i++) {
+    var m = allMapMarkers[i];
+    var v = m.venue;
+    var newStatus = getHHStatus(v.Hours || '');
+    var oldState = m.status ? m.status.state : -1;
+
+    // Only update if status actually changed - saves CPU
+    if (newStatus.state !== oldState) {
+      var dotColor = getDotColor(newStatus.state);
+      var borderColor = CITY_COLORS[v.City] || '#666';
+      m.marker.setIcon(makeMarkerIcon(dotColor, borderColor, !!v.verified));
+      m.status = newStatus;
+    }
+
+    // Always refresh popup content so countdown text stays current,
+    // but only if popup is currently closed - avoids interrupting users mid-read
+    if (!m.marker.isPopupOpen()) {
+      m.marker.setPopupContent(buildPopup(v, newStatus));
+    }
+  }
 }
 
 function locateMe() {
