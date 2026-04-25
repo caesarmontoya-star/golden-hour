@@ -468,6 +468,52 @@ body {
 }
 .lucky-btn .dice { font-size: 20px; }
 
+/* Map view */
+.map-toggle-btn {
+  position: fixed;
+  bottom: calc(86px + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a2e;
+  color: #fff;
+  border: none;
+  border-radius: 28px;
+  height: 44px;
+  padding: 0 20px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  z-index: 50;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+  transition: transform 0.15s, background 0.2s;
+}
+.map-toggle-btn:active { transform: translateX(-50%) scale(0.95); }
+.map-toggle-btn.is-map-active { background: var(--accent); }
+#mapContainer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: #1a1a2e;
+}
+#mapContainer.is-visible { display: block; }
+#leafletMap { width: 100%; height: 100%; }
+.map-popup { min-width: 180px; }
+.map-popup-name { font-size: 14px; font-weight: 700; margin-bottom: 3px; color: #1a1a1a; }
+.map-popup-city { font-size: 11px; color: #888; margin-bottom: 4px; }
+.map-popup-hours { font-size: 11px; color: #555; margin-bottom: 4px; }
+.map-popup-status { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 20px; margin-bottom: 5px; }
+.map-popup-status.live { background: #dcfce7; color: #15803d; }
+.map-popup-status.soon { background: #fff7ed; color: #c05c0a; }
+.map-popup-status.later { background: #f3f4f6; color: #6b7280; }
+.map-popup-address { display: block; font-size: 11px; color: #2563eb; text-decoration: none; margin-top: 4px; }
+
 @keyframes luckyPulse {
   0%   { border-color: var(--accent); background: #ffeedd; transform: scale(1.02); }
   30%  { border-color: var(--accent-light); background: #fff0e0; transform: scale(1.02); }
@@ -864,6 +910,11 @@ body {
   <div class="recents-label">Recently Viewed</div>
   <div class="recents-row" id="recentsRow"></div>
 </div>
+<div id="mapContainer">
+  <div id="leafletMap"></div>
+</div>
+<button class="map-toggle-btn" id="mapToggleBtn" onclick="toggleMapView()">🗺️ Map View</button>
+
 <div class="card-modal-overlay" id="cardModalOverlay" onclick="closeCardModal(event)">
   <div class="card-modal" id="cardModal">
     <div class="card-modal-handle"></div>
@@ -4464,7 +4515,110 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js" defer></script>
 <script src="https://unpkg.com/tippy.js@6/dist/tippy.umd.min.js" defer></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// --- Map View ---
+var mapInitialized = false;
+var leafletMap = null;
+var mapVisible = false;
+
+var CITY_COLORS = {
+  'Fort Collins': '#2d5be3',
+  'Windsor': '#1a7a40',
+  'Loveland': '#c05c0a',
+  'Greeley': '#b91c1c',
+  'Wellington': '#7e22ce',
+  'Johnstown': '#0c5a9e',
+  'Longmont': '#2e7d32',
+  'Erie': '#92400e',
+  'Evans': '#b45309'
+};
+
+function initMap() {
+  if (mapInitialized) return;
+  mapInitialized = true;
+
+  leafletMap = L.map('leafletMap', {
+    center: [40.45, -105.07],
+    zoom: 10,
+    zoomControl: true
+  });
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 19
+  }).addTo(leafletMap);
+
+  fetch('data.json')
+    .then(function(r) { return r.json(); })
+    .then(function(venues) {
+      venues.forEach(function(v) {
+        if (!v.lat || !v.lng || v.Status !== 'Active') return;
+
+        var color = CITY_COLORS[v.City] || '#666';
+        var status = getHHStatus(v.Hours || '');
+
+        var dotColor = '#6b7280';
+        if (status.state === 2) dotColor = '#16a34a';
+        else if (status.state === 1) dotColor = '#c05c0a';
+
+        var icon = L.divIcon({
+          className: '',
+          html: '<div style="width:12px;height:12px;border-radius:50%;background:' + dotColor + ';border:2.5px solid ' + color + ';box-shadow:0 1px 4px rgba(0,0,0,0.3)"></div>',
+          iconSize: [12, 12],
+          iconAnchor: [6, 6]
+        });
+
+        var statusHtml = '';
+        if (status.state === 2) statusHtml = '<span class="map-popup-status live">' + status.text + '</span><br>';
+        else if (status.state <= 1 && status.text) statusHtml = '<span class="map-popup-status ' + (status.state === 1 ? 'soon' : 'later') + '">' + status.text + '</span><br>';
+
+        var addressLink = v.Address ? '<a class="map-popup-address" href="https://maps.apple.com/?q=' + encodeURIComponent(v.Name + ' ' + v.Address + ' ' + v.City + ' CO') + '" target="_blank">' + v.Address + ' \u2197</a>' : '';
+
+        var popup = '<div class="map-popup">'
+          + '<div class="map-popup-name">' + v.Name + '</div>'
+          + '<div class="map-popup-city">' + v.City + '</div>'
+          + statusHtml
+          + '<div class="map-popup-hours">' + (v.Hours || '') + '</div>'
+          + addressLink
+          + '</div>';
+
+        L.marker([v.lat, v.lng], {icon: icon})
+          .addTo(leafletMap)
+          .bindPopup(popup, {maxWidth: 220});
+      });
+    })
+    .catch(function(e) { console.warn('Map: could not load data.json', e); });
+}
+
+function toggleMapView() {
+  mapVisible = !mapVisible;
+  var container = document.getElementById('mapContainer');
+  var btn = document.getElementById('mapToggleBtn');
+  var grid = document.getElementById('grid');
+  var header = document.querySelector('.header');
+
+  if (mapVisible) {
+    container.classList.add('is-visible');
+    btn.classList.add('is-map-active');
+    btn.innerHTML = '\u2261 List View';
+    if (grid) grid.style.display = 'none';
+    if (header) header.style.display = 'none';
+    initMap();
+    setTimeout(function() {
+      if (leafletMap) leafletMap.invalidateSize();
+    }, 150);
+  } else {
+    container.classList.remove('is-visible');
+    btn.classList.remove('is-map-active');
+    btn.innerHTML = '\uD83D\uDDFA\uFE0F Map View';
+    if (grid) grid.style.display = '';
+    if (header) header.style.display = '';
+  }
+}
+</script>
 </body>
 </html>
