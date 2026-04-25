@@ -912,6 +912,8 @@ body {
 </div>
 <div id="mapContainer">
   <div id="leafletMap"></div>
+  <button id="crawlMapBtn" onclick="toggleCrawlOverlay()" style="position:absolute;top:16px;right:16px;z-index:1000;background:#1a1a2e;color:#fff;border:none;border-radius:20px;padding:8px 14px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);">🍺 Crawls</button>
+  <button onclick="locateMe()" style="position:absolute;top:16px;left:16px;z-index:1000;background:#1a1a2e;color:#fff;border:none;border-radius:20px;padding:8px 14px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);">📍 Near Me</button>
 </div>
 <button class="map-toggle-btn" id="mapToggleBtn" onclick="toggleMapView()">🗺️ Map View</button>
 
@@ -3448,7 +3450,6 @@ function getNearMe() {
   });
 }
 
-// --- Add to Home Screen prompt ---
 // --- Structured data JSON-LD ---
 function injectStructuredData() {
   var cards = document.querySelectorAll('.card');
@@ -3457,27 +3458,52 @@ function injectStructuredData() {
     var card = cards[i];
     var nameEl = card.querySelector('.card-name');
     var addrEl = card.querySelector('.card-address');
+    var hoursEl = card.querySelector('.hours');
+    var specialEls = card.querySelectorAll('.specials li');
     var city = card.getAttribute('data-city') || '';
     if (!nameEl || !addrEl) continue;
-    items.push({
+
+    var venueName = nameEl.textContent.replace(/[\uD83C-\uDBFF\uDC00-\uDFFF]+/g, '').trim();
+    var addressText = addrEl.textContent.replace('\u2197', '').trim();
+    var hoursText = hoursEl ? hoursEl.textContent.replace(/\(verified[^)]*\)/i, '').trim() : '';
+
+    // Build offers from specials list
+    var offers = [];
+    for (var s = 0; s < specialEls.length; s++) {
+      var specialText = specialEls[s].textContent.trim();
+      if (specialText) {
+        offers.push({
+          "@type": "Offer",
+          "description": specialText,
+          "validThrough": hoursText
+        });
+      }
+    }
+
+    var item = {
       "@type": "FoodEstablishment",
-      "name": nameEl.textContent.trim(),
+      "name": venueName,
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": addrEl.textContent.replace('\u2197', '').trim(),
+        "streetAddress": addressText,
         "addressLocality": city,
         "addressRegion": "CO",
         "addressCountry": "US"
       }
-    });
+    };
+
+    if (hoursText) item.openingHours = hoursText;
+    if (offers.length > 0) item.makesOffer = offers;
+
+    items.push(item);
   }
   var script = document.createElement('script');
   script.type = 'application/ld+json';
   script.textContent = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "NoCo Happy Hour Guide",
-    "description": "Happy hour deals at bars and restaurants in Northern Colorado",
+    "name": "Golden Hour: NoCo Happy Hour Guide",
+    "description": "Happy hour deals at bars and restaurants in Fort Collins, Loveland, Greeley, Windsor, Longmont, Erie, and Northern Colorado",
     "url": "https://goldenhournoco.com",
     "numberOfItems": items.length,
     "itemListElement": items.map(function(item, idx) {
@@ -3702,6 +3728,7 @@ function filterCards() {
   updatePageTitle();
   updateFilterBadge();
   applyStatusPills();
+  if (mapVisible) updateMapPins();
 
   // Empty state
   var grid = document.getElementById('grid');
@@ -3791,6 +3818,7 @@ function clearAllFilters() {
   if (btnWeekend) btnWeekend.classList.remove('is-active');
   document.querySelectorAll('.tag-btn').forEach(function(b) { b.classList.remove('is-active'); });
   filterCards();
+  if (mapVisible) updateMapPins();
 }
 
 function updateFilterBadge() {
@@ -4192,6 +4220,10 @@ function openCardModal(card) {
   var overlay = document.getElementById('cardModalOverlay');
   overlay.classList.add('is-open');
   document.body.style.overflow = 'hidden';
+  // Push history state so the back button closes the modal instead of leaving the site
+  if (!window.history.state || !window.history.state.modalOpen) {
+    window.history.pushState({modalOpen: true}, '', '');
+  }
 }
 
 function updateModalCountdown() {
@@ -4235,7 +4267,21 @@ function closeCardModal(e) {
   var overlay = document.getElementById('cardModalOverlay');
   if (overlay) overlay.classList.remove('is-open');
   document.body.style.overflow = '';
+  // Pop the history state we pushed when opening, but only if it's still our state
+  if (window.history.state && window.history.state.modalOpen) {
+    window.history.back();
+  }
 }
+
+// Listen for back button (popstate) to close modal
+window.addEventListener('popstate', function() {
+  var overlay = document.getElementById('cardModalOverlay');
+  if (overlay && overlay.classList.contains('is-open')) {
+    if (modalCountdownInterval) { clearInterval(modalCountdownInterval); modalCountdownInterval = null; }
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+});
 
 function injectCardModalTriggers() {
   var cards = document.querySelectorAll('.card');
@@ -4516,14 +4562,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js" defer></script>
 <script src="https://unpkg.com/tippy.js@6/dist/tippy.umd.min.js" defer></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
 // --- Map View ---
 var mapInitialized = false;
 var leafletMap = null;
 var mapVisible = false;
+var allMapMarkers = []; // {marker, venue, status}
+var clusterGroup = null;
+var crawlLayers = []; // polylines + markers for crawl overlay
+var crawlOverlayVisible = false;
+var venueDataCache = null;
 
 var CITY_COLORS = {
   'Fort Collins': '#2d5be3',
@@ -4537,6 +4593,159 @@ var CITY_COLORS = {
   'Evans': '#b45309'
 };
 
+function makeMarkerIcon(dotColor, borderColor, verified) {
+  var inner = verified
+    ? '<div style="width:14px;height:14px;border-radius:50%;background:' + dotColor + ';border:2.5px solid ' + borderColor + ';box-shadow:0 1px 4px rgba(0,0,0,0.35);display:flex;align-items:center;justify-content:center;"><svg width="7" height="7" viewBox="0 0 10 10" fill="none"><polyline points="2,5 4.2,7.5 8,3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
+    : '<div style="width:12px;height:12px;border-radius:50%;background:' + dotColor + ';border:2.5px solid ' + borderColor + ';box-shadow:0 1px 4px rgba(0,0,0,0.3)"></div>';
+  return L.divIcon({
+    className: '',
+    html: inner,
+    iconSize: verified ? [14, 14] : [12, 12],
+    iconAnchor: verified ? [7, 7] : [6, 6]
+  });
+}
+
+function getDotColor(state) {
+  if (state === 2) return '#f5c518'; // Golden - LIVE
+  if (state === 1) return '#c05c0a'; // Amber - starting soon
+  return '#9ca3af';                  // Gray - closed
+}
+
+function locateMe() {
+  if (!leafletMap) return;
+  leafletMap.locate({setView: true, maxZoom: 14});
+  leafletMap.once('locationfound', function(e) {
+    L.circleMarker(e.latlng, {
+      radius: 8,
+      fillColor: '#2d5be3',
+      color: '#fff',
+      weight: 2,
+      fillOpacity: 0.9
+    }).addTo(leafletMap).bindPopup('You are here').openPopup();
+  });
+  leafletMap.once('locationerror', function() {
+    alert('Could not get your location. Make sure location access is enabled.');
+  });
+}
+
+function buildPopup(v, status) {
+  var statusHtml = '';
+  if (status.state === 2) statusHtml = '<span class="map-popup-status live">' + status.text + '</span><br>';
+  else if (status.state === 1 && status.text) statusHtml = '<span class="map-popup-status soon">' + status.text + '</span><br>';
+  else if (status.state === 0 && status.text) statusHtml = '<span class="map-popup-status later">' + status.text + '</span><br>';
+
+  var verifiedHtml = v.verified ? '<div style="font-size:10px;color:#15803d;margin-bottom:3px;">✓ Verified ' + (v.verifiedDate || '') + '</div>' : '';
+  var addressLink = v.Address ? '<a class="map-popup-address" href="https://maps.apple.com/?q=' + encodeURIComponent(v.Name + ' ' + v.Address + ' ' + v.City + ' CO') + '" target="_blank">' + v.Address + ' \u2197</a>' : '';
+
+  return '<div class="map-popup">'
+    + '<div class="map-popup-name">' + v.Name + '</div>'
+    + '<div class="map-popup-city">' + v.City + '</div>'
+    + verifiedHtml
+    + statusHtml
+    + '<div class="map-popup-hours">' + (v.Hours || '') + '</div>'
+    + addressLink
+    + '</div>';
+}
+
+function updateMapPins() {
+  if (!mapInitialized || !clusterGroup || !venueDataCache) return;
+
+  var filterCity = (document.getElementById('city') || {}).value || '';
+  var filterDay = (document.getElementById('day') || {}).value;
+  var filterDayNum = filterDay !== '' ? parseInt(filterDay) : null;
+  var searchQ = ((document.getElementById('search') || {}).value || '').toLowerCase();
+
+  clusterGroup.clearLayers();
+
+  for (var i = 0; i < allMapMarkers.length; i++) {
+    var m = allMapMarkers[i];
+    var v = m.venue;
+
+    // Recalculate status
+    var status = getHHStatus(v.Hours || '');
+
+    // Apply filters
+    if (showOpenNow && status.state !== 2) continue;
+    if (filterCity && v.City !== filterCity) continue;
+    if (filterDayNum !== null && !hasHoursOnDay(v.Hours || '', filterDayNum)) continue;
+    if (searchQ && (v.Name + ' ' + (v.City || '') + ' ' + (v.Hours || '')).toLowerCase().indexOf(searchQ) < 0) continue;
+
+    // Update icon color based on fresh status
+    var dotColor = status.state === 2 ? '#16a34a' : status.state === 1 ? '#c05c0a' : '#9ca3af';
+    var borderColor = CITY_COLORS[v.City] || '#666';
+    m.marker.setIcon(makeMarkerIcon(dotColor, borderColor, !!v.verified));
+    m.marker.setPopupContent(buildPopup(v, status));
+
+    clusterGroup.addLayer(m.marker);
+  }
+}
+
+function drawCrawlOverlay() {
+  if (!leafletMap || !venueDataCache) return;
+
+  // Clear existing
+  for (var i = 0; i < crawlLayers.length; i++) {
+    leafletMap.removeLayer(crawlLayers[i]);
+  }
+  crawlLayers = [];
+
+  if (!crawlOverlayVisible) return;
+
+  // Color palette for crawls
+  var crawlColors = ['#e85d0a', '#2d5be3', '#16a34a', '#b91c1c', '#7e22ce', '#92400e'];
+
+  // Build name->coords lookup
+  var coordsMap = {};
+  for (var j = 0; j < venueDataCache.length; j++) {
+    var v = venueDataCache[j];
+    if (v.lat && v.lng) coordsMap[v.Name.toLowerCase()] = [v.lat, v.lng];
+  }
+
+  CRAWLS.forEach(function(crawl, ci) {
+    var color = crawlColors[ci % crawlColors.length];
+    var points = [];
+
+    crawl.stops.forEach(function(stop, si) {
+      var coords = coordsMap[stop.name.toLowerCase()];
+      if (!coords) return;
+      points.push(coords);
+
+      // Numbered stop marker
+      var numIcon = L.divIcon({
+        className: '',
+        html: '<div style="width:22px;height:22px;border-radius:50%;background:' + color + ';color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.4)">' + (si + 1) + '</div>',
+        iconSize: [22, 22],
+        iconAnchor: [11, 11]
+      });
+
+      var marker = L.marker(coords, {icon: numIcon})
+        .bindPopup('<div class="map-popup"><div class="map-popup-name">' + stop.name + '</div><div class="map-popup-city" style="color:' + color + ';font-weight:600">' + crawl.name + ' \u2022 Stop ' + (si + 1) + '</div><div class="map-popup-hours">' + stop.order + '</div></div>', {maxWidth: 220})
+        .addTo(leafletMap);
+      crawlLayers.push(marker);
+    });
+
+    if (points.length > 1) {
+      var line = L.polyline(points, {
+        color: color,
+        weight: 3,
+        opacity: 0.7,
+        dashArray: '6, 8'
+      }).addTo(leafletMap);
+      crawlLayers.push(line);
+    }
+  });
+}
+
+function toggleCrawlOverlay() {
+  crawlOverlayVisible = !crawlOverlayVisible;
+  var btn = document.getElementById('crawlMapBtn');
+  if (btn) {
+    btn.style.background = crawlOverlayVisible ? 'var(--accent)' : '#1a1a2e';
+    btn.innerHTML = crawlOverlayVisible ? '\uD83C\uDF7A Hide Crawls' : '\uD83C\uDF7A Crawls';
+  }
+  drawCrawlOverlay();
+}
+
 function initMap() {
   if (mapInitialized) return;
   mapInitialized = true;
@@ -4548,47 +4757,44 @@ function initMap() {
   });
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors',
+    attribution: '\u00a9 OpenStreetMap contributors',
     maxZoom: 19
   }).addTo(leafletMap);
+
+  clusterGroup = L.markerClusterGroup({
+    maxClusterRadius: 40,
+    showCoverageOnHover: false,
+    iconCreateFunction: function(cluster) {
+      var count = cluster.getChildCount();
+      return L.divIcon({
+        html: '<div style="width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(232,101,10,0.5)">' + count + '</div>',
+        className: '',
+        iconSize: [32, 32],
+        iconAnchor: [16, 16]
+      });
+    }
+  });
+  leafletMap.addLayer(clusterGroup);
 
   fetch('data.json')
     .then(function(r) { return r.json(); })
     .then(function(venues) {
+      venueDataCache = venues;
+      allMapMarkers = [];
+
       venues.forEach(function(v) {
         if (!v.lat || !v.lng || v.Status !== 'Active') return;
 
-        var color = CITY_COLORS[v.City] || '#666';
         var status = getHHStatus(v.Hours || '');
+        var dotColor = getDotColor(status.state);
+        var borderColor = CITY_COLORS[v.City] || '#666';
 
-        var dotColor = '#6b7280';
-        if (status.state === 2) dotColor = '#16a34a';
-        else if (status.state === 1) dotColor = '#c05c0a';
+        var marker = L.marker([v.lat, v.lng], {
+          icon: makeMarkerIcon(dotColor, borderColor, !!v.verified)
+        }).bindPopup(buildPopup(v, status), {maxWidth: 220});
 
-        var icon = L.divIcon({
-          className: '',
-          html: '<div style="width:12px;height:12px;border-radius:50%;background:' + dotColor + ';border:2.5px solid ' + color + ';box-shadow:0 1px 4px rgba(0,0,0,0.3)"></div>',
-          iconSize: [12, 12],
-          iconAnchor: [6, 6]
-        });
-
-        var statusHtml = '';
-        if (status.state === 2) statusHtml = '<span class="map-popup-status live">' + status.text + '</span><br>';
-        else if (status.state <= 1 && status.text) statusHtml = '<span class="map-popup-status ' + (status.state === 1 ? 'soon' : 'later') + '">' + status.text + '</span><br>';
-
-        var addressLink = v.Address ? '<a class="map-popup-address" href="https://maps.apple.com/?q=' + encodeURIComponent(v.Name + ' ' + v.Address + ' ' + v.City + ' CO') + '" target="_blank">' + v.Address + ' \u2197</a>' : '';
-
-        var popup = '<div class="map-popup">'
-          + '<div class="map-popup-name">' + v.Name + '</div>'
-          + '<div class="map-popup-city">' + v.City + '</div>'
-          + statusHtml
-          + '<div class="map-popup-hours">' + (v.Hours || '') + '</div>'
-          + addressLink
-          + '</div>';
-
-        L.marker([v.lat, v.lng], {icon: icon})
-          .addTo(leafletMap)
-          .bindPopup(popup, {maxWidth: 220});
+        allMapMarkers.push({marker: marker, venue: v, status: status});
+        clusterGroup.addLayer(marker);
       });
     })
     .catch(function(e) { console.warn('Map: could not load data.json', e); });
@@ -4609,7 +4815,10 @@ function toggleMapView() {
     if (header) header.style.display = 'none';
     initMap();
     setTimeout(function() {
-      if (leafletMap) leafletMap.invalidateSize();
+      if (leafletMap) {
+        leafletMap.invalidateSize();
+        updateMapPins();
+      }
     }, 150);
   } else {
     container.classList.remove('is-visible');
@@ -4617,6 +4826,9 @@ function toggleMapView() {
     btn.innerHTML = '\uD83D\uDDFA\uFE0F Map View';
     if (grid) grid.style.display = '';
     if (header) header.style.display = '';
+    crawlOverlayVisible = false;
+    var crawlBtn = document.getElementById('crawlMapBtn');
+    if (crawlBtn) { crawlBtn.style.background = '#1a1a2e'; crawlBtn.innerHTML = '\uD83C\uDF7A Crawls'; }
   }
 }
 </script>
