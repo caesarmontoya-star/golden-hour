@@ -829,7 +829,7 @@ body {
     <button class="toggle-btn" id="btnCrawl" onclick="openCrawl()">🍻 Crawl</button>
   </div>
   <div class="toggle-row" style="margin-top:6px;">
-    <a class="toggle-btn" href="mailto:caesar.montoya@gmail.com?subject=Golden%20Hour%20-%20Venue%20Suggestion&body=Name%3A%0ACity%3A%0AAddress%3A%0AHappy%20Hour%20Hours%3A%0ASpecials%3A%0A%0AAny%20other%20details%3A%0A%0AFound%20on%3A%20goldenhournoco.com" style="text-decoration:none">Suggest a Venue</a>
+    <a class="toggle-btn" href="mailto:caesar.montoya@gmail.com?subject=Golden%20Hour%20Feedback&body=Type%3A%20%5BSuggest%20a%20venue%20%2F%20Report%20an%20error%5D%0A%0AVenue%20Name%3A%0ACity%3A%0AAddress%3A%0A%0ADetails%20%2F%20Correction%3A%0A%0AFound%20on%3A%20goldenhournoco.com" style="text-decoration:none">Send Feedback</a>
   </div>
   <div class="tag-row-wrap">
     <div class="tag-row" id="tagRow">
@@ -838,6 +838,7 @@ body {
       <button class="tag-btn" data-tag="reverse-happy-hour" onclick="toggleTag('reverse-happy-hour')">🌙 Reverse HH</button>
       <button class="tag-btn" data-tag="date-night"   onclick="toggleTag('date-night')">Date Night</button>
       <button class="tag-btn" id="btnNew" onclick="toggleNew()">✨ New</button>
+      <button class="tag-btn" id="btnWeekend" onclick="toggleWeekend()">🍻 Weekend</button>
       <button class="tag-btn tag-more-btn" id="tagMoreBtn" onclick="toggleMoreTags()">+ More</button>
     </div>
     <div class="tag-row tag-row-more" id="tagRowMore" style="display:none">
@@ -2479,9 +2480,9 @@ body {
   <div class="hours">Mon-Fri 3-6pm, late night Sun-Thu 9-11pm</div>
   <ul class="specials"><li>$3-$7 drafts, $5 wells/wine, $7 handcrafted cocktails</li><li>$5 cajun fries/hummus, $6.75 deviled eggs, $9 sliders/wings</li></ul>
 </div>
-<div class="card" data-city="Johnstown" data-tags="new,cheap,food-forward,late-night,reverse-happy-hour" data-date="2026-04-23" data-text="bad daddy's burger bar 4848 thompson pkwy johnstown mon-fri 4-6pm $4 bad daddys amber 16oz $5 domestics imports $6 craft drafts well spirits house wine chips dip chili cheese tots $7 fried pickles crispy verde fries $8 bad ass margarita">
+<div class="card" data-city="Johnstown" data-tags="new,cheap,food-forward,late-night,reverse-happy-hour" data-date="2026-04-23" data-text="bad daddy's burger bar 4848 thompson pkwy johnstown mon-fri 4-6pm daily 8pm-close $4 bad daddys amber 16oz $5 domestics imports $6 craft drafts well spirits house wine chips dip chili cheese tots $7 fried pickles crispy verde fries $8 bad ass margarita">
   <div class="card-top">
-    <div class="card-name">Bad Daddy&#x27;s Burger Bar</div>
+    <div class="card-name">Bad Daddy&#x27;s Burger Bar 🌙</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
       <span class="badge badge-johnstown">Johnstown</span>
@@ -2490,7 +2491,7 @@ body {
   </div>
   <a class="card-address" href="https://maps.apple.com/?q=Bad%20Daddy%27s%20Burger%20Bar%204848%20Thompson%20Pkwy%20Johnstown%20CO" target="_blank" rel="noopener">4848 Thompson Pkwy &nearr;</a>
   <hr class="divider">
-  <div class="hours">Mon-Fri 4-6pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="hours">Mon-Fri 4-6pm and 8pm-close (verified Apr 2026)<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
   <ul class="specials"><li>$4 Bad Daddy's Amber 16oz, $5 domestics/imports, $6 craft drafts/well spirits/house wine</li><li>$6 housemade chips & dip, $6 chili cheese tots, $7 fried pickles, $7 crispy verde fries</li><li>$8 Bad Ass margarita</li></ul>
 </div>
 <div class="card" data-city="Johnstown" data-tags="new,date-night,food-forward" data-date="2026-04-23" data-text="bonefish grill 4948 thompson pkwy johnstown daily 4-6:30pm social hour $1 off drafts $6 house wine $7 select cocktails $7-10 bang bang shrimp calamari small plates">
@@ -2983,6 +2984,118 @@ body {
   <div class="hours">Tue-Fri 4:30-6pm<span class="verified-badge" data-tippy-content="&#10003; Golden Hour staff verified Apr 2026"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#16a34a"/><polyline points="3.5,7 5.8,9.5 10.5,4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
   <ul class="specials"><li>$2 off cocktails</li><li>$10 bistro sliders</li></ul>
 </div>
+<div class="card" data-city="Loveland" data-tags="new,cheap,food-forward" data-date="2026-04-25" data-text="nordy's bbq grill 354 n lincoln ave loveland wed-fri 3-6pm $3 off craft drafts $2 off wells wine half off select appetizers bbq ribs wings">
+  <div class="card-top">
+    <div class="card-name">Nordy&#x27;s BBQ &amp; Grill</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-loveland">Loveland</span>
+      <button class="fav-btn" data-name="Nordy's BBQ &amp; Grill" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Nordy%27s%20BBQ%20%26%20Grill%20354%20N%20Lincoln%20Ave%20Loveland%20CO" target="_blank" rel="noopener">354 N Lincoln Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Wed-Fri 3-6pm</div>
+  <ul class="specials"><li>$3 off craft drafts, $2 off wells and wine</li><li>Half off select appetizers: BBQ ribs, wings</li></ul>
+</div>
+<div class="card" data-city="Loveland" data-tags="new,cheap,food-forward,weekend" data-date="2026-04-25" data-text="pourhouse bar grill 124 e 4th st loveland mon-fri 11am-6pm all day sun $1 off drafts $4 wells $4.50 house wine margs $2 off select appetizers longest happy hour loveland">
+  <div class="card-top">
+    <div class="card-name">Pourhouse Bar &amp; Grill</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-loveland">Loveland</span>
+      <button class="fav-btn" data-name="Pourhouse Bar &amp; Grill" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Pourhouse%20Bar%20%26%20Grill%20124%20E%204th%20St%20Loveland%20CO" target="_blank" rel="noopener">124 E 4th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 11am-6pm, all day Sun</div>
+  <ul class="specials"><li>$1 off drafts, $4 wells, $4.50 house wine and margs</li><li>$2 off select appetizers</li></ul>
+</div>
+<div class="card" data-city="Longmont" data-tags="new,cheap,food-forward,late-night,reverse-happy-hour" data-date="2026-04-25" data-text="longs peak pub 600 longs peak ave longmont mon-fri open to 5pm daily 8pm-close $6 pitchers $10 burgers fries $10 pizzas $6 margaritas wine 21 craft beers on tap">
+  <div class="card-top">
+    <div class="card-name">Longs Peak Pub 🌙</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-longmont">Longmont</span>
+      <button class="fav-btn" data-name="Longs Peak Pub" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Longs%20Peak%20Pub%20600%20Longs%20Peak%20Ave%20Longmont%20CO" target="_blank" rel="noopener">600 Longs Peak Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri open to 5pm, daily 8pm-close</div>
+  <ul class="specials"><li>$6 pitchers, $6 margaritas and wine</li><li>$10 burgers and fries, $10 pizzas</li><li>21 craft beers on tap</li></ul>
+</div>
+<div class="card" data-city="Greeley" data-date="2026-04-25" data-tags="new,cheap,food-forward,late-night,reverse-happy-hour" data-text="applebee's 4100 w 10th st greeley daily 3-6pm and 9pm-close half off appetizers boneless wings brew pub pretzels beer cheese dip">
+  <div class="card-top">
+    <div class="card-name">Applebee&#x27;s 🌙</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-greeley">Greeley</span>
+      <button class="fav-btn" data-name="Applebee's" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Applebee%27s%204100%20W%2010th%20St%20Greeley%20CO" target="_blank" rel="noopener">4100 W 10th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-6pm and 9pm-close</div>
+  <ul class="specials"><li>Half off appetizers (dine-in)</li><li>Boneless wings, brew pub pretzels and beer cheese dip</li></ul>
+</div>
+<div class="card" data-city="Greeley" data-date="2026-04-25" data-tags="new,cheap,food-forward,late-night,reverse-happy-hour,weekend" data-text="old chicago pizza taproom 2349 w 29th st greeley mon-fri 3-6pm sat-sun 9pm-close $1 off drafts bogo beers pizza wings pretzels">
+  <div class="card-top">
+    <div class="card-name">Old Chicago Pizza + Taproom 🌙</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-greeley">Greeley</span>
+      <button class="fav-btn" data-name="Old Chicago Pizza + Taproom" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Old%20Chicago%20Pizza%20%26%20Taproom%202349%20W%2029th%20St%20Greeley%20CO" target="_blank" rel="noopener">2349 W 29th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm, Sat-Sun 9pm-close</div>
+  <ul class="specials"><li>$1 off drafts, BOGO beers</li><li>Discounted pizza, wings, pretzels</li></ul>
+</div>
+<div class="card" data-city="Greeley" data-date="2026-04-25" data-tags="new,date-night,food-forward" data-text="after hours cocktail bar 4111 center place dr unit d greeley daily 4-6pm all day tue innovative craft cocktails wine tapas edible glitter drinks">
+  <div class="card-top">
+    <div class="card-name">After Hours Cocktail Bar</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-greeley">Greeley</span>
+      <button class="fav-btn" data-name="After Hours Cocktail Bar" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=After%20Hours%20Cocktail%20Bar%204111%20Center%20Place%20Dr%20Greeley%20CO" target="_blank" rel="noopener">4111 Center Place Dr Unit D &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 4-6pm, all day Tue</div>
+  <ul class="specials"><li>Innovative craft cocktails and wine</li><li>Light tapas, specialty cocktails with edible glitter</li></ul>
+</div>
+<div class="card" data-city="Greeley" data-date="2026-04-25" data-tags="new,cheap,late-night,reverse-happy-hour" data-text="litl bit bar grill 3620 35th ave evans greeley daily happy hour $4 fireball $3 domestic draft $3 wells $5 frozen margs ladies drink free 9-10pm fri sat">
+  <div class="card-top">
+    <div class="card-name">Litl Bit Bar &amp; Grill</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-greeley">Greeley</span>
+      <button class="fav-btn" data-name="Litl Bit Bar &amp; Grill" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Litl%20Bit%20Bar%20%26%20Grill%203620%2035th%20Ave%20Evans%20CO" target="_blank" rel="noopener">3620 35th Ave, Evans &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily happy hour + Fri-Sat 9-10pm</div>
+  <ul class="specials"><li>$4 Fireball, $3 domestic drafts, $3 wells, $5 frozen margs</li><li>Fri-Sat 9-10pm: ladies drink free</li></ul>
+</div>
+<div class="card" data-city="Erie" data-tags="new,cheap" data-date="2026-04-24" data-text="industrial revolution brewing 2851 rock creek dr erie mon-thu 4:30-6pm 50% off select drafts brewery snacks">
+  <div class="card-top">
+    <div class="card-name">Industrial Revolution Brewing</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-erie">Erie</span>
+      <button class="fav-btn" data-name="Industrial Revolution Brewing" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Industrial%20Revolution%20Brewing%202851%20Rock%20Creek%20Dr%20Erie%20CO" target="_blank" rel="noopener">2851 Rock Creek Dr &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Thu 4:30-6pm</div>
+  <ul class="specials"><li>50% off select drafts</li><li>Brewery snacks</li></ul>
+</div>
 </div>
 
 <script>
@@ -2993,6 +3106,7 @@ body {
 var showOpenNow = false;
 var showFavs = false;
 var showNew = false;
+var showWeekend = false;
 var activeTags = {};
 
 // --- localStorage helpers (fail-safe) ---
@@ -3455,6 +3569,21 @@ function toggleNew() {
   filterCards();
 }
 
+function toggleWeekend() {
+  showWeekend = !showWeekend;
+  var btn = document.getElementById('btnWeekend');
+  if (btn) btn.classList.toggle('is-active', showWeekend);
+  // Set day filter to Fri or Sat based on current day, or Fri if neither
+  var dayEl = document.getElementById('day');
+  if (showWeekend) {
+    var today = new Date().getDay();
+    dayEl.value = (today === 6) ? '6' : '5'; // Sat stays Sat, everything else defaults to Fri
+  } else {
+    dayEl.value = new Date().getDay().toString();
+  }
+  filterCards();
+}
+
 // --- Tags ---
 function toggleTag(tag) {
   activeTags[tag] = !activeTags[tag];
@@ -3604,8 +3733,11 @@ function clearAllFilters() {
   // Reset tags
   activeTags = {};
   showNew = false;
+  showWeekend = false;
   var btnNew = document.getElementById('btnNew');
   if (btnNew) btnNew.classList.remove('is-active');
+  var btnWeekend = document.getElementById('btnWeekend');
+  if (btnWeekend) btnWeekend.classList.remove('is-active');
   document.querySelectorAll('.tag-btn').forEach(function(b) { b.classList.remove('is-active'); });
   filterCards();
 }
