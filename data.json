@@ -10,7 +10,9 @@
       "$7 house red or white wine",
       "$9 featured classic cocktails",
       "$6 truffle fries, $9 sliders"
-    ]
+    ],
+    "lat": 40.584619,
+    "lng": -105.077342
   },
   {
     "Name": "Austin's American Grill",
@@ -22,7 +24,9 @@
       "$5 well cocktails, $6+ featured cocktails",
       "$2 off all draft beer, $5 mocktails, $6 wine",
       "$4 beer cheese soup, $2 ribs, $9 chicken street tacos"
-    ]
+    ],
+    "lat": 40.584075,
+    "lng": -105.071816
   },
   {
     "Name": "Avogadro's Number",
@@ -35,7 +39,9 @@
       "$5 margaritas",
       "$5 PBR + well shot combo",
       "$5 tempeh burgers, fries, chicken tenders"
-    ]
+    ],
+    "lat": 40.579636,
+    "lng": -105.079262
   },
   {
     "Name": "Beau Jo's",
@@ -46,7 +52,9 @@
     "specials": [
       "$5 food and $4 drink specials",
       "$13.50 lunch combo"
-    ]
+    ],
+    "lat": 40.589253,
+    "lng": -105.077339
   },
   {
     "Name": "Bistro Nautile",
@@ -57,7 +65,9 @@
     "specials": [
       "Discounted small plates and select wines",
       "$2 off house cocktails"
-    ]
+    ],
+    "lat": 40.585842,
+    "lng": -105.07853
   },
   {
     "Name": "Blue Agave Grill",
@@ -70,7 +80,9 @@
       "$5 draft pints, $6 margaritas and sangria swirls",
       "$7-$11 street tacos, chorizo corn dip, guac",
       "Tue: 50% off tequila. Wed: 50% off wine bottles"
-    ]
+    ],
+    "lat": 40.585339,
+    "lng": -105.077576
   },
   {
     "Name": "Brother's Bar & Grill",
@@ -81,7 +93,9 @@
     "specials": [
       "Tue: $3 cheeseburgers (dine-in only)",
       "Wed: 25-cent wings (dine-in only)"
-    ]
+    ],
+    "lat": 40.584075,
+    "lng": -105.071816
   },
   {
     "Name": "Buffalo Wild Wings",
@@ -93,7 +107,9 @@
       "$6 strawberry margs, $4 Long Islands",
       "$4 tall drafts, $5 Bud Lights, $6 Voodoo Ranger IPA",
       "$3 chips/salsa/tots, $5 mozzarella sticks, $6 pretzel knots"
-    ]
+    ],
+    "lat": 40.523989,
+    "lng": -105.075896
   },
   {
     "Name": "Cafe Vino",
@@ -105,7 +121,9 @@
       "$7 wine by glass, $28 featured bottles",
       "$24 sangria carafes, $6 mimosas/well drinks/drafts",
       "$4 PBR bottles, food specials $3-$10"
-    ]
+    ],
+    "lat": 40.571671,
+    "lng": -105.076622
   },
   {
     "Name": "Cafe at Ginger & Baker",
@@ -116,7 +134,9 @@
     "specials": [
       "$5 well drinks and house wines",
       "$2 off draft beers"
-    ]
+    ],
+    "lat": 40.590022,
+    "lng": -105.073626
   },
   {
     "Name": "C.B. & Potts",
@@ -128,7 +148,9 @@
       "$3.75 domestic pints, $4.75 craft pints",
       "$5.75 margaritas/well/wine, $8.75 martinis",
       "$3 off large shareables"
-    ]
+    ],
+    "lat": 40.537563,
+    "lng": -105.05098
   },
   {
     "Name": "Charco Broiler",
@@ -140,7 +162,9 @@
       "$1 off well drinks",
       "$1 off all wines by the glass",
       "$1 off local craft, domestic, and imported beers"
-    ]
+    ],
+    "lat": 40.581655,
+    "lng": -105.045924
   },
   {
     "Name": "Cheba Hut",
@@ -152,7 +176,9 @@
       "$2 off bar menu",
       "Signature \"Dirty Hippy\" cocktail",
       "Hash Cans and beer/shot combos"
-    ]
+    ],
+    "lat": 40.53057,
+    "lng": -105.11297
   },
   {
     "Name": "Choice City",
@@ -164,7 +190,9 @@
       "2 for 1 house cocktails",
       "$5 Colorado dogs",
       "Wed 5-9pm: 2 for 1 burgers, $1 off drafts"
-    ]
+    ],
+    "lat": 40.584393,
+    "lng": -105.077589
   },
   {
     "Name": "Chili's",
@@ -176,7 +204,9 @@
       "$3-$5 domestic beers",
       "$5 house wine",
       "$6 Tequila Trifectas"
-    ]
+    ],
+    "lat": 40.53844,
+    "lng": -105.07652
   },
   {
     "Name": "Colorado Room",
@@ -187,7 +217,9 @@
     "specials": [
       "$1 off domestics, crafts, cocktails, well drinks",
       "$3 BBQ pork sammys, $3.50 poutine"
-    ]
+    ],
+    "lat": 40.578546,
+    "lng": -105.076715
   },
   {
     "Name": "Comet Chicken",
@@ -199,7 +231,9 @@
       "$5 keg cocktails",
       "$1 off draft beer",
       "$2.99 churros/fries, $4.99 chicken sandwiches"
-    ]
+    ],
+    "lat": 40.58742,
+    "lng": -105.07789
   },
   {
     "Name": "CooperSmith's",
@@ -211,7 +245,9 @@
       "$2 off select pints",
       "$1 off well drinks",
       "$5 select appetizers"
-    ]
+    ],
+    "lat": 40.587391,
+    "lng": -105.075629
   },
   {
     "Name": "Corner Slice",
@@ -223,7 +259,9 @@
       "$3 cheese slices, garlic pretzels, cheesy bread",
       "$10 16-inch cheese pizza",
       "$3.50 beers, $5 shots/mixed drinks"
-    ]
+    ],
+    "lat": 40.589709,
+    "lng": -105.076997
   },
   {
     "Name": "Crown Pub",
@@ -235,7 +273,9 @@
       "$5 draft beer, spirits, wine",
       "$7 fries/shishitos, $8 calamari/fish & chips",
       "$11 pork sliders"
-    ]
+    ],
+    "lat": 40.586179,
+    "lng": -105.076767
   },
   {
     "Name": "DC Oakes Brewhouse",
@@ -247,7 +287,9 @@
       "$3 select brews",
       "$4 well drinks",
       "$5 house wines"
-    ]
+    ],
+    "lat": 40.522757,
+    "lng": -105.011422
   },
   {
     "Name": "Elliott's Martini Bar",
@@ -258,7 +300,9 @@
     "specials": [
       "$2 off martinis and tapas",
       "Wed: $7 house dirty martinis all night"
-    ]
+    ],
+    "lat": 40.588462,
+    "lng": -105.07447
   },
   {
     "Name": "The Emporium",
@@ -270,7 +314,9 @@
       "$8 tapped cocktails, $9 classic cocktails",
       "$7 select wines, $1 off local drafts",
       "Small plates $5-$9"
-    ]
+    ],
+    "lat": 40.587591,
+    "lng": -105.074406
   },
   {
     "Name": "Farmhouse at Jessup Farm",
@@ -282,7 +328,9 @@
       "$7 select wines, $8+ cocktails, $4 draft beer",
       "$5 carnitas tacos, $8 duck fat tots",
       "$10 truffle Parmesan fries"
-    ]
+    ],
+    "lat": 40.562451,
+    "lng": -105.038704
   },
   {
     "Name": "Fuzzy's Taco Shop",
@@ -294,7 +342,9 @@
       "$5 18oz margaritas",
       "$4 imported beer, $3 domestic beer",
       "$2 chips/salsa, $2 select tacos"
-    ]
+    ],
+    "lat": 40.526892,
+    "lng": -105.041495
   },
   {
     "Name": "Illegal Pete's",
@@ -306,7 +356,9 @@
       "$1 off margaritas and draft beer",
       "$4 off party margaritas (serves 4)",
       "$1 off chips/queso/guac"
-    ]
+    ],
+    "lat": 40.587924,
+    "lng": -105.074693
   },
   {
     "Name": "Island Grill",
@@ -317,7 +369,9 @@
     "specials": [
       "$1 off draft beers, house wines, well cocktails, House Rocks Margaritas",
       "$2 off appetizers"
-    ]
+    ],
+    "lat": 40.551555,
+    "lng": -105.059395
   },
   {
     "Name": "Japango",
@@ -330,7 +384,9 @@
       "$8 well cocktails/house wine",
       "$9 large sake/choice cocktail/sangria",
       "$2 off special rolls, $4.50 hand rolls"
-    ]
+    ],
+    "lat": 40.586442,
+    "lng": -105.077499
   },
   {
     "Name": "Jax Fish House",
@@ -343,7 +399,9 @@
       "$8 sangria, $10 Tito's martinis",
       "$2-$3 raw oysters",
       "$7 wedge salads, $41 seafood sampler"
-    ]
+    ],
+    "lat": 40.587799,
+    "lng": -105.077325
   },
   {
     "Name": "Jaws Sushi",
@@ -354,7 +412,9 @@
     "specials": [
       "$3 drafts, well drinks, sake bombs",
       "$4 large hot sake"
-    ]
+    ],
+    "lat": 40.574175,
+    "lng": -105.097887
   },
   {
     "Name": "JINYA Ramen Bar",
@@ -365,7 +425,9 @@
     "specials": [
       "Deals on Sapporo drafts, lychee-tini, hot sake",
       "Discounted assorted small plates"
-    ]
+    ],
+    "lat": 40.54241,
+    "lng": -105.076542
   },
   {
     "Name": "The Lyric",
@@ -378,7 +440,9 @@
       "$2 off N/A cocktails, $1 off N/A beer or bucha",
       "$5 off large pizzas, $1 off pretzels/falafel bites/mozz sticks",
       "2 slices and a draft for $12"
-    ]
+    ],
+    "lat": 40.602603,
+    "lng": -105.077169
   },
   {
     "Name": "Maida Trattoria",
@@ -390,7 +454,9 @@
       "$7 happy hour wine (sparkling, white, rose, or red)",
       "$9 margarita, aperol spritz, limoncello spritz, $10 negroni and classic cocktails",
       "$6 cheesy focaccia, $7 bruschetta/caesar, $8 artichoke dip, $10 margherita pizzetta"
-    ]
+    ],
+    "lat": 40.587241,
+    "lng": -105.076707
   },
   {
     "Name": "Mas Fuegos",
@@ -403,7 +469,9 @@
       "Half-price tequila ($12+, on the rocks or neat) and tequila flights",
       "$1 off a la carte tacos and tostadas",
       "$5.50 sope, $5.75 chicken taquitos/guac/tinga chips, $6.75 queso, $12.75 carne asada fries"
-    ]
+    ],
+    "lat": 40.523722,
+    "lng": -105.033849
   },
   {
     "Name": "Masa Hibachi & Sushi",
@@ -415,7 +483,9 @@
       "Draft beers $5-$6, house wine $6, well drinks $6.50, hot sake $8",
       "Kitchen apps $4-$9: edamame, gyoza, yakitori, calamari, shrimp tempura",
       "Sushi rolls $5.50-$12: Alaskan, spicy salmon/tuna, California and specialty rolls"
-    ]
+    ],
+    "lat": 40.523728,
+    "lng": -105.033144
   },
   {
     "Name": "Maya Cove",
@@ -427,7 +497,9 @@
       "$7 margaritas, $5 mezcal margs, $6 hurricanes",
       "$4 draft beer, $3.75 Coors Light",
       "$3 ribs, $8 pulled pork/burger baskets, $8 crispy chicken tacos"
-    ]
+    ],
+    "lat": 40.5532,
+    "lng": -105.116
   },
   {
     "Name": "The Melting Pot",
@@ -438,7 +510,9 @@
     "specials": [
       "Half off cheese and chocolate fondues",
       "$8 cocktails, beer and wine specials"
-    ]
+    ],
+    "lat": 40.587395,
+    "lng": -105.073107
   },
   {
     "Name": "Mobb Mountain Distillers",
@@ -449,7 +523,9 @@
     "specials": [
       "$3 vodka mules and vodka sodas",
       "$2 off all cocktails"
-    ]
+    ],
+    "lat": 40.590011,
+    "lng": -105.072533
   },
   {
     "Name": "Moot House",
@@ -461,7 +537,9 @@
       "$1.50 off all draft beer",
       "$6 wine/sangria, $5 well cocktails",
       "$3.95 Caesar salads, $4.95 pretzel rolls, $7.95 artichoke dip"
-    ]
+    ],
+    "lat": 40.551181,
+    "lng": -105.07652
   },
   {
     "Name": "Mugs",
@@ -472,7 +550,9 @@
     "specials": [
       "$5 craft cocktails",
       "$5 half toasts, paninis, mini mac and cheese, hummus, quesadillas"
-    ]
+    ],
+    "lat": 40.578109,
+    "lng": -105.07697
   },
   {
     "Name": "Music City Hot Chicken",
@@ -482,7 +562,9 @@
     "Status": "Active",
     "specials": [
       "$1 off all house cocktails"
-    ]
+    ],
+    "lat": 40.566752,
+    "lng": -105.078699
   },
   {
     "Name": "Music City Hot Chicken North",
@@ -493,7 +575,9 @@
     "specials": [
       "$1 off seasonal and specialty cocktails",
       "$1.50 Labatt Blue during happy hour and Avalanche, Nuggets, and Broncos games"
-    ]
+    ],
+    "lat": 40.611032,
+    "lng": -105.073688
   },
   {
     "Name": "Nick's Restaurant & Bar",
@@ -505,7 +589,9 @@
       "$2.75 Old Aggies, $3 Bud Lights",
       "$6 house wine, $5.50 well drinks, $7 frozen cocktails",
       "$3 pizza slices/meatball sliders, $6 chicken Parm hoagies"
-    ]
+    ],
+    "lat": 40.572981,
+    "lng": -105.076702
   },
   {
     "Name": "PizzaVino NoCo",
@@ -516,7 +602,9 @@
     "specials": [
       "$6-$8 drinks",
       "$3 meatball slider, $7 pizza roll, $9 bruschetta, $11 hot wings"
-    ]
+    ],
+    "lat": 40.562666,
+    "lng": -105.038351
   },
   {
     "Name": "Rare Italian",
@@ -528,7 +616,9 @@
       "$3-$4 beers, $6 well drinks, $5 limoncello",
       "$7+ cocktails/wine",
       "$5 meatballs, $6 truffle fries, $11-$15 pizzettas, $14 dry-aged burger"
-    ]
+    ],
+    "lat": 40.586793,
+    "lng": -105.077372
   },
   {
     "Name": "The Regional",
@@ -540,7 +630,9 @@
       "$2 off all drinks",
       "$2.50 raw oysters, $7 fries",
       "$15 burger/beer/shot combo"
-    ]
+    ],
+    "lat": 40.586498,
+    "lng": -105.0786
   },
   {
     "Name": "Rio Grande",
@@ -552,7 +644,9 @@
       "$2 off margaritas",
       "$3 drafts/cans, $5 wine",
       "$7 quesadilla, $4-$7 queso, tacos $1 off"
-    ]
+    ],
+    "lat": 40.586836,
+    "lng": -105.078233
   },
   {
     "Name": "Road 34",
@@ -563,7 +657,9 @@
     "specials": [
       "$2 Coors/Coors Light/Old Aggie",
       "50 cents off other drafts and appetizers"
-    ]
+    ],
+    "lat": 40.574387,
+    "lng": -105.098303
   },
   {
     "Name": "Scrumpy's Hard Cider Bar",
@@ -573,7 +669,9 @@
     "Status": "Active",
     "specials": [
       "$2 off everything"
-    ]
+    ],
+    "lat": 40.589493,
+    "lng": -105.077513
   },
   {
     "Name": "Smok",
@@ -585,7 +683,9 @@
       "$1 off beers on tap",
       "$6 margaritas/whiskey sours/gin tonics/old fashioneds",
       "$7 brisket chili frito pies, $10 brisket egg rolls"
-    ]
+    ],
+    "lat": 40.542486,
+    "lng": -105.072911
   },
   {
     "Name": "Smokin Fins",
@@ -608,7 +708,9 @@
     "specials": [
       "$7.75-$9.75 cocktails, $7 wine, $6 Ayinger Pils",
       "$5.25 olives, $6.50 deviled eggs, $11.50 charcuterie board"
-    ]
+    ],
+    "lat": 40.587333,
+    "lng": -105.075926
   },
   {
     "Name": "Sonny Lubick Steakhouse",
@@ -621,7 +723,9 @@
       "$8 wines, cocktails and spirits, $28 wine bottles",
       "$6 pommes frites, $9 meatballs",
       "$10 nachos and loaded fries"
-    ]
+    ],
+    "lat": 40.586603,
+    "lng": -105.077275
   },
   {
     "Name": "The Cache at Ginger & Baker",
@@ -633,7 +737,9 @@
       "$5 dirty martinis and draft beer",
       "$10 Old Fashioneds and wine",
       "Happy hour appetizers"
-    ]
+    ],
+    "lat": 40.590022,
+    "lng": -105.073626
   },
   {
     "Name": "Tap and Handle",
@@ -646,7 +752,9 @@
       "$9 lager and a shot",
       "75-cent wings (min 6)",
       "$8 hot pretzels/tender baskets, $5 cheese curds"
-    ]
+    ],
+    "lat": 40.58374,
+    "lng": -105.077522
   },
   {
     "Name": "Tony's Bar",
@@ -658,7 +766,9 @@
       "$3 Budweiser/Bud Light",
       "$3.75 well mixed drinks",
       "$2.50 Fireball/Jager/Jim Beam shots"
-    ]
+    ],
+    "lat": 40.584796,
+    "lng": -105.076611
   },
   {
     "Name": "Torchy's Tacos",
@@ -670,7 +780,9 @@
       "$1 off tacos",
       "$2 off cocktails",
       "$1.50 off beer"
-    ]
+    ],
+    "lat": 40.54241,
+    "lng": -105.076542
   },
   {
     "Name": "Town Pump",
@@ -682,7 +794,9 @@
       "$4.75 craft beers/well drinks",
       "$4 Fat Tires",
       "$3.75 Coors drafts"
-    ]
+    ],
+    "lat": 40.587665,
+    "lng": -105.076744
   },
   {
     "Name": "Trailhead Tavern",
@@ -694,7 +808,9 @@
       "$3.50 craft beers/well drinks",
       "$2.50 domestic drafts",
       "$4 Jameson/$4 Hornitos shots"
-    ]
+    ],
+    "lat": 40.587438,
+    "lng": -105.078284
   },
   {
     "Name": "Uno Mas Taqueria",
@@ -706,7 +822,9 @@
       "$1 off drafts",
       "$8 traditional margs, $7 palomas, $10 mango margs",
       "$7 half order chips/guac"
-    ]
+    ],
+    "lat": 40.584615,
+    "lng": -105.078139
   },
   {
     "Name": "Grey Rock Sports Grill",
@@ -723,7 +841,9 @@
       "Sat: $5 off bottled beer buckets (5 beers)",
       "Sun: $6 mimosas/Long Islands, $5 screwdrivers"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.521484,
+    "lng": -105.060776
   },
   {
     "Name": "William Oliver's",
@@ -735,7 +855,9 @@
       "10% off cocktails and appetizers",
       "Free beer with any hot dog meal (11am-4pm daily)",
       "Thu: BOGO bossy pig (pork mac and cheese)"
-    ]
+    ],
+    "lat": 40.55178,
+    "lng": -105.037118
   },
   {
     "Name": "Lucky Joe's Sidewalk Saloon",
@@ -749,7 +871,9 @@
       "Irish Whiskey Wednesdays 5pm-2am",
       "$4 all bomb shots (Thu 7pm-2am)"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.587447,
+    "lng": -105.076354
   },
   {
     "Name": "Pour Brothers Community Tavern",
@@ -761,7 +885,9 @@
       "$1 off draft beer, liquor, wine and shots",
       "$2 16oz domestic drafts, $3 22oz domestic drafts"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.588344,
+    "lng": -105.074737
   },
   {
     "Name": "Chimney Park",
@@ -784,7 +910,9 @@
     "specials": [
       "Craft cocktails, beer, and wine specials",
       "Elevated pub fare at happy hour prices"
-    ]
+    ],
+    "lat": 40.479648,
+    "lng": -104.901869
   },
   {
     "Name": "Mash Lab",
@@ -796,7 +924,9 @@
       "$5 house wine, $5 Old Fashioned",
       "$7 strawberry cucumber limeade, bourbon smash, pomegranate margarita, ranch water",
       "$4 pretzel bites, $5 chips/queso/salsa, $6 fried green beans, $6 skillet fries"
-    ]
+    ],
+    "lat": 40.438403,
+    "lng": -104.968237
   },
   {
     "Name": "Windsor Mill Tavern",
@@ -808,7 +938,9 @@
       "Mill Old Fashioned",
       "Strawberry Mule",
       "Discounted appetizers"
-    ]
+    ],
+    "lat": 40.47954,
+    "lng": -104.900971
   },
   {
     "Name": "Tiho's Tequila Bar",
@@ -820,7 +952,9 @@
       "Mon: $4 house margaritas with fajita purchase",
       "Tue: 50% off tequila and mezcal",
       "Wed: $25 any appetizer and house margs"
-    ]
+    ],
+    "lat": 40.47954,
+    "lng": -104.900971
   },
   {
     "Name": "Sweet Heart Winery",
@@ -831,7 +965,9 @@
     "specials": [
       "$2 off wine by the glass",
       "$2 off charcuterie boards"
-    ]
+    ],
+    "lat": 40.407512,
+    "lng": -105.157705
   },
   {
     "Name": "Austin's American Grill",
@@ -844,7 +980,9 @@
       "$3.95 cup of soup, $7.95 queso, $8.95 chicken street tacos",
       "$9.95 rotisserie chicken & fries, $13.95 steak bites"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.421003,
+    "lng": -104.690672
   },
   {
     "Name": "Big City Roadhouse",
@@ -857,7 +995,9 @@
       "$1 off margaritas, half-price tequilas ($12+)",
       "Daily rotating food specials"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.407387,
+    "lng": -104.775973
   },
   {
     "Name": "The Cow Saloon & Eatery",
@@ -870,7 +1010,9 @@
       "$2 off appetizers",
       "Wed: half off wine bottles, $2 off whiskey pours"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.423719,
+    "lng": -104.691029
   },
   {
     "Name": "Coyote's Southwestern Grill",
@@ -883,7 +1025,9 @@
       "$1 off draft and bottled beers",
       "$2 off appetizers"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.42184,
+    "lng": -104.768099
   },
   {
     "Name": "Fuzzy's Taco Shop",
@@ -896,7 +1040,9 @@
       "$4 imported beer, $3 domestic beer",
       "$2 chips/salsa, $2 select tacos"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.391161,
+    "lng": -104.71973
   },
   {
     "Name": "The GOAT Sports Bar",
@@ -908,7 +1054,9 @@
       "$1 off draft beer, well drinks, wine",
       "$1 off appetizers (except wings)"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.396644,
+    "lng": -104.752928
   },
   {
     "Name": "Lucky Fins",
@@ -921,7 +1069,9 @@
       "BOGO half off sushi rolls",
       "Happy hour bites: potstickers, calamari, kickin' shrimp"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.393816,
+    "lng": -104.752507
   },
   {
     "Name": "Meeker's Kitchen",
@@ -934,7 +1084,9 @@
       "$9 cocktails (Pearl of the Plains, Cherry Picked Old Fashioned)",
       "$7 wine by the glass"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.426767,
+    "lng": -104.693499
   },
   {
     "Name": "Patrick's Irish Pub",
@@ -950,7 +1102,9 @@
       "Fri 3pm-midnight: $1 off all IPAs",
       "Late night Mon-Thu 10pm-midnight: $1 off wells and drafts"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.423519,
+    "lng": -104.69103
   },
   {
     "Name": "Rio Grande",
@@ -965,7 +1119,9 @@
     ],
     "dateAdded": "2026-04-21",
     "verified": true,
-    "verifiedDate": "2026-04-24"
+    "verifiedDate": "2026-04-24",
+    "lat": 40.424242,
+    "lng": -104.692249
   },
   {
     "Name": "Smokin' Dave's BBQ",
@@ -978,7 +1134,9 @@
       "$6 double-shot margaritas",
       "$2 off appetizers"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.424216,
+    "lng": -104.691863
   },
   {
     "Name": "The Tavern at St. Michael's Square",
@@ -991,7 +1149,9 @@
       "$6 cocktails: margaritas, cosmos, old fashioneds, rum smashes",
       "$7 apps: potato skins, tavern sliders, beef street tacos, buffalo wings, shrimp ceviche tostadas"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.388589,
+    "lng": -104.786781
   },
   {
     "Name": "Wyler's Pub & Grill",
@@ -1003,7 +1163,9 @@
       "$3 shots (Fireball/Ole Smokey Peanut Butter), $2 drafts (12oz), $1 off wells",
       "Late night Mon-Thu 10pm-midnight: $1 off wells and drafts"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.394339,
+    "lng": -104.717528
   },
   {
     "Name": "BJ\u2019s",
@@ -1016,7 +1178,9 @@
       "$7 sliders, pot stickers, mozzarella sticks and personal pizza",
       "$5 house wines"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.523854,
+    "lng": -105.027398
   },
   {
     "Name": "Hooters",
@@ -1029,7 +1193,9 @@
       "$5 screwball, Jameson, Patron and fireball (1.25oz shots)",
       "$16 all you can eat wings (Weds only)"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.436517,
+    "lng": -104.994172
   },
   {
     "Name": "Union Bar & Soda Fountain",
@@ -1040,7 +1206,9 @@
     "specials": [
       "$5 drafts, $7 wines, $8 elixirs",
       "$3 off starters"
-    ]
+    ],
+    "lat": 40.589546,
+    "lng": -105.074531
   },
   {
     "Name": "Mo Jeauxs",
@@ -1051,7 +1219,9 @@
     "specials": [
       "$4 Single, $6 Double Cocktails"
     ],
-    "dateAdded": "2026-04-21"
+    "dateAdded": "2026-04-21",
+    "lat": 40.575328,
+    "lng": -105.100443
   },
   {
     "Name": "Deppen Brewing",
@@ -1062,7 +1232,9 @@
     "specials": [
       "$1 off beers",
       "$2 off wine and cocktails"
-    ]
+    ],
+    "lat": 40.681843,
+    "lng": -105.001694
   },
   {
     "Name": "Rally5",
@@ -1075,7 +1247,9 @@
       "$3 off Tiki and house cocktails, $2 off 16oz drafts, $2 off wine by the glass",
       "Sliders: $4 sloppy joe, $5 burger/chicken salad/crispy buffalo chicken/BBQ pork, $7 crab cake, $10 lobster",
       "Apps: $7 chips/queso, chips/guac, cheese curds, bacon wrapped dates, fried pickles"
-    ]
+    ],
+    "lat": 40.523726,
+    "lng": -105.034359
   },
   {
     "Name": "High Point Bar",
@@ -1094,7 +1268,9 @@
       "Sun: happy hour all day and all night"
     ],
     "verified": true,
-    "verifiedDate": "2026-04-24"
+    "verifiedDate": "2026-04-24",
+    "lat": 40.588047,
+    "lng": -105.076594
   },
   {
     "Name": "Vatos Tacos & Tequila",
@@ -1107,7 +1283,9 @@
       "$5 house margaritas, $1 off drafts, $4 Tecate",
       "$3 street tacos",
       "Tue: Taco Tuesday all day - $2 off margs/beers, discounted taco trios"
-    ]
+    ],
+    "lat": 40.589776,
+    "lng": -105.07652
   },
   {
     "Name": "Stuft Burger Bar",
@@ -1121,7 +1299,9 @@
       "Half off all appetizers"
     ],
     "verified": true,
-    "verifiedDate": "2026-04-24"
+    "verifiedDate": "2026-04-24",
+    "lat": 40.585061,
+    "lng": -105.076593
   },
   {
     "Name": "The Still Whiskey Steaks",
@@ -1135,7 +1315,9 @@
       "Mon: half off all wine bottles"
     ],
     "verified": true,
-    "verifiedDate": "2026-04-24"
+    "verifiedDate": "2026-04-24",
+    "lat": 40.588155,
+    "lng": -105.077604
   },
   {
     "Name": "The Whiskey @ Tony's",
@@ -1147,7 +1329,9 @@
     "specials": [
       "$1 off most drinks",
       "Rotating daily whiskey flight specials"
-    ]
+    ],
+    "lat": 40.584796,
+    "lng": -105.076611
   },
   {
     "Name": "Indigo",
@@ -1161,7 +1345,9 @@
       "Small plates: samosa chaat, tandoori wings and more"
     ],
     "verified": true,
-    "verifiedDate": "2026-04-24"
+    "verifiedDate": "2026-04-24",
+    "lat": 40.588258,
+    "lng": -105.078301
   },
   {
     "Name": "Madre Cocina y Lounge",
@@ -1173,7 +1359,9 @@
     "specials": [
       "$6 margaritas, $5 palomas, $1 off beer/wine",
       "$3-$5 tacos and street-style snacks"
-    ]
+    ],
+    "lat": 40.588148,
+    "lng": -105.074796
   },
   {
     "Name": "The Mayor of Old Town",
@@ -1185,7 +1373,9 @@
     "specials": [
       "$1 off all 100+ draft taps",
       "$2 off pretzels and fries"
-    ]
+    ],
+    "lat": 40.57892,
+    "lng": -105.07853
   },
   {
     "Name": "Sugar Beet Saloon",
@@ -1197,7 +1387,9 @@
     "specials": [
       "$2 off cocktails and draft beer",
       "Rotating seasonal small plates"
-    ]
+    ],
+    "lat": 40.56219,
+    "lng": -105.037864
   },
   {
     "Name": "La Luz Mexican Grill",
@@ -1210,7 +1402,9 @@
       "Mon/Wed: BOGO 50% off margaritas",
       "Tue/Thu: $4 micro drafts all day",
       "Tue: $3.50 taco special all day"
-    ]
+    ],
+    "lat": 40.532974,
+    "lng": -105.074527
   },
   {
     "Name": "Ridgehill Tavern",
@@ -1222,7 +1416,9 @@
     "specials": [
       "$5 wine/wells, $1 off beer",
       "$5-$8 tavern snacks"
-    ]
+    ],
+    "lat": 40.438756,
+    "lng": -104.90508
   },
   {
     "Name": "Twin Staves",
@@ -1233,7 +1429,9 @@
     "dateAdded": "2026-04-23",
     "specials": [
       "$2 off house spirits"
-    ]
+    ],
+    "lat": 40.479709,
+    "lng": -104.902032
   },
   {
     "Name": "The Goat Sports Bar",
@@ -1245,7 +1443,9 @@
     "specials": [
       "$1 off wells, $4 domestic drafts",
       "$2 off select starters"
-    ]
+    ],
+    "lat": 40.436508,
+    "lng": -104.978616
   },
   {
     "Name": "Nordy's BBQ & Grill",
@@ -1259,7 +1459,9 @@
       "$5 wells/house wines/house margaritas",
       "$6 hillbilly nachos, $5 cheddar fries, $6 smokin' skins, $7 sausage basket",
       "$5 Texas toothpicks, $7 cheese curds, $7 for 5 wings"
-    ]
+    ],
+    "lat": 40.436712,
+    "lng": -104.983031
   },
   {
     "Name": "Pourhouse Bar & Grill",
@@ -1272,7 +1474,9 @@
       "$1 off standard drafts",
       "$4 well drinks",
       "$4.50 house wine/margaritas/bloody marys"
-    ]
+    ],
+    "lat": 40.395199,
+    "lng": -105.075081
   },
   {
     "Name": "Vatos Tacos & Tequila",
@@ -1284,7 +1488,9 @@
     "specials": [
       "$2 off Vato & Macho margaritas",
       "$2 off all beers"
-    ]
+    ],
+    "lat": 40.394228,
+    "lng": -105.074137
   },
   {
     "Name": "Loveland Tap & Tavern",
@@ -1296,7 +1502,9 @@
     "specials": [
       "$2 off featured beers, $2 off draft cocktails, $10 lager and a shot",
       "$5.50 wings, $8 pretzel, $6 cheese curds, $8 tenders/fries"
-    ]
+    ],
+    "lat": 40.395663,
+    "lng": -105.073617
   },
   {
     "Name": "Loveland Chophouse",
@@ -1308,7 +1516,9 @@
     "specials": [
       "$2 off cocktails and wine",
       "Half off appetizers: oysters, calamari, tartare"
-    ]
+    ],
+    "lat": 40.39578,
+    "lng": -105.075104
   },
   {
     "Name": "Wicked Tequila Room",
@@ -1319,7 +1529,9 @@
     "dateAdded": "2026-04-23",
     "specials": [
       "$5 Wicked margaritas, $1 off wells"
-    ]
+    ],
+    "lat": 40.395607,
+    "lng": -105.075218
   },
   {
     "Name": "East End Ale House",
@@ -1331,7 +1543,9 @@
     "specials": [
       "$1 off beer/wells, $2 off BBQ items",
       "Free pool Mon/Wed/Fri 10am-3pm"
-    ]
+    ],
+    "lat": 40.395203,
+    "lng": -105.071245
   },
   {
     "Name": "Tom Davis Saloon",
@@ -1345,7 +1559,9 @@
       "$4 off TD teas, $4 off lemonades"
     ],
     "verified": true,
-    "verifiedDate": "2026-04-24"
+    "verifiedDate": "2026-04-24",
+    "lat": 40.396305,
+    "lng": -105.074184
   },
   {
     "Name": "The Atlas",
@@ -1357,7 +1573,9 @@
     "specials": [
       "$1 off drafts, $5 select cocktails",
       "Rotating shareables"
-    ]
+    ],
+    "lat": 40.414053,
+    "lng": -104.689699
   },
   {
     "Name": "Pura Vida Bar",
@@ -1369,7 +1587,9 @@
     "specials": [
       "$5 margaritas, $1 off beer",
       "Latin-inspired appetizers"
-    ]
+    ],
+    "lat": 40.423646,
+    "lng": -104.691866
   },
   {
     "Name": "Bogeys Pub & Grille",
@@ -1381,7 +1601,9 @@
     "specials": [
       "$4 wells, $4 tall boys, $5 craft pints, $6 wine",
       "$6-$10 wings and street tacos"
-    ]
+    ],
+    "lat": 40.402823,
+    "lng": -104.767855
   },
   {
     "Name": "Parry's Pizzeria & Taphouse",
@@ -1396,7 +1618,9 @@
       "$3.99 parm/fire fries, $5.99 cheesy bread/parm bites/9\" pizza, $6.99 wings, $7.99 pretzel & beer cheese"
     ],
     "verified": true,
-    "verifiedDate": "2026-04-24"
+    "verifiedDate": "2026-04-24",
+    "lat": 40.40562,
+    "lng": -104.981008
   },
   {
     "Name": "Lazy Dog Bar & Grill",
@@ -1408,7 +1632,9 @@
     "specials": [
       "$3-$7 drafts, $5 wells/wine, $7 handcrafted cocktails",
       "$5 cajun fries/hummus, $6.75 deviled eggs, $9 sliders/wings"
-    ]
+    ],
+    "lat": 40.406618,
+    "lng": -104.984442
   },
   {
     "Name": "Bad Daddy's Burger Bar",
@@ -1423,7 +1649,9 @@
       "$8 Bad Ass margarita"
     ],
     "verified": true,
-    "verifiedDate": "2026-04-24"
+    "verifiedDate": "2026-04-24",
+    "lat": 40.406568,
+    "lng": -104.979051
   },
   {
     "Name": "Bonefish Grill",
@@ -1435,7 +1663,9 @@
     "specials": [
       "$1 off drafts, $6 house wine, $7 select cocktails",
       "$7-$10 small plates: Bang Bang Shrimp, calamari"
-    ]
+    ],
+    "lat": 40.405423,
+    "lng": -104.982669
   },
   {
     "Name": "The Post Chicken & Beer",
@@ -1451,7 +1681,9 @@
       "Soup $5, salads $6, side fries $5, appetizer platter $18"
     ],
     "verified": true,
-    "verifiedDate": "2026-04-24"
+    "verifiedDate": "2026-04-24",
+    "lat": 40.153973,
+    "lng": -105.101986
   },
   {
     "Name": "The Roost",
@@ -1463,7 +1695,9 @@
     "specials": [
       "$1 off draft beer/wine, $2 off wells",
       "$6+ off select appetizers: wings, shishitos"
-    ]
+    ],
+    "lat": 40.168458,
+    "lng": -105.102176
   },
   {
     "Name": "300 Suns Brewing",
@@ -1475,7 +1709,9 @@
     "specials": [
       "Half off 300 Suns drafts, $2 off cocktails",
       "Half off appetizers: pretzels, poutine"
-    ]
+    ],
+    "lat": 40.15992,
+    "lng": -105.101274
   },
   {
     "Name": "Pumphouse Brewery",
@@ -1487,7 +1723,9 @@
     "specials": [
       "$5 wells/house wine, $6 margs, $2 off drafts",
       "$2 off all appetizers (dine-in only)"
-    ]
+    ],
+    "lat": 40.16876,
+    "lng": -105.102065
   },
   {
     "Name": "Georgia Boys BBQ",
@@ -1501,7 +1739,9 @@
       "$7 bites: pickle fries, loaded fries (pork or chicken), 5 smoked wings, pork or chicken sandwich, medium banana pudding"
     ],
     "verified": true,
-    "verifiedDate": "2026-04-24"
+    "verifiedDate": "2026-04-24",
+    "lat": 40.164183,
+    "lng": -105.097437
   },
   {
     "Name": "West Side Tavern",
@@ -1513,7 +1753,9 @@
     "specials": [
       "$2 off house spirits, $5 drafts, $6 wells",
       "$5-$9 rotating small plates: disco fries, sliders"
-    ]
+    ],
+    "lat": 40.166618,
+    "lng": -105.115553
   },
   {
     "Name": "Urban Field Pizza",
@@ -1525,7 +1767,9 @@
     "specials": [
       "$1 off drafts, $2 off wells/wine",
       "$2 off appetizers and slices"
-    ]
+    ],
+    "lat": 40.161365,
+    "lng": -105.101569
   },
   {
     "Name": "Summit Tacos",
@@ -1537,7 +1781,9 @@
     "specials": [
       "20% off all beer, margs, and palomas",
       "20% off all appetizers: guac, queso"
-    ]
+    ],
+    "lat": 40.164579,
+    "lng": -105.102851
   },
   {
     "Name": "Collision Brewing",
@@ -1549,7 +1795,9 @@
     "specials": [
       "$5 house beers, $3 shots, $6.50 cocktails",
       "Discounts on small bites and buzzard baskets"
-    ]
+    ],
+    "lat": 40.157315,
+    "lng": -105.033168
   },
   {
     "Name": "Teocalli Cocina",
@@ -1561,7 +1809,9 @@
     "specials": [
       "$6 margaritas, $1 off drafts",
       "$3.50 tacos, $6 queso, $8 ceviche"
-    ]
+    ],
+    "lat": 40.166945,
+    "lng": -105.102146
   },
   {
     "Name": "Mike O'Shays",
@@ -1573,7 +1823,9 @@
     "specials": [
       "$1 off drafts and wells, daily rotating specials",
       "$2 off appetizers: Irish egg rolls"
-    ]
+    ],
+    "lat": 40.167938,
+    "lng": -105.102296
   },
   {
     "Name": "Burk's Tavern",
@@ -1584,7 +1836,9 @@
     "dateAdded": "2026-04-23",
     "specials": [
       "$3.75 wells/domestics, $4.50 Odell drafts"
-    ]
+    ],
+    "lat": 40.395291,
+    "lng": -105.075344
   },
   {
     "Name": "Door 222",
@@ -1598,7 +1852,9 @@
       "Half-priced select appetizers"
     ],
     "verified": true,
-    "verifiedDate": "2026-04-24"
+    "verifiedDate": "2026-04-24",
+    "lat": 40.395305,
+    "lng": -105.073952
   },
   {
     "Name": "El Mexicali Cafe",
@@ -1610,7 +1866,9 @@
     "specials": [
       "$6 draft imports, $8 wells and margaritas",
       "$9-$19 appetizer platters"
-    ]
+    ],
+    "lat": 40.395747,
+    "lng": -105.077074
   },
   {
     "Name": "The White Rabbit",
@@ -1622,7 +1880,9 @@
     "specials": [
       "$2 off social hour cocktails, $1 off beer",
       "$2 off small plates"
-    ]
+    ],
+    "lat": 40.39577,
+    "lng": -105.078681
   },
   {
     "Name": "The Flipside",
@@ -1633,7 +1893,9 @@
     "dateAdded": "2026-04-23",
     "specials": [
       "$1 off drafts and wells"
-    ]
+    ],
+    "lat": 40.395271,
+    "lng": -105.074768
   },
   {
     "Name": "Backyard Tap",
@@ -1645,7 +1907,9 @@
     "specials": [
       "Rotating local draft specials",
       "Food truck dependent"
-    ]
+    ],
+    "lat": 40.395009,
+    "lng": -105.07614
   },
   {
     "Name": "Stella's Bar",
@@ -1657,7 +1921,9 @@
     "specials": [
       "$7 margaritas, $9 martinis, $4 Miller/Mich",
       "$10-$12 apps: steak bites, sliders"
-    ]
+    ],
+    "lat": 40.423562,
+    "lng": -104.69206
   },
   {
     "Name": "Centennial Public House",
@@ -1669,7 +1935,9 @@
     "specials": [
       "$3 beer, $6 wine, $5 cocktails",
       "$8-$12 apps: goat cheese, Brussels sprouts"
-    ]
+    ],
+    "lat": 40.424216,
+    "lng": -104.691863
   },
   {
     "Name": "The Kress Speakeasy",
@@ -1680,7 +1948,9 @@
     "dateAdded": "2026-04-23",
     "specials": [
       "$2 off classics, $1 off drafts"
-    ]
+    ],
+    "lat": 40.424243,
+    "lng": -104.69108
   },
   {
     "Name": "Wing Shack",
@@ -1692,7 +1962,9 @@
     "specials": [
       "Wed: $0.75 wings",
       "Daily rotating bundle deals"
-    ]
+    ],
+    "lat": 40.404217,
+    "lng": -104.983429
   },
   {
     "Name": "Jefe's Tacos & Tequila",
@@ -1704,7 +1976,9 @@
     "specials": [
       "$5 margaritas, $1 off drafts",
       "$3 street tacos"
-    ]
+    ],
+    "lat": 40.163621,
+    "lng": -105.102142
   },
   {
     "Name": "Left Hand Brewing",
@@ -1718,7 +1992,9 @@
       "$5 select beers, $6 margaritas, $4 shots"
     ],
     "verified": true,
-    "verifiedDate": "2026-04-24"
+    "verifiedDate": "2026-04-24",
+    "lat": 40.158417,
+    "lng": -105.115279
   },
   {
     "Name": "Oskar Blues HML&S",
@@ -1730,7 +2006,9 @@
     "specials": [
       "$4 Oskar Blues drafts, $5 wells",
       "$4-$9 select apps"
-    ]
+    ],
+    "lat": 40.13917,
+    "lng": -105.131488
   },
   {
     "Name": "Grossen Bart Brewery",
@@ -1741,7 +2019,9 @@
     "dateAdded": "2026-04-23",
     "specials": [
       "$1 off flagship pints"
-    ]
+    ],
+    "lat": 40.154419,
+    "lng": -105.109246
   },
   {
     "Name": "Bootstrap Brewing",
@@ -1752,7 +2032,9 @@
     "dateAdded": "2026-04-23",
     "specials": [
       "$1 off pints"
-    ]
+    ],
+    "lat": 40.161503,
+    "lng": -105.106214
   },
   {
     "Name": "Shoes & Brews",
@@ -1763,7 +2045,9 @@
     "dateAdded": "2026-04-23",
     "specials": [
       "$1 off drafts"
-    ]
+    ],
+    "lat": 40.15807,
+    "lng": -105.107427
   },
   {
     "Name": "Luna's Tacos & Tequila",
@@ -1778,7 +2062,9 @@
       "$5 house margaritas, $5 draft beer, $5 Suerte Blanco shots",
       "$4 chips & salsa, $5 chicharrones, $8 gorditas (two double-stack tacos)",
       "$10 Frito pie, $11 shrimp ceviche"
-    ]
+    ],
+    "lat": 40.465745,
+    "lng": -104.8878
   },
   {
     "Name": "John Russell Brewing Co",
@@ -1792,7 +2078,9 @@
     "specials": [
       "~50% off beers, mules, and wine",
       "~50% off specialty pizzas and flatbreads"
-    ]
+    ],
+    "lat": 40.0494,
+    "lng": -105.0523
   },
   {
     "Name": "The Old Mine",
@@ -1806,7 +2094,9 @@
     "specials": [
       "$1 off all draft pours",
       "Hard cider and pizza focus"
-    ]
+    ],
+    "lat": 40.0498,
+    "lng": -105.0468
   },
   {
     "Name": "Master's Restaurant",
@@ -1820,7 +2110,9 @@
     "specials": [
       "$4 wells, $5 craft pints, $6 wine",
       "Rotating appetizers, large patio with mountain views"
-    ]
+    ],
+    "lat": 40.0512,
+    "lng": -105.0445
   },
   {
     "Name": "Erie Social Club",
@@ -1834,7 +2126,9 @@
     "specials": [
       "Wed: happy hour all day",
       "25% off wine bottles, wine and whiskey focus"
-    ]
+    ],
+    "lat": 40.050508,
+    "lng": -105.046381
   },
   {
     "Name": "Piripi",
@@ -1848,7 +2142,9 @@
     "specials": [
       "$6-$9 wine specials, 10% off tapas and apps",
       "Latin/Mediterranean, 99% gluten free, heated patio"
-    ]
+    ],
+    "lat": 40.050657,
+    "lng": -105.047153
   },
   {
     "Name": "Echo Brewing",
@@ -1862,7 +2158,9 @@
     "specials": [
       "$2 off pints",
       "Rotating food trucks, large dog-friendly outdoor space"
-    ]
+    ],
+    "lat": 40.0487,
+    "lng": -105.0478
   },
   {
     "Name": "24 Carrot Bistro",
@@ -1876,6 +2174,8 @@
     "specials": [
       "$2 off cocktails",
       "$10 bistro sliders"
-    ]
+    ],
+    "lat": 40.0501,
+    "lng": -105.0471
   }
 ]
