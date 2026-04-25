@@ -206,6 +206,7 @@ body {
 .badge-johnstown   { background: #e0f0ff; color: #0c5a9e; }
 .badge-longmont    { background: #e8f5e9; color: #2e7d32; }
 .badge-erie        { background: #fdf4e3; color: #92400e; }
+.badge-evans       { background: #fef3c7; color: #b45309; }
 .open-badge     { background: var(--green-bg); color: var(--green); font-size: 10px; font-weight: 700; border: 1px solid var(--green-border); }
 .new-badge      { background: #fef9c3; color: #854d0e; font-size: 10px; font-weight: 700; border: 1px solid #fde047; }
 .dist-label     { background: #f0f4ff; color: #2d5be3; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 6px; border: 1px solid #c7d7f9; white-space: nowrap; }
@@ -218,6 +219,7 @@ body {
   .badge-johnstown { background: #0a1e2e; color: #7ac4ff; }
   .badge-longmont  { background: #0d2010; color: #6dcc80; }
   .badge-erie       { background: #2a1a00; color: #ffb347; }
+  .badge-evans      { background: #2a1800; color: #fbbf24; }
   .new-badge      { background: #2a2200; color: #ffd700; border-color: #665500; }
   .dist-label     { background: #0d1a3a; color: #7aaaff; border-color: #1e3a6e; }
 }
@@ -860,6 +862,7 @@ body {
       <option value="Johnstown">Johnstown</option>
       <option value="Longmont">Longmont</option>
       <option value="Erie">Erie</option>
+      <option value="Evans">Evans</option>
     </select>
     <select class="ctrl ctrl-select" id="day" onchange="filterCards()">
       <option value="">All days</option>
@@ -3125,12 +3128,12 @@ body {
   <div class="hours">Daily 4-6pm, all day Tue</div>
   <ul class="specials"><li>Innovative craft cocktails and wine</li><li>Light tapas, specialty cocktails with edible glitter</li></ul>
 </div>
-<div class="card" data-city="Greeley" data-date="2026-04-25" data-tags="new,cheap,late-night,reverse-happy-hour" data-text="litl bit bar grill 3620 35th ave evans greeley daily happy hour $4 fireball $3 domestic draft $3 wells $5 frozen margs ladies drink free 9-10pm fri sat">
+<div class="card" data-city="Evans" data-date="2026-04-25" data-tags="new,cheap,late-night,reverse-happy-hour" data-text="litl bit bar grill 3620 35th ave evans greeley daily happy hour $4 fireball $3 domestic draft $3 wells $5 frozen margs ladies drink free 9-10pm fri sat">
   <div class="card-top">
     <div class="card-name">Litl Bit Bar &amp; Grill</div>
     <div class="card-right">
       <span class="badge open-badge" style="display:none"></span>
-      <span class="badge badge-greeley">Greeley</span>
+      <span class="badge badge-evans">Evans</span>
       <button class="fav-btn" data-name="Litl Bit Bar &amp; Grill" aria-label="Add to favorites">&#9734;</button>
     </div>
   </div>
@@ -3152,6 +3155,133 @@ body {
   <hr class="divider">
   <div class="hours">Mon-Thu 4:30-6pm</div>
   <ul class="specials"><li>50% off select drafts</li><li>Brewery snacks</li></ul>
+</div>
+
+<div class="card" data-city="Greeley" data-date="2026-04-25" data-tags="new,cheap" data-text="palomino mexican 3390 w 10th st greeley daily 2-6pm $2 off specialty cocktails appetizers" data-lat="40.4191" data-lng="-104.7345">
+  <div class="card-top">
+    <div class="card-name">Palomino Mexican</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-greeley">Greeley</span>
+      <button class="fav-btn" data-name="Palomino Mexican" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Palomino%20Mexican%203390%20W%2010th%20St%20Greeley%20CO" target="_blank" rel="noopener">3390 W 10th St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 2-6pm</div>
+  <ul class="specials"><li>$2 off specialty cocktails and appetizers</li></ul>
+</div>
+<div class="card" data-city="Greeley" data-date="2026-04-25" data-tags="new,date-night" data-text="aunt helen's 800 8th ave greeley tue-thu 3-5pm half-off house lime caipirinhas" data-lat="40.4197" data-lng="-104.6969">
+  <div class="card-top">
+    <div class="card-name">Aunt Helen&#x27;s</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-greeley">Greeley</span>
+      <button class="fav-btn" data-name="Aunt Helen&#x27;s" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Aunt%20Helen%27s%20800%208th%20Ave%20Greeley%20CO" target="_blank" rel="noopener">800 8th Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Tue-Thu 3-5pm</div>
+  <ul class="specials"><li>Half-off house lime caipirinhas</li></ul>
+</div>
+<div class="card" data-city="Greeley" data-date="2026-04-25" data-tags="new,cheap" data-text="state armory 614 8th ave greeley mon-fri 3-6pm $1 off drafts wells $5 select appetizers" data-lat="40.4189" data-lng="-104.6963">
+  <div class="card-top">
+    <div class="card-name">State Armory</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-greeley">Greeley</span>
+      <button class="fav-btn" data-name="State Armory" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=State%20Armory%20614%208th%20Ave%20Greeley%20CO" target="_blank" rel="noopener">614 8th Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm</div>
+  <ul class="specials"><li>$1 off drafts and wells</li><li>$5 select appetizers</li></ul>
+</div>
+<div class="card" data-city="Johnstown" data-date="2026-04-25" data-tags="new,cheap" data-text="texas roadhouse 4820 thompson pkwy johnstown mon-fri 3-6pm $3 domestic drafts $5 legendary margaritas $5.99 rattlesnake bites" data-lat="40.3484" data-lng="-104.9877">
+  <div class="card-top">
+    <div class="card-name">Texas Roadhouse</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-johnstown">Johnstown</span>
+      <button class="fav-btn" data-name="Texas Roadhouse" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Texas%20Roadhouse%204820%20Thompson%20Pkwy%20Johnstown%20CO" target="_blank" rel="noopener">4820 Thompson Pkwy &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm</div>
+  <ul class="specials"><li>$3 domestic drafts</li><li>$5 Legendary Margaritas</li><li>$5.99 Rattlesnake Bites</li></ul>
+</div>
+<div class="card" data-city="Johnstown" data-date="2026-04-25" data-tags="new,cheap,weekend" data-text="chili's 4812 thompson pkwy johnstown mon-fri 3-6pm $3-$6 menu $5 margaritas half-price select appetizers" data-lat="40.3485" data-lng="-104.9875">
+  <div class="card-top">
+    <div class="card-name">Chili&#x27;s</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-johnstown">Johnstown</span>
+      <button class="fav-btn" data-name="Chili&#x27;s Johnstown" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Chili%27s%204812%20Thompson%20Pkwy%20Johnstown%20CO" target="_blank" rel="noopener">4812 Thompson Pkwy &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-6pm</div>
+  <ul class="specials"><li>$3-$6 menu</li><li>$5 Margaritas</li><li>Half-price select appetizers</li></ul>
+</div>
+<div class="card" data-city="Wellington" data-date="2026-04-25" data-tags="new,cheap,patio" data-text="sparge brewing 3999 gw bush ave wellington daily 3-6pm $2 off all full-size draft pours" data-lat="40.7006" data-lng="-105.0048">
+  <div class="card-top">
+    <div class="card-name">Sparge Brewing</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-wellington">Wellington</span>
+      <button class="fav-btn" data-name="Sparge Brewing" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Sparge%20Brewing%203999%20GW%20Bush%20Ave%20Wellington%20CO" target="_blank" rel="noopener">3999 GW Bush Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-6pm</div>
+  <ul class="specials"><li>$2 off all full-size draft pours</li></ul>
+</div>
+<div class="card" data-city="Wellington" data-date="2026-04-25" data-tags="new,cheap" data-text="wellington grill 3730 cleveland ave wellington mon-fri 4-6pm $3 domestic bottles well drinks" data-lat="40.7009" data-lng="-105.0063">
+  <div class="card-top">
+    <div class="card-name">Wellington Grill</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-wellington">Wellington</span>
+      <button class="fav-btn" data-name="Wellington Grill" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Wellington%20Grill%203730%20Cleveland%20Ave%20Wellington%20CO" target="_blank" rel="noopener">3730 Cleveland Ave &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 4-6pm</div>
+  <ul class="specials"><li>$3 domestic bottles and well drinks</li></ul>
+</div>
+<div class="card" data-city="Erie" data-date="2026-04-25" data-tags="new,patio,food-forward" data-text="birdhouse 526 briggs st erie daily 3-5pm $1 off drafts wells 10% off global tapas" data-lat="40.0522" data-lng="-105.0447">
+  <div class="card-top">
+    <div class="card-name">Birdhouse</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-erie">Erie</span>
+      <button class="fav-btn" data-name="Birdhouse" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=Birdhouse%20526%20Briggs%20St%20Erie%20CO" target="_blank" rel="noopener">526 Briggs St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Daily 3-5pm</div>
+  <ul class="specials"><li>$1 off drafts and wells</li><li>10% off global tapas</li></ul>
+</div>
+<div class="card" data-city="Erie" data-date="2026-04-25" data-tags="new,upscale,date-night" data-text="the cork 1794 550 briggs st erie mon-fri 3-5:30pm $8 craft cocktails $8 wine glasses $5 draft beers" data-lat="40.0524" data-lng="-105.0449">
+  <div class="card-top">
+    <div class="card-name">The Cork 1794</div>
+    <div class="card-right">
+      <span class="badge open-badge" style="display:none"></span>
+      <span class="badge badge-erie">Erie</span>
+      <button class="fav-btn" data-name="The Cork 1794" aria-label="Add to favorites">&#9734;</button>
+    </div>
+  </div>
+  <a class="card-address" href="https://maps.apple.com/?q=The%20Cork%201794%20550%20Briggs%20St%20Erie%20CO" target="_blank" rel="noopener">550 Briggs St &nearr;</a>
+  <hr class="divider">
+  <div class="hours">Mon-Fri 3-5:30pm</div>
+  <ul class="specials"><li>$8 craft cocktails</li><li>$8 wine glasses</li><li>$5 draft beers</li></ul>
 </div>
 </div>
 

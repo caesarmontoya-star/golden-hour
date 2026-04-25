@@ -2177,5 +2177,135 @@
     ],
     "lat": 40.0501,
     "lng": -105.0471
+  },
+  {
+    "Name": "Palomino Mexican",
+    "City": "Greeley",
+    "Address": "3390 W 10th St",
+    "Hours": "Daily 2-6pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off specialty cocktails and appetizers"
+    ],
+    "lat": 40.4191,
+    "lng": -104.7345
+  },
+  {
+    "Name": "Aunt Helen's",
+    "City": "Greeley",
+    "Address": "800 8th Ave",
+    "Hours": "Tue-Thu 3-5pm",
+    "Status": "Active",
+    "specials": [
+      "Half-off house lime caipirinhas"
+    ],
+    "lat": 40.4197,
+    "lng": -104.6969
+  },
+  {
+    "Name": "State Armory",
+    "City": "Greeley",
+    "Address": "614 8th Ave",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off drafts and wells",
+      "$5 select appetizers"
+    ],
+    "lat": 40.4189,
+    "lng": -104.6963
+  },
+  {
+    "Name": "Texas Roadhouse",
+    "City": "Johnstown",
+    "Address": "4820 Thompson Pkwy",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$3 domestic drafts",
+      "$5 Legendary Margaritas",
+      "$5.99 Rattlesnake Bites"
+    ],
+    "lat": 40.3484,
+    "lng": -104.9877
+  },
+  {
+    "Name": "Chili's Johnstown",
+    "City": "Johnstown",
+    "Address": "4812 Thompson Pkwy",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$3-$6 menu",
+      "$5 Margaritas",
+      "Half-price select appetizers"
+    ],
+    "lat": 40.3485,
+    "lng": -104.9875
+  },
+  {
+    "Name": "Sparge Brewing",
+    "City": "Wellington",
+    "Address": "3999 GW Bush Ave",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off all full-size draft pours"
+    ],
+    "lat": 40.7006,
+    "lng": -105.0048
+  },
+  {
+    "Name": "Wellington Grill",
+    "City": "Wellington",
+    "Address": "3730 Cleveland Ave",
+    "Hours": "Mon-Fri 4-6pm",
+    "Status": "Active",
+    "specials": [
+      "$3 domestic bottles and well drinks"
+    ],
+    "lat": 40.7009,
+    "lng": -105.0063
+  },
+  {
+    "Name": "Birdhouse",
+    "City": "Erie",
+    "Address": "526 Briggs St",
+    "Hours": "Daily 3-5pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off drafts and wells",
+      "10% off global tapas"
+    ],
+    "lat": 40.0522,
+    "lng": -105.0447
+  },
+  {
+    "Name": "The Cork 1794",
+    "City": "Erie",
+    "Address": "550 Briggs St",
+    "Hours": "Mon-Fri 3-5:30pm",
+    "Status": "Active",
+    "specials": [
+      "$8 craft cocktails",
+      "$8 wine glasses",
+      "$5 draft beers"
+    ],
+    "lat": 40.0524,
+    "lng": -105.0449
+  },
+  {
+    "Name": "Lit'l Bit Bar & Grill",
+    "City": "Evans",
+    "Address": "3620 35th Ave",
+    "Hours": "Tue 4-7pm, Fri/Sat 9-10pm",
+    "Status": "Active",
+    "specials": [
+      "$3 wells, $3 domestic drafts",
+      "$4 Fireball",
+      "Ladies drink free (9-10pm Fri/Sat)"
+    ],
+    "lat": 40.3766,
+    "lng": -104.7124
   }
 ]
