@@ -2719,5 +2719,139 @@
     ],
     "lat": 40.3968,
     "lng": -105.0712
+  },
+  {
+    "Name": "Peppers Mexican Grill",
+    "City": "Firestone",
+    "Address": "11078 Hilltop Rd",
+    "Hours": "Daily 1-5pm, Daily 9pm-close",
+    "Status": "Active",
+    "specials": [
+      "2-for-1 everything daily",
+      "Reverse HH 9pm-close"
+    ],
+    "lat": 40.1567,
+    "lng": -104.9423
+  },
+  {
+    "Name": "Mirror Image Brewing",
+    "City": "Frederick",
+    "Address": "5969 Iris Pkwy",
+    "Hours": "Daily 3-7pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off draft beer and wine",
+      "$4 off chopped sliders"
+    ],
+    "lat": 40.1012,
+    "lng": -104.9389
+  },
+  {
+    "Name": "Mountain Cowboy Brewing",
+    "City": "Frederick",
+    "Address": "5958 Iris Pkwy",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off all pints",
+      "Rotating craft cans"
+    ],
+    "lat": 40.1009,
+    "lng": -104.9391
+  },
+  {
+    "Name": "Westview Tavern",
+    "City": "Firestone",
+    "Address": "10461 Westview Dr",
+    "Hours": "Mon-Fri 4-7pm",
+    "Status": "Active",
+    "specials": [
+      "$2.25 domestic drafts",
+      "$3 well drinks",
+      "$3 house wines"
+    ],
+    "lat": 40.1489,
+    "lng": -104.9401
+  },
+  {
+    "Name": "The Firestone Garage",
+    "City": "Firestone",
+    "Address": "8350 Colorado Blvd",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off drafts and wells",
+      "$5 select app bites"
+    ],
+    "lat": 40.1412,
+    "lng": -104.9456
+  },
+  {
+    "Name": "Saddleback Golf Club",
+    "City": "Firestone",
+    "Address": "8631 Frontier St",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off drafts and wells",
+      "$12 range and beer combo"
+    ],
+    "lat": 40.1438,
+    "lng": -104.9441
+  },
+  {
+    "Name": "Dickey's Barbecue Pit",
+    "City": "Firestone",
+    "Address": "11169 E I-25 Frontage Rd",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off all drafts",
+      "Daily meat plate deals"
+    ],
+    "lat": 40.1571,
+    "lng": -104.9418
+  },
+  {
+    "Name": "G-Town Bar & Grill",
+    "City": "Severance",
+    "Address": "190 Center St",
+    "Hours": "Daily 3-6pm, Daily 10pm-close",
+    "Status": "Active",
+    "specials": [
+      "$3.50 domestic pints",
+      "$3.50 well drinks",
+      "Reverse HH 10pm-close"
+    ],
+    "lat": 40.5234,
+    "lng": -104.8534
+  },
+  {
+    "Name": "Bruce's Bar",
+    "City": "Severance",
+    "Address": "123 1st St",
+    "Hours": "Mon-Fri 4-7pm",
+    "Status": "Active",
+    "specials": [
+      "$2 draft beers",
+      "$3.50 well drinks",
+      "Sun: All-you-can-eat Rocky Mountain oysters"
+    ],
+    "lat": 40.5231,
+    "lng": -104.8531
+  },
+  {
+    "Name": "Tecate Grill",
+    "City": "Severance",
+    "Address": "1018 Mahogany Way",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$4.99 house margaritas",
+      "$2.99 16oz draft beers",
+      "$1.99 street tacos"
+    ],
+    "lat": 40.5198,
+    "lng": -104.8512
   }
 ]
