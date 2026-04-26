@@ -2307,5 +2307,417 @@
     ],
     "lat": 40.3766,
     "lng": -104.7124
+  },
+  {
+    "Name": "Longs Peak Pub",
+    "City": "Longmont",
+    "Address": "600 Longs Peak Ave",
+    "Hours": "Mon-Fri open to 5pm, Daily 8pm-close",
+    "Status": "Active",
+    "specials": [
+      "$6 pitchers, $6 margaritas and wine",
+      "$10 burgers and fries, $10 pizzas",
+      "21 craft beers on tap"
+    ],
+    "lat": 40.1621,
+    "lng": -105.1019
+  },
+  {
+    "Name": "Martini's Bistro",
+    "City": "Longmont",
+    "Address": "543 Terry St",
+    "Hours": "Tue-Fri 4-6pm",
+    "Status": "Active",
+    "specials": [
+      "$8 house martinis",
+      "$6 house red/white wine"
+    ],
+    "lat": 40.165,
+    "lng": -105.1023
+  },
+  {
+    "Name": "Rosalee's Pizzeria",
+    "City": "Longmont",
+    "Address": "461 Main St",
+    "Hours": "Tue-Sat 2-6pm",
+    "Status": "Active",
+    "specials": [
+      "Discounted drafts and slices"
+    ],
+    "lat": 40.1658,
+    "lng": -105.1019
+  },
+  {
+    "Name": "Wibby Brewing",
+    "City": "Longmont",
+    "Address": "209 Emery St",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off all lager pints",
+      "Rotating food truck specials"
+    ],
+    "lat": 40.1664,
+    "lng": -105.1054
+  },
+  {
+    "Name": "New Belgium Brewing",
+    "City": "Fort Collins",
+    "Address": "500 Linden St",
+    "Hours": "Mon-Thu 2-5pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off all full pours",
+      "Rotating small batch deals"
+    ],
+    "lat": 40.5901,
+    "lng": -105.0693
+  },
+  {
+    "Name": "Odell Brewing Co",
+    "City": "Fort Collins",
+    "Address": "800 E Lincoln Ave",
+    "Hours": "Mon-Thu 3-5pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off flagship pints"
+    ],
+    "lat": 40.5897,
+    "lng": -105.0661
+  },
+  {
+    "Name": "Snowbank Brewing",
+    "City": "Fort Collins",
+    "Address": "225 N Lemay Ave",
+    "Hours": "Mon-Thu 2-4pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off flagship pints"
+    ],
+    "lat": 40.5889,
+    "lng": -105.0598
+  },
+  {
+    "Name": "Horse & Dragon Brewing",
+    "City": "Fort Collins",
+    "Address": "124 Racquette Dr",
+    "Hours": "Mon-Wed 3-5pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off all 12oz and 16oz pours"
+    ],
+    "lat": 40.5912,
+    "lng": -105.0701
+  },
+  {
+    "Name": "SweetWater Brewing",
+    "City": "Fort Collins",
+    "Address": "1020 E Lincoln Ave",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$5 drafts, $6 spirits, $7 cocktails",
+      "$5 apps (pretzel bites, hummus)"
+    ],
+    "lat": 40.5894,
+    "lng": -105.0668
+  },
+  {
+    "Name": "The Exchange",
+    "City": "Fort Collins",
+    "Address": "200 N College Ave",
+    "Hours": "Mon-Fri 3-5pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off all drafts and wine at central bar"
+    ],
+    "lat": 40.5882,
+    "lng": -105.0748
+  },
+  {
+    "Name": "BJ's Restaurant & Brewhouse",
+    "City": "Fort Collins",
+    "Address": "2670 E Harmony Rd",
+    "Hours": "Mon-Fri 3-7pm, Daily 9pm-close",
+    "Status": "Active",
+    "specials": [
+      "$6 Tito's, 1800 Tequila, Jack Daniels",
+      "$7 sliders, pot stickers, mozzarella sticks and personal pizza",
+      "$5 house wines"
+    ],
+    "lat": 40.5254,
+    "lng": -105.0268
+  },
+  {
+    "Name": "Applebee's",
+    "City": "Greeley",
+    "Address": "4100 W 10th St",
+    "Hours": "Daily 3-6pm, Daily 9pm-close",
+    "Status": "Active",
+    "specials": [
+      "Half off appetizers (dine-in)",
+      "Boneless wings, brew pub pretzels and beer cheese dip"
+    ],
+    "lat": 40.4191,
+    "lng": -104.7513
+  },
+  {
+    "Name": "Old Chicago Pizza + Taproom",
+    "City": "Greeley",
+    "Address": "2349 W 29th St",
+    "Hours": "Mon-Fri 3-6pm, Sat-Sun 9pm-close",
+    "Status": "Active",
+    "specials": [
+      "$1 off drafts, BOGO beers",
+      "Discounted pizza, wings, pretzels"
+    ],
+    "lat": 40.4312,
+    "lng": -104.7441
+  },
+  {
+    "Name": "After Hours Cocktail Bar",
+    "City": "Greeley",
+    "Address": "4111 Center Place Dr Unit D",
+    "Hours": "Daily 4-6pm, all day Tue",
+    "Status": "Active",
+    "specials": [
+      "Innovative craft cocktails and wine",
+      "Light tapas, specialty cocktails with edible glitter"
+    ],
+    "lat": 40.4098,
+    "lng": -104.7489
+  },
+  {
+    "Name": "Industrial Revolution Brewing",
+    "City": "Erie",
+    "Address": "2851 Rock Creek Dr",
+    "Hours": "Mon-Thu 4:30-6pm",
+    "Status": "Active",
+    "specials": [
+      "50% off select drafts",
+      "Brewery snacks"
+    ],
+    "lat": 40.0503,
+    "lng": -105.0468
+  },
+  {
+    "Name": "Roma Restaurant",
+    "City": "Evans",
+    "Address": "3625 23rd Ave",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off all drafts",
+      "$2 off wine and cocktails",
+      "$2 off all appetizers"
+    ],
+    "lat": 40.3774,
+    "lng": -104.7118
+  },
+  {
+    "Name": "Spanky's Roadhouse",
+    "City": "Evans",
+    "Address": "2512 47th Ave",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off local craft drafts",
+      "$4.50 house wines",
+      "$6 pretzel bites and queso"
+    ],
+    "lat": 40.3701,
+    "lng": -104.7089
+  },
+  {
+    "Name": "Cancun Mexican Grill",
+    "City": "Evans",
+    "Address": "3535 W 13th St",
+    "Hours": "Mon-Fri 4-7pm",
+    "Status": "Active",
+    "specials": [
+      "$5.50 house margaritas",
+      "$3.50 domestic drafts",
+      "$4.50 imported beers"
+    ],
+    "lat": 40.3791,
+    "lng": -104.7312
+  },
+  {
+    "Name": "Skyview Lanes",
+    "City": "Evans",
+    "Address": "2601 31st St",
+    "Hours": "Mon-Fri 4-6pm",
+    "Status": "Active",
+    "specials": [
+      "$3.50 domestic drafts",
+      "$4 well drinks",
+      "$5 loaded fries"
+    ],
+    "lat": 40.3756,
+    "lng": -104.7143
+  },
+  {
+    "Name": "The Library",
+    "City": "Greeley",
+    "Address": "806 16th St",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$3.50 pint of the day",
+      "$4 well drinks",
+      "$6 Bookworm sliders"
+    ],
+    "lat": 40.4228,
+    "lng": -104.7082
+  },
+  {
+    "Name": "Thirsty's",
+    "City": "Greeley",
+    "Address": "2422 W 10th St",
+    "Hours": "Mon-Fri 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off all pints",
+      "$3.50 well drinks",
+      "$5 fried pickles"
+    ],
+    "lat": 40.4191,
+    "lng": -104.7398
+  },
+  {
+    "Name": "Old Town Pub",
+    "City": "Wellington",
+    "Address": "3747 Cleveland Ave",
+    "Hours": "Daily 3-5pm, Daily 9-11pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off all drafts",
+      "$1 off wells and wine",
+      "Late night food specials 9-11pm"
+    ],
+    "lat": 40.7012,
+    "lng": -105.0071
+  },
+  {
+    "Name": "Soul Squared Brewing",
+    "City": "Wellington",
+    "Address": "3740 Cleveland Ave",
+    "Hours": "Tue-Fri 4-6pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off all farm-to-tap pours",
+      "$5 flagship cans",
+      "$2 off large soft pretzels"
+    ],
+    "lat": 40.7009,
+    "lng": -105.0068
+  },
+  {
+    "Name": "Sandos",
+    "City": "Wellington",
+    "Address": "3724 Cleveland Ave",
+    "Hours": "Daily 3-5pm",
+    "Status": "Active",
+    "specials": [
+      "$1 off draft beers",
+      "$5 house sangria",
+      "$2 off signature sliders"
+    ],
+    "lat": 40.7007,
+    "lng": -105.0065
+  },
+  {
+    "Name": "Origins Food & Drink",
+    "City": "Loveland",
+    "Address": "500 N Lincoln Ave",
+    "Hours": "Sun-Thu 5-7pm",
+    "Status": "Active",
+    "specials": [
+      "$10 smoked fish dip",
+      "$12 steak sliders",
+      "High-end wine specials"
+    ],
+    "lat": 40.3978,
+    "lng": -105.0749
+  },
+  {
+    "Name": "The 4th St Chophouse",
+    "City": "Loveland",
+    "Address": "125 E 4th St",
+    "Hours": "Daily 4-6pm",
+    "Status": "Active",
+    "specials": [
+      "$2 off cocktails and wine",
+      "$6 craft drafts",
+      "$8 calamari and shrimp"
+    ],
+    "lat": 40.3973,
+    "lng": -105.0731
+  },
+  {
+    "Name": "West End Lounge",
+    "City": "Loveland",
+    "Address": "108 W 4th St",
+    "Hours": "Mon-Fri 4-6pm",
+    "Status": "Active",
+    "specials": [
+      "$7 signature martinis",
+      "$2 off house wine"
+    ],
+    "lat": 40.3972,
+    "lng": -105.0748
+  },
+  {
+    "Name": "Rock Bottom Brewery",
+    "City": "Loveland",
+    "Address": "6025 Sky Pond Dr",
+    "Hours": "Mon-Fri 4-6pm",
+    "Status": "Active",
+    "specials": [
+      "$3 brewmaster pints",
+      "$6 spirits and cocktails",
+      "$6 select starters"
+    ],
+    "lat": 40.3621,
+    "lng": -105.0889
+  },
+  {
+    "Name": "Cactus Grille",
+    "City": "Loveland",
+    "Address": "119 E 4th St",
+    "Hours": "Daily 3-6pm",
+    "Status": "Active",
+    "specials": [
+      "$4 domestic beers",
+      "$7 tap margaritas"
+    ],
+    "lat": 40.3973,
+    "lng": -105.0732
+  },
+  {
+    "Name": "Loveland Aleworks",
+    "City": "Loveland",
+    "Address": "118 W 4th St",
+    "Hours": "Mon-Fri 3-6pm, all day Wed",
+    "Status": "Active",
+    "specials": [
+      "$5 draft beers",
+      "All day Wednesday happy hour"
+    ],
+    "lat": 40.3972,
+    "lng": -105.0747
+  },
+  {
+    "Name": "Metrolux Dine-In",
+    "City": "Loveland",
+    "Address": "285 E 3rd St",
+    "Hours": "Daily 3-6pm, Daily 9pm-close",
+    "Status": "Active",
+    "specials": [
+      "$2 off draft beer",
+      "$2 off wine and wells"
+    ],
+    "lat": 40.3968,
+    "lng": -105.0712
   }
 ]
